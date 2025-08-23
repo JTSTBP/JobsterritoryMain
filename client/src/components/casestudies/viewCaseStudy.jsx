@@ -7,7 +7,7 @@ export default function CaseStudyDetails() {
   const [caseStudy, setCaseStudy] = useState(null);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/casestudy/${slug}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/casestudy/${slug}`)
       .then((res) => res.json())
       .then((data) => setCaseStudy(data))
       .catch((err) => console.error("Error fetching case study:", err));
