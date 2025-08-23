@@ -18,7 +18,7 @@ connectDB();
 
 // Sample Route
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.send("API is running in Jobsterritory...");
 });
 
 app.use("/api", getdata);
