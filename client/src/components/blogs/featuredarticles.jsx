@@ -43,7 +43,7 @@ export default function FeaturedArticles() {
     const fetchBlogs = async () => {
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/getblogs`
+          `${process.env.REACT_APP_API_URL}/getblogs`
         );
         setArticles(res.data || []);
       } catch (err) {

@@ -10,7 +10,7 @@ export default function CaseStudiesMain() {
   const [visibleCount, setVisibleCount] = useState(3); // show first 3 by default
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/getcasestudies`) // adjust backend URL if deployed
+    fetch(`${process.env.REACT_APP_API_URL}/getcasestudies`) // adjust backend URL if deployed
       .then((res) => res.json())
       .then((data) => setCaseStudies(data))
       .catch((err) => console.error("Error fetching case studies:", err));

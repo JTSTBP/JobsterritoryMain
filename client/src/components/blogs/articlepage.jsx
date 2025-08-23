@@ -180,7 +180,7 @@ export default function ArticlePage() {
   useEffect(() => {
     // Fetch single blog by slug
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/blogs/${slug}`)
+      .get(`${process.env.REACT_APP_API_URL}/blogs/${slug}`)
       .then((res) => setBlog(res.data))
       .catch((err) => console.error(err));
   }, [slug]);

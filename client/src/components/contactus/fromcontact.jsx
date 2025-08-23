@@ -208,7 +208,7 @@ export default function ContactForm() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/addcontact`,
+        `${process.env.REACT_APP_API_URL}/addcontact`,
         formData
       );
       alert(res.data.message);

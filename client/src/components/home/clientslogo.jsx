@@ -29,7 +29,7 @@ const fallbackLogos = [
   useEffect(() => {
     const fetchLogos = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/getlogos`); // 🔹 Change API URL
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/getlogos`); // 🔹 Change API URL
         if (res.data && res.data.length > 0) {
           setLogos(res.data); // pick only `banner` field
         } else {
