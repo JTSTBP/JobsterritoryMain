@@ -9,7 +9,7 @@ const Navbar = () => {
   const currentPath = location.pathname;
 
   const isActive = (path) => currentPath === path;
- 
+
   const menuItems = [
     { name: "Home", path: "/" },
     // { name: "About", path: "/About" },
@@ -233,7 +233,7 @@ const Navbar = () => {
             </div>
             <a
               className="bg-white p-2 rounded-full"
-              href="https://main.d2om26q6t6v3tv.amplifyapp.com/"
+              href="https://raasjobsterritory.com/"
               target="_blank"
             >
               <button className="whitespace-nowrap bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md">
@@ -331,7 +331,7 @@ const Navbar = () => {
                 </a>
                 <a
                   className="px-3"
-                  href="https://main.d2om26q6t6v3tv.amplifyapp.com/"
+                  href="https://raasjobsterritory.com/"
                   target="_blank"
                 >
                   <button className="w-full bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-sm">
