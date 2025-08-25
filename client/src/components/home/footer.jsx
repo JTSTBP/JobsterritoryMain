@@ -1,137 +1,4 @@
 
-// const Footer = () => {
-//   return (
-//     <footer className="bg-[#1B084C] text-white">
-//       {/* Main Content */}
-//       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-//         {/* Left Section */}
-//         <div>
-//           <img
-//             src="/images/logo.png"
-//             alt="Logo"
-//             className="w-32 sm:w-40 mb-4"
-//           />
-//           <p className="text-sm leading-relaxed mb-6">
-//             Transforming the way companies hire across India. We connect
-//             exceptional talent with outstanding opportunities through innovative
-//             recruitment solutions.
-//           </p>
-
-//           {/* Stats */}
-//           <div className="flex flex-wrap gap-6 mb-6">
-//             <div className="text-center min-w-[70px]">
-//               <p className="font-bold text-xl">10K+</p>
-//               <p className="text-xs">Placements</p>
-//             </div>
-//             <div className="text-center min-w-[70px]">
-//               <p className="font-bold text-xl">95%</p>
-//               <p className="text-xs">Success Rate</p>
-//             </div>
-//             <div className="text-center min-w-[70px]">
-//               <p className="font-bold text-xl">48hrs</p>
-//               <p className="text-xs">Response Time</p>
-//             </div>
-//           </div>
-
-//           {/* Social Links */}
-//           <div className="flex gap-4 text-lg">
-//             <a href="#" className="hover:text-gray-300">
-//               <i className="fab fa-linkedin"></i>
-//             </a>
-//             <a href="#" className="hover:text-gray-300">
-//               <i className="fab fa-facebook"></i>
-//             </a>
-//             <a href="#" className="hover:text-gray-300">
-//               <i className="fab fa-instagram"></i>
-//             </a>
-//             <a href="#" className="hover:text-gray-300">
-//               <i className="fab fa-x-twitter"></i>
-//             </a>
-//           </div>
-//         </div>
-
-//         {/* Our Services */}
-//         <div>
-//           <h3 className="font-semibold text-lg mb-4">Our Services</h3>
-//           <ul className="space-y-2 text-sm">
-//             <li>Recruitment as a Service (RAAS)</li>
-//             <li>Pay Per Hire</li>
-//             <li>C-Suiting Hiring</li>
-//             <li>Executive Search</li>
-//             <li>Technical Recruitment</li>
-//             <li>Bulk hiring</li>
-//           </ul>
-//         </div>
-
-//         {/* Industries */}
-//         <div>
-//           <h3 className="font-semibold text-lg mb-4">Industries</h3>
-//           <ul className="space-y-2 text-sm">
-//             <li>Technology and Startups</li>
-//             <li>E-Commerce and Retail</li>
-//             <li>Manufacturing</li>
-//             <li>Healthcare</li>
-//             <li>Media and Entertainment</li>
-//             <li>BFSI</li>
-//           </ul>
-//         </div>
-
-//         {/* Contact */}
-//         <div>
-//           <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
-//           <p className="text-sm mb-2">+91 98765 43210</p>
-//           <p className="text-sm mb-2">hello@jobsterritory.co</p>
-//           <p className="text-sm mb-6">
-//             Mumbai, Delhi, Bangalore, Pune, Hyderabad
-//           </p>
-
-//           <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-//           <ul className="space-y-2 text-sm">
-//             <li>About Us</li>
-//             <li>Our Process</li>
-//             <li>Careers</li>
-//           </ul>
-//         </div>
-//       </div>
-
-//       {/* Newsletter */}
-//       <div className=" px-6 md:px-12 lg:px-20 py-8">
-//         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-//           <div>
-//             <h3 className="font-semibold text-lg mb-1">
-//               Stay Updated with Industry Insights
-//             </h3>
-//             <p className="text-sm text-gray-300">
-//               Get the latest recruitment trends and hiring tips delivered to
-//               your inbox
-//             </p>
-//           </div>
-
-//           <form className="flex w-full sm:w-auto">
-//             <input
-//               type="email"
-//               placeholder="Your email"
-//               className="px-4 py-2 rounded-l-md text-black w-full sm:w-64"
-//             />
-//             <button
-//               type="submit"
-//               className="bg-white text-[#1B084C] font-semibold px-4 py-2 rounded-r-md hover:bg-gray-200 transition"
-//             >
-//               Subscribe
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-
-//       {/* Bottom Bar */}
-//       <div className="border-t border-gray-700 mt-8 py-4 text-center text-xs text-gray-400">
-//         © {new Date().getFullYear()} Jobs Territory. All rights reserved.
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
 
 
 import React from 'react';
@@ -152,12 +19,9 @@ import {
 
 const Footer = () => {
   const services = [
-    'Recruitment as a Service (RAAS)',
-    'Pay Per Hire',
-    'C-Suite Hiring',
-    'Executive Search',
-    'Technical Recruitment',
-    'Bulk Hiring'
+    "Recruitment as a Service (RAAS)",
+    "Pay Per Hire",
+    "Fractional Hiring",
   ];
 
   const industries = [
@@ -179,10 +43,28 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: '#', color: 'hover:text-blue-600' },
-    { icon: Twitter, href: '#', color: 'hover:text-blue-400' },
-    { icon: Facebook, href: '#', color: 'hover:text-blue-700' },
-    { icon: Instagram, href: '#', color: 'hover:text-pink-600' }
+    {
+      icon: Linkedin,
+
+      color: "hover:text-blue-600",
+      href: "https://www.linkedin.com/company/jobs-territory/",
+    },
+    {
+      icon: Twitter,
+      color: "hover:text-blue-400",
+      href: "https://x.com/jobsterritory",
+    },
+    {
+      icon: Facebook,
+      color: "hover:text-blue-700",
+      href: "https://www.facebook.com/jobsterritory",
+    },
+    {
+      icon: Instagram,
+
+      color: "hover:text-pink-600",
+      href: "https://www.instagram.com/jobsterritory",
+    },
   ];
 
   return (
@@ -261,6 +143,7 @@ const Footer = () => {
                     <motion.a
                       key={index}
                       href={social.href}
+                      target="_blank"
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -366,19 +249,19 @@ const Footer = () => {
                     Contact Us
                   </h4>
                   <div className="space-y-4">
-                    <motion.div
+                    {/* <motion.div
                       whileHover={{ x: 5 }}
                       className="flex items-center space-x-3 text-gray-400 hover:text-primary-400 transition-all duration-200"
                     >
                       <Phone size={18} />
                       <span>+91 9999999999</span>
-                    </motion.div>
+                    </motion.div> */}
                     <motion.div
                       whileHover={{ x: 5 }}
                       className="flex items-center space-x-3 text-gray-400 hover:text-primary-400 transition-all duration-200"
                     >
                       <Mail size={18} />
-                      <span>hello@jobsterritory.com</span>
+                      <span>careers@jobsterritory.com</span>
                     </motion.div>
                     <motion.div
                       whileHover={{ x: 5 }}

@@ -13,10 +13,11 @@ const Navbar = () => {
   const menuItems = [
     { name: "Home", path: "/" },
     // { name: "About", path: "/About" },
-    { name: "About", path: "/AboutUs" },
+
     { name: "Fraction Hiring", path: "/FractionHiring" },
     { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Resources", path: "#" },
+    // { name: "About", path: "/AboutUs" },
   ];
 
   const miditems = [
@@ -230,11 +231,15 @@ const Navbar = () => {
               </a>
               <div className="absolute right-0 top-1/2 w-6 h-[5px] bg-white transform translate-x-full -translate-y-1/2"></div>
             </div>
-            <div className="bg-white p-2 rounded-full">
+            <a
+              className="bg-white p-2 rounded-full"
+              href="https://main.d2om26q6t6v3tv.amplifyapp.com/"
+              target="_blank"
+            >
               <button className="whitespace-nowrap bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md">
                 Raas
               </button>
-            </div>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}

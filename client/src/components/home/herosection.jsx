@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 4;
+  const totalSlides = 3;
   const navigate = useNavigate();
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -31,37 +31,36 @@ const HeroSection = () => {
   ];
 
   const backgroundImages = [
-    { desktop: "/images/herobg1.png", mobile: "/images/mobilebg1.png" },
-    { desktop: "/images/herobg2.png", mobile: "/images/mobilebg1.png" },
-    { desktop: "/images/herobg3.png", mobile: "/images/mobilebg1.png" },
-    { desktop: "/images/herobg4.png", mobile: "/images/mobilebg1.png" },
+    {
+      url: "/images/herobg2.png",
+    },
+    {
+      url: "/images/herobg3.png",
+    },
+    {
+      url: "/images/herobg4.png",
+    },
   ];
 
   const slides = [
     {
-      heading: "Executive Search Excellence",
+      heading: "Great Companies Deserve Great Leaders",
       paragraph:
-        "Find C-Suite leaders who drive business transformation and growth",
+        "We don’t just fill roles—we connect you with visionaries who ignite change",
       statNumber: "30+",
       statLabel: "Successful Placement",
     },
     {
-      heading: "Recruitment as a Service",
+      heading: "Trusted by India’s Industry Leaders",
       paragraph:
-        "Dedicated recruiters tailored to your business needs and culture",
-      statNumber: "30+",
-      statLabel: "Successful Placement",
-    },
-    {
-      heading: "Transform Your Hiring Process",
-      paragraph:
-        "Connect with top talent across India through our innovative recruitment solutions",
+        "From ambitious startups to India’s most iconic brands, we match businesses with the people who spark innovation, drive measurable results, and shape the future.",
       statNumber: "500+",
       statLabel: "Successful Placement",
     },
     {
-      heading: "Pay Per Hire Success",
-      paragraph: "Risk-free hiring with payment only for successful placements",
+      heading: "Our Services — More Than Recruitment.",
+      paragraph:
+        "At Jobs Territory, hiring isn’t a transaction—it’s a strategic advantage. We go beyond recruitment to help you discover, attract, and retain the talent that fuels breakthrough growth and lasting success.",
       statNumber: "48hr",
       statLabel: "Average Response Time",
     },
@@ -75,10 +74,7 @@ const HeroSection = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const currentImage =
-    screenWidth >= 1118
-      ? backgroundImages[currentSlide].desktop
-      : backgroundImages[currentSlide].mobile;
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -97,7 +93,7 @@ const HeroSection = () => {
           exit={{ scale: 0.95, opacity: 0 }}
           transition={{ duration: 1 }}
           style={{
-            backgroundImage: `url(${currentImage})`,
+            backgroundImage: `url(${backgroundImages[currentSlide].url})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -114,7 +110,7 @@ const HeroSection = () => {
             <h1 className="text-3xl md:text-4xl font-bold ">
               {slides[currentSlide].heading}
             </h1>
-            <p className="mt-2 text-base md:text-lg">
+            <p className="mt-2 text-center md:text-lg w-auto lg:w-[50%] mx-auto">
               {slides[currentSlide].paragraph}
             </p>
           </motion.div>
@@ -226,7 +222,9 @@ const HeroSection = () => {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={()=>{navigate("/ContactUs")}}
+                onClick={() => {
+                  navigate("/ContactUs");
+                }}
                 className="flex items-center gap-2 "
               >
                 <button className="xl:w-[200px] flex items-center justify-center bg-gradient-to-r from-[#2c1361] to-[#7300ff] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">
