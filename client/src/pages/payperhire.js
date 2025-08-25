@@ -83,23 +83,23 @@ const faqData = [
    {
      id: 3,
      title: "fast-hiring-no-upfront-fees",
-     image: "/images/blogsimg1.png",
+     image: "/images/blogimg1.png",
    },
    {
      id: 4,
      title: "pay-per-hire-trend-or-future-of-hiring",
-     image: "/images/blogsimg.png",
+     image: "/images/blogsimgsh1.png",
      bg: "#1B084C",
    },
    {
      id: 5,
      title: "is-pay-per-hire-changing-recruitment-forever",
-     image: "/images/blogsimg1.png",
+     image: "/images/blogimg2.png",
    },
    {
      id: 6,
      title: "how-pay-per-hire-can-cut-hiring-costs-by-50percent",
-     image: "/images/blogsimg.png",
+     image: "/images/blogsimgsh2.png",
      bg: "#1B084C",
    },
  ];

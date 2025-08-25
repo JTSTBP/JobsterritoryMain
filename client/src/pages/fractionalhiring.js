@@ -88,23 +88,23 @@ const faqData = [
    {
      id: 3,
      title: "c-suite-hiring-trends-in-tech-healthcare",
-     image: "/images/blogsimg1.png",
+     image: "/images/blogimg1.png",
    },
    {
      id: 4,
      title: "importance-of-executive-search-for-c-suite-ro",
-     image: "/images/blogsimg.png",
+     image: "/images/blogsimgsh1.png",
      bg: "#1B084C",
    },
    {
      id: 5,
      title: "how-to-attract-and-retain-top-c-suite-talent",
-     image: "/images/blogsimg1.png",
+     image: "/images/blogimg2.png",
    },
    {
      id: 6,
      title: "importance-of-executive-search-for-c-suite-ro",
-     image: "/images/blogsimg.png",
+     image: "/images/blogsimgsh2.png",
      bg: "#1B084C",
    },
  ];
