@@ -25,6 +25,7 @@ const Services = () => {
       buttonText: "Learn More",
       image: "/images/vec1.png",
       icon: "/images/icon1.png",
+      href: "https://main.d2om26q6t6v3tv.amplifyapp.com/",
     },
     {
       // you can use emoji or image path
@@ -39,6 +40,7 @@ const Services = () => {
       buttonText: "Learn More",
       image: "/images/vec2.png",
       icon: "/images/icon2.png",
+      href: "/Payperhire",
     },
     {
       // you can use emoji or image path
@@ -54,6 +56,7 @@ const Services = () => {
       buttonText: "Learn More",
       image: "/images/vec3.png",
       icon: "/images/icon3.png",
+      href: "/FractionHiring",
     },
   ];
 
@@ -111,7 +114,7 @@ const Services = () => {
         className="flex justify-center flex-wrap items-start gap-8   bg-[#EFEFEF]"
       >
         {cardData.map((item, index) => (
-          <motion.div
+          <motion.a
             key={index}
             variants={cardVariants}
             whileHover={{ scale: 1.05, y: -10 }}
@@ -123,6 +126,7 @@ const Services = () => {
               backgroundPosition: "center",
               boxShadow: "0 4px 6px -4px rgba(0,0,0,0.1)",
             }}
+            href={item.href}
           >
             {/* Card Content */}
             <div className="relative text-[#1B084C] flex flex-col justify-between flex-grow my-[2px] mx-[20px]">
@@ -168,7 +172,7 @@ const Services = () => {
                 </span>
               </motion.button>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </motion.div>
 
