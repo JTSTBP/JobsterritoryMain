@@ -287,7 +287,7 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden border-t border-gray-200 bg-gray-50 absolute top-16 left-0 w-full shadow-md z-[60]">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {menuItems.slice(0, 4).map((item) => (
+              {miditems.slice(0, 4).map((item) => (
                 <a
                   key={item.name}
                   href={item.path}
