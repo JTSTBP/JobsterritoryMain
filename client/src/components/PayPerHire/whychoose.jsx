@@ -69,7 +69,7 @@
 // //       }}
 // //     >
 // //       <div className="max-w-[45rem] mx-auto text-center mr-0 md:mr-5 lg:mr-10">
-// //         <h2 className="text-2xl md:text-4xl font-bold text-[#1B084C] font-museo">
+// //         <h2 className="text-2xl md:text-4xl font-bold text-[#1B084C] font-playfair">
 // //           Why Choose Pay Per Hire?
 // //         </h2>
 // //         <p className="mt-4 text-base md:text-lg text-[#1B084C]">
@@ -146,7 +146,6 @@
 // // };
 
 // // export default WhyChoosePayPerHire;
-
 
 // import React, { useEffect, useState } from "react";
 
@@ -234,7 +233,7 @@
 //       }}
 //     >
 //       <div className="max-w-[45rem] mx-auto text-center mr-0 md:mr-5 lg:mr-10">
-//         <h2 className="text-2xl md:text-4xl font-bold text-[#1B084C] font-museo">
+//         <h2 className="text-2xl md:text-4xl font-bold text-[#1B084C] font-playfair">
 //           Why Choose Pay Per Hire?
 //         </h2>
 //         <p className="mt-4 text-base md:text-lg text-[#1B084C]">
@@ -313,7 +312,6 @@
 // };
 
 // export default WhyChoosePayPerHire;
-
 
 // import React, { useEffect, useState } from "react";
 
@@ -461,7 +459,6 @@
 //   );
 // }
 
-
 import React, { useEffect, useState } from "react";
 
 const POS = [
@@ -601,7 +598,7 @@ export default function RotatingCardWithText() {
       <div className="max-w-5xl flex flex-col text-center md:text-left flex-1 self-end">
         <div>
           {/* Main heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1B084C] font-museo mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1B084C] font-playfair mb-3">
             Why Businesses Choose Pay Per Hire
           </h2>
 
@@ -612,7 +609,7 @@ export default function RotatingCardWithText() {
           </p>
 
           {/* Highlighted Feature */}
-          <h3 className="font-museo text-lg md:text-xl font-semibold text-[#5500FE] mb-2">
+          <h3 className="font-playfair text-lg md:text-xl font-semibold text-[#5500FE] mb-2">
             {activeImage.title}:
           </h3>
 

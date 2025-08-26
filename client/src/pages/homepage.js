@@ -10,81 +10,148 @@ import IndustriesGrid from "../components/home/industriesgrid";
 import Footer from "../components/home/footer";
 import FAQSection from "../components/home/faqs";
 
-
 import { motion, AnimatePresence } from "framer-motion";
-
-
+import BlogsSection from "../components/commonsections/staticblogs";
 
 const Homepage = () => {
-const industries = [
-  {
-    title: "Technology & Startups",
-    description:
-      "Software engineers, product managers, data scientists, and tech leaders. 2,000+ placements and counting.",
-    placements: "2000+",
-    bg: "images/bg1.png",
-    text: "text-[#FFFFFF]",
-  },
-  {
-    title: "Healthcare & Life Sciences",
-    description:
-      "Medical experts, innovators, and compliance leaders making quality care accessible.",
-    placements: "800+",
-    bg: "images/bg4.png",
-    text: "text-[#1B084C]",
-  },
-  {
-    title: "E-Commerce & Retail",
-    description:
-      "Digital marketing, operations, supply chain, and customer experience professionals.",
-    placements: "1500+",
-    bg: "images/bg2.png",
-    text: "text-[#FFFFFF]",
-  },
-  {
-    title: "Banking & Financial Services",
-    description:
-      "Banking, insurance, fintech, and investment professionals who drive stability and growth.",
-    placements: "1000+",
-    bg: "images/bg5.png",
-    text: "text-[#1B084C]",
-  },
-  {
-    title: "Engineering & Manufacturing",
-    description:
-      "Mechanical, electrical, industrial engineers, and production managers who optimize operations.",
-    placements: "1200+",
-    bg: "images/bg3.png",
-    text: "text-[#1B084C]",
-  },
+  const industries = [
+    {
+      title: "Technology & Startups",
+      description:
+        "Software engineers, product managers, data scientists, and tech leaders. 2,000+ placements and counting.",
+      placements: "2000+",
+      bg: "images/bg1.png",
+      text: "text-[#FFFFFF]",
+    },
+    {
+      title: "Healthcare & Life Sciences",
+      description:
+        "Medical experts, innovators, and compliance leaders making quality care accessible.",
+      placements: "800+",
+      bg: "images/bg4.png",
+      text: "text-[#1B084C]",
+    },
+    {
+      title: "E-Commerce & Retail",
+      description:
+        "Digital marketing, operations, supply chain, and customer experience professionals.",
+      placements: "1500+",
+      bg: "images/bg2.png",
+      text: "text-[#FFFFFF]",
+    },
+    {
+      title: "Banking & Financial Services",
+      description:
+        "Banking, insurance, fintech, and investment professionals who drive stability and growth.",
+      placements: "1000+",
+      bg: "images/bg5.png",
+      text: "text-[#1B084C]",
+    },
+    {
+      title: "Engineering & Manufacturing",
+      description:
+        "Mechanical, electrical, industrial engineers, and production managers who optimize operations.",
+      placements: "1200+",
+      bg: "images/bg3.png",
+      text: "text-[#1B084C]",
+    },
 
-  {
-    title: "Media & Creative",
-    description:
-      "Content creators, marketers, and storytellers who inspire audiences.",
-    placements: "1500+",
-    bg: "images/bg6.png",
-    text: "text-[#FFFFFF]",
-  },
-  {
-    title: "Logistics & Supply Chain",
-    description:
-      "Professionals ensuring your operations run on time, on budget, and without disruption.",
-    placements: "700+",
-    bg: "images/bg7.png",
-    large: true,
-    text: "text-[#FFFFFF]",
-  },
-  {
-    title: "Real Estate",
-    description:
-      "Strategic leaders in development, sales, marketing, and investment who deliver measurable returns.",
-    placements: "500+",
-    bg: "images/bg8.png",
-    text: "text-[#1B084C]",
-  },
+    {
+      title: "Media & Creative",
+      description:
+        "Content creators, marketers, and storytellers who inspire audiences.",
+      placements: "1500+",
+      bg: "images/bg6.png",
+      text: "text-[#FFFFFF]",
+    },
+    {
+      title: "Logistics & Supply Chain",
+      description:
+        "Professionals ensuring your operations run on time, on budget, and without disruption.",
+      placements: "700+",
+      bg: "images/bg7.png",
+      large: true,
+      text: "text-[#FFFFFF]",
+    },
+    {
+      title: "Real Estate",
+      description:
+        "Strategic leaders in development, sales, marketing, and investment who deliver measurable returns.",
+      placements: "500+",
+      bg: "images/bg8.png",
+      text: "text-[#1B084C]",
+    },
   ];
-  
+  const blogs = [
+    {
+      id: 1,
+      title: "how-to-attract-and-retain-top-c-suite-talent",
+      image: "/images/blogsimg1.png",
+    },
+    {
+      id: 2,
+      title: "importance-of-executive-search-for-c-suite-ro",
+      image: "/images/blogsimg.png",
+      bg: "#1B084C",
+    },
+    {
+      id: 3,
+      title: "c-suite-hiring-trends-in-tech-healthcare",
+      image: "/images/blogimg1.png",
+    },
+    {
+      id: 4,
+      title: "importance-of-executive-search-for-c-suite-ro",
+      image: "/images/blogsimgsh1.png",
+      bg: "#1B084C",
+    },
+    {
+      id: 5,
+      title: "how-to-attract-and-retain-top-c-suite-talent",
+      image: "/images/blogimg2.png",
+    },
+    {
+      id: 6,
+      title: "importance-of-executive-search-for-c-suite-ro",
+      image: "/images/blogsimgsh2.png",
+      bg: "#1B084C",
+    },
+
+    {
+      id: 7,
+      title: "pay-per-hire-a-fix-for-costly-hiring",
+      image: "/images/blogsimg1.png",
+    },
+    {
+      id: 8,
+      title: "pay-per-hire-smarter-hiring-better-roi",
+      image: "/images/blogsimg.png",
+      bg: "#1B084C",
+    },
+    {
+      id: 9,
+      title: "fast-hiring-no-upfront-fees",
+      image: "/images/blogimg1.png",
+    },
+    {
+      id: 10,
+      title: "pay-per-hire-trend-or-future-of-hiring",
+      image: "/images/blogsimgsh1.png",
+      bg: "#1B084C",
+    },
+    {
+      id: 11,
+      title: "is-pay-per-hire-changing-recruitment-forever",
+      image: "/images/blogimg2.png",
+    },
+    {
+      id: 12,
+      title: "how-pay-per-hire-can-cut-hiring-costs-by-50percent",
+      image: "/images/blogsimgsh2.png",
+      bg: "#1B084C",
+    },
+  ];
+
   const faqData = [
     {
       question: "How does Recruitment as a service (RAAS) work?",
@@ -129,8 +196,7 @@ const industries = [
         "We provide replacement guarantees for a set period in case the hired candidate leaves early.",
     },
   ];
- 
- 
+
   return (
     <div>
       <Navbar />
@@ -141,7 +207,7 @@ const industries = [
       <Testimonial />
       <IndustriesGrid industries={industries} />
 
-
+      <BlogsSection blogs={blogs} />
       <FAQSection faqData={faqData} />
 
       {/* Bottom CTA Section */}
@@ -176,7 +242,7 @@ const industries = [
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-light text-white mb-4 font-museo"
+              className="text-3xl md:text-4xl font-light text-white mb-4 font-playfair"
             >
               Still Have <span className="font-bold">Questions?</span>
             </motion.h2>
@@ -195,7 +261,7 @@ const industries = [
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row justify-center gap-4 font-museo"
+              className="flex flex-col sm:flex-row justify-center gap-4 font-playfair"
             >
               <motion.button
                 whileHover={{

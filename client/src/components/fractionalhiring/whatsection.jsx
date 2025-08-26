@@ -8,7 +8,7 @@ export default function Whysection() {
         <div className="">
           {/* Heading */}
           <div className="mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4 font-museo">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4 font-playfair">
               What Makes Our Fractional Hiring Different
             </h2>
             <p className="text-base md:text-lg text-gray-700 max-w-3xl">
@@ -28,7 +28,7 @@ export default function Whysection() {
                 src={"/images/fractionic1.png"}
               />
               <div>
-                <h3 className="text-lg font-semibold mb-1 font-museo">
+                <h3 className="text-lg font-semibold mb-1 font-playfair">
                   Senior Expertise at a Fraction of the Cost
                 </h3>
                 <p className="text-gray-600">

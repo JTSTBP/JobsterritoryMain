@@ -6,6 +6,10 @@ module.exports = {
       fontFamily: {
         museo: ['"MuseoModerno"', "cursive"],
         inter: ['"Inter"', "sans-serif"],
+        montserrat: ['"Montserrat"', "sans-serif"],
+        nunito: ['"Nunito"', "sans-serif"],
+        playfair: ['"Playfair Display"', "serif"], // For classy headings
+        poppins: ['"Poppins"', "sans-serif"],
       },
       keyframes: {
         scroll: {
@@ -33,7 +37,6 @@ module.exports = {
         xs: { max: "419px" },
         hidebuttons: { max: "958px" },
         custom: "1196px",
-       
       },
     },
   },

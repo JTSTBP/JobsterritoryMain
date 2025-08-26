@@ -14,7 +14,7 @@ const Bannersection = ({
   showBottomButton = true,
 }) => {
   return (
-    <div className="bg-[#EFEFEF] py-4 font-museo">
+    <div className="bg-[#EFEFEF] py-4 font-playfair">
       <motion.div
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

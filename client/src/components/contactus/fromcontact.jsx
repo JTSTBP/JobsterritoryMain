@@ -24,7 +24,7 @@
 //   };
 
 //   return (
-//     <section className="bg-white py-12 px-6 flex justify-center text-[#1B084C] font-inter">
+//     <section className="bg-white py-12 px-6 flex justify-center text-[#1B084C] font-poppins">
 //       <form
 //         onSubmit={handleSubmit}
 //         className="max-w-2xl w-full bg-white rounded-lg mb-[5rem]"
@@ -222,7 +222,7 @@ export default function ContactForm() {
         linkdin: "",
         message: "",
         agree: false,
-      });// Show success message
+      }); // Show success message
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Something went wrong. Please try again.");
@@ -230,7 +230,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="bg-white py-12 px-6 flex justify-center text-[#1B084C] font-inter">
+    <section className="bg-white py-12 px-6 flex justify-center text-[#1B084C] font-poppins">
       <form
         onSubmit={handleSubmit}
         className="max-w-2xl w-full bg-white rounded-lg mb-[5rem]"

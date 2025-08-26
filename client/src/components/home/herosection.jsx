@@ -51,16 +51,16 @@ const HeroSection = () => {
       statLabel: "Successful Placement",
     },
     {
-      heading: "Trusted by India’s Industry Leaders",
+      heading: "Hire Smarter, Grow Faster",
       paragraph:
-        "From ambitious startups to India’s most iconic brands, we match businesses with the people who spark innovation, drive measurable results, and shape the future.",
+        "Connect with top-tier candidates across India via our cutting-edge recruitment expertise.",
       statNumber: "500+",
       statLabel: "Successful Placement",
     },
     {
-      heading: "Our Services — More Than Recruitment.",
+      heading: "Pay Per Hire Success",
       paragraph:
-        "At Jobs Territory, hiring isn’t a transaction—it’s a strategic advantage. We go beyond recruitment to help you discover, attract, and retain the talent that fuels breakthrough growth and lasting success.",
+        "Risk-free hiring—pay only when your new team member is on board.",
       statNumber: "48hr",
       statLabel: "Average Response Time",
     },
@@ -76,15 +76,15 @@ const HeroSection = () => {
 
 
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  //   }, 6000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
-    <div className="bg-[#EFEFEF] py-4 font-museo">
+    <div className="bg-[#EFEFEF] py-4 font-playfair">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
@@ -110,7 +110,7 @@ const HeroSection = () => {
             <h1 className="text-3xl md:text-4xl font-bold ">
               {slides[currentSlide].heading}
             </h1>
-            <p className="mt-2 text-center md:text-lg w-auto lg:w-[50%] mx-auto">
+            <p className="mt-2 text-center md:text-lg w-auto lg:w-[50%] mx-auto font-poppins">
               {slides[currentSlide].paragraph}
             </p>
           </motion.div>
@@ -162,7 +162,7 @@ const HeroSection = () => {
                   <div className="text-3xl font-bold">
                     {slides[currentSlide].statNumber}
                   </div>
-                  <div className="text-sm font-medium">
+                  <div className="text-sm font-medium font-poppins">
                     {slides[currentSlide].statLabel}
                   </div>
                 </motion.div>

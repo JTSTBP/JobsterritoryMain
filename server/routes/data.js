@@ -3,6 +3,7 @@ const Blog = require("../models/blogs");
 const CaseStudy = require("../models/casestudies");
 const Contact = require("../models/contact");
 const Logos = require("../models/logos");
+const Testimonial = require("../models/testimonials");
 const { sendContactmail } = require("../utils/sendemails");
 
 const router = express.Router();
@@ -97,4 +98,15 @@ router.get("/getlogos", async (req, res) => {
   }
 });
 
+
+
+// GET all testimonials
+router.get("/gettestimonials", async (req, res) => {
+  try {
+    const testimonials = await Testimonial.find()
+    res.status(200).json(testimonials);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching testimonials", error });
+  }
+});
 module.exports = router;

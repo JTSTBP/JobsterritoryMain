@@ -1,6 +1,3 @@
-
-
-
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
@@ -10,14 +7,13 @@ const ClientLogos = () => {
   const [loading, setLoading] = useState(true);
 
   // Dummy fallback logos
-const fallbackLogos = [
-  { heading: "Logo1", banner: "/images/img1.png" },
-  { heading: "Logo2", banner: "/images/img2.png" },
-  { heading: "Logo3", banner: "/images/img3.png" },
-  { heading: "Logo4", banner: "/images/img4.png" },
-  { heading: "Logo5", banner: "/images/unac.png" },
-];
-
+  const fallbackLogos = [
+    { heading: "Logo1", banner: "/images/img1.png" },
+    { heading: "Logo2", banner: "/images/img2.png" },
+    { heading: "Logo3", banner: "/images/img3.png" },
+    { heading: "Logo4", banner: "/images/img4.png" },
+    { heading: "Logo5", banner: "/images/unac.png" },
+  ];
 
   const stats = [
     { value: "500+", label: "Companies Served" },
@@ -29,7 +25,9 @@ const fallbackLogos = [
   useEffect(() => {
     const fetchLogos = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/getlogos`); // 🔹 Change API URL
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/getlogos`
+        ); // 🔹 Change API URL
         if (res.data && res.data.length > 0) {
           setLogos(res.data); // pick only `banner` field
         } else {
@@ -58,12 +56,13 @@ const fallbackLogos = [
           viewport={{ once: true }}
           className="text-center mb-12 text-[#1B084C]"
         >
-          <h2 className="text-3xl font-bold font-museo mb-4">
-            Trusted by Leading Companies
+          <h2 className="text-3xl font-bold font-playfair mb-4">
+            Trusted by India’s Industry Leaders
           </h2>
-          <p className="max-w-2xl mx-auto font-inter">
-            We've helped hundreds of companies across India find their perfect
-            talent match
+          <p className="max-w-2xl mx-auto font-poppins">
+            From ambitious startups to India’s most iconic brands, we match
+            businesses with the people who spark innovation, drive measurable
+            results, and shape the future.
           </p>
         </motion.div>
       </div>

@@ -1,9 +1,5 @@
-
-
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-
 
 const FAQSection = ({ faqData }) => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -33,7 +29,7 @@ const FAQSection = ({ faqData }) => {
               className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
             />
           </div>
-          <h2 className="text-3xl font-bold mb-2 font-museo">
+          <h2 className="text-3xl font-bold mb-2 font-playfair">
             Frequently Asked Questions
           </h2>
           <p className="mb-8">
@@ -95,7 +91,7 @@ const FAQSection = ({ faqData }) => {
                           initial={{ y: -10, opacity: 0 }}
                           animate={{ y: 0, opacity: 1 }}
                           transition={{ delay: 0.1 }}
-                          className="text-[#6A1FFF] font-museo leading-relaxed mt-2"
+                          className="text-[#6A1FFF] font-playfair leading-relaxed mt-2"
                         >
                           {faq.answer}
                         </motion.p>

@@ -18,9 +18,9 @@ const Services = () => {
       description:
         "Your business deserves more than a recruiter. It deserves a dedicated partner who understands your goals, culture, and vision.",
       points: [
-        "Custom Hiring – ",
-        "Industry Expertise – ",
-        "Scalable Solutions – ",
+        "Custom Hiring  ",
+        "Industry Expertise  ",
+        "Scalable Solutions  ",
       ],
       buttonText: "Learn More",
       image: "/images/vec1.png",
@@ -32,10 +32,10 @@ const Services = () => {
       heading: "Pay Per Hire",
       description: "Hire with confidence—only pay when we deliver results.",
       points: [
-        "No Upfront Costs – ",
-        "Pay for Results –",
-        "Scale on Demand – ",
-        "Quality Guarantee – ",
+        "No Upfront Costs  ",
+        "Pay for Results ",
+        "Scale on Demand  ",
+        "Quality Guarantee  ",
       ],
       buttonText: "Learn More",
       image: "/images/vec2.png",
@@ -48,10 +48,10 @@ const Services = () => {
       description:
         "Leadership on your terms. Access experienced executives—only when you need them.",
       points: [
-        "Executive Search Expertise -",
-        "Leadership Assessment – ",
-        "Confidential Process –",
-        "Global Network – ",
+        "Executive Search Expertise ",
+        "Leadership Assessment  ",
+        "Confidential Process ",
+        "Global Network  ",
       ],
       buttonText: "Learn More",
       image: "/images/vec3.png",
@@ -98,8 +98,10 @@ const Services = () => {
             />
           </div>
 
-          <h2 className="text-3xl font-bold font-museo mb-4">Our Services</h2>
-          <p className="max-w-2xl mx-auto font-inter">
+          <h2 className="text-3xl font-bold font-playfair mb-4">
+            Our Services
+          </h2>
+          <p className="max-w-2xl mx-auto font-poppins">
             Comprehensive recruitment solutions designed to meet your unique
             hiring needs and drive business growth
           </p>
@@ -111,7 +113,8 @@ const Services = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="flex justify-center flex-wrap items-start gap-8   bg-[#EFEFEF]"
+        // className="flex justify-center flex-wrap items-start gap-8   bg-[#EFEFEF] items-stretch"
+        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch justify-items-center"
       >
         {cardData.map((item, index) => (
           <motion.a
@@ -119,9 +122,9 @@ const Services = () => {
             variants={cardVariants}
             whileHover={{ scale: 1.05, y: -10 }}
             className="group relative w-full max-w-[300px] sm:max-w-[340px] md:max-w-[360px] lg:max-w-[380px] 
-             p-6 md:p-7 lg:p-8 overflow-hidden rounded-2xl shadow-lg flex flex-col min-h-[400px] font-inter"
+   p-6 md:p-7 lg:p-8 overflow-hidden rounded-2xl shadow-lg flex flex-col h-full font-poppins"
             style={{
-              backgroundImage: `url(${item.image})`,
+              backgroundImage: "url('/images/oursersam.png')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               boxShadow: "0 4px 6px -4px rgba(0,0,0,0.1)",
@@ -137,7 +140,7 @@ const Services = () => {
                     alt="icon"
                     className="w-6 h-6 object-contain"
                   />
-                  <h2 className="text-xl font-semibold font-museo">
+                  <h2 className="text-xl font-semibold font-playfair">
                     {item.heading}
                   </h2>
                 </div>
@@ -202,11 +205,11 @@ const Services = () => {
             className="absolute bottom-4 left-4 w-8 h-8 bg-white/20 rounded-full"
           />
 
-          <h3 className="text-2xl  mb-4 font-museo">
+          <h3 className="text-2xl  mb-4 font-playfair">
             Ready to Transform
             <span className="font-bold"> Your Hiring Process?</span>
           </h3>
-          <p className="text-white/90 mb-6 max-w-2xl mx-auto font-inter">
+          <p className="text-white/90 mb-6 max-w-2xl mx-auto font-poppins">
             The right hire can rewrite your company’s future. Let’s find the
             people who will take your business to the next level.
           </p>

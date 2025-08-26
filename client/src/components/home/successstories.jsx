@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "framer-motion";
@@ -149,7 +146,7 @@ const SuccessStories = () => {
 
   return (
     <div>
-      <div className="bg-[#f8f8ff] py-12 lg:px-20 font-inter text-[#1B084C]">
+      <div className="bg-[#f8f8ff] py-12 lg:px-20 font-poppins text-[#1B084C]">
         {/* Heading */}
         <motion.div
           className="text-center mb-12"
@@ -166,7 +163,7 @@ const SuccessStories = () => {
               className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
             />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold font-museo inline-block pb-2">
+          <h1 className="text-3xl md:text-4xl font-bold font-playfair inline-block pb-2">
             Success Stories
           </h1>
           <p className="mt-2">
@@ -188,7 +185,7 @@ const SuccessStories = () => {
           >
             {/* Logo */}
             <motion.div
-              className="relative flex-shrink-0 font-museo"
+              className="relative flex-shrink-0 font-playfair"
               initial={{ scale: 0.8 }}
               whileInView={{ scale: 1 }}
               transition={{ duration: 0.6 }}
@@ -216,7 +213,7 @@ const SuccessStories = () => {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <h1 className="text-3xl md:text-4xl font-bold mb-6 font-museo">
+              <h1 className="text-3xl md:text-4xl font-bold mb-6 font-playfair">
                 {story.title}
               </h1>
 
@@ -271,25 +268,24 @@ const SuccessStories = () => {
                   <motion.span
                     className={`inline-block text-gray-500 text-xl transition-transform duration-300 
                      
-                      ` }
+                      `}
                     animate={{ y: [0, 5, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5 }}
                   >
                     <IoIosArrowDown />
                   </motion.span>
                 </div>
-        
-                  <motion.p
-                    className="mt-4 text-gray-700 italic"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    {story.testimonial}
-                    <br />
-                    {story.name}
-                  </motion.p>
-            
+
+                <motion.p
+                  className="mt-4 text-gray-700 italic"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {story.testimonial}
+                  <br />
+                  {story.name}
+                </motion.p>
               </div>
             </motion.div>
           </motion.div>
@@ -312,11 +308,11 @@ const SuccessStories = () => {
             backgroundPosition: "center",
           }}
         >
-          <h3 className="text-2xl mb-4 font-museo">
+          <h3 className="text-2xl mb-4 font-playfair">
             Ready to Write Your{" "}
             <span className="font-bold">Success Story?</span>
           </h3>
-          <p className="text-white/90 mb-6 max-w-2xl mx-auto font-inter">
+          <p className="text-white/90 mb-6 max-w-2xl mx-auto font-poppins">
             Join hundreds of companies who have transformed their hiring process
             with Jobs Territory
           </p>

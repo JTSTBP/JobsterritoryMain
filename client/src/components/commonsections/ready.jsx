@@ -39,12 +39,12 @@ const HireSection = ({
         />
 
         {/* Title */}
-        <h3 className="text-3xl mb-4 font-museo font-bold">
+        <h3 className="text-3xl mb-4 font-playfair font-bold">
           {title} <span className="font-normal">{highlight}</span>
         </h3>
 
         {/* Description */}
-        <p className="text-white/90 mb-6 max-w-2xl mx-auto font-inter">
+        <p className="text-white/90 mb-6 max-w-2xl mx-auto font-poppins">
           {description}
         </p>
 
@@ -59,7 +59,7 @@ const HireSection = ({
         >
           <span>{buttonText}</span>
         </motion.button>
-        {buttontext2 &&
+        {buttontext2 && (
           <motion.button
             whileHover={{
               scale: 1.05,
@@ -69,7 +69,8 @@ const HireSection = ({
             className="text-[#fff] ml-3 bg-[rgb(213_206_255/56%)] px-8 py-3 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-2"
           >
             <span>{buttontext2}</span>
-          </motion.button>}
+          </motion.button>
+        )}
       </div>
     </motion.div>
   );

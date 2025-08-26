@@ -18,6 +18,7 @@ import BlogsPage from "./pages/blogs";
 import SeparateBlogs from "./pages/separateblog";
 import ViewCaseStudy from "./pages/viewcasestudy";
 import ScrollToTop from "./pages/scrollTop";
+import AboutUs from "./pages/aboutus";
 
 
 
@@ -31,9 +32,10 @@ export default function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          
           <Route path="/FractionHiring" element={<FractionalHiring />} />
+
           <Route path="/Payperhire" element={<PayperHire />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/CaseStudies" element={<CaseStudy />} />
           <Route path="/casestudy/:slug" element={<ViewCaseStudy />} />

@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function BlogsSection({ blogs }) {
-    const navigate=useNavigate()
+  const navigate = useNavigate();
   // Group blogs into sets of 2
   const groupedBlogs = [];
   for (let i = 0; i < blogs.length; i += 2) {
@@ -58,7 +58,7 @@ export default function BlogsSection({ blogs }) {
             <div className="flex md:flex-row flex-col gap-3 md:justify-between items-start mb-8">
               <div>
                 <h2
-                  className="text-3xl md:text-4xl font-semibold mb-2 font-museo"
+                  className="text-3xl md:text-4xl font-semibold mb-2 font-playfair"
                   style={{ color: "#1B084C" }}
                 >
                   Blogs
@@ -69,7 +69,7 @@ export default function BlogsSection({ blogs }) {
                 </p>
               </div>
               <a
-                href="#"
+                href="/Blogs"
                 className="flex items-center gap-1 text-sm font-semibold"
                 style={{ color: "#1B084C" }}
               >

@@ -1,4 +1,3 @@
-
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +23,7 @@ export default function CaseStudiesMain() {
     <section className="py-16 text-[#1B084C]">
       {/* Heading */}
       <div className="text-center mb-12">
-        <h2 className="md:text-4xl text-3xl font-bold font-museo">
+        <h2 className="md:text-4xl text-3xl font-bold font-playfair">
           Case Studies
         </h2>
         <p className="mt-2 max-w-2xl mx-auto">

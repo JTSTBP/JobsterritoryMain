@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { IoIosArrowDown } from "react-icons/io";
 
 import React, { useState } from "react";
 
@@ -38,7 +39,7 @@ const Navbar = () => {
   const activeItem = menuItems[activeIndex];
   const rightItems = menuItems.slice(activeIndex + 1);
   return (
-    <nav className="bg-[#EFEFEF] border-b border-gray-200 font-inter">
+    <nav className="bg-[#EFEFEF] border-b border-gray-200 font-poppins font-semibold">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16   whitespace-nowrap  ">
           {/* logo */}
@@ -61,9 +62,10 @@ const Navbar = () => {
                       <div key={it.path} className="relative">
                         <button
                           onClick={() => setShowResources(!showResources)}
-                          className="text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
+                          className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                         >
-                          {it.name}
+                          <span>{it.name}</span>
+                          <IoIosArrowDown className="ml-1 text-sm" />
                         </button>
                         {showResources && (
                           <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-50">
@@ -132,9 +134,10 @@ const Navbar = () => {
                       <div key={it.path} className="relative">
                         <button
                           onClick={() => setShowResources(!showResources)}
-                          className="text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
+                          className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                         >
-                          {it.name}
+                          <span>{it.name}</span>
+                          <IoIosArrowDown className="ml-1 text-sm" />
                         </button>
                         {showResources && (
                           <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-50">
@@ -180,9 +183,10 @@ const Navbar = () => {
                     <div key={it.path} className="relative">
                       <button
                         onClick={() => setShowResources(!showResources)}
-                        className="text-[#2F1656]  cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
+                        className="flex items-center text-[#2F1656]  cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                       >
-                        {it.name}
+                        <span>{it.name}</span>
+                        <IoIosArrowDown className="ml-1 text-sm" />
                       </button>
                       {showResources && (
                         <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-50">
@@ -300,9 +304,10 @@ const Navbar = () => {
               <div className="relative">
                 <button
                   onClick={() => setShowResources(!showResources)}
-                  className="w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md text-sm font-medium"
+                  className="flex items-center w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md text-sm font-medium"
                 >
-                  Resources
+                  <span>Resources</span>
+                  <IoIosArrowDown className="ml-1 text-sm" />
                 </button>
                 {showResources && (
                   <div className="ml-4 border-l border-gray-200 pl-4">

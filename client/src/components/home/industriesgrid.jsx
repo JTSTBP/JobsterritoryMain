@@ -1,10 +1,6 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-
-
-
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -16,7 +12,7 @@ const cardVariants = {
 };
 
 const IndustriesGrid = ({ industries, separate }) => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="py-12 px-10 md:px-8 lg:px-16 bg-[#EFEFEF] text-[#1B084C]">
       {/* Heading */}
@@ -35,7 +31,7 @@ const IndustriesGrid = ({ industries, separate }) => {
             className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
           />
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold font-museo inline-block pb-2">
+        <h2 className="text-3xl md:text-4xl font-bold font-playfair inline-block pb-2">
           Your Industry, Our Expertise
         </h2>
         <p className="mt-2">
@@ -66,7 +62,7 @@ const IndustriesGrid = ({ industries, separate }) => {
                 }}
                 className={`rounded-xl p-6 shadow-md break-inside-avoid ${item.text}`}
               >
-                <img src={item.img} className="w-36 mx-auto my-2"/>
+                <img src={item.img} className="w-36 mx-auto my-2" />
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                 <p className="text-sm mb-4">{item.description}</p>
 
@@ -185,7 +181,12 @@ const IndustriesGrid = ({ industries, separate }) => {
               No matter your sector, we can find the right people to drive your
               business forward. Let’s talk about your hiring needs.
             </p>
-            <button className="bg-[#1B084C] text-white px-6 py-2 rounded-full hover:bg-purple-700 transition" onClick={()=>{navigate("/ContactUs")}}>
+            <button
+              className="bg-[#1B084C] text-white px-6 py-2 rounded-full hover:bg-purple-700 transition"
+              onClick={() => {
+                navigate("/ContactUs");
+              }}
+            >
               Contact Us
             </button>
           </div>
