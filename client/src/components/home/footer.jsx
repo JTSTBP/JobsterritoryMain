@@ -18,10 +18,14 @@ import {
 } from 'lucide-react';
 
 const Footer = () => {
+
   const services = [
-    "Recruitment as a Service (RAAS)",
-    "Pay Per Hire",
-    "Fractional Hiring",
+    {
+      name: "Recruitment as a Service (RAAS)",
+      url: "https://raasjobsterritory.com/",
+    },
+    { name: "Pay Per Hire", url: "/Payperhire" },
+    { name: "Fractional Hiring", url: "/FractionHiring" },
   ];
 
   const industries = [
@@ -157,8 +161,7 @@ const Footer = () => {
                 </div>
               </motion.div>
             </div>
-
-            {/* Services */}
+            {/* // Services */}
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -172,14 +175,14 @@ const Footer = () => {
                 <ul className="space-y-3">
                   {services.map((service, index) => (
                     <motion.li
-                      key={service}
+                      key={service.name}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.05 }}
                       viewport={{ once: true }}
                     >
                       <a
-                        href="#"
+                        href={service.url}
                         className="text-gray-400 hover:text-primary-400 transition-colors duration-200 flex items-center group"
                       >
                         <ArrowRight
@@ -187,7 +190,7 @@ const Footer = () => {
                           className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity"
                         />
                         <span className="group-hover:translate-x-2 transition-transform duration-200">
-                          {service}
+                          {service.name}
                         </span>
                       </a>
                     </motion.li>
@@ -195,7 +198,6 @@ const Footer = () => {
                 </ul>
               </motion.div>
             </div>
-
             {/* Industries */}
             {/* <div>
               <motion.div
@@ -233,7 +235,6 @@ const Footer = () => {
                 </ul>
               </motion.div>
             </div> */}
-
             {/* Contact & Quick Links */}
             <div>
               <motion.div
