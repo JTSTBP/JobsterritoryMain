@@ -56,7 +56,7 @@ const ClientLogos = () => {
           viewport={{ once: true }}
           className="text-center mb-12 text-[#1B084C]"
         >
-          <h2 className="text-3xl font-bold font-playfair mb-4">
+          <h2 className="text-3xl font-bold font-montserrat mb-4">
             Trusted by India’s Industry Leaders
           </h2>
           <p className="max-w-2xl mx-auto font-poppins">

@@ -1,7 +1,7 @@
 
 
 
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -19,30 +19,40 @@ import SeparateBlogs from "./pages/separateblog";
 import ViewCaseStudy from "./pages/viewcasestudy";
 import ScrollToTop from "./pages/scrollTop";
 import AboutUs from "./pages/aboutus";
+import RecruiterPopup from "./components/commonsections/popup";
+import { PopupProvider, usePopup } from "./contexts/popupcontext";
 
-
+// Global popup placed here
+const PopupContainer = () => {
+  const { isPopupOpen, closePopup } = usePopup();
+  return <RecruiterPopup isOpen={isPopupOpen} onClose={closePopup} />;
+};
 
 
 export default function App() {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
  
   return (
     <>
-      <Router>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/FractionHiring" element={<FractionalHiring />} />
+      <PopupProvider>
+        <Router>
+          <ScrollToTop />
+          <PopupContainer />
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/FractionHiring" element={<FractionalHiring />} />
 
-          <Route path="/Payperhire" element={<PayperHire />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/CaseStudies" element={<CaseStudy />} />
-          <Route path="/casestudy/:slug" element={<ViewCaseStudy />} />
-          <Route path="/Blogs" element={<BlogsPage />} />
-          <Route path="/Blog/:slug" element={<SeparateBlogs />} />
-        </Routes>
-      </Router>
+            <Route path="/Payperhire" element={<PayperHire />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/ContactUs" element={<ContactUs />} />
+            <Route path="/CaseStudies" element={<CaseStudy />} />
+            <Route path="/casestudy/:slug" element={<ViewCaseStudy />} />
+            <Route path="/Blogs" element={<BlogsPage />} />
+            <Route path="/Blog/:slug" element={<SeparateBlogs />} />
+          </Routes>
+        </Router>
+      </PopupProvider>
       <ToastContainer position="top-right" autoClose={3000} />
     </>
   );

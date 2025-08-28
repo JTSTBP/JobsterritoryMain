@@ -68,7 +68,7 @@ const Navbar = () => {
                           <IoIosArrowDown className="ml-1 text-sm" />
                         </button>
                         {showResources && (
-                          <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-50">
+                          <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
                             <a
                               href="/CaseStudies"
                               className="block px-4 py-2 hover:bg-gray-200"
@@ -140,7 +140,7 @@ const Navbar = () => {
                           <IoIosArrowDown className="ml-1 text-sm" />
                         </button>
                         {showResources && (
-                          <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-50">
+                          <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
                             <a
                               href="/CaseStudies"
                               className="block px-4 py-2 hover:bg-gray-200"
@@ -189,7 +189,7 @@ const Navbar = () => {
                         <IoIosArrowDown className="ml-1 text-sm" />
                       </button>
                       {showResources && (
-                        <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-50">
+                        <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
                           <a
                             href="/CaseStudies"
                             className="block px-4 py-2 hover:bg-gray-200"

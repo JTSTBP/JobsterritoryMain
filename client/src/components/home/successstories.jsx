@@ -163,7 +163,7 @@ const SuccessStories = () => {
               className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
             />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold font-playfair inline-block pb-2">
+          <h1 className="text-3xl md:text-4xl font-bold font-montserrat inline-block pb-2">
             Success Stories
           </h1>
           <p className="mt-2">
@@ -185,7 +185,7 @@ const SuccessStories = () => {
           >
             {/* Logo */}
             <motion.div
-              className="relative flex-shrink-0 font-playfair"
+              className="relative flex-shrink-0 font-montserrat"
               initial={{ scale: 0.8 }}
               whileInView={{ scale: 1 }}
               transition={{ duration: 0.6 }}
@@ -213,7 +213,7 @@ const SuccessStories = () => {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <h1 className="text-3xl md:text-4xl font-bold mb-6 font-playfair">
+              <h1 className="text-3xl md:text-4xl font-bold mb-6 font-montserrat">
                 {story.title}
               </h1>
 
@@ -308,7 +308,7 @@ const SuccessStories = () => {
             backgroundPosition: "center",
           }}
         >
-          <h3 className="text-2xl mb-4 font-playfair">
+          <h3 className="text-2xl mb-4 font-montserrat">
             Ready to Write Your{" "}
             <span className="font-bold">Success Story?</span>
           </h3>

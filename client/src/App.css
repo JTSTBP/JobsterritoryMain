@@ -1,0 +1,10 @@
+.c-blur1 {
+  position: absolute;
+  top: 1rem;
+  left: 8rem;
+  width: 15rem;
+  height: 10rem;
+  border-radius: 50%;
+  filter: blur(72px);
+  z-index: -1; /* keeps it behind text */
+}

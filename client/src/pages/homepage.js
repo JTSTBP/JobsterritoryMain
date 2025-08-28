@@ -12,8 +12,9 @@ import FAQSection from "../components/home/faqs";
 
 import { motion, AnimatePresence } from "framer-motion";
 import BlogsSection from "../components/commonsections/staticblogs";
+import Hero from "../components/home/hero";
 
-const Homepage = () => {
+const Homepage = ({ openPopup }) => {
   const industries = [
     {
       title: "Technology & Startups",
@@ -102,7 +103,7 @@ const Homepage = () => {
     {
       id: 4,
       title: "importance-of-executive-search-for-c-suite-ro",
-      image: "/images/blogsimgsh1.png",
+      image: "/images/blogsh1.png",
       bg: "#1B084C",
     },
     {
@@ -113,7 +114,7 @@ const Homepage = () => {
     {
       id: 6,
       title: "importance-of-executive-search-for-c-suite-ro",
-      image: "/images/blogsimgsh2.png",
+      image: "/images/blogsh2.png",
       bg: "#1B084C",
     },
 
@@ -125,7 +126,7 @@ const Homepage = () => {
     {
       id: 8,
       title: "pay-per-hire-smarter-hiring-better-roi",
-      image: "/images/blogsimg.png",
+      image: "/images/blogsh3.png",
       bg: "#1B084C",
     },
     {
@@ -136,7 +137,7 @@ const Homepage = () => {
     {
       id: 10,
       title: "pay-per-hire-trend-or-future-of-hiring",
-      image: "/images/blogsimgsh1.png",
+      image: "/images/blogsh1.png",
       bg: "#1B084C",
     },
     {
@@ -147,7 +148,7 @@ const Homepage = () => {
     {
       id: 12,
       title: "how-pay-per-hire-can-cut-hiring-costs-by-50percent",
-      image: "/images/blogsimgsh2.png",
+      image: "/images/blogsh2.png",
       bg: "#1B084C",
     },
   ];
@@ -201,6 +202,7 @@ const Homepage = () => {
     <div>
       <Navbar />
       <HeroSection />
+      {/* <Hero /> */}
       <ClientLogos />
       <Services />
       <SuccessStories />
@@ -242,7 +244,7 @@ const Homepage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-light text-white mb-4 font-playfair"
+              className="text-3xl md:text-4xl font-light text-white mb-4 font-montserrat"
             >
               Still Have <span className="font-bold">Questions?</span>
             </motion.h2>
@@ -261,7 +263,7 @@ const Homepage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row justify-center gap-4 font-playfair"
+              className="flex flex-col sm:flex-row justify-center gap-4 font-montserrat"
             >
               <motion.button
                 whileHover={{

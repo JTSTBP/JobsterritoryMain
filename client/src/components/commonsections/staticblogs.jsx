@@ -58,7 +58,7 @@ export default function BlogsSection({ blogs }) {
             <div className="flex md:flex-row flex-col gap-3 md:justify-between items-start mb-8">
               <div>
                 <h2
-                  className="text-3xl md:text-4xl font-semibold mb-2 font-playfair"
+                  className="text-3xl md:text-4xl font-semibold mb-2 font-montserrat"
                   style={{ color: "#1B084C" }}
                 >
                   Blogs
@@ -93,7 +93,7 @@ export default function BlogsSection({ blogs }) {
                   />
 
                   {/* Bottom-left text */}
-                  <div className="absolute bottom-4 left-4 text-left w-[186px]">
+                  <div className="absolute bottom-4 left-4 text-left w-[156px]">
                     <button
                       className={`${
                         blog.bg === "#1B084C"

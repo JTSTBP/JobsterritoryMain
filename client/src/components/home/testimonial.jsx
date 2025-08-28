@@ -91,7 +91,7 @@ const Testimonial = () => {
             className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
           />
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold  font-playfair inline-block pb-2">
+        <h2 className="text-3xl md:text-4xl font-bold  font-montserrat inline-block pb-2">
           What Clients Say
         </h2>
         <p className=" mt-2">
@@ -134,7 +134,7 @@ const Testimonial = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h2 className="text-xl font-bold text-[#6A1FFF] font-playfair">
+            <h2 className="text-xl font-bold text-[#6A1FFF] font-montserrat">
               {items[active].heading}
             </h2>
             <div className="flex items-start mt-4">

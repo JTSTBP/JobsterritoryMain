@@ -39,7 +39,7 @@ const HireSection = ({
         />
 
         {/* Title */}
-        <h3 className="text-3xl mb-4 font-playfair font-bold">
+        <h3 className="text-3xl mb-4 font-montserrat font-bold">
           {title} <span className="font-normal">{highlight}</span>
         </h3>
 

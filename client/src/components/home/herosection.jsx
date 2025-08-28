@@ -1,6 +1,3 @@
-
-
-
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -13,11 +10,14 @@ import {
   Award,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { usePopup } from "../../contexts/popupcontext";
 
 const HeroSection = () => {
+  const { openPopup } = usePopup();
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 3;
   const navigate = useNavigate();
+  console.log(openPopup,"opened")
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
   const prevSlide = () =>
@@ -74,8 +74,6 @@ const HeroSection = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
-
   // useEffect(() => {
   //   const interval = setInterval(() => {
   //     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -84,7 +82,7 @@ const HeroSection = () => {
   // }, []);
 
   return (
-    <div className="bg-[#EFEFEF] py-4 font-playfair">
+    <div className="bg-[#EFEFEF] py-4 font-montserrat">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
@@ -150,7 +148,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="relative w-full z-50"
+              className="relative w-full z-40"
             >
               <div className="flex flex-col items-start w-full max-w-[24rem] space-y-6">
                 <motion.div
@@ -215,16 +213,14 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="absolute bottom-10 right-10 z-50 hidebuttons:hidden w-40%]"
+            className="absolute bottom-10 right-10 z-40 hidebuttons:hidden w-40%]"
           >
             <div className="flex items-center gap-6">
               {/* Hire Now */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  navigate("/ContactUs");
-                }}
+               onClick={openPopup}
                 className="flex items-center gap-2 "
               >
                 <button className="xl:w-[200px] flex items-center justify-center bg-gradient-to-r from-[#2c1361] to-[#7300ff] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">

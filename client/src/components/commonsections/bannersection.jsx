@@ -14,7 +14,7 @@ const Bannersection = ({
   showBottomButton = true,
 }) => {
   return (
-    <div className="bg-[#EFEFEF] py-4 font-playfair">
+    <div className="bg-[#EFEFEF] py-4 font-montserrat">
       <motion.div
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -98,7 +98,7 @@ const Bannersection = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="absolute bottom-10 right-10 z-50 hidebuttons:hidden"
+            className="absolute bottom-10 right-10 z-40 hidebuttons:hidden"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}

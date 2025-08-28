@@ -31,7 +31,7 @@ const IndustriesGrid = ({ industries, separate }) => {
             className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
           />
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold font-playfair inline-block pb-2">
+        <h2 className="text-3xl md:text-4xl font-bold font-montserrat inline-block pb-2">
           Your Industry, Our Expertise
         </h2>
         <p className="mt-2">

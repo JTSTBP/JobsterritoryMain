@@ -40,3 +40,19 @@ code {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+.c-blur1 {
+  position: absolute;
+  top: 1rem;      /* adjust placement */
+  left: 8rem;     /* adjust placement */
+  width: 15rem;   /* size of blur */
+  height: 10rem;
+  border-radius: 50%;
+  filter: blur(72px);
+  z-index: -1;    /* keeps it behind the text */
+}
+.blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  z-index: -1;
+}

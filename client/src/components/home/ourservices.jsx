@@ -98,7 +98,7 @@ const Services = () => {
             />
           </div>
 
-          <h2 className="text-3xl font-bold font-playfair mb-4">
+          <h2 className="text-3xl font-bold font-montserrat mb-4">
             Our Services
           </h2>
           <p className="max-w-2xl mx-auto font-poppins">
@@ -140,7 +140,7 @@ const Services = () => {
                     alt="icon"
                     className="w-6 h-6 object-contain"
                   />
-                  <h2 className="text-xl font-semibold font-playfair">
+                  <h2 className="text-xl font-semibold font-montserrat">
                     {item.heading}
                   </h2>
                 </div>
@@ -205,7 +205,7 @@ const Services = () => {
             className="absolute bottom-4 left-4 w-8 h-8 bg-white/20 rounded-full"
           />
 
-          <h3 className="text-2xl  mb-4 font-playfair">
+          <h3 className="text-2xl  mb-4 font-montserrat">
             Ready to Transform
             <span className="font-bold"> Your Hiring Process?</span>
           </h3>

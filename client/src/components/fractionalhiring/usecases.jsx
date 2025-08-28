@@ -61,7 +61,7 @@ export default function ProjectBasedWorkCard() {
     <div>
       <section className="bg-[#D7CCF5] py-12 px-4 text-[#1B084C]">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-3xl font-bold  font-playfair">
+          <h1 className="text-3xl font-bold  font-montserrat">
             Perfect Use Cases
           </h1>
           <p className=" mt-2">Where We Give You the Edge</p>

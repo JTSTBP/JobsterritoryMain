@@ -39,7 +39,7 @@ export default function BenefitsCard() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold font-playfair inline-block pb-2">
+        <h2 className="text-3xl md:text-4xl font-bold font-montserrat inline-block pb-2">
           Why Businesses Keep Coming Back to Us
         </h2>
         <p className="mt-2">
@@ -86,7 +86,7 @@ export default function BenefitsCard() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 font-playfair">
+            <div className="mt-8 font-montserrat">
               <h2 className="text-2xl md:text-4xl font-bold text-purple-600 text-right">
                 Success Metrics
               </h2>

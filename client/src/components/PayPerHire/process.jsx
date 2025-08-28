@@ -45,7 +45,7 @@ export default function PayPerHireProcess() {
       <section className=" text-white py-16    mt-10 bg-[#EFEFEF]">
         {/* Heading */}
         <div className="  mx-auto mb-14 flex flex-col justify-center items-center text-[#1B084C]">
-          <h1 className="text-3xl md:text-5xl  font-playfair">
+          <h1 className="text-3xl md:text-5xl  font-montserrat">
             Your Simple, Transparent Hiring Journey
           </h1>
           <p className="text-sm md:text-base mt-2 ">
