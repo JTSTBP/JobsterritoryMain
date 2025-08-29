@@ -53,8 +53,8 @@ const Homepage = ({ openPopup }) => {
       description:
         "Mechanical, electrical, industrial engineers, and production managers who optimize operations.",
       placements: "1200+",
-      bg: "images/bg3.png",
-      text: "text-[#1B084C]",
+      bg: "images/bg1.png",
+      text: "text-[#FFFFFF]",
     },
 
     {
@@ -62,8 +62,8 @@ const Homepage = ({ openPopup }) => {
       description:
         "Content creators, marketers, and storytellers who inspire audiences.",
       placements: "1500+",
-      bg: "images/bg6.png",
-      text: "text-[#FFFFFF]",
+      bg: "images/bg8.png",
+      text: "text-[#1B084C]",
     },
     {
       title: "Logistics & Supply Chain",
@@ -81,6 +81,16 @@ const Homepage = ({ openPopup }) => {
       placements: "500+",
       bg: "images/bg8.png",
       text: "text-[#1B084C]",
+    },
+    {
+      title: "Renewable Energy",
+      description:
+        "Visionary leaders in solar, wind, and clean energy who drive sustainability, innovation, and measurable impact.",
+      placements: "500+",
+      bg: "images/bg8.png",
+      text: "text-[#1B084C]",
+      bg: "images/bg6.png",
+      text: "text-[#FFFFFF]",
     },
   ];
   const blogs = [
@@ -201,8 +211,8 @@ const Homepage = ({ openPopup }) => {
   return (
     <div>
       <Navbar />
-      <HeroSection />
-      {/* <Hero /> */}
+      {/* <HeroSection /> */}
+      <Hero />
       <ClientLogos />
       <Services />
       <SuccessStories />

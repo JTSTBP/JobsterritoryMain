@@ -32,7 +32,7 @@ const FAQSection = ({ faqData }) => {
           <h2 className="text-3xl font-bold mb-2 font-montserrat">
             Frequently Asked Questions
           </h2>
-          <p className="mb-8">
+          <p className="mb-8 text-lg">
             Get answers to common questions about our recruitment services and
             processes
           </p>
@@ -62,9 +62,9 @@ const FAQSection = ({ faqData }) => {
                         transition={{ duration: 0.3 }}
                         className="w-12 h-12 rounded-xl flex items-center justify-center shadow-md bg-white"
                       >
-                        <img src={faq.icon} alt="icon" className="w-6 h-6" />
+                        <img src={faq.icon} alt="icon" className="w-9 h-9" />
                       </motion.div>
-                      <h3 className="text-lg font-semibold text-[#1B084C] group-hover:text-[#6A1FFF] transition-colors">
+                      <h3 className="text-xl font-semibold text-[#1B084C] group-hover:text-[#6A1FFF] transition-colors">
                         {faq.question}
                       </h3>
                     </div>

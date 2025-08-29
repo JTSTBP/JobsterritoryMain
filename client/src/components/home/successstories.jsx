@@ -17,17 +17,17 @@ const SuccessStories = () => {
         {
           text: "Academic",
           position:
-            "absolute top-[2rem] left-[-7%] bg-white px-3 py-1 shadow-md rounded text-sm",
+            "absolute top-[2rem] left-[-7%] bg-white px-3 py-1 shadow-md rounded text-base",
         },
         {
           text: "Unacademy",
           position:
-            "absolute top-[27%] right-0 bg-purple-900 text-white px-3 py-1 shadow-md rounded text-sm",
+            "absolute top-[27%] right-0 bg-purple-900 text-white px-3 py-1 shadow-md rounded text-base",
         },
         {
           text: "Our Story",
           position:
-            "absolute bottom-0 left-[20%] bg-white px-3 py-1 shadow-md rounded text-sm",
+            "absolute bottom-0 left-[20%] bg-white px-3 py-1 shadow-md rounded text-base",
         },
       ],
       title: "Unacademy",
@@ -61,17 +61,17 @@ const SuccessStories = () => {
         {
           text: "Manufacturing & Engineering",
           position:
-            "absolute top-[2rem] left-[-7%] bg-white px-3 py-1 shadow-md rounded text-sm",
+            "absolute top-[2rem] left-[-7%] bg-white px-3 py-1 shadow-md rounded text-base",
         },
         {
           text: "Neuron",
           position:
-            "absolute top-[27%] right-0 bg-purple-900 text-white px-3 py-1 shadow-md rounded text-sm",
+            "absolute top-[27%] right-0 bg-purple-900 text-white px-3 py-1 shadow-md rounded text-base",
         },
         {
           text: "Our Story",
           position:
-            "absolute bottom-0 left-[20%] bg-white px-3 py-1 shadow-md rounded text-sm",
+            "absolute bottom-0 left-[20%] bg-white px-3 py-1 shadow-md rounded text-base",
         },
       ],
       title: "Neuron Energy",
@@ -104,17 +104,17 @@ const SuccessStories = () => {
         {
           text: "Financial Technology",
           position:
-            "absolute top-[2rem] left-[-7%] bg-white px-3 py-1 shadow-md rounded text-sm",
+            "absolute top-[2rem] left-[-7%] bg-white px-3 py-1 shadow-md rounded text-base",
         },
         {
           text: "FloBiz",
           position:
-            "absolute top-[27%] right-0 bg-purple-900 text-white px-3 py-1 shadow-md rounded text-sm",
+            "absolute top-[27%] right-0 bg-purple-900 text-white px-3 py-1 shadow-md rounded text-base",
         },
         {
           text: "Our Story",
           position:
-            "absolute bottom-0 left-[20%] bg-white px-3 py-1 shadow-md rounded text-sm",
+            "absolute bottom-0 left-[20%] bg-white px-3 py-1 shadow-md rounded text-base",
         },
       ],
       title: "FloBiz",

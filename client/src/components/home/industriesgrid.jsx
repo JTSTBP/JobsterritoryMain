@@ -43,7 +43,7 @@ const IndustriesGrid = ({ industries, separate }) => {
       {/* First 6 Cards */}
       <div className="mb-5 text-center">
         <div className="columns-1 md:columns-3 gap-6 space-y-6">
-          {(!separate ? industries.slice(0, 6) : industries).map(
+          {(industries).map(
             (item, index) => (
               <motion.div
                 key={index}
@@ -97,71 +97,8 @@ const IndustriesGrid = ({ industries, separate }) => {
         </div>
       </div>
 
-      {!separate && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-center">
-          {/* Tall Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
-            className="md:col-span-2"
-          >
-            <div
-              style={{
-                backgroundImage: `url(${industries[6].bg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-              className={`rounded-xl p-6 shadow-md ${industries[6].text}`}
-            >
-              <h3 className="text-xl font-bold mb-2">{industries[6].title}</h3>
-              <p className="text-sm mb-4">{industries[6].description}</p>
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1.7, type: "spring" }}
-                className="bg-[#2E1B56] rounded-2xl px-10 py-1 text-center w-fit mx-auto"
-              >
-                <h2 className="text-white text-3xl font-bold">
-                  {industries[6].placements}
-                </h2>
-                <p className="text-white text-lg">Placements</p>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Normal Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2 }}
-          >
-            <div
-              style={{
-                backgroundImage: `url(${industries[7].bg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-              className={`rounded-xl p-6 shadow-md ${industries[7].text}`}
-            >
-              <h3 className="text-xl font-bold mb-2">{industries[7].title}</h3>
-              <p className="text-sm mb-4">{industries[7].description}</p>
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 2.2, type: "spring" }}
-                className="bg-[#2E1B56] rounded-2xl px-10 py-1 text-center w-fit mx-auto"
-              >
-                <h2 className="text-white text-3xl font-bold">
-                  {industries[7].placements}
-                </h2>
-                <p className="text-white text-lg">Placements</p>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      )}
-      {/* Last 2 Cards */}
+      
+     
 
       <div className="relative w-[90%] my-2 mx-auto h-[300px] md:h-full rounded-lg overflow-hidden">
         {/* Background Image */}
@@ -174,7 +111,7 @@ const IndustriesGrid = ({ industries, separate }) => {
         {/* Centered Text */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-[#1B084C] w-[80%]">
-            <h2 className="text-2xl md:text-4xl font-light mb-2">
+            <h2 className="text-2xl md:text-5xl font-light mb-2">
               Don't See Your <span className="font-bold">Industry?</span>
             </h2>
             <p className="max-w-2xl mx-auto mb-6 text-sm md:text-base">
