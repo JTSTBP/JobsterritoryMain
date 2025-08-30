@@ -152,11 +152,11 @@ export default function RotatingCardWithText() {
           <div>
         
             {/* Highlighted Feature */}
-            <h3 className="font-montserrat text-XL md:text-xl font-semibold text-[#5500FE] mb-2">
+            <h3 className="font-montserrat text-XL md:text-3xl font-semibold text-[#5500FE] mb-2">
               {activeImage.title}:
             </h3>
             {/* Feature description */}
-            <p className="mt-2 text-base md:text-lg text-[#1B084C] leading-relaxed">
+            <p className="mt-2 text-base md:text-xl text-[#1B084C] leading-relaxed">
               "{activeImage.text}"
             </p>
           </div>
