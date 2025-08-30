@@ -28,7 +28,7 @@ export default function BlogsSection({ blogs }) {
     }
   }, [currentIndex]);
 
-  console.log(containerHeight, "containerHeight");
+ 
   return (
     <div
       className="py-16 sm:px-6 relative w-full"

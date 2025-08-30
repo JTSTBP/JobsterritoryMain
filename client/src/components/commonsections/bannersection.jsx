@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -13,6 +13,19 @@ const Bannersection = ({
   onPrimaryButtonClick,
   showBottomButton = true,
 }) => {
+   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+ useEffect(() => {
+     const handleResize = () => setScreenWidth(window.innerWidth);
+     window.addEventListener("resize", handleResize);
+
+     return () => window.removeEventListener("resize", handleResize);
+   }, []);
+  const backgroundImagemobile = "/images/exherobg3.png";
+  
+
+   const currentImage =
+     screenWidth >= 1024 ? backgroundImage : backgroundImagemobile;
+  
   return (
     <div className="bg-[#EFEFEF] py-4 font-montserrat">
       <motion.div
@@ -20,42 +33,43 @@ const Bannersection = ({
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1 }}
         style={{
-          backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: `url(${currentImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="relative w-[89%] mx-auto min-h-screen text-[#240960] flex flex-col px-4 py-10 pt-24 md:pt-24 lg:pt-28 pl-4 md:pl-10 lg:pl-16 xs:pt-[6.5rem] xs:pb-[10rem]"
+        className="relative w-[89%] mx-auto min-h-screen lg:min-h-[115vh] text-[#240960] flex flex-col px-4 py-10 pt-24 md:pt-24 lg:pt-28 pl-4 md:pl-10 lg:pl-16 xs:pt-[6.5rem] xs:pb-[10rem]"
       >
         {/* Heading and Paragraph */}
-        <motion.div
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="text-left mb-10"
-        >
-          <h1 className="text-3xl md:text-4xl font-bold text-[#FFFFFF]">
-            {heading}
-          </h1>
-          <h1 className="text-3xl md:text-4xl font-bold text-[#5500FF]">
-            {heading1}
-          </h1>
-        </motion.div>
+        <div className="lg:w-[50%]">
+          <motion.div
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="text-left mb-10"
+          >
+            <h1 className="text-3xl md:text-4xl font-bold text-[#FFFFFF]">
+              {heading}
+            </h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-[#5500FF]">
+              {heading1}
+            </h1>
+          </motion.div>
 
-        {/* Features */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            visible: {
-              transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.5,
+          {/* Features */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.15,
+                  delayChildren: 0.5,
+                },
               },
-            },
-          }}
-          className="flex flex-wrap justify-start gap-4 w-full md:w-[70%] lg:w-[60%]"
-        >
-          {/* {features.map((feature, index) => (
+            }}
+            className="flex flex-wrap justify-start gap-4 w-full md:w-[70%] lg:w-auto"
+          >
+            {/* {features.map((feature, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, x: -20 }}
@@ -67,9 +81,9 @@ const Bannersection = ({
               <span>{feature.text}</span>
             </motion.div>
           ))} */}
-          <p className="text-[15px] md:text-[21px]">{paragraph}</p>
-        </motion.div>
-
+            <p className="text-[15px] md:text-[21px]">{paragraph}</p>
+          </motion.div>
+        </div>
         <div className="lg:flex-grow" />
 
         {/* Top Action Button */}

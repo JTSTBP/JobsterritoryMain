@@ -256,7 +256,7 @@
 
 
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowUpRight,
@@ -275,6 +275,7 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 4;
   const navigate = useNavigate();
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
   const prevSlide = () =>
@@ -290,10 +291,17 @@ const Hero = () => {
   // RIGHT SIDE IMAGES
   const slideImages = [
     "/images/exhero.png",
-    "/images/exhero11.png",
-    "/images/exhero2.png",
-    "/images/exhero3.png",
+    "/images/exhero1.png",
+    "/images/exhero31.png",
+    "/images/exhero4.png",
   ];
+
+   useEffect(() => {
+     const handleResize = () => setScreenWidth(window.innerWidth);
+     window.addEventListener("resize", handleResize);
+
+     return () => window.removeEventListener("resize", handleResize);
+   }, []);
 
   const slides = [
     {
@@ -333,6 +341,27 @@ const Hero = () => {
   ];
   const backgroundImage="/images/exherobg3.png"
 
+  const backgroundImages = [
+    {
+      url: "/images/exbg1.png",
+    },
+    {
+      url: "/images/exbg2.png",
+    },
+    {
+      url: "/images/exbg3.png",
+    },
+    {
+      url: "/images/exbg4.png",
+    },
+  ];
+
+    const currentImage =
+      screenWidth >= 1024
+        ? backgroundImages[currentSlide].url
+      : backgroundImage;
+  
+
   return (
     <div className="bg-[#EFEFEF] py-4 font-montserrat">
       <AnimatePresence mode="wait">
@@ -344,11 +373,11 @@ const Hero = () => {
           transition={{ duration: 1 }}
           // ✅ static bg only
           style={{
-            backgroundImage: `url('${backgroundImage}')`,
+            backgroundImage: `url(${currentImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          className="relative w-[89%] mx-auto min-h-screen text-[#240960] flex flex-col  px-4 py-10 pt-24 md:pt-24 lg:pt-12 pl-4 md:pl-10 lg:pl-16 xs:pt-[6.5rem] xs:pb-[10rem]"
+          className="rounded-[10px] relative w-[89%] mx-auto min-h-screen text-[#240960] flex flex-col  px-4 py-10 pt-24 md:pt-24 lg:pt-12 pl-4 md:pl-10 lg:pl-16 xs:pt-[6.5rem] xs:pb-[10rem]"
         >
           {/* TOP TEXT + RIGHT IMAGE */}
           <motion.div
@@ -360,11 +389,11 @@ const Hero = () => {
             className="text-center mb-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8"
           >
             {/* LEFT SIDE TEXT */}
-            <div className=" flex flex-col gap-5 lg:pt-20">
-              <h1 className="text-3xl md:text-4xl font-bold">
+            <div className=" flex flex-col gap-5 lg:pt-20  lg:w-[50%] text-left ">
+              <h1 className="text-3xl md:text-5xl font-bold">
                 {slides[currentSlide].heading}
               </h1>
-              <p className="mt-2 text-center md:text-lg w-auto mx-auto font-poppins">
+              <p className="mt-2  md:text-lg w-auto mx-auto font-poppins">
                 {slides[currentSlide].paragraph}
               </p>
               <motion.div
@@ -459,20 +488,20 @@ const Hero = () => {
             </div>
 
             {/* RIGHT SIDE IMAGE */}
-            <div className="flex-1 flex justify-center hidebuttons:hidden">
+            {/* <div className="flex-1 flex justify-center hidebuttons:hidden">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentSlide}
                   src={slideImages[currentSlide]}
                   alt="Hero Slide"
-                  className="w-[350px] lg:w-[450px]  rounded-xl "
+                  className="w-[450px] lg:w-[550px]  rounded-xl "
                   initial={{ opacity: 0, x: 40 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -40 }}
                   transition={{ duration: 0.8 }}
                 />
               </AnimatePresence>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Buttons */}

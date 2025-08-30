@@ -47,14 +47,14 @@ const HeroSection = () => {
       heading: "Great Companies Deserve Great Leaders",
       paragraph:
         "We don’t just fill roles—we connect you with visionaries who ignite change",
-      statNumber: "30+",
+      statNumber: "30K+",
       statLabel: "Successful Placement",
     },
     {
       heading: "Hire Smarter, Grow Faster",
       paragraph:
         "Connect with top-tier candidates across India via our cutting-edge recruitment expertise.",
-      statNumber: "500+",
+      statNumber: "50K+",
       statLabel: "Successful Placement",
     },
     {
@@ -81,6 +81,8 @@ const HeroSection = () => {
   //   return () => clearInterval(interval);
   // }, []);
 
+  
+
   return (
     <div className="bg-[#EFEFEF] py-4 font-montserrat">
       <AnimatePresence mode="wait">
@@ -91,7 +93,11 @@ const HeroSection = () => {
           exit={{ scale: 0.95, opacity: 0 }}
           transition={{ duration: 1 }}
           style={{
-            backgroundImage: `url(${backgroundImages[currentSlide].url})`,
+            backgroundImage: `url(${
+              window.innerWidth >= 768
+                ? "/images/exherobg3.png" // ✅ single bg for md+
+                : backgroundImages[currentSlide].url // ✅ rotating bg for sm
+            })`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -104,7 +110,6 @@ const HeroSection = () => {
             exit={{ y: -30, opacity: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-10"
-            
           >
             <h1 className="text-3xl md:text-4xl font-bold ">
               {slides[currentSlide].heading}
@@ -221,7 +226,7 @@ const HeroSection = () => {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-               onClick={openPopup}
+                onClick={openPopup}
                 className="flex items-center gap-2 "
               >
                 <button className="xl:w-[200px] flex items-center justify-center bg-gradient-to-r from-[#2c1361] to-[#7300ff] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">

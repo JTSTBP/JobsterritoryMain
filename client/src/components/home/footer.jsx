@@ -118,7 +118,7 @@ const Footer = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   {[
-                    { icon: Users, number: "10K+", label: "Placements" },
+                    { icon: Users, number: "90K+", label: "Placements" },
                     { icon: Award, number: "95%", label: "Success Rate" },
                     { icon: Clock, number: "48hrs", label: "Response Time" },
                   ].map((stat, index) => (

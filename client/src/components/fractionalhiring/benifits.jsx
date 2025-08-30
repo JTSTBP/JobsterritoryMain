@@ -1,3 +1,134 @@
+// import { CheckCircleIcon } from "@heroicons/react/24/outline";
+// import { motion } from "framer-motion";
+// import { useEffect, useRef } from "react";
+
+// export default function BenefitsCard() {
+//   const text = "gniriH lanoitcarF  ";
+
+//   const benefits = [
+//     {
+//       title: "Cost Efficiency Without Compromise",
+//       text: "Save 40–60% vs. full-time hires while getting boardroom level expertise that delivers real results.",
+//     },
+//     {
+//       title: "Day-One Impact",
+//       text: "Battle tested leaders who step in, take charge, and deliver wins immediately.",
+//     },
+//     {
+//       title: "Agility On Demand",
+//       text: "Scale talent up or down instantly to match projects or market shifts.",
+//     },
+//     {
+//       title: "Elite Talent Network",
+//       text: "Direct access to ex CXOs, specialists, and transformation leaders who choose high impact, flexible roles.",
+//     },
+//   ];
+
+//   const stats = [
+//     { value: "40-60%", label: "Cost Reduction vs Full-time" },
+//     { value: "2-3 weeks", label: "Time to Onboard" },
+//     { value: "95%", label: "Project Success Rate" },
+//     { value: "80%", label: "Convert to Full-time" },
+//   ];
+
+//   return (
+//     <div className="bg-white relative py-16">
+//       <motion.div
+//         className="text-center text-[#1B084C]"
+//         initial={{ opacity: 0, scale: 0.9 }}
+//         animate={{ opacity: 1, scale: 1 }}
+//         transition={{ duration: 0.8, ease: "easeOut" }}
+//       >
+//         <h2 className="text-3xl md:text-4xl font-bold font-montserrat inline-block pb-2">
+//           Why Businesses Keep Coming Back to Us
+//         </h2>
+//         <p className="mt-2">
+//           Why companies choose fractional hiring over traditional employment
+//         </p>
+//       </motion.div>
+
+//       <div className="bg-white flex flex-col lg:flex-row justify-center gap-3 px-5  lg:justify-evenly items-center py-6 relative ">
+//         {/* Left Card */}
+//         <div className="relative max-w-xl w-full lg:w-[45%] bg-white rounded-t-xl rounded-bl-xl overflow-hidden my-10">
+//           <div className="bg-white p-6 border border-purple-500 rounded-t-xl rounded-bl-xl shadow-lg">
+//             {benefits.map((item, index) => (
+//               <div key={index} className="flex items-start mb-6 last:mb-0">
+//                 <CheckCircleIcon className="w-6 h-6 text-[#2B0099] mt-1 flex-shrink-0" />
+//                 <div className="ml-3">
+//                   <h3 className="font-semibold text-lg text-[#240960]">
+//                     {item.title}
+//                   </h3>
+//                   <p className="text-[#2B0099] text-sm">{item.text}</p>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//           {/* Inverted corner */}
+//           <span
+//             className="hidden sm:block absolute -bottom-10 -right-10 w-32 h-32 rounded-[30px] bg-white border-t border-l border-purple-500"
+//             aria-hidden="true"
+//           />
+//         </div>
+
+//         {/* Right Card */}
+//         <div className="relative bg-[#E7E4FF] max-w-xl w-full lg:w-[45%] rounded-t-xl rounded-br-xl my-10">
+//           <div className="p-8 rounded-t-xl rounded-br-xl">
+//             <div className="grid grid-cols-2 gap-4">
+//               {stats.map((item, i) => (
+//                 <div
+//                   key={i}
+//                   className="bg-white rounded-md shadow-md p-4 text-center"
+//                 >
+//                   <p className="text-2xl font-bold text-purple-600">
+//                     {item.value}
+//                   </p>
+//                   <p className="text-sm text-gray-600">{item.label}</p>
+//                 </div>
+//               ))}
+//             </div>
+//             <div className="mt-8 font-montserrat">
+//               <h2 className="text-2xl md:text-4xl font-bold text-purple-600 text-right">
+//                 Success Metrics
+//               </h2>
+//             </div>
+//           </div>
+//           {/* Inverted Bottom-Left Curve */}
+//           <span
+//             className="hidden sm:block absolute -bottom-8 -left-8 w-32 h-32 bg-white rounded-tr-[40px]"
+//             aria-hidden="true"
+//           />
+//         </div>
+
+//         <div className="absolute bottom-[-34px] left-[51%] transform -translate-x-1/2 hidden lg:block">
+//           {/* <div className="flex justify-center items-center h-[1vh]]">
+//             <div className="circle">
+//               {text.split("").map((char, index) => {
+//                 const rotate = index * (360 / text.length);
+//                 return (
+//                   <span
+//                     key={index}
+//                     className="circle-text"
+//                     style={{
+//                       transform: `rotate(${rotate}deg) translate(5rem) rotate(-${rotate}deg)`,
+//                     }}
+//                   >
+//                     {char}
+//                   </span>
+//                 );
+//               })}
+//             </div>
+//           </div> */}
+//           <img
+//             src="/images/circleletters.png"
+//             alt="Hands Together"
+//             className="rounded-md w-[12rem] h-[12rem]"
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -46,11 +177,10 @@ export default function BenefitsCard() {
           Why companies choose fractional hiring over traditional employment
         </p>
       </motion.div>
-
-      <div className="bg-white flex flex-col lg:flex-row justify-center gap-3 px-5  lg:justify-evenly items-center py-6 relative ">
+      <div className="bg-white flex flex-col lg:flex-row justify-center gap-3 px-5 lg:justify-evenly items-stretch py-6">
         {/* Left Card */}
-        <div className="relative max-w-xl w-full lg:w-[45%] bg-white rounded-t-xl rounded-bl-xl overflow-hidden my-10">
-          <div className="bg-white p-6 border border-purple-500 rounded-t-xl rounded-bl-xl shadow-lg">
+        <div className=" max-w-xl w-full lg:w-[45%] bg-white rounded-xl  overflow-hidden my-10">
+          <div className="bg-white p-6 border border-purple-500 rounded-xl  shadow-lg">
             {benefits.map((item, index) => (
               <div key={index} className="flex items-start mb-6 last:mb-0">
                 <CheckCircleIcon className="w-6 h-6 text-[#2B0099] mt-1 flex-shrink-0" />
@@ -64,14 +194,10 @@ export default function BenefitsCard() {
             ))}
           </div>
           {/* Inverted corner */}
-          <span
-            className="hidden sm:block absolute -bottom-10 -right-10 w-32 h-32 rounded-[30px] bg-white border-t border-l border-purple-500"
-            aria-hidden="true"
-          />
         </div>
 
         {/* Right Card */}
-        <div className="relative bg-[#E7E4FF] max-w-xl w-full lg:w-[45%] rounded-t-xl rounded-br-xl my-10">
+        <div className=" bg-[#E7E4FF] max-w-xl w-full lg:w-[45%] rounded-xl my-10">
           <div className="p-8 rounded-t-xl rounded-br-xl">
             <div className="grid grid-cols-2 gap-4">
               {stats.map((item, i) => (
@@ -96,32 +222,6 @@ export default function BenefitsCard() {
           <span
             className="hidden sm:block absolute -bottom-8 -left-8 w-32 h-32 bg-white rounded-tr-[40px]"
             aria-hidden="true"
-          />
-        </div>
-
-        <div className="absolute bottom-[-34px] left-[51%] transform -translate-x-1/2 hidden lg:block">
-          {/* <div className="flex justify-center items-center h-[1vh]]">
-            <div className="circle">
-              {text.split("").map((char, index) => {
-                const rotate = index * (360 / text.length);
-                return (
-                  <span
-                    key={index}
-                    className="circle-text"
-                    style={{
-                      transform: `rotate(${rotate}deg) translate(5rem) rotate(-${rotate}deg)`,
-                    }}
-                  >
-                    {char}
-                  </span>
-                );
-              })}
-            </div>
-          </div> */}
-          <img
-            src="/images/circleletters.png"
-            alt="Hands Together"
-            className="rounded-md w-[12rem] h-[12rem]"
           />
         </div>
       </div>

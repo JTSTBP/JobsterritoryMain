@@ -109,7 +109,7 @@ const PayperHire = () => {
     <div>
       <Navbar />
       <Bannersection
-        backgroundImage="/images/heropph.png"
+        backgroundImage="/images/exbg2.png"
         heading="Pay Per Hire  "
         heading1="Talent Without the Risk"
         paragraph="Hire with confidence — you pay only for successful placements. No upfront costs, no hidden fees, no ongoing commitments."
