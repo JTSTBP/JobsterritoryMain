@@ -10,6 +10,8 @@ import BenefitsCard from "../components/fractionalhiring/benifits";
 import HireSection from "../components/commonsections/ready";
 import FAQSection from "../components/home/faqs";
 import BlogsSection from "../components/commonsections/staticblogs";
+import IndustriesGrid from "../components/home/industriesgrid";
+import StaticCaestudies from "../components/commonsections/casestdiesstatic";
 
 const faqData = [
   {
@@ -107,7 +109,103 @@ const faqData = [
      image: "/images/blogsimgsh2.png",
      bg: "#1B084C",
    },
- ];
+];
+ 
+const industries = [
+  {
+    title: "Practo",
+    description:
+      "How Jobs Territory Helped Practo Hire 42 Healthcare Professionals in Just 2 Months (2021)",
+    placements: "2000+",
+    bg: "images/bg1.png",
+    text: "text-[#FFFFFF]",
+    img: "/images/casimg1.jpg",
+    slug: "practo",
+  },
+  {
+    title: "Vogo",
+    description:
+      "How Jobs Territory Helped Vogo Hire 50+ Customer Support Team Members in 2 Months",
+    placements: "800+",
+    bg: "images/bg4.png",
+    text: "text-[#1B084C]",
+    img: "/images/casimg4.jpg",
+    slug: "vogo",
+  },
+  {
+    title: "Unacademy",
+    description:
+      "How Jobs Territory Helped Unacademy Close 84 Business Development Positions in February 2022",
+    placements: "700+",
+    placements: "1500+",
+    bg: "images/bg2.png",
+    text: "text-[#FFFFFF]",
+    slug: "unacademy",
+    img: "/images/casimg7.png",
+  },
+  {
+    title: "Medvarsity",
+    description:
+      "How Jobs Territory Helped Medvarsity Hire 60+ Academic Counselors in Just 3 Months (2021)",
+    placements: "1000+",
+    bg: "images/bg4.png",
+    text: "text-[#1B084C]",
+    img: "/images/casimg2.png",
+    slug: "medvarsity",
+  },
+  {
+    title: "PagarBook",
+    description:
+      "How Jobs Territory Helped PagarBook Hire 81+ Professionals to Power Rapid Expansion",
+    placements: "1200+",
+    bg: "images/bg1.png",
+    text: "text-[#FFFFFF]",
+    img: "/images/casimg5.jpg",
+    slug: "pagarbook",
+  },
+
+  {
+    title: "Brandstudio",
+    description:
+      "How Jobs Territory Helped Brandstudio Hire 28+ Professionals to Power Creative Growth",
+    placements: "1500+",
+    bg: "images/bg4.png",
+    text: "text-[#1B084C]",
+    img: "/images/casimg8.jpg",
+    slug: "brandstudio",
+  },
+  {
+    title: "Urban Ladder",
+    description:
+      "How Jobs Territory Helped Urban Ladder Hire 25+ Retail and Customer Support Professionals",
+    bg: "images/bg1.png",
+    text: "text-[#FFFFFF]",
+    large: true,
+    img: "/images/casimg3.jpg",
+    slug: "urban-ladder",
+  },
+  {
+    title: "FloBiz",
+    description:
+      "How Jobs Territory Helped FloBiz Hire 150+ Business Development Executives in FY 2021-2022",
+    placements: "500+",
+    bg: "images/bg4.png",
+    text: "text-[#1B084C]",
+    img: "/images/casimg6.png",
+    slug: "flobiz",
+  },
+  {
+    title: "Zepto",
+    description:
+      "How Jobs Territory Helped Zepto Close 25 Super Store Manager Positions in Less Than 20 Days",
+    placements: "500+",
+
+    bg: "images/bg1.png",
+    text: "text-[#FFFFFF]",
+    img: "/images/casimg9.png",
+    slug: "zepto",
+  },
+];
 
 const FractionalHiring = () => {
   return (
@@ -135,6 +233,7 @@ const FractionalHiring = () => {
         buttonText="Start Fractional Hiring"
         backgroundImage="/images/trasfrom.png"
       />
+      <StaticCaestudies industries={industries} separate="true" />
       <FAQSection faqData={faqData} />
       <Footer />
     </div>

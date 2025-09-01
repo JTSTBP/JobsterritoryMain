@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "framer-motion";
 import { Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const SuccessStories = () => {
   // const [openTestimonial, setOpenTestimonial] = useState(null);
@@ -9,6 +10,8 @@ const SuccessStories = () => {
   // const toggleTestimonial = (index) => {
   //   setOpenTestimonial(openTestimonial === index ? null : index);
   // };
+
+  const navigate=useNavigate()
 
   const stories = [
     {
@@ -290,6 +293,14 @@ const SuccessStories = () => {
             </motion.div>
           </motion.div>
         ))}
+        <div className="flex items-center justify-center mt-2">
+          <button
+            onClick={() => navigate("/CaseStudies")}
+            className=" bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-sm"
+          >
+            Explore more
+          </button>
+        </div>
       </div>
 
       {/* Bottom CTA */}

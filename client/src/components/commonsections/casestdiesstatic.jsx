@@ -11,7 +11,7 @@ const cardVariants = {
   }),
 };
 
-const IndustriesGrid = ({ industries, separate }) => {
+const StaticCaestudies = ({ industries, separate }) => {
   const navigate = useNavigate();
   return (
     <div className="py-12 px-10 md:px-8 lg:px-16 bg-[#EFEFEF] text-[#1B084C]">
@@ -32,18 +32,18 @@ const IndustriesGrid = ({ industries, separate }) => {
           />
         </div>
         <h2 className="text-3xl md:text-4xl font-bold font-montserrat inline-block pb-2">
-          Your Industry, Our Expertise
+          Case Studies
         </h2>
         <p className="mt-2">
-          From emerging brands to industry giants, we deliver hiring solutions
-          tailored to your sector’s challenges and ambitions.
+          Explore how Job Territory has helped businesses find exceptional
+          talent and transform their teams.
         </p>
       </motion.div>
 
       {/* First 6 Cards */}
       <div className="mb-5 text-center">
         <div className="columns-1 md:columns-3 gap-6 space-y-6">
-          {(industries).map(
+          {(!separate ? industries.slice(0, 6) : industries).map(
             (item, index) => (
               <motion.div
                 key={index}
@@ -57,17 +57,19 @@ const IndustriesGrid = ({ industries, separate }) => {
                 }}
                 style={{
                   backgroundImage: `url(${item.bg})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
                 }}
-                className={`rounded-xl p-6 shadow-md break-inside-avoid ${item.text}`}
+                className={`rounded-xl p-6 shadow-md break-inside-avoid 
+              bg-cover bg-center h-[266px] flex flex-col justify-between items-center ${item.text}`}
               >
-                <img src={item.img} className="w-36 mx-auto my-2" />
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-sm mb-4">{item.description}</p>
+                <div className="flex flex-col items-center text-center">
+                  <img src={item.img} className="w-32 mx-auto my-2" />
+                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <p className="text-sm mb-4">{item.description}</p>
+                </div>
 
                 {separate === "true" ? (
                   <button
+                    onClick={() => navigate(`/casestudy/${item.slug}`)}
                     className={`py-2 px-4 border rounded-full ${
                       item.text.includes("#FFFFFF")
                         ? "bg-[#FFFFFF] text-[#1B084C]"
@@ -97,8 +99,71 @@ const IndustriesGrid = ({ industries, separate }) => {
         </div>
       </div>
 
-      
-     
+      {!separate && (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-center">
+          {/* Tall Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.5 }}
+            className="md:col-span-2"
+          >
+            <div
+              style={{
+                backgroundImage: `url(${industries[6].bg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              className={`rounded-xl p-6 shadow-md ${industries[6].text}`}
+            >
+              <h3 className="text-xl font-bold mb-2">{industries[6].title}</h3>
+              <p className="text-sm mb-4">{industries[6].description}</p>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 1.7, type: "spring" }}
+                className="bg-[#2E1B56] rounded-2xl px-10 py-1 text-center w-fit mx-auto"
+              >
+                <h2 className="text-white text-3xl font-bold">
+                  {industries[6].placements}
+                </h2>
+                <p className="text-white text-lg">Placements</p>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Normal Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 2 }}
+          >
+            <div
+              style={{
+                backgroundImage: `url(${industries[7].bg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              className={`rounded-xl p-6 shadow-md ${industries[7].text}`}
+            >
+              <h3 className="text-xl font-bold mb-2">{industries[7].title}</h3>
+              <p className="text-sm mb-4">{industries[7].description}</p>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 2.2, type: "spring" }}
+                className="bg-[#2E1B56] rounded-2xl px-10 py-1 text-center w-fit mx-auto"
+              >
+                <h2 className="text-white text-3xl font-bold">
+                  {industries[7].placements}
+                </h2>
+                <p className="text-white text-lg">Placements</p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+      {/* Last 2 Cards */}
 
       <div className="relative w-[90%] my-2 mx-auto h-[300px] md:h-full rounded-lg overflow-hidden">
         {/* Background Image */}
@@ -111,7 +176,7 @@ const IndustriesGrid = ({ industries, separate }) => {
         {/* Centered Text */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-[#1B084C] w-[80%]">
-            <h2 className="text-2xl md:text-5xl font-light mb-2">
+            <h2 className="text-2xl md:text-4xl font-light mb-2">
               Don't See Your <span className="font-bold">Industry?</span>
             </h2>
             <p className="max-w-2xl mx-auto mb-6 text-sm md:text-base">
@@ -133,5 +198,4 @@ const IndustriesGrid = ({ industries, separate }) => {
   );
 };
 
-export default IndustriesGrid;
-
+export default StaticCaestudies;

@@ -308,7 +308,7 @@ const Hero = () => {
       heading: "RAAS – Unlimited Hiring, Fixed Monthly Cost",
       paragraph:
         "Scale your workforce with dedicated recruiters who work as part of your team.",
-      statNumber: "30+",
+      statNumber: "30K+",
       statLabel: "Successful Placement",
       cta1: "Start with RAAS",
       cta2: "Learn More",
@@ -316,7 +316,7 @@ const Hero = () => {
     {
       heading: "Hire First. Pay Only When You Win.",
       paragraph: "Risk-free hiring model aligned with your success.",
-      statNumber: "500+",
+      statNumber: "10K+",
       statLabel: "Successful Placement",
       cta1: "Start Hiring",
       cta2: "Learn More",

@@ -21,6 +21,8 @@ import ScrollToTop from "./pages/scrollTop";
 import AboutUs from "./pages/aboutus";
 import RecruiterPopup from "./components/commonsections/popup";
 import { PopupProvider, usePopup } from "./contexts/popupcontext";
+import TermsAndConditions from "./components/terms";
+import PrivacyPolicy from "./components/policy";
 
 // Global popup placed here
 const PopupContainer = () => {
@@ -50,6 +52,14 @@ export default function App() {
             <Route path="/casestudy/:slug" element={<ViewCaseStudy />} />
             <Route path="/Blogs" element={<BlogsPage />} />
             <Route path="/Blog/:slug" element={<SeparateBlogs />} />
+            <Route
+              path="/TermsandConditions"
+              element={<TermsAndConditions />}
+            />
+            <Route
+              path="/PrivacyPolicy"
+              element={<PrivacyPolicy />}
+            />
           </Routes>
         </Router>
       </PopupProvider>

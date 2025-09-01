@@ -16,8 +16,10 @@ import {
   Award,
   Users
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate=useNavigate()
 
   const services = [
     {
@@ -118,7 +120,7 @@ const Footer = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   {[
-                    { icon: Users, number: "90K+", label: "Placements" },
+                    { icon: Users, number: "10K+", label: "Placements" },
                     { icon: Award, number: "95%", label: "Success Rate" },
                     { icon: Clock, number: "48hrs", label: "Response Time" },
                   ].map((stat, index) => (
@@ -321,7 +323,7 @@ const Footer = () => {
                   your inbox
                 </p>
               </div>
-              <div className="flex w-full md:w-auto ">
+              <div className="flex w-full md:w-auto cursor-pointer">
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -349,14 +351,14 @@ const Footer = () => {
               </div>
               <div className="flex space-x-6">
                 <a
-                  href="#"
-                  className="hover:text-primary-400 transition-colors"
+                  onClick={() => navigate("/PrivacyPolicy")}
+                  className="hover:text-primary-400 transition-colors cursor-pointer"
                 >
                   Privacy Policy
                 </a>
                 <a
-                  href="#"
-                  className="hover:text-primary-400 transition-colors"
+                  onClick={() => navigate("/TermsandConditions")}
+                  className="hover:text-primary-400 transition-colors cursor-pointer"
                 >
                   Terms of Service
                 </a>

@@ -27,11 +27,16 @@ module.exports = {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-15px)" },
+        },
       },
       animation: {
         scroll: "scroll 130s linear infinite",
         orbit: "orbit 5s linear infinite",
         "spin-slow": "spinSlow 10s linear infinite",
+        float: "float 3s ease-in-out infinite",
       },
       screens: {
         xs: { max: "419px" },
