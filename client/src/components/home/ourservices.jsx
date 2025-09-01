@@ -27,21 +27,21 @@ const Services = () => {
       icon: "/images/icon1.png",
       href: "https://raasjobsterritory.com/",
     },
-    {
-      // you can use emoji or image path
-      heading: "Pay Per Hire",
-      description: "Hire with confidence—only pay when we deliver results.",
-      points: [
-        "No Upfront Costs  ",
-        "Pay for Results ",
-        "Scale on Demand  ",
-        "Quality Guarantee  ",
-      ],
-      buttonText: "Learn More",
-      image: "/images/vec2.png",
-      icon: "/images/icon2.png",
-      href: "/Payperhire",
-    },
+    // {
+    //   // you can use emoji or image path
+    //   heading: "Pay Per Hire",
+    //   description: "Hire with confidence—only pay when we deliver results.",
+    //   points: [
+    //     "No Upfront Costs  ",
+    //     "Pay for Results ",
+    //     "Scale on Demand  ",
+    //     "Quality Guarantee  ",
+    //   ],
+    //   buttonText: "Learn More",
+    //   image: "/images/vec2.png",
+    //   icon: "/images/icon2.png",
+    //   href: "/Payperhire",
+    // },
     {
       // you can use emoji or image path
       heading: "Fractional Hiring",
@@ -113,16 +113,19 @@ const Services = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
+        className="flex justify-center flex-wrap items-stretch gap-8 bg-[#EFEFEF]"
         // className="flex justify-center flex-wrap items-start gap-8   bg-[#EFEFEF] items-stretch"
-        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch justify-items-center"
+        // className="grid sm:grid-cols-2 lg:grid-cols- gap-5 items-stretch justify-items-center"
       >
         {cardData.map((item, index) => (
           <motion.a
             key={index}
             variants={cardVariants}
             whileHover={{ scale: 1.05, y: -10 }}
-            className="group relative w-full max-w-[300px] sm:max-w-[340px] md:max-w-[360px] lg:max-w-[380px] 
-   p-6 md:p-7 lg:p-8 overflow-hidden rounded-2xl shadow-lg flex flex-col h-full font-poppins"
+            className="group relative w-full max-w-[360px] min-h-[367px] 
+p-6 md:p-7 lg:p-8 overflow-hidden rounded-2xl shadow-lg flex flex-col font-poppins"
+            //           className="group relative w-full max-w-[300px] sm:max-w-[340px] md:max-w-[360px] lg:max-w-[380px]
+            //  p-6 md:p-7 lg:p-8 overflow-hidden rounded-2xl shadow-lg flex flex-col h-full font-poppins"
             style={{
               backgroundImage: "url('/images/oursersam.png')",
               backgroundSize: "cover",
