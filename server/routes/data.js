@@ -4,6 +4,9 @@ const CaseStudy = require("../models/casestudies");
 const Contact = require("../models/contact");
 const Logos = require("../models/logos");
 const Testimonial = require("../models/testimonials");
+const RecruiterRequest = require("../models/recruiterReq");
+
+
 const { sendContactmail } = require("../utils/sendemails");
 
 const router = express.Router();
@@ -109,4 +112,43 @@ router.get("/gettestimonials", async (req, res) => {
     res.status(500).json({ message: "Error fetching testimonials", error });
   }
 });
+
+// recruiter request
+// POST - Save recruiter request
+router.post("/add-recruiter-request", async (req, res) => {
+  try {
+    const { name, phone, email, company, requirement, level } = req.body;
+
+    if (!name || !phone || !email || !company) {
+      return res.status(400).json({ message: "Required fields are missing" });
+    }
+
+    const newRequest = new RecruiterRequest({
+      name,
+      phone,
+      email,
+      company,
+      requirement,
+      level,
+    });
+
+    await newRequest.save();
+    res.status(200).json({ message: "Recruiter request submitted successfully" });
+  } catch (error) {
+    console.error("Error saving recruiter request:", error);
+    res.status(500).json({ message: "Server error. Please try again later." });
+  }
+});
+
+// (Optional) GET - Fetch all recruiter requests (for admin)
+router.get("/recruiter-requests", async (req, res) => {
+  try {
+    const requests = await RecruiterRequest.find().sort({ createdAt: -1 });
+    res.status(200).json(requests);
+  } catch (error) {
+    console.error("Error fetching recruiter requests:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 module.exports = router;
