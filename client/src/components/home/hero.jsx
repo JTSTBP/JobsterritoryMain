@@ -325,8 +325,8 @@ const Hero = () => {
       nav1: "https://raasjobsterritory.com/",
     },
     {
-      heading: "Hire First. Pay Only When You Win.",
-      paragraph: "Risk-free hiring model aligned with your success.",
+      heading: "Smart Hiring. Zero Risks. Maximum Results.",
+      paragraph: "A hiring model built to match your goals, not limit them",
       statNumber: "10K+",
       statLabel: "Successful Placement",
       cta1: "Start Hiring",
