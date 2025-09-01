@@ -12,6 +12,8 @@ import FAQSection from "../components/home/faqs";
 import BlogsSection from "../components/commonsections/staticblogs";
 import IndustriesGrid from "../components/home/industriesgrid";
 import StaticCaestudies from "../components/commonsections/casestdiesstatic";
+import { useNavigate } from "react-router-dom";
+import { usePopup } from "../contexts/popupcontext";
 
 const faqData = [
   {
@@ -208,6 +210,8 @@ const industries = [
 ];
 
 const FractionalHiring = () => {
+    const navigate = useNavigate();
+    const { openPopup } = usePopup();
   return (
     <div>
       <Navbar />
@@ -218,7 +222,8 @@ const FractionalHiring = () => {
         paragraph="When projects can’t wait months for leadership, we connect you with battle-tested industry experts who deliver measurable impact within days — without the cost or commitment of full-time hires."
         primaryButtonText="Explore"
         secondrybuttontext="Book a call"
-        onPrimaryButtonClick={() => console.log("Demo clicked")}
+        onPrimaryButtonClick={() => navigate("/ContactUs")}
+        onSecondaryButtonClick={openPopup}
         showBottomButton={true}
       />
       <Whysection />

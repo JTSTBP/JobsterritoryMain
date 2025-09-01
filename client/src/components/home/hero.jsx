@@ -303,6 +303,16 @@ const Hero = () => {
      return () => window.removeEventListener("resize", handleResize);
    }, []);
 
+  const handleNavigation = (url) => {
+    if (!url) return;
+    if (url.startsWith("https")) {
+      window.open(url, "_blank"); // external link
+    } else {
+      navigate(url); // internal route
+    }
+  };
+
+  
   const slides = [
     {
       heading: "RAAS – Unlimited Hiring, Fixed Monthly Cost",
@@ -312,6 +322,7 @@ const Hero = () => {
       statLabel: "Successful Placement",
       cta1: "Start with RAAS",
       cta2: "Learn More",
+      nav1: "https://raasjobsterritory.com/",
     },
     {
       heading: "Hire First. Pay Only When You Win.",
@@ -320,6 +331,7 @@ const Hero = () => {
       statLabel: "Successful Placement",
       cta1: "Start Hiring",
       cta2: "Learn More",
+      nav1: "https://calendly.com/jobsterritory/30min",
     },
     {
       heading: "Fractional Hiring, Maximum Impact",
@@ -328,6 +340,7 @@ const Hero = () => {
       statLabel: "Average Response Time",
       cta1: "Explore Talent",
       cta2: "How It Works",
+      nav1: "https://calendly.com/jobsterritory/30min",
     },
     {
       heading: "Streelancer – Redefining Remote Work",
@@ -337,6 +350,7 @@ const Hero = () => {
       statLabel: "Average Response Time",
       cta1: "Hire with Streelancer",
       cta2: "Join as a Streelancer",
+      nav1: "https://streelancer.com/",
     },
   ];
   const backgroundImage="/images/exherobg3.png"
@@ -536,12 +550,13 @@ const Hero = () => {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() =>
-                  window.open(
-                    "https://calendly.com/jobsterritory/30min",
-                    "_blank"
-                  )
-                }
+                // onClick={() =>
+                //   window.open(
+                //     "https://calendly.com/jobsterritory/30min",
+                //     "_blank"
+                //   )
+                // }
+                onClick={() => handleNavigation(slides[currentSlide].nav1)}
                 className="flex items-center gap-2"
               >
                 <button className="xl:w-[200px] flex items-center justify-center bg-gradient-to-r from-[#7300ff] to-[#2c1361] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">

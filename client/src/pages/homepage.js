@@ -13,8 +13,12 @@ import FAQSection from "../components/home/faqs";
 import { motion, AnimatePresence } from "framer-motion";
 import BlogsSection from "../components/commonsections/staticblogs";
 import Hero from "../components/home/hero";
+import { usePopup } from "../contexts/popupcontext";
+import { useNavigate } from "react-router-dom";
 
-const Homepage = ({ openPopup }) => {
+const Homepage = () => {
+  const { openPopup } = usePopup();
+  const navigate=useNavigate()
   const industries = [
     {
       title: "Technology & Startups",
@@ -280,12 +284,14 @@ const Homepage = ({ openPopup }) => {
                   scale: 1.05,
                   boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
                 }}
+                onClick={openPopup}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-[#1B084C] font-medium py-3 px-6 rounded-full shadow hover:bg-gray-100 transition"
               >
                 Contact experts
               </motion.button>
               <motion.button
+                onClick={()=>navigate("/ContactUs")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-[#1B084C] font-medium py-3 px-6 rounded-full shadow hover:bg-gray-100 transition"

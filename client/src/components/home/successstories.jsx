@@ -3,6 +3,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "framer-motion";
 import { Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { usePopup } from "../../contexts/popupcontext";
 
 const SuccessStories = () => {
   // const [openTestimonial, setOpenTestimonial] = useState(null);
@@ -10,7 +11,7 @@ const SuccessStories = () => {
   // const toggleTestimonial = (index) => {
   //   setOpenTestimonial(openTestimonial === index ? null : index);
   // };
-
+ const { openPopup } = usePopup();
   const navigate=useNavigate()
 
   const stories = [
@@ -328,6 +329,7 @@ const SuccessStories = () => {
             with Jobs Territory
           </p>
           <motion.button
+            onClick={openPopup}
             whileHover={{
               scale: 1.05,
               boxShadow: "0 20px 40px rgba(0,0,0,0.2)",

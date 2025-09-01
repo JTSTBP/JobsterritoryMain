@@ -7,6 +7,8 @@ import Footer from "../components/home/footer";
 import FAQSection from "../components/home/faqs";
 import BlogsSection from "../components/commonsections/staticblogs";
 import StaticCaestudies from "../components/commonsections/casestdiesstatic";
+import { useNavigate } from "react-router-dom";
+import { usePopup } from "../contexts/popupcontext";
 
 const faqData = [
   {
@@ -202,6 +204,8 @@ const industries = [
 ];
 
 const PayperHire = () => {
+  const navigate = useNavigate()
+  const { openPopup } = usePopup();
   return (
     <div>
       <Navbar />
@@ -212,7 +216,8 @@ const PayperHire = () => {
         paragraph="Hire with confidence — you pay only for successful placements. No upfront costs, no hidden fees, no ongoing commitments."
         primaryButtonText="Get Started"
         secondrybuttontext="Learn More"
-        onPrimaryButtonClick={() => console.log("Demo clicked")}
+        onPrimaryButtonClick={() => navigate("/ContactUs")}
+        onSecondaryButtonClick={openPopup}
         showBottomButton={true}
       />
       <WhyChoosePayPerHire />

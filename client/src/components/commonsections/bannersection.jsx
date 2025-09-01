@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { usePopup } from "../../contexts/popupcontext";
 
 const Bannersection = ({
   backgroundImage,
@@ -11,8 +12,10 @@ const Bannersection = ({
   primaryButtonText,
   secondrybuttontext,
   onPrimaryButtonClick,
+  onSecondaryButtonClick,
   showBottomButton = true,
 }) => {
+  const { openPopup } = usePopup();
    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
  useEffect(() => {
      const handleResize = () => setScreenWidth(window.innerWidth);
@@ -119,7 +122,10 @@ const Bannersection = ({
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2"
             >
-              <button className="xl:w-[236px] flex items-center justify-center bg-gradient-to-r from-[#7300ff] to-[#2c1361] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">
+              <button
+                onClick={onSecondaryButtonClick}
+                className="xl:w-[236px] flex items-center justify-center bg-gradient-to-r from-[#7300ff] to-[#2c1361] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md"
+              >
                 {secondrybuttontext}
               </button>
               <div className="w-1 h-0.5 bg-[#cfc0ff]" />
