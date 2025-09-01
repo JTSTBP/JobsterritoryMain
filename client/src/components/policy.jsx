@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[#1B084C]">
           Privacy Policy
         </h1>
-        <p className="text-sm text-gray-500 mb-8">Last updated: Sep 01, 2025</p>
+      
 
         {/* Intro */}
         <p className="mb-4">
