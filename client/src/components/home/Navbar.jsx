@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "Home", path: "/" },
-    // { name: "About", path: "/About" },
+    { name: "About", path: "/AboutUs" },
 
     { name: "Fractional Hiring", path: "/FractionHiring" },
     { name: "Pay Per Hire", path: "/Payperhire" },
@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const miditems = [
     { name: "Home", path: "/" },
-    // { name: "About", path: "/About" },
+  
     { name: "About", path: "/AboutUs" },
     { name: "Fractional Hiring", path: "/FractionHiring" },
     { name: "Pay Per Hire", path: "/Payperhire" },
