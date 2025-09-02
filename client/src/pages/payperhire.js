@@ -222,8 +222,9 @@ const PayperHire = () => {
       />
       <WhyChoosePayPerHire />
       <PayPerHireProcess />
-      <BlogsSection blogs={blogs} />
+
       <StaticCaestudies industries={industries} separate="true" />
+      <BlogsSection blogs={blogs} />
       <FAQSection faqData={faqData} />
       <Footer />
     </div>

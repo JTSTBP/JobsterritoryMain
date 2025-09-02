@@ -16,19 +16,25 @@ const Bannersection = ({
   showBottomButton = true,
 }) => {
   const { openPopup } = usePopup();
-   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
- useEffect(() => {
-     const handleResize = () => setScreenWidth(window.innerWidth);
-     window.addEventListener("resize", handleResize);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
 
-     return () => window.removeEventListener("resize", handleResize);
-   }, []);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const backgroundImagemobile = "/images/exherobg3.png";
-  
+  const backgroundImagemobilesmall = "/images/bgsmall.png";
+  // const currentImage =
+  //   screenWidth >= 1024 ? backgroundImage : backgroundImagemobile;
 
-   const currentImage =
-     screenWidth >= 1024 ? backgroundImage : backgroundImagemobile;
-  
+  const currentImage =
+    screenWidth >= 1024
+      ? backgroundImage // Desktop
+      : screenWidth >= 568
+      ? backgroundImagemobile // Tablet
+      : backgroundImagemobilesmall; // Mobile
+
   return (
     <div className="bg-[#EFEFEF] py-4 font-montserrat">
       <motion.div
@@ -40,7 +46,7 @@ const Bannersection = ({
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="relative w-[89%] mx-auto min-h-screen lg:min-h-[115vh] text-[#240960] flex flex-col px-4 py-10 pt-24 md:pt-24 lg:pt-28 pl-4 md:pl-10 lg:pl-16 xs:pt-[6.5rem] xs:pb-[10rem]"
+        className="relative w-[89%] mx-auto min-h-screen lg:min-h-[115vh] text-[#240960] flex flex-col gap-3 px-4 py-10 pt-16 md:pt-24 lg:pt-28 pl-4 md:pl-10 lg:pl-16  "
       >
         {/* Heading and Paragraph */}
         <div className="lg:w-[50%]">

@@ -42,6 +42,7 @@ module.exports = {
         xs: { max: "419px" },
         hidebuttons: { max: "958px" },
         custom: "1196px",
+        customtext: "1373px",
       },
     },
   },

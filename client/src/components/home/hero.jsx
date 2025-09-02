@@ -275,7 +275,7 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 4;
   const navigate = useNavigate();
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
   const prevSlide = () =>
@@ -296,12 +296,12 @@ const Hero = () => {
     "/images/exhero4.png",
   ];
 
-   useEffect(() => {
-     const handleResize = () => setScreenWidth(window.innerWidth);
-     window.addEventListener("resize", handleResize);
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
 
-     return () => window.removeEventListener("resize", handleResize);
-   }, []);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleNavigation = (url) => {
     if (!url) return;
@@ -312,20 +312,21 @@ const Hero = () => {
     }
   };
 
-  
   const slides = [
     {
-      heading: "RAAS – Unlimited Hiring, Fixed Monthly Cost",
+      heading: "RAAS – Unlimited Hiring,",
+      heading1: "Fixed Monthly Cost",
       paragraph:
         "Scale your workforce with dedicated recruiters who work as part of your team.",
-      statNumber: "30K+",
-      statLabel: "Successful Placement",
+      statNumber: "One Subscription",
+      statLabel: "Unlimited Hires",
       cta1: "Start with RAAS",
       cta2: "Learn More",
       nav1: "https://raasjobsterritory.com/",
     },
     {
-      heading: "Smart Hiring. Zero Risks. Maximum Results.",
+      heading: "Smart Hiring Zero Risks,",
+      heading1: "Maximum Results",
       paragraph: "A hiring model built to match your goals, not limit them",
       statNumber: "10K+",
       statLabel: "Successful Placement",
@@ -334,7 +335,8 @@ const Hero = () => {
       nav1: "https://calendly.com/jobsterritory/30min",
     },
     {
-      heading: "Fractional Hiring, Maximum Impact",
+      heading: "Fractional Hiring,",
+      heading1: "Maximum Impact",
       paragraph: "Access top talent when and how you need—no overhead.",
       statNumber: "48hr",
       statLabel: "Average Response Time",
@@ -343,7 +345,8 @@ const Hero = () => {
       nav1: "https://calendly.com/jobsterritory/30min",
     },
     {
-      heading: "Streelancer – Redefining Remote Work",
+      heading: "Streelancer,",
+      heading1: "Redefining Remote Work",
       paragraph:
         "Connecting women professionals with flexible, inclusive opportunities.",
       statNumber: "48hr",
@@ -353,7 +356,8 @@ const Hero = () => {
       nav1: "https://streelancer.com/",
     },
   ];
-  const backgroundImage="/images/exherobg3.png"
+  const backgroundImage = "/images/exherobg3.png";
+  const backgroundImagesmall = "/images/bgsmall.png";
 
   const backgroundImages = [
     {
@@ -369,12 +373,12 @@ const Hero = () => {
       url: "/images/exbg4.png",
     },
   ];
-
-    const currentImage =
-      screenWidth >= 1024
-        ? backgroundImages[currentSlide].url
-      : backgroundImage;
-  
+  const currentImage =
+    screenWidth >= 1024
+      ? backgroundImages[currentSlide].url // Desktop
+      : screenWidth >= 568
+      ? backgroundImage // Tablet
+      : backgroundImagesmall; // Mobile
 
   return (
     <div className="bg-[#EFEFEF] py-4 font-montserrat">
@@ -391,7 +395,7 @@ const Hero = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          className="rounded-[10px] relative w-[89%] mx-auto min-h-screen text-[#240960] flex flex-col  px-4 py-10 pt-24 md:pt-24 lg:pt-12 pl-4 md:pl-10 lg:pl-16 xs:pt-[6.5rem] xs:pb-[10rem]"
+          className="rounded-[10px] relative w-[89%] mx-auto min-h-screen text-[#240960] flex flex-col  px-4 py-10 pt-16 md:pt-24 lg:pt-12 pl-4 md:pl-10 lg:pl-16 xs:pt-[6.5rem] xs:pb-[10rem]"
         >
           {/* TOP TEXT + RIGHT IMAGE */}
           <motion.div
@@ -404,10 +408,12 @@ const Hero = () => {
           >
             {/* LEFT SIDE TEXT */}
             <div className=" flex flex-col gap-5 lg:pt-20  lg:w-[50%] text-left ">
-              <h1 className="text-3xl md:text-5xl font-bold">
+              <h1 className="whitespace-normal sm:whitespace-nowrap text-2xl md:text-4xl customtext:text-5xl font-bold ">
                 {slides[currentSlide].heading}
+                <br />
+                {slides[currentSlide].heading1}
               </h1>
-              <p className="mt-2  md:text-lg w-auto mx-auto font-poppins">
+              <p className="mt-2  md:text-lg w-auto font-poppins">
                 {slides[currentSlide].paragraph}
               </p>
               <motion.div

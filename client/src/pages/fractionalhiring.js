@@ -229,7 +229,6 @@ const FractionalHiring = () => {
       <Whysection />
       <ProjectBasedWorkCard />
       <BenefitsCard />
-      <BlogsSection blogs={blogs} />
       <HireSection
         title="Ready to See Impact in Weeks, "
         highlight=" Not Months?"
@@ -238,7 +237,10 @@ const FractionalHiring = () => {
         buttonText="Start Fractional Hiring"
         backgroundImage="/images/trasfrom.png"
       />
+
       <StaticCaestudies industries={industries} separate="true" />
+
+      <BlogsSection blogs={blogs} />
       <FAQSection faqData={faqData} />
       <Footer />
     </div>
