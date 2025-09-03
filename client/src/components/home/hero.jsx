@@ -413,7 +413,7 @@ const Hero = () => {
                 <br />
                 {slides[currentSlide].heading1}
               </h1>
-              <p className="mt-2  md:text-lg w-auto font-poppins">
+              <p className="mt-2  md:text-lg w-auto font-poppins font-medium">
                 {slides[currentSlide].paragraph}
               </p>
               <motion.div
