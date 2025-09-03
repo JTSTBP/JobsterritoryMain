@@ -8,15 +8,17 @@ export default function TermsAndConditions() {
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[#1B084C]">
           WEBSITE TERMS AND CONDITIONS
         </h1>
-       
 
         {/* Intro */}
         <p className="mb-4">
           Welcome to <span className="font-semibold">Jobs Territory</span>!
           These Terms and Conditions ("Terms") govern your access to and use of{" "}
-          <span className="text-[#6A1FFF] font-medium">
+          <a
+            className="text-[#6A1FFF] font-medium"
+            href="https://www.jobsterritory.com/"
+          >
             www.jobsterritory.com
-          </span>{" "}
+          </a>{" "}
           ("Website"). By accessing or using the Website, you agree to comply
           with these Terms. If you do not agree, please refrain from using the
           Website.

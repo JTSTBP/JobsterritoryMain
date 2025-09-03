@@ -8,7 +8,6 @@ export default function PrivacyPolicy() {
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-[#1B084C]">
           Privacy Policy
         </h1>
-      
 
         {/* Intro */}
         <p className="mb-4">
@@ -19,9 +18,12 @@ export default function PrivacyPolicy() {
           At Jobs Territory, your privacy is our priority. This Privacy Policy
           explains how we collect, use, and protect your personal information
           when you visit our website{" "}
-          <span className="text-[#6A1FFF] font-medium">
+          <a
+            className="text-[#6A1FFF] font-medium"
+            href="https://www.jobsterritory.com/"
+          >
             www.jobsterritory.com
-          </span>{" "}
+          </a>{" "}
           (the "Platform") or use our services (the "Services"). By using our
           Platform, you agree to the terms outlined in this Policy.
         </p>

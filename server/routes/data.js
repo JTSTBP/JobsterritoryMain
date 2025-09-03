@@ -151,4 +151,42 @@ router.get("/recruiter-requests", async (req, res) => {
   }
 });
 
+
+// ✅ Single dynamic route
+router.get("/:type", async (req, res) => {
+  const { type } = req.params;
+console.log(type,"type")
+  try {
+    let data;
+
+    switch (type.toLowerCase()) {
+      case "blogs":
+        data = await Blog.find();
+        break;
+      case "testimonials":
+        data = await Testimonial.find();
+        break;
+      case "contactus":
+        data = await Contact.find();
+        break;
+      case "recruiters":
+        data = await RecruiterRequest.find();
+        break;
+      case "casestudies":
+        data = await CaseStudy.find();
+        break;
+      case "logos":
+        data = await Logos.find();
+        break;
+      default:
+        return res.status(400).json({ error: "Invalid type" });
+    }
+
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch data" });
+  }
+});
+
+
 module.exports = router;
