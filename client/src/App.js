@@ -45,7 +45,7 @@ export default function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/FractionHiring" element={<FractionalHiring />} />
 
-            <Route path="/Payperhire" element={<PayperHire />} />
+            {/* <Route path="/Payperhire" element={<PayperHire />} /> */}
             <Route path="/AboutUs" element={<AboutUs />} />
             <Route path="/ContactUs" element={<ContactUs />} />
             <Route path="/CaseStudies" element={<CaseStudy />} />

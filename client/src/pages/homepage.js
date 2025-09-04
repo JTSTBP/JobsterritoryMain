@@ -174,12 +174,12 @@ const Homepage = () => {
       answer:
         "Recruitment as a Service (RaaS) provides on-demand hiring support with flexible pricing and dedicated recruiting experts.",
     },
-    {
-      question: "What is Pay Per Hire and how does pricing work?",
-      icon: "/images/f2.png",
-      answer:
-        "Pay Per Hire allows you to pay only for successful placements. Pricing is based on the role and level of expertise required.",
-    },
+    // {
+    //   question: "What is Pay Per Hire and how does pricing work?",
+    //   icon: "/images/f2.png",
+    //   answer:
+    //     "Pay Per Hire allows you to pay only for successful placements. Pricing is based on the role and level of expertise required.",
+    // },
     {
       question: "What type of industries do you serve?",
       icon: "/images/f3.png",

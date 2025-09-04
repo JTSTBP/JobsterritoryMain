@@ -26,7 +26,7 @@ const Footer = () => {
       name: "Recruitment as a Service (RAAS)",
       url: "https://raasjobsterritory.com/",
     },
-    { name: "Pay Per Hire", url: "/Payperhire" },
+    // { name: "Pay Per Hire", url: "/Payperhire" },
     { name: "Fractional Hiring", url: "/FractionHiring" },
   ];
 

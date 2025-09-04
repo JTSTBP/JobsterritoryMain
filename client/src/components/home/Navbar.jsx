@@ -16,7 +16,7 @@ const Navbar = () => {
     // { name: "About Us", path: "/AboutUs" },
 
     { name: "Fractional Hiring", path: "/FractionHiring" },
-    { name: "Pay Per Hire", path: "/Payperhire" },
+    // { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Resources", path: "#" },
     // { name: "About", path: "/AboutUs" },
   ];
@@ -26,7 +26,7 @@ const Navbar = () => {
   
     // { name: "About Us", path: "/AboutUs" },
     { name: "Fractional Hiring", path: "/FractionHiring" },
-    { name: "Pay Per Hire", path: "/Payperhire" },
+    // { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Resources", path: "#" },
     { name: "Hire Now", path: "/ContactUs" },
     { name: "Raas", path: "#" },
