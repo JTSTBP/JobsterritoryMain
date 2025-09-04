@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/AboutUs" },
+    // { name: "About Us", path: "/AboutUs" },
 
     { name: "Fractional Hiring", path: "/FractionHiring" },
     { name: "Pay Per Hire", path: "/Payperhire" },
@@ -24,7 +24,7 @@ const Navbar = () => {
   const miditems = [
     { name: "Home", path: "/" },
   
-    { name: "About", path: "/AboutUs" },
+    // { name: "About Us", path: "/AboutUs" },
     { name: "Fractional Hiring", path: "/FractionHiring" },
     { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Resources", path: "#" },
@@ -39,7 +39,7 @@ const Navbar = () => {
   const activeItem = menuItems[activeIndex];
   const rightItems = menuItems.slice(activeIndex + 1);
   return (
-    <nav className="bg-[#EFEFEF] border-b border-gray-200 font-poppins font-semibold">
+    <nav className="bg-[#EFEFEF] border-b border-gray-200 font-montserrat font-semibold">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16   whitespace-nowrap  ">
           {/* logo */}
@@ -80,6 +80,12 @@ const Navbar = () => {
                               className="block px-4 py-2 hover:bg-gray-200"
                             >
                               Blogs
+                            </a>
+                            <a
+                              href="/AboutUs"
+                              className="block px-4 py-2 hover:bg-gray-200"
+                            >
+                              About Us
                             </a>
                           </div>
                         )}
@@ -153,6 +159,12 @@ const Navbar = () => {
                             >
                               Blogs
                             </a>
+                            <a
+                              href="/AboutUs"
+                              className="block px-4 py-2 hover:bg-gray-200"
+                            >
+                              About Us
+                            </a>
                           </div>
                         )}
                       </div>
@@ -202,6 +214,12 @@ const Navbar = () => {
                           >
                             Blogs
                           </a>
+                          <a
+                            href="/AboutUs"
+                            className="block px-4 py-2 hover:bg-gray-200"
+                          >
+                            About Us
+                          </a>
                         </div>
                       )}
                     </div>
@@ -231,7 +249,7 @@ const Navbar = () => {
                   backgroundImage: "url('/images/navrec4.png')",
                 }}
               >
-                Hire Now
+                <p>Hire Now</p>
               </a>
               <div className="absolute right-0 top-1/2 w-6 h-[5px] bg-white transform translate-x-full -translate-y-1/2"></div>
             </div>
@@ -322,6 +340,12 @@ const Navbar = () => {
                       className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
                     >
                       Blogs
+                    </a>
+                    <a
+                      href="/AboutUs"
+                      className="block px-4 py-2 hover:bg-gray-200"
+                    >
+                      About Us
                     </a>
                   </div>
                 )}

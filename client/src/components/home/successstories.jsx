@@ -39,14 +39,23 @@ const SuccessStories = () => {
         {
           icon: "⚙",
           heading: "Challenge",
-          description:
-            "Unacademy needed a strong Biz Dev team to boost subscriptions and drive growth.",
+          description: (
+            <>
+              "Unacademy needed a strong Biz Dev team to boost subscriptions and
+              drive growth."
+            </>
+          ),
         },
         {
           icon: "💡",
           heading: "Solution",
-          description:
-            "In Feb 2022, Unacademy aimed to hire 84 BDEs quickly, needing strong communicators with sales skills. The large scale and tight timeline called for expert recruitment support.",
+          description: (
+            <>
+              "In Feb 2022, Unacademy aimed to hire <strong>84 BDEs</strong>{" "}
+              quickly, needing strong communicators with sales skills. The large
+              scale and tight timeline called for expert recruitment support.",
+            </>
+          ),
         },
       ],
       results: [
@@ -83,14 +92,23 @@ const SuccessStories = () => {
         {
           icon: "⚙",
           heading: "Challenge",
-          description:
-            "Neuron Energy needed 5+ quick hires in sales, ops, and tech—seeking candidates who drive innovation and efficiency under a tight timeline.",
+          description: (
+            <>
+              "Neuron Energy needed <strong>5+</strong> quick hires in sales,
+              ops, and tech—seeking candidates who drive innovation and
+              efficiency under a tight timeline."
+            </>
+          ),
         },
         {
           icon: "💡",
           heading: "Solution",
-          description:
-            "Sourced industry-specific talent, screened for expertise and fit, and ensured fast, smooth onboarding.",
+          description: (
+            <>
+              "Sourced industry-specific talent, screened for expertise and fit,
+              and ensured fast, smooth onboarding."
+            </>
+          ),
         },
       ],
       results: [
@@ -126,14 +144,24 @@ const SuccessStories = () => {
         {
           icon: "⚙",
           heading: "Challenge",
-          description:
-            "FloBiz needed 150+ BDEs in 2021–22 with strong SME knowledge and sales skills, requiring a strategic hiring partner.",
+          description: (
+            <>
+              "FloBiz needed <strong>150+ BDEs</strong> in 2021–22 with strong
+              SME knowledge and sales skills, requiring a strategic hiring
+              partner."
+            </>
+          ),
         },
         {
           icon: "💡",
           heading: "Solution",
-          description:
-            "Aligned with FloBiz on BDE needs, built a strong talent pipeline, screened for sales and SME fit, and ensured fast, tech-enabled hiring.",
+          description: (
+            <>
+              "Aligned with FloBiz on BDE needs, built a strong talent pipeline,
+              screened for sales and SME fit, and ensured fast, tech-enabled
+              hiring.",
+            </>
+          ),
         },
       ],
       results: [
@@ -288,7 +316,7 @@ const SuccessStories = () => {
                 >
                   {story.testimonial}
                   <br />
-                  {story.name}
+                  <strong>{story.name}</strong>
                 </motion.p>
               </div>
             </motion.div>

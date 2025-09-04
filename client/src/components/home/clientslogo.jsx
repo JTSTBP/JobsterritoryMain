@@ -17,7 +17,7 @@ const ClientLogos = () => {
 
   const stats = [
     { value: "500+", label: "Companies Served" },
-    { value: "10K+", label: "Successful Placements" },
+    { value: "10,000", label: "Successful Placements" },
     { value: "95%", label: "Client Retention" },
     { value: "48hrs", label: "Average Response" },
   ];
@@ -112,7 +112,7 @@ const ClientLogos = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#6A1FFF]">
               {stat.value}
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl mt-2 text-[#1B084C]">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium  mt-2 text-[#1B084C]">
               {stat.label}
             </p>
           </motion.div>

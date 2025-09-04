@@ -273,7 +273,7 @@ import { usePopup } from "../../contexts/popupcontext";
 const Hero = () => {
   const { openPopup } = usePopup();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 4;
+  const totalSlides = 3;
   const navigate = useNavigate();
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -314,31 +314,31 @@ const Hero = () => {
 
   const slides = [
     {
-      heading: "RAAS – Unlimited Hiring,",
-      heading1: "Fixed Monthly Cost",
+      heading: "India’s First Recruitment",
+      heading1: "Subscription Engine",
       paragraph:
-        "Scale your workforce with dedicated recruiters who work as part of your team.",
+        "Stop paying agencies 8–12% per hire. Scale your team with Jobs Territory’s flat monthly subscription. Unlimited roles, unlimited hiring — predictable, fast, and cost-effective.",
       statNumber: "One Subscription",
       statLabel: "Unlimited Hires",
-      cta1: "Start with RAAS",
-      cta2: "Learn More",
+      cta1: "Book a Demo",
+      cta2: "Start Subscription",
       nav1: "https://raasjobsterritory.com/",
     },
-    {
-      heading: "Smart Hiring Zero Risks,",
-      heading1: "Maximum Results",
-      paragraph: "A hiring model built to match your goals, not limit them",
-      statNumber: "10K+",
-      statLabel: "Successful Placement",
-      cta1: "Start Hiring",
-      cta2: "Learn More",
-      nav1: "https://calendly.com/jobsterritory/30min",
-    },
+    // {
+    //   heading: "Smart Hiring Zero Risks,",
+    //   heading1: "Maximum Results",
+    //   paragraph: "A hiring model built to match your goals, not limit them",
+    //   statNumber: "10K+",
+    //   statLabel: "Successful Placement",
+    //   cta1: "Start Hiring",
+    //   cta2: "Learn More",
+    //   nav1: "https://calendly.com/jobsterritory/30min",
+    // },
     {
       heading: "Fractional Hiring,",
       heading1: "Maximum Impact",
       paragraph: "Access top talent when and how you need—no overhead.",
-      statNumber: "48hr",
+      statNumber: "48 hrs",
       statLabel: "Average Response Time",
       cta1: "Explore Talent",
       cta2: "How It Works",
@@ -349,7 +349,7 @@ const Hero = () => {
       heading1: "Redefining Remote Work",
       paragraph:
         "Connecting women professionals with flexible, inclusive opportunities.",
-      statNumber: "48hr",
+      statNumber: "48 hrs",
       statLabel: "Average Response Time",
       cta1: "Hire with Streelancer",
       cta2: "Join as a Streelancer",
@@ -435,7 +435,7 @@ const Hero = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(255,255,255,0.34)] backdrop-blur-md border border-white/30 text-sm font-medium shadow-sm hover:scale-105 transition-transform"
+                    className="font-medium flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(255,255,255,0.34)] backdrop-blur-md border border-white/30 text-sm font-medium shadow-sm hover:scale-105 transition-transform"
                   >
                     {feature.icon}
                     <span>{feature.text}</span>
@@ -456,10 +456,10 @@ const Hero = () => {
                     transition={{ duration: 0.5 }}
                     className="bg-[rgba(255,255,255,0.34)] backdrop-blur-md px-6 py-4 rounded-xl shadow-md border border-white/40 text-center"
                   >
-                    <div className="text-3xl font-bold">
+                    <div className="text-2xl font-bold">
                       {slides[currentSlide].statNumber}
                     </div>
-                    <div className="text-sm font-medium font-poppins">
+                    <div className=" font-medium font-poppins">
                       {slides[currentSlide].statLabel}
                     </div>
                   </motion.div>
@@ -529,7 +529,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="absolute bottom-10 right-10 z-40 hidebuttons:hidden"
+            className="absolute bottom-10 right-[-2rem] custom:right-10 z-40 hidebuttons:hidden"
           >
             <div className="flex items-center gap-6">
               {/* Hire Now */}

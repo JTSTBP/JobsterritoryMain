@@ -39,14 +39,16 @@ const Footer = () => {
     'Media & Entertainment'
   ];
 
-  const quickLinks = [
-    'About Us',
-    'Our Process',
-    'Success Stories',
-    'Career Opportunities',
-    'Privacy Policy',
-    'Terms of Service'
-  ];
+ const quickLinks = [
+   { name: "About Us", path: "/AboutUs" },
+   { name: "Contact Us", path: "/ContactUs" },
+   //  { name: "Our Process", path: "/OurProcess" },
+   //  { name: "Success Stories", path: "/SuccessStories" },
+   //  { name: "Career Opportunities", path: "/Careers" },
+   { name: "Privacy Policy", path: "/PrivacyPolicy" },
+   { name: "Terms And Conditions", path: "/TermsAndConditions" },
+ ];
+
 
   const socialLinks = [
     {
@@ -120,7 +122,7 @@ const Footer = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   {[
-                    { icon: Users, number: "10K+", label: "Placements" },
+                    { icon: Users, number: "10,000", label: "Placements" },
                     { icon: Award, number: "95%", label: "Success Rate" },
                     { icon: Clock, number: "48hrs", label: "Response Time" },
                   ].map((stat, index) => (
@@ -285,17 +287,17 @@ const Footer = () => {
               <ul className="space-y-2">
                 {quickLinks.slice(0, 4).map((link, index) => (
                   <motion.li
-                    key={link}
+                    key={link.name}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     viewport={{ once: true }}
                   >
                     <a
-                      href="#"
+                      href={link.path}
                       className="text-gray-400 hover:text-primary-400 transition-colors duration-200 text-sm"
                     >
-                      {link}
+                      {link.name}
                     </a>
                   </motion.li>
                 ))}
