@@ -16,7 +16,7 @@ const ClientLogos = () => {
   ];
 
   const stats = [
-    { value: "500+", label: "Companies Served" },
+    { value: "15000+", label: "Companies Served" },
     { value: "10,000", label: "Successful Placements" },
     { value: "95%", label: "Client Retention" },
     { value: "48hrs", label: "Average Response" },
@@ -107,7 +107,7 @@ const ClientLogos = () => {
             transition={{ duration: 0.6, delay: index * 0.2 }}
             whileHover={{ scale: 1.1 }}
             viewport={{ once: true }}
-            className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 bg-violet-100 rounded-full flex flex-col justify-center items-center text-center shadow-md border-4 border-[#DAD4FF]"
+            className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 bg-violet-100 rounded-full flex flex-col justify-center items-center text-center shadow-md border-4 border-[#DAD4FF]"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#6A1FFF]">
               {stat.value}

@@ -349,36 +349,40 @@ const Hero = () => {
       heading1: "Redefining Remote Work",
       paragraph:
         "Connecting women professionals with flexible, inclusive opportunities.",
-      statNumber: "48 hrs",
-      statLabel: "Average Response Time",
+      // statNumber: "48 hrs",
+      // statLabel: "Average Response Time",
       cta1: "Hire with Streelancer",
       cta2: "Join as a Streelancer",
       nav1: "https://streelancer.com/",
+      nav2: "https://www.streelancer.com/Remotetalent#contact",
     },
   ];
-  const backgroundImage = "/images/exherobg3.png";
+  const backgroundImage = "/images/herotab.png";
   const backgroundImagesmall = "/images/bgsmall.png";
 
   const backgroundImages = [
     {
       url: "/images/exbg1.png",
+      tab: backgroundImage,
+      small: backgroundImagesmall,
     },
     {
       url: "/images/exbg2.png",
+      tab: backgroundImage,
+      small: backgroundImagesmall,
     },
     {
-      url: "/images/exbg3.png",
-    },
-    {
-      url: "/images/exbg4.png",
+      url: "/images/herostree.png",
+      tab: "/images/herostreetab.png",
+      small: "/images/herostreetab.png",
     },
   ];
   const currentImage =
     screenWidth >= 1024
       ? backgroundImages[currentSlide].url // Desktop
       : screenWidth >= 568
-      ? backgroundImage // Tablet
-      : backgroundImagesmall; // Mobile
+      ? backgroundImages[currentSlide].tab // Tablet
+      : backgroundImages[currentSlide].small; ; // Mobile
 
   return (
     <div className="bg-[#EFEFEF] py-4 font-montserrat">
@@ -395,7 +399,7 @@ const Hero = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          className="rounded-[10px] relative w-[89%] mx-auto min-h-screen text-[#240960] flex flex-col  px-4 py-10 pt-16 md:pt-24 lg:pt-12 pl-4 md:pl-10 lg:pl-16 xs:pt-[6.5rem] xs:pb-[10rem]"
+          className="rounded-[10px] relative w-[89%] mx-auto min-h-screen text-[#240960] flex flex-col  px-4 py-10 pt-16 md:pt-24 lg:pt-12 pl-4 md:pl-10 lg:pl-16 "
         >
           {/* TOP TEXT + RIGHT IMAGE */}
           <motion.div
@@ -404,7 +408,7 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -30, opacity: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8"
+            className="text-center mb-10 "
           >
             {/* LEFT SIDE TEXT */}
             <div className=" flex flex-col gap-5 lg:pt-20  lg:w-[50%] text-left ">
@@ -450,135 +454,218 @@ const Hero = () => {
                 className="relative w-full z-40 self-end"
               >
                 <div className="flex flex-col items-start w-full max-w-[24rem] space-y-6">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="bg-[rgba(255,255,255,0.34)] backdrop-blur-md px-6 py-4 rounded-xl shadow-md border border-white/40 text-center"
-                  >
-                    <div className="text-2xl font-bold">
-                      {slides[currentSlide].statNumber}
-                    </div>
-                    <div className=" font-medium font-poppins">
-                      {slides[currentSlide].statLabel}
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="self-end flex items-center space-x-4"
-                  >
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={prevSlide}
-                      className="w-10 h-10 bg-[rgba(178,164,249,0.59)] rounded-full flex items-center justify-center shadow-md hover:bg-[#a855f7]/70 transition"
+                  {slides[currentSlide].statNumber && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="bg-[rgba(255,255,255,0.34)] backdrop-blur-md px-6 py-4 rounded-xl shadow-md border border-white/40 text-center"
                     >
-                      <ChevronLeft size={20} className="text-[#240960]" />
-                    </motion.button>
+                      <div className="text-2xl font-bold">
+                        {slides[currentSlide].statNumber}
+                      </div>
+                      <div className=" font-medium font-poppins">
+                        {slides[currentSlide].statLabel}
+                      </div>
+                    </motion.div>
+                  )}
+                  {!slides[currentSlide].statNumber && (
+                    <div className="flex flex-col md:flex-row items-center gap-6">
+                      {/* Hire Now */}
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() =>
+                          handleNavigation(slides[currentSlide].nav1)
+                        }
+                        className="flex items-center gap-2 "
+                      >
+                        <button className="xl:w-[200px] whitespace-nowrap flex items-center justify-center bg-gradient-to-r from-[#2c1361] to-[#7300ff] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">
+                          {slides[currentSlide].cta1}
+                        </button>
+                        <div className="w-1 h-0.5 bg-[#cfc0ff]" />
+                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-[#2c1361] to-[#7300ff] border-2 border-[#cfc0ff] shadow-md">
+                          <ArrowUpRight
+                            size={18}
+                            strokeWidth={2}
+                            className="text-white"
+                          />
+                        </div>
+                      </motion.div>
 
-                    <div className="flex space-x-3">
-                      {Array.from({ length: totalSlides }).map((_, index) => (
-                        <motion.span
-                          key={index}
-                          whileHover={{ scale: 1.2 }}
-                          onClick={() => setCurrentSlide(index)}
-                          className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
-                            currentSlide === index
-                              ? "bg-[#5f00f5]"
-                              : "bg-[#a47ff5]"
-                          }`}
-                        />
-                      ))}
+                      {/* Watch Demo */}
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        // onClick={() =>
+                        //   window.open(
+                        //     "https://calendly.com/jobsterritory/30min",
+                        //     "_blank"
+                        //   )
+                        // }
+                        onClick={() =>
+                          handleNavigation(slides[currentSlide].nav2)
+                        }
+                        className="flex items-center gap-2"
+                      >
+                        <button
+                          className="xl:w-[200px] whitespace-nowrap flex items-center justify-center bg-gradient-to-r from-[#7300ff] to-[#2c1361] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md"
+                        >
+                          {slides[currentSlide].cta2}
+                        </button>
+                        <div className="w-1 h-0.5 bg-[#cfc0ff]" />
+                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-[#7300ff] to-[#2c1361] border-2 border-[#cfc0ff] shadow-md">
+                          <ArrowUpRight
+                            size={18}
+                            strokeWidth={2}
+                            className="text-white"
+                          />
+                        </div>
+                      </motion.div>
                     </div>
-
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={nextSlide}
-                      className="w-10 h-10 bg-[rgba(178,164,249,0.59)] rounded-full flex items-center justify-center shadow-md hover:bg-[#a855f7]/70 transition"
+                  )}
+                  {slides[currentSlide].statNumber && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6 }}
+                      className="self-end flex items-center space-x-4"
                     >
-                      <ChevronRight size={20} className="text-[#240960]" />
-                    </motion.button>
-                  </motion.div>
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={prevSlide}
+                        className="w-10 h-10 bg-[rgba(178,164,249,0.59)] rounded-full flex items-center justify-center shadow-md hover:bg-[#a855f7]/70 transition"
+                      >
+                        <ChevronLeft size={20} className="text-[#240960]" />
+                      </motion.button>
+
+                      <div className="flex space-x-3">
+                        {Array.from({ length: totalSlides }).map((_, index) => (
+                          <motion.span
+                            key={index}
+                            whileHover={{ scale: 1.2 }}
+                            onClick={() => setCurrentSlide(index)}
+                            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
+                              currentSlide === index
+                                ? "bg-[#5f00f5]"
+                                : "bg-[#a47ff5]"
+                            }`}
+                          />
+                        ))}
+                      </div>
+
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={nextSlide}
+                        className="w-10 h-10 bg-[rgba(178,164,249,0.59)] rounded-full flex items-center justify-center shadow-md hover:bg-[#a855f7]/70 transition"
+                      >
+                        <ChevronRight size={20} className="text-[#240960]" />
+                      </motion.button>
+                    </motion.div>
+                  )}
                 </div>
               </motion.div>
             </div>
-
-            {/* RIGHT SIDE IMAGE */}
-            {/* <div className="flex-1 flex justify-center hidebuttons:hidden">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={currentSlide}
-                  src={slideImages[currentSlide]}
-                  alt="Hero Slide"
-                  className="w-[450px] lg:w-[550px]  rounded-xl "
-                  initial={{ opacity: 0, x: 40 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -40 }}
-                  transition={{ duration: 0.8 }}
-                />
-              </AnimatePresence>
-            </div> */}
           </motion.div>
+          {!slides[currentSlide].statNumber && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mt-5 flex justify-center  items-center space-x-4"
+            >
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={prevSlide}
+                className="w-10 h-10 bg-[rgba(178,164,249,0.59)] rounded-full flex items-center justify-center shadow-md hover:bg-[#a855f7]/70 transition"
+              >
+                <ChevronLeft size={20} className="text-[#240960]" />
+              </motion.button>
+
+              <div className="flex space-x-3">
+                {Array.from({ length: totalSlides }).map((_, index) => (
+                  <motion.span
+                    key={index}
+                    whileHover={{ scale: 1.2 }}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
+                      currentSlide === index ? "bg-[#5f00f5]" : "bg-[#a47ff5]"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={nextSlide}
+                className="w-10 h-10 bg-[rgba(178,164,249,0.59)] rounded-full flex items-center justify-center shadow-md hover:bg-[#a855f7]/70 transition"
+              >
+                <ChevronRight size={20} className="text-[#240960]" />
+              </motion.button>
+            </motion.div>
+          )}
 
           {/* Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="absolute bottom-10 right-[-2rem] custom:right-10 z-40 hidebuttons:hidden"
-          >
-            <div className="flex items-center gap-6">
-              {/* Hire Now */}
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={openPopup}
-                className="flex items-center gap-2 "
-              >
-                <button className="xl:w-[200px] flex items-center justify-center bg-gradient-to-r from-[#2c1361] to-[#7300ff] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">
-                  {slides[currentSlide].cta1}
-                </button>
-                <div className="w-1 h-0.5 bg-[#cfc0ff]" />
-                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-[#2c1361] to-[#7300ff] border-2 border-[#cfc0ff] shadow-md">
-                  <ArrowUpRight
-                    size={18}
-                    strokeWidth={2}
-                    className="text-white"
-                  />
-                </div>
-              </motion.div>
+          {slides[currentSlide].statNumber && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.6 }}
+              className="absolute bottom-10 md:right-[0rem] right-[-3rem] custom:right-10 z-40 hidebuttons:hidden"
+            >
+              <div className="flex items-center gap-6">
+                {/* Hire Now */}
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={openPopup}
+                  className="flex items-center gap-2 "
+                >
+                  <button className="xl:w-[200px] flex items-center justify-center bg-gradient-to-r from-[#2c1361] to-[#7300ff] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">
+                    {slides[currentSlide].cta1}
+                  </button>
+                  <div className="w-1 h-0.5 bg-[#cfc0ff]" />
+                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-[#2c1361] to-[#7300ff] border-2 border-[#cfc0ff] shadow-md">
+                    <ArrowUpRight
+                      size={18}
+                      strokeWidth={2}
+                      className="text-white"
+                    />
+                  </div>
+                </motion.div>
 
-              {/* Watch Demo */}
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                // onClick={() =>
-                //   window.open(
-                //     "https://calendly.com/jobsterritory/30min",
-                //     "_blank"
-                //   )
-                // }
-                onClick={() => handleNavigation(slides[currentSlide].nav1)}
-                className="flex items-center gap-2"
-              >
-                <button className="xl:w-[200px] flex items-center justify-center bg-gradient-to-r from-[#7300ff] to-[#2c1361] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">
-                  {slides[currentSlide].cta2}
-                </button>
-                <div className="w-1 h-0.5 bg-[#cfc0ff]" />
-                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-[#7300ff] to-[#2c1361] border-2 border-[#cfc0ff] shadow-md">
-                  <ArrowUpRight
-                    size={18}
-                    strokeWidth={2}
-                    className="text-white"
-                  />
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
+                {/* Watch Demo */}
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  // onClick={() =>
+                  //   window.open(
+                  //     "https://calendly.com/jobsterritory/30min",
+                  //     "_blank"
+                  //   )
+                  // }
+                  onClick={() => handleNavigation(slides[currentSlide].nav1)}
+                  className="flex items-center gap-2"
+                >
+                  <button className="xl:w-[200px] flex items-center justify-center bg-gradient-to-r from-[#7300ff] to-[#2c1361] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">
+                    {slides[currentSlide].cta2}
+                  </button>
+                  <div className="w-1 h-0.5 bg-[#cfc0ff]" />
+                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-[#7300ff] to-[#2c1361] border-2 border-[#cfc0ff] shadow-md">
+                    <ArrowUpRight
+                      size={18}
+                      strokeWidth={2}
+                      className="text-white"
+                    />
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
         </motion.div>
       </AnimatePresence>
     </div>

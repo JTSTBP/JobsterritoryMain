@@ -7,7 +7,7 @@ const Testimonial = require("../models/testimonials");
 const RecruiterRequest = require("../models/recruiterReq");
 
 
-const { sendContactmail } = require("../utils/sendemails");
+const { sendContactmail, sendRecruitermail } = require("../utils/sendemails");
 
 const router = express.Router();
 
@@ -133,7 +133,11 @@ router.post("/add-recruiter-request", async (req, res) => {
     });
 
     await newRequest.save();
-    res.status(200).json({ message: "Recruiter request submitted successfully" });
+    // send email notification (separate from contact mail)
+    await sendRecruitermail(newRequest);
+    res
+      .status(200)
+      .json({ message: "Recruiter request submitted successfully" });
   } catch (error) {
     console.error("Error saving recruiter request:", error);
     res.status(500).json({ message: "Server error. Please try again later." });

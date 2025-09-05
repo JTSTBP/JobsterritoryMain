@@ -106,7 +106,7 @@ const Homepage = () => {
     {
       id: 2,
       title: "importance-of-executive-search-for-c-suite-ro",
-      image: "/images/blogsimg.png",
+      image: "/images/blogsh1.png",
       bg: "#1B084C",
     },
     {
@@ -117,7 +117,7 @@ const Homepage = () => {
     {
       id: 4,
       title: "importance-of-executive-search-for-c-suite-ro",
-      image: "/images/blogsh1.png",
+      image: "/images/blogsh2.png",
       bg: "#1B084C",
     },
     {
@@ -128,43 +128,12 @@ const Homepage = () => {
     {
       id: 6,
       title: "importance-of-executive-search-for-c-suite-ro",
-      image: "/images/blogsh2.png",
-      bg: "#1B084C",
-    },
-
-    {
-      id: 7,
-      title: "pay-per-hire-a-fix-for-costly-hiring",
-      image: "/images/blogsimg1.png",
-    },
-    {
-      id: 8,
-      title: "pay-per-hire-smarter-hiring-better-roi",
       image: "/images/blogsh3.png",
       bg: "#1B084C",
     },
-    {
-      id: 9,
-      title: "fast-hiring-no-upfront-fees",
-      image: "/images/blogimg1.png",
-    },
-    {
-      id: 10,
-      title: "pay-per-hire-trend-or-future-of-hiring",
-      image: "/images/blogsh1.png",
-      bg: "#1B084C",
-    },
-    {
-      id: 11,
-      title: "is-pay-per-hire-changing-recruitment-forever",
-      image: "/images/blogimg2.png",
-    },
-    {
-      id: 12,
-      title: "how-pay-per-hire-can-cut-hiring-costs-by-50percent",
-      image: "/images/blogsh2.png",
-      bg: "#1B084C",
-    },
+
+    
+    
   ];
 
   const faqData = [

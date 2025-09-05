@@ -86,7 +86,7 @@ const faqData = [
    {
      id: 2,
      title: "importance-of-executive-search-for-c-suite-ro",
-     image: "/images/blogsimg.png",
+     image: "/images/blogsh1.png",
      bg: "#1B084C",
    },
    {
@@ -97,7 +97,7 @@ const faqData = [
    {
      id: 4,
      title: "importance-of-executive-search-for-c-suite-ro",
-     image: "/images/blogsimgsh1.png",
+     image: "/images/blogsh2.png",
      bg: "#1B084C",
    },
    {
@@ -108,7 +108,7 @@ const faqData = [
    {
      id: 6,
      title: "importance-of-executive-search-for-c-suite-ro",
-     image: "/images/blogsimgsh2.png",
+     image: "/images/blogsh3.png",
      bg: "#1B084C",
    },
 ];

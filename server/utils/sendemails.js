@@ -58,6 +58,37 @@ const sendContactmail = async (formData) => {
   }
 };
 
+
+const sendRecruitermail = async (formData) => {
+  try {
+    const { name, phone, email, company, requirement, level } = formData;
+
+    const safe = (v) => (v && String(v).trim() ? v : "—");
+
+    const mailOptions = {
+      from: `"Recruiter Request" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      subject: "📩 New Recruiter Request Submission",
+      html: `
+        <h3>New Recruiter Request</h3>
+        <p><strong>Name:</strong> ${safe(name)}</p>
+        <p><strong>Phone Number:</strong> ${safe(phone)}</p>
+        <p><strong>Email:</strong> ${safe(email)}</p>
+        <p><strong>Company:</strong> ${safe(company)}</p>
+        <p><strong>Requirement:</strong> ${safe(requirement)}</p>
+        <p><strong>Position Level:</strong> ${safe(level)}</p>
+      `,
+    };
+
+    const info = await transporter.sendMail(mailOptions);
+    console.log("✅ Recruiter email sent:", info.messageId);
+    return info;
+  } catch (err) {
+    console.error("❌ Error sending recruiter email:", err);
+    throw err;
+  }
+};
 module.exports = {
   sendContactmail,
+  sendRecruitermail,
 };
