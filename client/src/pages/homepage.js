@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
   const { openPopup } = usePopup();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const industries = [
     {
       title: "Technology & Startups",
@@ -131,9 +131,6 @@ const Homepage = () => {
       image: "/images/blogsh3.png",
       bg: "#1B084C",
     },
-
-    
-    
   ];
 
   const faqData = [
@@ -260,7 +257,7 @@ const Homepage = () => {
                 Contact experts
               </motion.button>
               <motion.button
-                onClick={()=>navigate("/ContactUs")}
+                onClick={() => navigate("/contactus")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-[#1B084C] font-medium py-3 px-6 rounded-full shadow hover:bg-gray-100 transition"

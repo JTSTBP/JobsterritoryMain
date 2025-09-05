@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -57,7 +55,6 @@ export default function FeaturedArticles() {
 
   // Filter logic (before pagination)
   const filteredArticles = articles.filter((article) => {
- 
     const matchesCategory =
       active === "All" ||
       (active === "Recruitment" &&
@@ -68,9 +65,8 @@ export default function FeaturedArticles() {
         article.heading.toLowerCase().includes("career")) ||
       (active === "Industry Insights" &&
         article.heading.toLowerCase().includes("industry")) ||
-      (active === "HR Trends" &&
-        article.heading.toLowerCase().includes("hr"));
-      // article.category?.toLowerCase() === active.toLowerCase();
+      (active === "HR Trends" && article.heading.toLowerCase().includes("hr"));
+    // article.category?.toLowerCase() === active.toLowerCase();
 
     const matchesSearch =
       article.heading.toLowerCase().includes(search.toLowerCase()) ||
@@ -163,7 +159,7 @@ export default function FeaturedArticles() {
               <div
                 key={item._id}
                 className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer"
-                onClick={() => navigate(`/Blog/${item.slug}`)}
+                onClick={() => navigate(`/blogs/${item.slug}`)}
               >
                 {/* Banner */}
                 <div className="h-40 bg-gray-100 overflow-hidden">

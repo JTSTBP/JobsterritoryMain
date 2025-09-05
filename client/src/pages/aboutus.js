@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react";
 import Navbar from "../components/home/Navbar";
 
@@ -10,18 +7,18 @@ import Stats from "../components/aboutus/stats";
 import VisionCard from "../components/aboutus/visioncard";
 import FAQSection from "../components/home/faqs";
 
- const stats = [
-   { number: "15000+", label: "Successful Hires" },
-   { number: "100%", label: "Service Commitment" },
-   { number: "500+", label: "Leadership Roles Closed" },
-   { number: "20+", label: "Locations Covered" },
+const stats = [
+  { number: "15000+", label: "Successful Hires" },
+  { number: "100%", label: "Service Commitment" },
+  { number: "500+", label: "Leadership Roles Closed" },
+  { number: "20+", label: "Locations Covered" },
 ];
-  const stats2 = [
-    { number: "24-48", label: "Hours Turnaround" },
-    { number: "500+", label: "Happy Clients " },
-    { number: "100+", label: " Recruitment Specialists " },
-    { number: "98%", label: "Client Retention Rate " },
-  ];
+const stats2 = [
+  { number: "24-48", label: "Hours Turnaround" },
+  { number: "500+", label: "Happy Clients " },
+  { number: "100+", label: " Recruitment Specialists " },
+  { number: "98%", label: "Client Retention Rate " },
+];
 const faqData = [
   {
     question: "What industries do you specialize in?",

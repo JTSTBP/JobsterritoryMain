@@ -13,22 +13,22 @@ const Navbar = () => {
 
   const menuItems = [
     { name: "Home", path: "/" },
-    // { name: "About Us", path: "/AboutUs" },
+    // { name: "About Us", path: "/aboutus" },
 
-    { name: "Fractional Hiring", path: "/FractionHiring" },
+    { name: "Fractional Hiring", path: "/fractionalhiring" },
     // { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Resources", path: "#" },
-    // { name: "About", path: "/AboutUs" },
+    // { name: "About", path: "/aboutus" },
   ];
 
   const miditems = [
     { name: "Home", path: "/" },
-  
-    // { name: "About Us", path: "/AboutUs" },
-    { name: "Fractional Hiring", path: "/FractionHiring" },
+
+    // { name: "About Us", path: "/aboutus" },
+    { name: "Fractional Hiring", path: "/fractionalhiring" },
     // { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Resources", path: "#" },
-    { name: "Hire Now", path: "/ContactUs" },
+    { name: "Hire Now", path: "/contactus" },
     { name: "Raas", path: "#" },
   ];
   // find active index (fallback to 0 if route not found)
@@ -70,19 +70,19 @@ const Navbar = () => {
                         {showResources && (
                           <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
                             <a
-                              href="/CaseStudies"
+                              href="/casestudies"
                               className="block px-4 py-2 hover:bg-gray-200"
                             >
                               Case Studies
                             </a>
                             <a
-                              href="/Blogs"
+                              href="/blogs"
                               className="block px-4 py-2 hover:bg-gray-200"
                             >
                               Blogs
                             </a>
                             <a
-                              href="/AboutUs"
+                              href="/aboutus"
                               className="block px-4 py-2 hover:bg-gray-200"
                             >
                               About Us
@@ -148,19 +148,19 @@ const Navbar = () => {
                         {showResources && (
                           <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
                             <a
-                              href="/CaseStudies"
+                              href="/casestudies"
                               className="block px-4 py-2 hover:bg-gray-200"
                             >
                               Case Studies
                             </a>
                             <a
-                              href="/Blogs"
+                              href="/blogs"
                               className="block px-4 py-2 hover:bg-gray-200"
                             >
                               Blogs
                             </a>
                             <a
-                              href="/AboutUs"
+                              href="/aboutus"
                               className="block px-4 py-2 hover:bg-gray-200"
                             >
                               About Us
@@ -203,19 +203,19 @@ const Navbar = () => {
                       {showResources && (
                         <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
                           <a
-                            href="/CaseStudies"
+                            href="/casestudies"
                             className="block px-4 py-2 hover:bg-gray-200"
                           >
                             Case Studies
                           </a>
                           <a
-                            href="/Blogs"
+                            href="/blogs"
                             className="block px-4 py-2 hover:bg-gray-200"
                           >
                             Blogs
                           </a>
                           <a
-                            href="/AboutUs"
+                            href="/aboutus"
                             className="block px-4 py-2 hover:bg-gray-200"
                           >
                             About Us
@@ -243,7 +243,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-6">
             <div className="relative">
               <a
-                href="/ContactUs"
+                href="/contactus"
                 className=" whitespace-nowrap text-[#1B084C] hover:text-gray-900 transition-colors duration-200 text-sm font-medium  w-40 h-10 rounded-[112px] flex items-center justify-center px-4 bg-no-repeat bg-cover bg-center"
                 style={{
                   backgroundImage: "url('/images/navrec4.png')",
@@ -330,19 +330,19 @@ const Navbar = () => {
                 {showResources && (
                   <div className="ml-4 border-l border-gray-200 pl-4">
                     <a
-                      href="/CaseStudies"
+                      href="/casestudies"
                       className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
                     >
                       Case Studies
                     </a>
                     <a
-                      href="/Blogs"
+                      href="/blogs"
                       className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
                     >
                       Blogs
                     </a>
                     <a
-                      href="/AboutUs"
+                      href="/aboutus"
                       className="block px-4 py-2 hover:bg-gray-200"
                     >
                       About Us
@@ -353,7 +353,7 @@ const Navbar = () => {
 
               <div className="border-t border-gray-200 pt-3 mt-3 space-y-2">
                 <a
-                  href="/ContactUs"
+                  href="/contactus"
                   className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-all duration-200 text-sm font-medium"
                 >
                   Hire Now

@@ -186,7 +186,7 @@ const StaticCaestudies = ({ industries, separate }) => {
             <button
               className="bg-[#1B084C] text-white px-6 py-2 rounded-full hover:bg-purple-700 transition"
               onClick={() => {
-                navigate("/ContactUs");
+                navigate("/contactus");
               }}
             >
               Contact Us

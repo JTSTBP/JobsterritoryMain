@@ -56,7 +56,7 @@ const Services = () => {
       buttonText: "Learn More",
       image: "/images/vec3.png",
       icon: "/images/icon3.png",
-      href: "/FractionHiring",
+      href: "/fractionalhiring",
     },
   ];
 

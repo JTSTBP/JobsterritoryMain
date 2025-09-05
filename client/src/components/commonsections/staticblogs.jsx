@@ -28,7 +28,6 @@ export default function BlogsSection({ blogs }) {
     }
   }, [currentIndex]);
 
- 
   return (
     <div
       className="py-16 sm:px-6 relative w-full"
@@ -69,7 +68,7 @@ export default function BlogsSection({ blogs }) {
                 </p>
               </div>
               <a
-                href="/Blogs"
+                href="/blogs"
                 className="flex items-center gap-1 text-sm font-semibold"
                 style={{ color: "#1B084C" }}
               >
@@ -83,7 +82,7 @@ export default function BlogsSection({ blogs }) {
                 <div
                   key={blog.id}
                   className="relative sm:w-[320px] sm:h-[420px] rounded-2xl overflow-hidden"
-                  onClick={() => navigate(`/Blog/${blog.title}`)}
+                  onClick={() => navigate(`/blogs/${blog.title}`)}
                 >
                   {/* Full image */}
                   <img

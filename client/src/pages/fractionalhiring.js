@@ -77,42 +77,42 @@ const faqData = [
       "Because we deliver top-tier experts on-demand, ensuring flexibility, agility, and cost-effectiveness without compromising quality.",
   },
 ];
- const blogs = [
-   {
-     id: 1,
-     title: "how-to-attract-and-retain-top-c-suite-talent",
-     image: "/images/blogsimg1.png",
-   },
-   {
-     id: 2,
-     title: "importance-of-executive-search-for-c-suite-ro",
-     image: "/images/blogsh1.png",
-     bg: "#1B084C",
-   },
-   {
-     id: 3,
-     title: "c-suite-hiring-trends-in-tech-healthcare",
-     image: "/images/blogimg1.png",
-   },
-   {
-     id: 4,
-     title: "importance-of-executive-search-for-c-suite-ro",
-     image: "/images/blogsh2.png",
-     bg: "#1B084C",
-   },
-   {
-     id: 5,
-     title: "how-to-attract-and-retain-top-c-suite-talent",
-     image: "/images/blogimg2.png",
-   },
-   {
-     id: 6,
-     title: "importance-of-executive-search-for-c-suite-ro",
-     image: "/images/blogsh3.png",
-     bg: "#1B084C",
-   },
+const blogs = [
+  {
+    id: 1,
+    title: "how-to-attract-and-retain-top-c-suite-talent",
+    image: "/images/blogsimg1.png",
+  },
+  {
+    id: 2,
+    title: "importance-of-executive-search-for-c-suite-ro",
+    image: "/images/blogsh1.png",
+    bg: "#1B084C",
+  },
+  {
+    id: 3,
+    title: "c-suite-hiring-trends-in-tech-healthcare",
+    image: "/images/blogimg1.png",
+  },
+  {
+    id: 4,
+    title: "importance-of-executive-search-for-c-suite-ro",
+    image: "/images/blogsh2.png",
+    bg: "#1B084C",
+  },
+  {
+    id: 5,
+    title: "how-to-attract-and-retain-top-c-suite-talent",
+    image: "/images/blogimg2.png",
+  },
+  {
+    id: 6,
+    title: "importance-of-executive-search-for-c-suite-ro",
+    image: "/images/blogsh3.png",
+    bg: "#1B084C",
+  },
 ];
- 
+
 const industries = [
   {
     title: "Practo",
@@ -210,8 +210,8 @@ const industries = [
 ];
 
 const FractionalHiring = () => {
-    const navigate = useNavigate();
-    const { openPopup } = usePopup();
+  const navigate = useNavigate();
+  const { openPopup } = usePopup();
   return (
     <div>
       <Navbar />
@@ -222,7 +222,7 @@ const FractionalHiring = () => {
         paragraph="When projects can’t wait months for leadership, we connect you with battle-tested industry experts who deliver measurable impact within days — without the cost or commitment of full-time hires."
         primaryButtonText="Explore"
         secondrybuttontext="Book a call"
-        onPrimaryButtonClick={() => navigate("/ContactUs")}
+        onPrimaryButtonClick={() => navigate("/contactus")}
         onSecondaryButtonClick={openPopup}
         showBottomButton={true}
       />

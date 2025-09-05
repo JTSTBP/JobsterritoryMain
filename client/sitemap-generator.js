@@ -7,14 +7,14 @@ async function generateSitemap() {
   // Static routes
   const routes = [
     { url: "/", changefreq: "daily", priority: 1.0 },
-    { url: "/FractionHiring", changefreq: "weekly", priority: 0.8 },
+    { url: "/fractionalhiring", changefreq: "weekly", priority: 0.8 },
     { url: "/Payperhire", changefreq: "weekly", priority: 0.8 },
-    { url: "/AboutUs", changefreq: "monthly", priority: 0.7 },
-    { url: "/ContactUs", changefreq: "monthly", priority: 0.6 },
-    { url: "/CaseStudies", changefreq: "weekly", priority: 0.7 },
-    { url: "/Blogs", changefreq: "weekly", priority: 0.7 },
-    { url: "/TermsandConditions", changefreq: "yearly", priority: 0.5 },
-    { url: "/PrivacyPolicy", changefreq: "yearly", priority: 0.5 },
+    { url: "/aboutus", changefreq: "monthly", priority: 0.7 },
+    { url: "/contactus", changefreq: "monthly", priority: 0.6 },
+    { url: "/casestudies", changefreq: "weekly", priority: 0.7 },
+    { url: "/blogs", changefreq: "weekly", priority: 0.7 },
+    { url: "/termsandconditions", changefreq: "yearly", priority: 0.5 },
+    { url: "/privacypolicy", changefreq: "yearly", priority: 0.5 },
   ];
 
   // Dynamic routes placeholders
@@ -30,7 +30,7 @@ async function generateSitemap() {
   });
 
   blogSlugs.forEach((slug) => {
-    routes.push({ url: `/Blog/${slug}`, changefreq: "weekly", priority: 0.7 });
+    routes.push({ url: `/blogs/${slug}`, changefreq: "weekly", priority: 0.7 });
   });
 
   // Create sitemap

@@ -1,25 +1,22 @@
-
-
-
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Twitter, 
-  Facebook, 
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Facebook,
   Instagram,
   ArrowRight,
   Clock,
   Award,
-  Users
-} from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+  Users,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const services = [
     {
@@ -27,28 +24,27 @@ const Footer = () => {
       url: "https://raasjobsterritory.com/",
     },
     // { name: "Pay Per Hire", url: "/Payperhire" },
-    { name: "Fractional Hiring", url: "/FractionHiring" },
+    { name: "Fractional Hiring", url: "/fractionalhiring" },
   ];
 
   const industries = [
-    'Technology & Startups',
-    'E-commerce & Retail',
-    'Manufacturing',
-    'Healthcare',
-    'BFSI',
-    'Media & Entertainment'
+    "Technology & Startups",
+    "E-commerce & Retail",
+    "Manufacturing",
+    "Healthcare",
+    "BFSI",
+    "Media & Entertainment",
   ];
 
- const quickLinks = [
-   { name: "About Us", path: "/AboutUs" },
-   { name: "Contact Us", path: "/ContactUs" },
-   //  { name: "Our Process", path: "/OurProcess" },
-   //  { name: "Success Stories", path: "/SuccessStories" },
-   //  { name: "Career Opportunities", path: "/Careers" },
-   { name: "Privacy Policy", path: "/PrivacyPolicy" },
-   { name: "Terms And Conditions", path: "/TermsAndConditions" },
- ];
-
+  const quickLinks = [
+    { name: "About Us", path: "/aboutus" },
+    { name: "Contact Us", path: "/contactus" },
+    //  { name: "Our Process", path: "/OurProcess" },
+    //  { name: "Success Stories", path: "/SuccessStories" },
+    //  { name: "Career Opportunities", path: "/Careers" },
+    { name: "Privacy Policy", path: "/privacypolicy" },
+    { name: "Terms And Conditions", path: "/termsandconditions" },
+  ];
 
   const socialLinks = [
     {
@@ -353,13 +349,13 @@ const Footer = () => {
               </div>
               <div className="flex space-x-6">
                 <a
-                  onClick={() => navigate("/PrivacyPolicy")}
+                  onClick={() => navigate("/privacypolicy")}
                   className="hover:text-primary-400 transition-colors cursor-pointer"
                 >
                   Privacy Policy
                 </a>
                 <a
-                  onClick={() => navigate("/TermsandConditions")}
+                  onClick={() => navigate("/termsandconditions")}
                   className="hover:text-primary-400 transition-colors cursor-pointer"
                 >
                   Terms of Service
@@ -380,6 +376,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-

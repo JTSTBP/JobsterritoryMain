@@ -35,7 +35,7 @@
 //         </div>
 //       </div>
 //           <div className="flex flex-col md:flex-row">
-              
+
 //         <div className="space-y-5 text-gray-700 leading-relaxed">
 //           <p>
 //             In today’s competitive market, scaling your business quickly often
@@ -165,17 +165,15 @@
 //   );
 // }
 
-
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Heart, MessageCircle, Share2, Bookmark } from "lucide-react";
 import axios from "axios";
 
-
 export default function ArticlePage() {
   const { slug } = useParams(); // slug from URL
   const [blog, setBlog] = useState(null);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch single blog by slug
@@ -240,7 +238,7 @@ export default function ArticlePage() {
               <button
                 className="px-5 py-2 bg-white text-purple-700 rounded-full font-medium hover:bg-purple-100 transition"
                 onClick={() => {
-                  navigate("/ContactUs");
+                  navigate("/contactus");
                 }}
               >
                 Hire Now
@@ -262,7 +260,7 @@ export default function ArticlePage() {
             <button
               className="px-6 py-2 bg-purple-200 text-gray-900 rounded-full font-medium hover:bg-purple-300 transition"
               onClick={() => {
-                navigate("/ContactUs");
+                navigate("/contactus");
               }}
             >
               Email Us

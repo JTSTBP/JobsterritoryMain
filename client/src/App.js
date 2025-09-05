@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -30,11 +27,9 @@ const PopupContainer = () => {
   return <RecruiterPopup isOpen={isPopupOpen} onClose={closePopup} />;
 };
 
-
 export default function App() {
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
- 
   return (
     <>
       <PopupProvider>
@@ -43,23 +38,20 @@ export default function App() {
           <PopupContainer />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/FractionHiring" element={<FractionalHiring />} />
+            <Route path="/fractionalhiring" element={<FractionalHiring />} />
 
             {/* <Route path="/Payperhire" element={<PayperHire />} /> */}
-            <Route path="/AboutUs" element={<AboutUs />} />
-            <Route path="/ContactUs" element={<ContactUs />} />
-            <Route path="/CaseStudies" element={<CaseStudy />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/casestudies" element={<CaseStudy />} />
             <Route path="/casestudy/:slug" element={<ViewCaseStudy />} />
-            <Route path="/Blogs" element={<BlogsPage />} />
-            <Route path="/Blog/:slug" element={<SeparateBlogs />} />
+            <Route path="/blogs" element={<BlogsPage />} />
+            <Route path="/blogs/:slug" element={<SeparateBlogs />} />
             <Route
-              path="/TermsandConditions"
+              path="/termsandconditions"
               element={<TermsAndConditions />}
             />
-            <Route
-              path="/PrivacyPolicy"
-              element={<PrivacyPolicy />}
-            />
+            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           </Routes>
         </Router>
       </PopupProvider>

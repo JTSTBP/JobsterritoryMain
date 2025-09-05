@@ -43,62 +43,57 @@ const IndustriesGrid = ({ industries, separate }) => {
       {/* First 6 Cards */}
       <div className="mb-5 text-center">
         <div className="columns-1 md:columns-3 gap-6 space-y-6">
-          {(industries).map(
-            (item, index) => (
-              <motion.div
-                key={index}
-                custom={index}
-                variants={cardVariants}
-                initial="hidden"
-                animate="visible"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0px 10px 30px rgba(0,0,0,0.3)",
-                }}
-                style={{
-                  backgroundImage: `url(${item.bg})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-                className={`rounded-xl p-6 shadow-md break-inside-avoid ${item.text}`}
-              >
-                <img src={item.img} className="w-36 mx-auto my-2" />
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-sm mb-4">{item.description}</p>
+          {industries.map((item, index) => (
+            <motion.div
+              key={index}
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0px 10px 30px rgba(0,0,0,0.3)",
+              }}
+              style={{
+                backgroundImage: `url(${item.bg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              className={`rounded-xl p-6 shadow-md break-inside-avoid ${item.text}`}
+            >
+              <img src={item.img} className="w-36 mx-auto my-2" />
+              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+              <p className="text-sm mb-4">{item.description}</p>
 
-                {separate === "true" ? (
-                  <button
-                    className={`py-2 px-4 border rounded-full ${
-                      item.text.includes("#FFFFFF")
-                        ? "bg-[#FFFFFF] text-[#1B084C]"
-                        : "bg-[#1B084C] text-white"
-                    }`}
-                  >
-                    Learn more
-                  </button>
-                ) : (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{
-                      delay: index * 0.3 + 0.4,
-                      type: "spring",
-                      stiffness: 100,
-                    }}
-                    className="bg-[rgba(255,255,255,0.34)] rounded-2xl px-10 py-1 text-center w-fit mx-auto"
-                  >
-                    <h2 className="text-2xl font-bold">{item.placements}</h2>
-                    <p className="text-lg">Placements</p>
-                  </motion.div>
-                )}
-              </motion.div>
-            )
-          )}
+              {separate === "true" ? (
+                <button
+                  className={`py-2 px-4 border rounded-full ${
+                    item.text.includes("#FFFFFF")
+                      ? "bg-[#FFFFFF] text-[#1B084C]"
+                      : "bg-[#1B084C] text-white"
+                  }`}
+                >
+                  Learn more
+                </button>
+              ) : (
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{
+                    delay: index * 0.3 + 0.4,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                  className="bg-[rgba(255,255,255,0.34)] rounded-2xl px-10 py-1 text-center w-fit mx-auto"
+                >
+                  <h2 className="text-2xl font-bold">{item.placements}</h2>
+                  <p className="text-lg">Placements</p>
+                </motion.div>
+              )}
+            </motion.div>
+          ))}
         </div>
       </div>
-
-      
-     
 
       <div className="relative w-[90%] my-2 mx-auto h-[300px] md:h-full rounded-lg overflow-hidden">
         {/* Background Image */}
@@ -121,7 +116,7 @@ const IndustriesGrid = ({ industries, separate }) => {
             <button
               className="bg-[#1B084C] text-white px-6 py-2 rounded-full hover:bg-purple-700 transition"
               onClick={() => {
-                navigate("/ContactUs");
+                navigate("/contactus");
               }}
             >
               Contact Us
@@ -134,4 +129,3 @@ const IndustriesGrid = ({ industries, separate }) => {
 };
 
 export default IndustriesGrid;
-

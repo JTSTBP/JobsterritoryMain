@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/home/Navbar";
 
-
 import { ArrowUpRight, Users, TrendingUp, Target, Award } from "lucide-react";
 
 import Footer from "../components/home/footer";
@@ -12,8 +11,8 @@ const ContactUs = () => {
   return (
     <div>
       <Navbar />
-          <ContactUsicons />
-          <ContactForm/>
+      <ContactUsicons />
+      <ContactForm />
       <Footer />
     </div>
   );

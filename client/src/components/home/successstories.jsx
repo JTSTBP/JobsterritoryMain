@@ -11,8 +11,8 @@ const SuccessStories = () => {
   // const toggleTestimonial = (index) => {
   //   setOpenTestimonial(openTestimonial === index ? null : index);
   // };
- const { openPopup } = usePopup();
-  const navigate=useNavigate()
+  const { openPopup } = usePopup();
+  const navigate = useNavigate();
 
   const stories = [
     {
@@ -324,7 +324,7 @@ const SuccessStories = () => {
         ))}
         <div className="flex items-center justify-center mt-2">
           <button
-            onClick={() => navigate("/CaseStudies")}
+            onClick={() => navigate("/casestudies")}
             className=" bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-sm"
           >
             Explore more

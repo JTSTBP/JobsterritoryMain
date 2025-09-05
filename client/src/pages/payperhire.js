@@ -71,42 +71,42 @@ const faqData = [
       "We combine speed, industry expertise, and DEI-focused recruitment to deliver the right talent without compromise.",
   },
 ];
- const blogs = [
-   {
-     id: 1,
-     title: "pay-per-hire-a-fix-for-costly-hiring",
-     image: "/images/blogsimg1.png",
-   },
-   {
-     id: 2,
-     title: "pay-per-hire-smarter-hiring-better-roi",
-     image: "/images/blogsimg.png",
-     bg: "#1B084C",
-   },
-   {
-     id: 3,
-     title: "fast-hiring-no-upfront-fees",
-     image: "/images/blogimg1.png",
-   },
-   {
-     id: 4,
-     title: "pay-per-hire-trend-or-future-of-hiring",
-     image: "/images/blogsimgsh1.png",
-     bg: "#1B084C",
-   },
-   {
-     id: 5,
-     title: "is-pay-per-hire-changing-recruitment-forever",
-     image: "/images/blogimg2.png",
-   },
-   {
-     id: 6,
-     title: "how-pay-per-hire-can-cut-hiring-costs-by-50percent",
-     image: "/images/blogsimgsh2.png",
-     bg: "#1B084C",
-   },
+const blogs = [
+  {
+    id: 1,
+    title: "pay-per-hire-a-fix-for-costly-hiring",
+    image: "/images/blogsimg1.png",
+  },
+  {
+    id: 2,
+    title: "pay-per-hire-smarter-hiring-better-roi",
+    image: "/images/blogsimg.png",
+    bg: "#1B084C",
+  },
+  {
+    id: 3,
+    title: "fast-hiring-no-upfront-fees",
+    image: "/images/blogimg1.png",
+  },
+  {
+    id: 4,
+    title: "pay-per-hire-trend-or-future-of-hiring",
+    image: "/images/blogsimgsh1.png",
+    bg: "#1B084C",
+  },
+  {
+    id: 5,
+    title: "is-pay-per-hire-changing-recruitment-forever",
+    image: "/images/blogimg2.png",
+  },
+  {
+    id: 6,
+    title: "how-pay-per-hire-can-cut-hiring-costs-by-50percent",
+    image: "/images/blogsimgsh2.png",
+    bg: "#1B084C",
+  },
 ];
- 
+
 const industries = [
   {
     title: "Practo",
@@ -204,7 +204,7 @@ const industries = [
 ];
 
 const PayperHire = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { openPopup } = usePopup();
   return (
     <div>
@@ -216,7 +216,7 @@ const PayperHire = () => {
         paragraph="Hire with confidence — you pay only for successful placements. No upfront costs, no hidden fees, no ongoing commitments."
         primaryButtonText="Get Started"
         secondrybuttontext="Learn More"
-        onPrimaryButtonClick={() => navigate("/ContactUs")}
+        onPrimaryButtonClick={() => navigate("/contactus")}
         onSecondaryButtonClick={openPopup}
         showBottomButton={true}
       />
