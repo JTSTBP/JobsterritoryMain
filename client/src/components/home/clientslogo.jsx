@@ -16,8 +16,8 @@ const ClientLogos = () => {
   ];
 
   const stats = [
-    { value: "15000+", label: "Companies Served" },
-    { value: "10,000", label: "Successful Placements" },
+    { value: "5000+", label: "Companies Served" },
+    { value: "15000+", label: "Successful Placements" },
     { value: "95%", label: "Client Retention" },
     { value: "48hrs", label: "Average Response" },
   ];

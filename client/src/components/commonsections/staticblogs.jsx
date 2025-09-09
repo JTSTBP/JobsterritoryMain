@@ -94,18 +94,15 @@ export default function BlogsSection({ blogs }) {
                   {/* Bottom-left text */}
                   <div className="absolute bottom-4 left-4 text-left w-[156px]">
                     <button
-                      className={`${
-                        blog.bg === "#1B084C"
-                          ? "bg-[#1B084C] text-white"
-                          : "bg-white text-[#1B084C]"
-                      } text-sm font-medium px-4 py-1 rounded-full mb-2 shadow-md`}
+                      className=
+                     
+                         
+                      "bg-white text-[#1B084C] text-sm font-medium px-4 py-1 rounded-full mb-2 shadow-md"
                     >
                       Read More
                     </button>
                     <p
-                      className={`${
-                        blog.bg === "#1B084C" ? "text-[#1B084C]" : "text-white"
-                      } text-lg font-semibold leading-snug`}
+                      className={"text-lg font-semibold leading-snug text-white"}
                     >
                       {blog.title}
                     </p>

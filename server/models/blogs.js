@@ -18,7 +18,7 @@ const blogSchema = new mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User", // assuming you have a User model
-      required: true,
+    
     },
     slug: {
       type: String,

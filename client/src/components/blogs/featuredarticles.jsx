@@ -91,7 +91,7 @@ export default function FeaturedArticles() {
 
   return (
     <div className="p-6 text-[#1B084C]">
-      <div className="flex flex-col items-center text-center py-14 pt-4 px-4 text-[#1B084C]">
+      <div className="flex flex-col items-center text-center py-14 pt-4 px-4 text-[#1B084C] font-poppins">
         {/* Title */}
         <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent leading-tight h-[10vh]">
           <span className="inline-block">Blogs</span>

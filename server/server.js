@@ -5,7 +5,7 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const getdata = require("./routes/data");
-
+const admindata = require("./routes/admin");
 
 const app = express();
 
@@ -22,6 +22,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", getdata);
+
+app.use("/admin", admindata);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
