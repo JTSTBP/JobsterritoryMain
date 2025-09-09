@@ -21,7 +21,7 @@ const Footer = () => {
   const services = [
     {
       name: "Recruitment as a Service (RAAS)",
-      url: "https://raasjobsterritory.com/",
+      url: "/raas",
     },
     // { name: "Pay Per Hire", url: "/Payperhire" },
     { name: "Fractional Hiring", url: "/fractionalhiring" },

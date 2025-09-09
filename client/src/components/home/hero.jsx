@@ -322,7 +322,7 @@ const Hero = () => {
       statLabel: "Unlimited Hires",
       cta1: "Book a Demo",
       cta2: "Start Subscription",
-      nav1: "https://raasjobsterritory.com/",
+      nav1: "/raas",
     },
     // {
     //   heading: "Smart Hiring Zero Risks,",

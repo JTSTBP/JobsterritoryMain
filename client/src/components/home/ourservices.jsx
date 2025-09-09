@@ -25,7 +25,7 @@ const Services = () => {
       buttonText: "Learn More",
       image: "/images/vec1.png",
       icon: "/images/icon1.png",
-      href: "https://raasjobsterritory.com/",
+      href: "/raas",
     },
     // {
     //   // you can use emoji or image path

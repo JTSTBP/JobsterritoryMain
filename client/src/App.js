@@ -21,6 +21,7 @@ import { PopupProvider, usePopup } from "./contexts/popupcontext";
 import TermsAndConditions from "./components/terms";
 import PrivacyPolicy from "./components/policy";
 import NotFound from "./pages/notfound";
+import RaasPage from "./pages/Raas";
 
 // Global popup placed here
 const PopupContainer = () => {
@@ -40,7 +41,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/fractionalhiring" element={<FractionalHiring />} />
-
+            <Route path="/raas" element={<RaasPage />} />
             {/* <Route path="/Payperhire" element={<PayperHire />} /> */}
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contactus" element={<ContactUs />} />

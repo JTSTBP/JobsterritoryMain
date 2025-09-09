@@ -16,6 +16,7 @@ const Navbar = () => {
     // { name: "About Us", path: "/aboutus" },
 
     { name: "Fractional Hiring", path: "/fractionalhiring" },
+    { name: "Raas ", path: "/raas" },
     // { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Resources", path: "#" },
     // { name: "About", path: "/aboutus" },
@@ -26,6 +27,7 @@ const Navbar = () => {
 
     // { name: "About Us", path: "/aboutus" },
     { name: "Fractional Hiring", path: "/fractionalhiring" },
+    { name: "Raas ", path: "/raas" },
     // { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Resources", path: "#" },
     { name: "Hire Now", path: "/contactus" },
@@ -255,7 +257,7 @@ const Navbar = () => {
             </div>
             <a
               className="bg-white p-2 rounded-full"
-              href="https://raasjobsterritory.com/"
+              href="/raas"
               target="_blank"
             >
               <button className="whitespace-nowrap bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md">
@@ -360,7 +362,7 @@ const Navbar = () => {
                 </a>
                 <a
                   className="px-3"
-                  href="https://raasjobsterritory.com/"
+                  href="/raas"
                   target="_blank"
                 >
                   <button className="w-full bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-sm">
