@@ -19,10 +19,7 @@ export default function ArticlePage() {
   }, [slug]);
 
   if (!blog) return <p className="text-center mt-10">Loading...</p>;
-  
-  const clean = blog.desc
-    .replace(/\\r\\n/g, " ") // remove line breaks
-    .replace(/(font-family|font-size|color):[^;"]*;?/gi, ""); // remove font-family, font-size, color
+  const clean = blog.desc.replace(/\\r\\n/g, " ");
 
   return (
     <div className="max-w-7xl mx-auto p-6 text-[#1B084C]">
