@@ -20,6 +20,7 @@ import RecruiterPopup from "./components/commonsections/popup";
 import { PopupProvider, usePopup } from "./contexts/popupcontext";
 import TermsAndConditions from "./components/terms";
 import PrivacyPolicy from "./components/policy";
+import NotFound from "./pages/notfound";
 
 // Global popup placed here
 const PopupContainer = () => {
@@ -52,6 +53,7 @@ export default function App() {
               element={<TermsAndConditions />}
             />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
       </PopupProvider>
