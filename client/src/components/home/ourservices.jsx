@@ -222,7 +222,7 @@ p-6 md:p-7 lg:p-8 overflow-hidden rounded-2xl shadow-lg flex flex-col font-poppi
               boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
             }}
             whileTap={{ scale: 0.95 }}
-            className="text-[#1B084C] bg-white text-primary-600 px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-2"
+            className="text-[#1B084C] bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-2"
           >
             <Zap size={20} />
             <span>Get Started Today</span>

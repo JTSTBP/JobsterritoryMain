@@ -69,15 +69,15 @@ const SuccessStories = () => {
       name: "— Regional Head – Talent Acquisition, Unacademy",
     },
     {
-      logo: "/images/neuron.png",
+      logo: "/images/casimg9.png",
       tags: [
         {
-          text: "Manufacturing & Engineering",
+          text: "Quick Commerce",
           position:
             "absolute top-[2rem] left-[-7%] bg-white px-3 py-1 shadow-md rounded text-base",
         },
         {
-          text: "Neuron",
+          text: "Zepto",
           position:
             "absolute top-[27%] right-0 bg-purple-900 text-white px-3 py-1 shadow-md rounded text-base",
         },
@@ -87,16 +87,16 @@ const SuccessStories = () => {
             "absolute bottom-0 left-[20%] bg-white px-3 py-1 shadow-md rounded text-base",
         },
       ],
-      title: "Neuron Energy",
+      title: "Zepto",
       sections: [
         {
           icon: "⚙",
           heading: "Challenge",
           description: (
             <>
-              "Neuron Energy needed <strong>5+</strong> quick hires in sales,
-              ops, and tech—seeking candidates who drive innovation and
-              efficiency under a tight timeline."
+              "Zepto faced the challenge of filling <strong>25 </strong>
+              positions within 20 days to meet aggressive expansion goals in a
+              competitive quick-commerce industry."
             </>
           ),
         },
@@ -105,31 +105,32 @@ const SuccessStories = () => {
           heading: "Solution",
           description: (
             <>
-              "Sourced industry-specific talent, screened for expertise and fit,
-              and ensured fast, smooth onboarding."
+              "Leveraged an extensive database of pre-vetted candidates and
+              implemented a multi-channel sourcing strategy, including targeted
+              job postings, professional network outreach, and referrals."
             </>
           ),
         },
       ],
       results: [
-        "Successful Hiring",
-        "High-Quality Matches",
-        "Strengthened Workforce",
+        "Positions Filled in 18 Days",
+        "Quality Hires",
+        "Seamless Onboarding",
       ],
       testimonial:
-        '"Jobs Territory delivered exactly what we needed — skilled professionals who could hit the ground running. The entire process was smooth, transparent, and incredibly fast."',
-      name: "— HR Head, Neuron Energy",
+        '"Jobs Territory exceeded our expectations by helping us fill 25 critical positions in less than 20 days. Their proactive approach, attention to detail, and seamless coordination were instrumental in meeting our expansion goals. We couldn’t have done it without them!"',
+      name: "HR Head, Zepto",
     },
     {
-      logo: "/images/flobiz.png",
+      logo: "/images/pagar.png",
       tags: [
         {
-          text: "Financial Technology",
+          text: "Workforce Management",
           position:
             "absolute top-[2rem] left-[-7%] bg-white px-3 py-1 shadow-md rounded text-base",
         },
         {
-          text: "FloBiz",
+          text: "PagarBook",
           position:
             "absolute top-[27%] right-0 bg-purple-900 text-white px-3 py-1 shadow-md rounded text-base",
         },
@@ -139,16 +140,15 @@ const SuccessStories = () => {
             "absolute bottom-0 left-[20%] bg-white px-3 py-1 shadow-md rounded text-base",
         },
       ],
-      title: "FloBiz",
+      title: "PagarBook",
       sections: [
         {
           icon: "⚙",
           heading: "Challenge",
           description: (
             <>
-              "FloBiz needed <strong>150+ BDEs</strong> in 2021–22 with strong
-              SME knowledge and sales skills, requiring a strategic hiring
-              partner."
+              "Required <strong>81+</strong> professionals across sales,
+              customer support, operations, and tech departments."
             </>
           ),
         },
@@ -157,22 +157,20 @@ const SuccessStories = () => {
           heading: "Solution",
           description: (
             <>
-              "Aligned with FloBiz on BDE needs, built a strong talent pipeline,
-              screened for sales and SME fit, and ensured fast, tech-enabled
-              hiring.",
+              "Identified and engaged candidates from fintech, SaaS, and
+              customer success backgrounds.",
             </>
           ),
         },
       ],
       results: [
-        "150+ Hires in FY 2021-2022",
-        "High-Quality Talent",
-        "Improved Recruitment Efficiency",
-        "Offer Acceptance",
+        "81+ Positions Filled",
+        "High-Quality Hires",
+        "Enhanced Efficiency",
       ],
       testimonial:
-        '"From understanding our business needs to delivering exceptional talent, Jobs Territory was a true partner in our hiring journey. Their expertise saved us both time and effort."',
-      name: "— Talent Acquisition Manager, FloBiz",
+        '"Jobs Territory helped us onboard 81+ skilled professionals efficiently, ensuring a seamless hiring process. Their expertise in volume hiring made a significant impact on our company’s growth. Highly recommended!"',
+      name: "-HR Manager, PagarBook",
     },
   ];
 
@@ -363,7 +361,7 @@ const SuccessStories = () => {
               boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
             }}
             whileTap={{ scale: 0.95 }}
-            className="text-[#1B084C] bg-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-2"
+            className="text-[#1B084C] bg-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-2"
           >
             <Zap size={20} />
             <span>Start Your Journey</span>

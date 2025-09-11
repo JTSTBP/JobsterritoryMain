@@ -8,7 +8,7 @@ import HowItWorks from "../components/Raas/howitworks";
 import RaaSCarousel from "../components/Raas/carousel";
 
 import AboutJobsTerritory from "../components/Raas/about";
-import BlogsSection from "../components/Raas/blogs";
+import BlogsSection from "../components/commonsections/staticblogs";
 
 import Navbar from "../components/home/Navbar";
 import Footer from "../components/home/footer";
@@ -178,38 +178,45 @@ const faqData = [
 const blogs = [
   {
     id: 1,
-    title: "raas-smarter-hiring-with-best-recruitment",
+    title: "RAAS smarter hiring with best recruitment",
+    slug: "raas-smarter-hiring-with-best-recruitment",
     image: "/images/blogsimg1.png",
   },
   {
     id: 2,
-    title: "post/scale-without-overloading-hr-raas-explained",
+    title: "Scale without overloading HR RAAS explained",
+    slug: "scale-without-overloading-hr-raas-explained",
     image: "/images/blogsh1.png",
     bg: "#1B084C",
   },
   {
     id: 3,
-    title: "post/how-raas-transforms-your-hiring-process",
+    title: "How RAAS transforms your hiring process",
+    slug: "how-raas-transforms-your-hiring-process",
     image: "/images/blogimg1.png",
   },
   {
     id: 4,
-    title: "why-raas-is-the-secret-weapon-for-startup",
+    title: "Why RAAS is the secret weapon for startup",
+    slug: "why-raas-is-the-secret-weapon-for-startup",
     image: "/images/blogsh2.png",
     bg: "#1B084C",
   },
   {
-    id: 3,
-    title: "how-raas-helps-startup-build-dream-teams-fast",
+    id: 5,
+    title: "How RAAS helps startup build dream teams fast",
+    slug: "how-raas-helps-startup-build-dream-teams-fast",
     image: "/images/blogimg2.png",
   },
   {
-    id: 4,
-    title: "5-signs-your-company-needs-raas-now",
+    id: 6,
+    title: "5 signs your company needs RAAS now",
+    slug: "5-signs-your-company-needs-raas-now",
     image: "/images/blogsh3.png",
     bg: "#1B084C",
   },
 ];
+
 const RaasPage = () => {
   return (
     <div className="font-poppins">

@@ -82,7 +82,7 @@ export default function BlogsSection({ blogs }) {
                 <div
                   key={blog.id}
                   className="relative sm:w-[320px] sm:h-[420px] rounded-2xl overflow-hidden"
-                  onClick={() => navigate(`/blogs/${blog.title}`)}
+                  onClick={() => navigate(`/blogs/${blog.slug}`)}
                 >
                   {/* Full image */}
                   <img

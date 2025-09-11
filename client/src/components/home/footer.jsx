@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -14,9 +14,14 @@ import {
   Users,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import ThankYouPopup from "../commonsections/thankyoupopup";
 
 const Footer = () => {
   const navigate = useNavigate();
+   const [email, setEmail] = useState("");
+   const [popupOpen, setPopupOpen] = useState(false);
+   const [loading, setLoading] = useState(false);
 
   const services = [
     {
@@ -71,6 +76,30 @@ const Footer = () => {
     },
   ];
 
+
+   const handleSubscribe = async () => {
+     if (!email) return;
+
+     try {
+       setLoading(true);
+       const res = await axios.post(
+         `${process.env.REACT_APP_API_URL}/api/subscribe`,
+         { email }
+       );
+
+       if (res.status===201) {
+         setPopupOpen(true);
+         setEmail(""); // clear input
+       }
+     } catch (err) {
+       console.error("Subscription error:", err);
+       alert("❌ Failed to subscribe. Please try again.");
+     } finally {
+       setLoading(false);
+     }
+  };
+  console.log(popupOpen, "popupOpen");
+
   return (
     <footer className="bg-[#1B084C] text-white relative overflow-hidden">
       {/* Background Pattern */}
@@ -118,7 +147,7 @@ const Footer = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   {[
-                    { icon: Users, number: "10,000", label: "Placements" },
+                    { icon: Users, number: "15k", label: "Placements" },
                     { icon: Award, number: "95%", label: "Success Rate" },
                     { icon: Clock, number: "48hrs", label: "Response Time" },
                   ].map((stat, index) => (
@@ -324,16 +353,19 @@ const Footer = () => {
               <div className="flex w-full md:w-auto cursor-pointer">
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   className="flex-1 md:w-64 px-4 py-3 bg-white/10 border border-white/20 rounded-l-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 transition-colors"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-[#dcdcdc] px-6 py-3 rounded-r-xl font-semibold hover:shadow-lg transition-all duration-300
-"
+                  disabled={loading}
+                  onClick={handleSubscribe}
+                  className="bg-[#dcdcdc] px-6 py-3 rounded-r-xl font-semibold hover:shadow-lg transition-all duration-300 disabled:opacity-50"
                 >
-                  Subscribe
+                  {loading ? "..." : "Subscribe"}
                 </motion.button>
               </div>
             </div>
@@ -371,6 +403,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <ThankYouPopup isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
     </footer>
   );
 };

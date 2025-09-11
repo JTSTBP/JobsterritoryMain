@@ -5,8 +5,12 @@ const Contact = require("../models/contact");
 const Logos = require("../models/logos");
 const Testimonial = require("../models/testimonials");
 const RecruiterRequest = require("../models/recruiterReq");
-
-const { sendContactmail, sendRecruitermail } = require("../utils/sendemails");
+const NewSubscribe = require("../models/subscribe");
+const {
+  sendContactmail,
+  sendRecruitermail,
+  newSubscribe,
+} = require("../utils/sendemails");
 
 const router = express.Router();
 
@@ -67,6 +71,30 @@ router.post("/addcontact", async (req, res) => {
     res.status(201).json({ message: "Form submitted successfully!" });
   } catch (error) {
     console.error("Error saving contact:", error);
+    res.status(500).json({ message: "Server error, please try again." });
+  }
+});
+
+
+// subscribe
+
+router.post("/subscribe", async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) {
+      return res.status(400).json({ message: "Email is required" });
+    }
+
+    // Save subscriber to DB
+    const newSubscriber = new NewSubscribe({ email });
+    await newSubscriber.save();
+
+    // Send email notification
+    await newSubscribe(email);
+
+    res.status(201).json({ message: "Subscription successful!" });
+  } catch (error) {
+    console.error("Error saving subscriber:", error);
     res.status(500).json({ message: "Server error, please try again." });
   }
 });

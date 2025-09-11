@@ -29,9 +29,9 @@ const Navbar = () => {
     { name: "Fractional Hiring", path: "/fractionalhiring" },
     { name: "Raas ", path: "/raas" },
     // { name: "Pay Per Hire", path: "/Payperhire" },
-    { name: "Resources", path: "#" },
+  
     { name: "Hire Now", path: "/contactus" },
-    { name: "Raas", path: "#" },
+    { name: "AboutUs", path: "/aboutus" },
   ];
   // find active index (fallback to 0 if route not found)
   const foundIndex = menuItems.findIndex((m) => m.path === location.pathname);
@@ -161,12 +161,7 @@ const Navbar = () => {
                             >
                               Blogs
                             </a>
-                            <a
-                              href="/aboutus"
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              About Us
-                            </a>
+                           
                           </div>
                         )}
                       </div>
@@ -216,12 +211,7 @@ const Navbar = () => {
                           >
                             Blogs
                           </a>
-                          <a
-                            href="/aboutus"
-                            className="block px-4 py-2 hover:bg-gray-200"
-                          >
-                            About Us
-                          </a>
+                         
                         </div>
                       )}
                     </div>
@@ -251,17 +241,17 @@ const Navbar = () => {
                   backgroundImage: "url('/images/navrec4.png')",
                 }}
               >
-                <p>Hire Now</p>
+                <p className="font-semibold">Hire Now</p>
               </a>
               <div className="absolute right-0 top-1/2 w-6 h-[5px] bg-white transform translate-x-full -translate-y-1/2"></div>
             </div>
             <a
               className="bg-white p-2 rounded-full"
-              href="/raas"
+              href="/aboutus"
               target="_blank"
             >
-              <button className="whitespace-nowrap bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md">
-                Raas
+              <button className="font-semibold whitespace-nowrap bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md">
+                About Us
               </button>
             </a>
           </div>
@@ -310,12 +300,12 @@ const Navbar = () => {
         {/* Mobile Dropdown */}
         {isOpen && (
           <div className="md:hidden border-t border-gray-200 bg-gray-50 absolute top-16 left-0 w-full shadow-md z-[60]">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-2 pt-2 pb-3 space-y-1 ">
               {miditems.slice(0, 4).map((item) => (
                 <a
                   key={item.name}
                   href={item.path}
-                  className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-all duration-200 text-sm font-medium"
+                  className="font-bold block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-all duration-200 text-sm "
                 >
                   {item.name}
                 </a>
@@ -324,7 +314,7 @@ const Navbar = () => {
               <div className="relative">
                 <button
                   onClick={() => setShowResources(!showResources)}
-                  className="flex items-center w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md text-sm font-medium"
+                  className="flex items-center w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md text-sm font-bold"
                 >
                   <span>Resources</span>
                   <IoIosArrowDown className="ml-1 text-sm" />
@@ -343,12 +333,7 @@ const Navbar = () => {
                     >
                       Blogs
                     </a>
-                    <a
-                      href="/aboutus"
-                      className="block px-4 py-2 hover:bg-gray-200"
-                    >
-                      About Us
-                    </a>
+                   
                   </div>
                 )}
               </div>
@@ -356,17 +341,17 @@ const Navbar = () => {
               <div className="border-t border-gray-200 pt-3 mt-3 space-y-2">
                 <a
                   href="/contactus"
-                  className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-all duration-200 text-sm font-medium"
+                  className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-all duration-200 text-sm font-bold"
                 >
                   Hire Now
                 </a>
                 <a
                   className="px-3"
-                  href="/raas"
+                  href="/aboutus"
                   target="_blank"
                 >
-                  <button className="w-full bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-sm">
-                    Raas
+                  <button className="w-full bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-all duration-200 shadow-sm">
+                    About Us
                   </button>
                 </a>
               </div>

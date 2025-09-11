@@ -100,34 +100,40 @@ const Homepage = () => {
   const blogs = [
     {
       id: 1,
-      title: "how-to-attract-and-retain-top-c-suite-talent",
+      title: "How to attract and retain top c suite talent",
+      slug: "how-to-attract-and-retain-top-c-suite-talent",
       image: "/images/blogsimg1.png",
     },
     {
       id: 2,
-      title: "importance-of-executive-search-for-c-suite-ro",
+      title: "Importance of executive search for c suite ro",
+      slug: "importance-of-executive-search-for-c-suite-ro",
       image: "/images/blogsh1.png",
       bg: "#1B084C",
     },
     {
       id: 3,
-      title: "c-suite-hiring-trends-in-tech-healthcare",
+      title: "C suite hiring trends in tech healthcare",
+      slug: "c-suite-hiring-trends-in-tech-healthcare",
       image: "/images/blogimg1.png",
     },
     {
       id: 4,
-      title: "importance-of-executive-search-for-c-suite-ro",
+      title: "Importance of executive search for c suite ro",
+      slug: "importance-of-executive-search-for-c-suite-ro",
       image: "/images/blogsh2.png",
       bg: "#1B084C",
     },
     {
       id: 5,
-      title: "how-to-attract-and-retain-top-c-suite-talent",
+      title: "How to attract and retain top c suite talent",
+      slug: "how-to-attract-and-retain-top-c-suite-talent",
       image: "/images/blogimg2.png",
     },
     {
       id: 6,
-      title: "importance-of-executive-search-for-c-suite-ro",
+      title: "Importance of executive search for c suite ro",
+      slug: "importance-of-executive-search-for-c-suite-ro",
       image: "/images/blogsh3.png",
       bg: "#1B084C",
     },
@@ -252,7 +258,7 @@ const Homepage = () => {
                 }}
                 onClick={openPopup}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-[#1B084C] font-medium py-3 px-6 rounded-full shadow hover:bg-gray-100 transition"
+                className="bg-white text-[#1B084C] font-bold py-3 px-6 rounded-full shadow hover:bg-gray-100 transition"
               >
                 Contact experts
               </motion.button>
@@ -260,7 +266,7 @@ const Homepage = () => {
                 onClick={() => navigate("/contactus")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-[#1B084C] font-medium py-3 px-6 rounded-full shadow hover:bg-gray-100 transition"
+                className="bg-white text-[#1B084C] font-bold py-3 px-6 rounded-full shadow hover:bg-gray-100 transition"
               >
                 Schedule call
               </motion.button>

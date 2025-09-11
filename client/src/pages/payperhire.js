@@ -74,38 +74,45 @@ const faqData = [
 const blogs = [
   {
     id: 1,
-    title: "pay-per-hire-a-fix-for-costly-hiring",
+    title: "Pay per hire a fix for costly hiring",
+    slug: "pay-per-hire-a-fix-for-costly-hiring",
     image: "/images/blogsimg1.png",
   },
   {
     id: 2,
-    title: "pay-per-hire-smarter-hiring-better-roi",
+    title: "Pay per hire smarter hiring better ROI",
+    slug: "pay-per-hire-smarter-hiring-better-roi",
     image: "/images/blogsimg.png",
     bg: "#1B084C",
   },
   {
     id: 3,
-    title: "fast-hiring-no-upfront-fees",
+    title: "Fast hiring no upfront fees",
+    slug: "fast-hiring-no-upfront-fees",
     image: "/images/blogimg1.png",
   },
   {
     id: 4,
-    title: "pay-per-hire-trend-or-future-of-hiring",
+    title: "Pay per hire trend or future of hiring",
+    slug: "pay-per-hire-trend-or-future-of-hiring",
     image: "/images/blogsimgsh1.png",
     bg: "#1B084C",
   },
   {
     id: 5,
-    title: "is-pay-per-hire-changing-recruitment-forever",
+    title: "Is pay per hire changing recruitment forever",
+    slug: "is-pay-per-hire-changing-recruitment-forever",
     image: "/images/blogimg2.png",
   },
   {
     id: 6,
-    title: "how-pay-per-hire-can-cut-hiring-costs-by-50percent",
+    title: "How pay per hire can cut hiring costs by 50 percent",
+    slug: "how-pay-per-hire-can-cut-hiring-costs-by-50-percent",
     image: "/images/blogsimgsh2.png",
     bg: "#1B084C",
   },
 ];
+
 
 const industries = [
   {

@@ -88,7 +88,30 @@ const sendRecruitermail = async (formData) => {
     throw err;
   }
 };
+
+const newSubscribe = async (subscriberEmail) => {
+  try {
+    const mailOptions = {
+      from: `"Newsletter Signup" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER, // admin email (your inbox)
+      subject: "📩 New Newsletter Subscription",
+      html: `
+        <h3>New Newsletter Subscription for Jobsterritory</h3>
+        <p><strong>Email:</strong> ${subscriberEmail}</p>
+      `,
+    };
+
+    const info = await transporter.sendMail(mailOptions);
+    console.log("✅ Newsletter email sent:", info.messageId);
+    return info;
+  } catch (err) {
+    console.error("❌ Error sending newsletter email:", err);
+    throw err;
+  }
+};
+
 module.exports = {
   sendContactmail,
+  newSubscribe,
   sendRecruitermail,
 };
