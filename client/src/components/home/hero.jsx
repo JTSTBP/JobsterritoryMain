@@ -194,7 +194,7 @@
 //                          <motion.div
 //                            whileHover={{ scale: 1.05 }}
 //                            whileTap={{ scale: 0.95 }}
-                      
+
 //                            className="flex items-center gap-2 "
 //                          >
 //                            <button className="xl:w-[200px] flex items-center justify-center bg-gradient-to-r from-[#2c1361] to-[#7300ff] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">
@@ -209,7 +209,7 @@
 //                              />
 //                            </div>
 //                          </motion.div>
-           
+
 //                          {/* Watch Demo */}
 //                          <motion.div
 //                            whileHover={{ scale: 1.05 }}
@@ -253,8 +253,6 @@
 // };
 
 // export default Hero;
-
-
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -382,7 +380,7 @@ const Hero = () => {
       ? backgroundImages[currentSlide].url // Desktop
       : screenWidth >= 568
       ? backgroundImages[currentSlide].tab // Tablet
-      : backgroundImages[currentSlide].small; ; // Mobile
+      : backgroundImages[currentSlide].small; // Mobile
 
   return (
     <div className="bg-[#EFEFEF] py-4 font-montserrat">
@@ -508,9 +506,7 @@ const Hero = () => {
                         }
                         className="flex items-center gap-2"
                       >
-                        <button
-                          className="xl:w-[200px] whitespace-nowrap flex items-center justify-center bg-gradient-to-r from-[#7300ff] to-[#2c1361] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md"
-                        >
+                        <button className="xl:w-[200px] whitespace-nowrap flex items-center justify-center bg-gradient-to-r from-[#7300ff] to-[#2c1361] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">
                           {slides[currentSlide].cta2}
                         </button>
                         <div className="w-1 h-0.5 bg-[#cfc0ff]" />
