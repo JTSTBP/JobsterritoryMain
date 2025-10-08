@@ -314,8 +314,8 @@ const Hero = () => {
 
   const slides = [
     {
-      heading: "India’s First Recruitment",
-      heading1: "Subscription Engine",
+      heading: "Raas - India's First Predictable",
+      heading1: "Recruitment Engine",
       paragraph:
         "Stop paying agencies 8–12% per hire. Scale your team with Jobs Territory’s flat monthly subscription. Unlimited roles, unlimited hiring — predictable, fast, and cost-effective.",
       statNumber: "One Subscription",
@@ -362,7 +362,7 @@ const Hero = () => {
 
   const backgroundImages = [
     {
-      url: "/images/exbg1.png",
+      url: "/images/exbg11.png",
       tab: backgroundImage,
       small: backgroundImagesmall,
     },
