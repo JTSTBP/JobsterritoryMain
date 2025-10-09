@@ -119,12 +119,7 @@ const faqData = [
     answer:
       "RAAS is a flexible recruitment subscription where Jobs Territory becomes your extended hiring team. You pay a fixed monthly cost and get unlimited hiring support without extra fees per candidate.",
   },
-  // {
-  //   question: "How does RAAS differ from Pay Per Hire?",
-  //   icon: "/images/f2.png",
-  //   answer:
-  //     "In Pay Per Hire, you pay per successful placement. In RAAS, you pay a flat monthly fee for unlimited roles, making it cost-effective for fast-scaling businesses.",
-  // },
+ 
   {
     question: "What are the main benefits of RAAS?",
     icon: "/images/f3.png",
@@ -149,12 +144,12 @@ const faqData = [
     answer:
       "Absolutely. Startups love RAAS because it gives them predictable costs, unlimited hires, and flexibility to scale without hiring an in-house HR team.",
   },
-  {
-    question: "How much does RAAS cost?",
-    icon: "/images/f7.png",
-    answer:
-      "RAAS Unlimited starts at ₹2,00,000/month. Custom RAAS Enterprise plans (₹3–5L/month) are available for larger teams.",
-  },
+  // {
+  //   question: "How much does RAAS cost?",
+  //   icon: "/images/f7.png",
+  //   answer:
+  //     "RAAS Unlimited starts at ₹2,00,000/month. Custom RAAS Enterprise plans (₹3–5L/month) are available for larger teams.",
+  // },
   {
     question: "How fast can RAAS start delivering results?",
     icon: "/images/f1.png",

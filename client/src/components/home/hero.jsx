@@ -315,7 +315,7 @@ const Hero = () => {
       heading: "Raas - India's First Predictable",
       heading1: "Recruitment Engine",
       paragraph:
-        "Stop paying agencies 8–12% per hire. Scale your team with Jobs Territory’s flat monthly subscription. Unlimited roles, unlimited hiring — predictable, fast, and cost-effective.",
+        "Stop paying 8–12% per hire. Hire smarter with Jobs Territory’s flat monthly plan — Unlimited roles, unlimited hiring.",
       statNumber: "One Subscription",
       statLabel: "Unlimited Hires",
       cta1: "Book a Demo",

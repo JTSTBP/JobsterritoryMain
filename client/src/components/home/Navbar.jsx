@@ -14,9 +14,9 @@ const Navbar = () => {
   const menuItems = [
     { name: "Home", path: "/" },
     // { name: "About Us", path: "/aboutus" },
-
-    { name: "Fractional Hiring", path: "/fractionalhiring" },
     { name: "Raas ", path: "/raas" },
+    { name: "Fractional Hiring", path: "/fractionalhiring" },
+
     // { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Resources", path: "#" },
     // { name: "About", path: "/aboutus" },
@@ -24,12 +24,12 @@ const Navbar = () => {
 
   const miditems = [
     { name: "Home", path: "/" },
-
+    { name: "Raas ", path: "/raas" },
     // { name: "About Us", path: "/aboutus" },
     { name: "Fractional Hiring", path: "/fractionalhiring" },
-    { name: "Raas ", path: "/raas" },
+
     // { name: "Pay Per Hire", path: "/Payperhire" },
-  
+
     { name: "Hire Now", path: "/contactus" },
     { name: "AboutUs", path: "/aboutus" },
   ];

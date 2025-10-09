@@ -91,7 +91,7 @@ const FAQSection = ({ faqData }) => {
                           initial={{ y: -10, opacity: 0 }}
                           animate={{ y: 0, opacity: 1 }}
                           transition={{ delay: 0.1 }}
-                          className="text-[#6A1FFF] font-montserrat leading-relaxed mt-2"
+                          className="text-[#6A1FFF] font-montserrat leading-relaxed mt-2 font-bold"
                         >
                           {faq.answer}
                         </motion.p>
