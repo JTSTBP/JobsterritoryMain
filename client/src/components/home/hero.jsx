@@ -315,7 +315,7 @@ const Hero = () => {
       heading: "Raas - India's First Predictable",
       heading1: "Recruitment Engine",
       paragraph:
-        "Stop paying 8–12% per hire. Hire smarter with Jobs Territory’s flat monthly plan — Unlimited roles, unlimited hiring.",
+        "Stop paying 8–12% per hire. Hire smarter with Jobs Territory’s flat monthly plan — Unlimited roles, Unlimited hiring.",
       statNumber: "One Subscription",
       statLabel: "Unlimited Hires",
       cta1: "Book a Demo",
@@ -360,7 +360,7 @@ const Hero = () => {
 
   const backgroundImages = [
     {
-      url: "/images/exbg11.png",
+      url: "/images/exbg12.png",
       tab: backgroundImage,
       small: backgroundImagesmall,
     },

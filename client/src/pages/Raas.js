@@ -217,7 +217,7 @@ const RaasPage = () => {
     <div className="font-poppins">
       <Navbar />
       <Bannersection
-        backgroundImage="/images/exbg1.png"
+        backgroundImage="/images/raasbg.png"
         heading="Unlimited Hiring. "
         heading1="One Flat Monthly Fee."
         paragraph="2 recruiters + 1 account manager dedicated to you. Pre-screened candidates in 72 hrs. Unlimited roles. Unlimited closures."
