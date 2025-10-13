@@ -222,7 +222,7 @@ const FractionalHiring = () => {
     <div>
       <Navbar />
       <Bannersection
-        backgroundImage="/images/exbg3.png"
+        backgroundImage="/images/exhero33.png"
         heading="Your Growth Accelerator, On Demand"
         heading1="Fractional Hiring"
         paragraph="When projects can’t wait months for leadership, we connect you with battle-tested industry experts who deliver measurable impact within days — without the cost or commitment of full-time hires."

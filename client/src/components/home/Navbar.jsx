@@ -53,7 +53,7 @@ const Navbar = () => {
             />
           </Link>
 
-          <div className="hidden lg:flex items-center ">
+          <div className="hidden lg:flex items-center font-bold">
             {/* Left group (all items before active) */}
             {leftItems.length > 0 && (
               <>
@@ -161,7 +161,6 @@ const Navbar = () => {
                             >
                               Blogs
                             </a>
-                           
                           </div>
                         )}
                       </div>
@@ -183,7 +182,7 @@ const Navbar = () => {
             )}
           </div>
 
-          <div className="hidden md:block  lg:hidden  text-[12px]">
+          <div className="hidden md:block  lg:hidden  text-[12px] font-bold">
             <div className="flex">
               <img src="/images/rec1.png" className="h-10" alt="rec-right" />
               <div className="flex bg-white items-center gap-5">
@@ -211,7 +210,6 @@ const Navbar = () => {
                           >
                             Blogs
                           </a>
-                         
                         </div>
                       )}
                     </div>
@@ -236,12 +234,12 @@ const Navbar = () => {
             <div className="relative">
               <a
                 href="/contactus"
-                className=" whitespace-nowrap text-[#1B084C] hover:text-gray-900 transition-colors duration-200 text-sm font-medium  w-40 h-10 rounded-[112px] flex items-center justify-center px-4 bg-no-repeat bg-cover bg-center"
+                className=" whitespace-nowrap text-[#1B084C] hover:text-gray-900 transition-colors duration-200 text-sm font-bold  w-40 h-10 rounded-[112px] flex items-center justify-center px-4 bg-no-repeat bg-cover bg-center"
                 style={{
                   backgroundImage: "url('/images/navrec4.png')",
                 }}
               >
-                <p className="font-semibold">Hire Now</p>
+                <p className="font-bold">Hire Now</p>
               </a>
               <div className="absolute right-0 top-1/2 w-6 h-[5px] bg-white transform translate-x-full -translate-y-1/2"></div>
             </div>
@@ -250,7 +248,7 @@ const Navbar = () => {
               href="/aboutus"
               target="_blank"
             >
-              <button className="font-semibold whitespace-nowrap bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md">
+              <button className="font-bold whitespace-nowrap bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-all duration-200 shadow-sm hover:shadow-md">
                 About Us
               </button>
             </a>
@@ -333,7 +331,6 @@ const Navbar = () => {
                     >
                       Blogs
                     </a>
-                   
                   </div>
                 )}
               </div>
@@ -345,11 +342,7 @@ const Navbar = () => {
                 >
                   Hire Now
                 </a>
-                <a
-                  className="px-3"
-                  href="/aboutus"
-                  target="_blank"
-                >
+                <a className="px-3" href="/aboutus" target="_blank">
                   <button className="w-full bg-gradient-to-r from-[#2D274B] to-[#5500FE] hover:bg-purple-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-all duration-200 shadow-sm">
                     About Us
                   </button>

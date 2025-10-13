@@ -12,10 +12,15 @@ export default function WhychooseRaas() {
               What Is RaaS?
             </h2>
             <p className="text-base md:text-lg text-gray-700 max-w-3xl">
-              RaaS — Recruitment as a Service, Reinvented for Startups & SMEs
+              {/* RaaS — Recruitment as a Service, Reinvented for Startups & SMEs
               Get 2 dedicated recruiters + 1 account manager embedded in your
               team. We source, screen, and coordinate so you can focus on
-              scaling — with precision hiring handled end-to-end
+              scaling — with precision hiring handled end-to-end */}
+              Recruitment-as-a-Service, reinvented for startups and SMEs. With
+              RAAS, you get unlimited hiring support through a fully managed
+              monthly subscription — where we handle sourcing, screening, and
+              coordination so you can scale without worrying about
+              recruitment bottlenecks.
             </p>
           </div>
 

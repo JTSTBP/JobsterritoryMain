@@ -119,7 +119,7 @@ const faqData = [
     answer:
       "RAAS is a flexible recruitment subscription where Jobs Territory becomes your extended hiring team. You pay a fixed monthly cost and get unlimited hiring support without extra fees per candidate.",
   },
- 
+
   {
     question: "What are the main benefits of RAAS?",
     icon: "/images/f3.png",
@@ -220,7 +220,10 @@ const RaasPage = () => {
         backgroundImage="/images/raasbg.png"
         heading="Unlimited Hiring. "
         heading1="One Flat Monthly Fee."
-        paragraph="2 recruiters + 1 account manager dedicated to you. Pre-screened candidates in 72 hrs. Unlimited roles. Unlimited closures."
+        paragraph="
+Hire across any role, any location — faster, simpler, and at one predictable monthly cost.
+Pre-screened candidates in 72 hours. No commissions. No limits."
+        // paragraph="2 recruiters + 1 account manager dedicated to you. Pre-screened candidates in 72 hrs. Unlimited roles. Unlimited closures."
         features={[
           { icon: <Users size={18} />, text: "Expert Recruiters" },
           { icon: <TrendingUp size={18} />, text: "Fast Turnaround" },
@@ -234,7 +237,7 @@ const RaasPage = () => {
       />
       <WhychooseRaas />
       <HowItWorks />
-      <HiringComparison/>
+      <HiringComparison />
       <RaaSCarousel />
       <AboutJobsTerritory />
 

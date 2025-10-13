@@ -56,7 +56,12 @@ const Bannersection = ({
             transition={{ duration: 0.6 }}
             className="text-left mb-10"
           >
-            <h1 className="text-3xl md:text-4xl font-bold text-[#FFFFFF]">
+            <h1
+              className="text-3xl md:text-4xl font-bold text-[#FFFFFF]"
+              style={{
+                textShadow: "2px 2px 6px rgba(0, 0, 0, 0.2)"
+              }}
+            >
               {heading}
             </h1>
             <h1 className="text-3xl md:text-4xl font-bold text-[#5500FF]">
