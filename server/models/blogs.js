@@ -18,7 +18,6 @@ const blogSchema = new mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User", // assuming you have a User model
-    
     },
     slug: {
       type: String,
@@ -26,6 +25,16 @@ const blogSchema = new mongoose.Schema(
       unique: true, // unique slug for SEO friendly URLs
       lowercase: true,
       trim: true,
+    },
+    category: {
+      type: String,
+      enum: [
+        "Recruitment",
+        "HR Trends",
+        "Industry Insights",
+        "Technology",
+        "Career Tips",
+      ],
     },
   },
   { timestamps: true } // will auto add createdAt & updatedAt

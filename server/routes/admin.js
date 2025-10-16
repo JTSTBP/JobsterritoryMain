@@ -92,7 +92,7 @@ router.post("/:type", upload.any(), async (req, res) => {
   const { type } = req.params;
   const Model = modelMap[type.toLowerCase()];
   if (!Model) return res.status(400).json({ message: "Invalid type" });
-  console.log(req.body);
+  console.log(req.body,"giv");
   try {
     const data = { ...req.body };
 
@@ -130,22 +130,22 @@ router.get("/:type", async (req, res) => {
 
     switch (type.toLowerCase()) {
       case "blogs":
-        data = await Blog.find();
+        data = await Blog.find().sort({ createdAt: -1 });
         break;
       case "testimonials":
-        data = await Testimonial.find();
+        data = await Testimonial.find().sort({ createdAt: -1 });
         break;
       case "contactus":
-        data = await Contact.find();
+        data = await Contact.find().sort({ createdAt: -1 });
         break;
       case "recruiters":
-        data = await RecruiterRequest.find();
+        data = await RecruiterRequest.find().sort({ createdAt: -1 });
         break;
       case "casestudies":
-        data = await CaseStudy.find();
+        data = await CaseStudy.find().sort({ createdAt: -1 });
         break;
       case "logos":
-        data = await Logos.find();
+        data = await Logos.find().sort({ createdAt: -1 });
         break;
       default:
         return res.status(400).json({ error: "Invalid type" });

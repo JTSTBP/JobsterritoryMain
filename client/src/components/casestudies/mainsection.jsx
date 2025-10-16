@@ -97,7 +97,6 @@
 //   );
 // }
 
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -174,7 +173,6 @@ export default function CaseStudiesMain() {
         <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent leading-tight">
           Case Studies
         </h1>
-       
 
         {/* Search + Categories */}
         <div className="flex md:items-center md:justify-center w-full max-w-5xl mt-10 gap-4">
@@ -191,7 +189,6 @@ export default function CaseStudiesMain() {
             />
             <Search className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
           </div>
-        
         </div>
       </div>
 
@@ -227,6 +224,12 @@ export default function CaseStudiesMain() {
                   {textPreview(study.clientBackground)}
                 </p>
                 <span className="text-xs text-gray-500">{study.heading}</span>
+                <span className="text-xs text-gray-500">
+
+                  {study.createdAt
+                    ? new Date(study.createdAt).toLocaleDateString("en-GB") // "dd/mm/yyyy"
+                    : ""}
+                </span>
               </div>
             </div>
           ))}

@@ -28,9 +28,8 @@ const Navbar = () => {
     // { name: "About Us", path: "/aboutus" },
     { name: "Fractional Hiring", path: "/fractionalhiring" },
 
-    // { name: "Pay Per Hire", path: "/Payperhire" },
-
     { name: "Hire Now", path: "/contactus" },
+    { name: "Resources", path: "#" },
     { name: "AboutUs", path: "/aboutus" },
   ];
   // find active index (fallback to 0 if route not found)

@@ -54,26 +54,27 @@ export default function FeaturedArticles() {
   }, []);
 
   // Filter logic (before pagination)
-  const filteredArticles = articles.filter((article) => {
-    const matchesCategory =
-      active === "All" ||
-      (active === "Recruitment" &&
-        article.heading.toLowerCase().includes("recruitment")) ||
-      (active === "Technology" &&
-        article.heading.toLowerCase().includes("tech")) ||
-      (active === "Career Tips" &&
-        article.heading.toLowerCase().includes("career")) ||
-      (active === "Industry Insights" &&
-        article.heading.toLowerCase().includes("industry")) ||
-      (active === "HR Trends" && article.heading.toLowerCase().includes("hr"));
-    // article.category?.toLowerCase() === active.toLowerCase();
+ const filteredArticles = articles.filter((article) => {
+   const heading = article.heading.toLowerCase();
+   const category = article.category?.toLowerCase();
+   const searchLower = search.toLowerCase();
 
-    const matchesSearch =
-      article.heading.toLowerCase().includes(search.toLowerCase()) ||
-      htmlToText(article.desc).toLowerCase().includes(search.toLowerCase());
+   const matchesCategory =
+     active === "All" ||
+     category === active.toLowerCase() || // direct category match
+     (active === "Recruitment" && heading.includes("recruitment")) ||
+     (active === "Technology" && heading.includes("tech")) ||
+     (active === "Career Tips" && heading.includes("career")) ||
+     (active === "Industry Insights" && heading.includes("industry")) ||
+     (active === "HR Trends" && heading.includes("hr"));
 
-    return matchesCategory && matchesSearch;
-  });
+   const matchesSearch =
+     heading.includes(searchLower) ||
+     htmlToText(article.desc).toLowerCase().includes(searchLower);
+
+   return matchesCategory && matchesSearch;
+ });
+
 
   // Pagination
   const startIndex = page * itemsPerPage;
@@ -193,7 +194,7 @@ export default function FeaturedArticles() {
                   <div className="flex items-center justify-between text-xs text-gray-500">
                     <span>
                       {item.createdAt
-                        ? new Date(item.createdAt).toLocaleDateString()
+                        ? new Date(item.createdAt).toLocaleDateString("en-GB") // "dd/mm/yyyy"
                         : ""}
                     </span>
                     <span className="bg-purple-100 text-purple-600 px-2 py-1 rounded-md text-[10px]">

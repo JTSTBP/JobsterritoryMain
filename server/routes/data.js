@@ -18,11 +18,8 @@ const router = express.Router();
 // @route  GET /api/blogs
 router.get("/getblogs", async (req, res) => {
   try {
-    const blogs = await Blog.find();
-    //       .populate(
-    //   "user",
-    //   "firstName lastName email"
-    // ); // optional populate
+    const blogs = await Blog.find().sort({ createdAt: -1 });
+    console.log(blogs[0], "ooo");
     res.json(blogs);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -43,7 +40,7 @@ router.get("/blogs/:slug", async (req, res) => {
 // casestudies
 router.get("/getcasestudies", async (req, res) => {
   try {
-    const caseStudies = await CaseStudy.find();
+    const caseStudies = await CaseStudy.find().sort({ createdAt: -1 });
     res.json(caseStudies);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -75,7 +72,6 @@ router.post("/addcontact", async (req, res) => {
   }
 });
 
-
 // subscribe
 
 router.post("/subscribe", async (req, res) => {
@@ -103,7 +99,7 @@ router.post("/subscribe", async (req, res) => {
 // @route  GET /api/leads
 router.get("/getcontacts", async (req, res) => {
   try {
-    const leads = await Contact.find();
+    const leads = await Contact.find().sort({ createdAt: -1 });
     res.json(leads);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -176,7 +172,5 @@ router.get("/recruiter-requests", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
-
-
 
 module.exports = router;
