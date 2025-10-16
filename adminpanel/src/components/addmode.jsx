@@ -153,6 +153,7 @@ export default function AddPage() {
       "Industry Insights",
       "Technology",
       "Career Tips",
+      "Funding",
     ],
   };
 

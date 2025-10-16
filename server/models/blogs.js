@@ -34,6 +34,7 @@ const blogSchema = new mongoose.Schema(
         "Industry Insights",
         "Technology",
         "Career Tips",
+        "Funding",
       ],
     },
   },

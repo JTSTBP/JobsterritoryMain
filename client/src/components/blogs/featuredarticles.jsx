@@ -19,6 +19,7 @@ export default function FeaturedArticles() {
     "Industry Insights",
     "Technology",
     "Career Tips",
+    "Funding",
   ];
 
   // Helper: convert HTML string to plain text for a safe preview
@@ -66,7 +67,9 @@ export default function FeaturedArticles() {
      (active === "Technology" && heading.includes("tech")) ||
      (active === "Career Tips" && heading.includes("career")) ||
      (active === "Industry Insights" && heading.includes("industry")) ||
-     (active === "HR Trends" && heading.includes("hr"));
+     (active === "HR Trends" && heading.includes("hr")) ||
+     (active === "Funding" && heading.includes("funding"));
+   
 
    const matchesSearch =
      heading.includes(searchLower) ||
