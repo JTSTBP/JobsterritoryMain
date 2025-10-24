@@ -66,7 +66,7 @@ export default function JobsterritoryLogin() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              Password
+              Passwordd
             </label>
             <input
               type="password"
