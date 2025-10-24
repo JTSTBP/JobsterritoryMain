@@ -245,6 +245,12 @@ const Testimonial = () => {
   if (items.length === 0)
     return <p className="text-center">No testimonials available</p>;
 
+   const rows = [];
+   for (let i = 0; i < items.length; i += 3) {
+     rows.push(items.slice(i, i + 3));
+   }
+
+console.log(rows)
   return (
     <div className="bg-[#EFEFEF] py-12 sm:px-2 font-poppins text-[#1B084C]">
       {/* Heading */}
@@ -272,7 +278,7 @@ const Testimonial = () => {
         </p>
       </motion.div>
 
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         <motion.div
           key={items[active]._id}
           className="w-full flex flex-col gap-5 items-center lg:flex-row justify-center px-4 md:py-4 rounded-lg"
@@ -281,7 +287,7 @@ const Testimonial = () => {
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Left Section - Image */}
+
           <div className="flex items-start">
             <motion.div
               className="rounded-lg flex justify-center items-center flex-shrink-0"
@@ -298,7 +304,7 @@ const Testimonial = () => {
             </motion.div>
           </div>
 
-          {/* Right Section - Text */}
+        
           <motion.div
             className="mt-8 md:mt-0 md:ml-12 max-w-xl"
             initial={{ opacity: 0, y: 20 }}
@@ -316,7 +322,37 @@ const Testimonial = () => {
             </div>
           </motion.div>
         </motion.div>
-      </AnimatePresence>
+      </AnimatePresence> */}
+
+      <div className="relative h-[800px] overflow-hidden px-10">
+        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#EFEFEF] to-transparent pointer-events-none z-10"></div>
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#EFEFEF] to-transparent pointer-events-none z-10"></div>
+
+        <div className="overflow-y-scroll h-full px-10">
+          <div className="animate-scrollUp space-y-6">
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 px-2">
+              {[...rows, ...rows].flat().map((t, index) => (
+                <div
+                  key={index}
+                  className="break-inside-avoid mb-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all inline-block w-full"
+                >
+                  <img
+                    src={t.banner}
+                    alt={t.heading}
+                    className="w-40 h-40 object-contain rounded-xl mb-4 my-2 mx-auto"
+                  />
+                  <h3 className="font-semibold text-gray-900 text-sm mb-1">
+                    {t.heading}
+                  </h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {htmlToText(t.message)}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
