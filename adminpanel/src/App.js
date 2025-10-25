@@ -21,6 +21,7 @@ export default function App() {
   return (
     <>
       <Router>
+        <ToastContainer position="top-right" autoClose={3000} />
         <Routes>
           {/* Public Route */}
           <Route path="/login" element={<JobsterritoryLogin />} />
@@ -38,8 +39,6 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
-
-      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 }

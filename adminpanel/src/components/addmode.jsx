@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import toast from "react-hot-toast";
-import { motion } from "framer-motion"; // ✨ Smooth animations
+import { toast } from "react-toastify";
+
+import { motion } from "framer-motion";
+import "react-quill/dist/quill.snow.css";
+import ReactQuill from "react-quill";
+
+// ✨ Smooth animations
 
 const tableConfig = {
   blogs: [
@@ -132,6 +137,7 @@ export default function AddPage() {
 
   const [formData, setFormData] = useState({});
   const [imagePreview, setImagePreview] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e, key) => {
     const { value, files } = e.target;
@@ -159,6 +165,7 @@ export default function AddPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const formPayload = new FormData();
@@ -188,7 +195,7 @@ export default function AddPage() {
         }
       }
 
-      console.log(formPayload,"f", formData,"d");
+      console.log(formPayload, "f", formData, "d");
       const response = await fetch(
         `${process.env.REACT_APP_API_URL}/admin/${type}`,
         {
@@ -197,15 +204,33 @@ export default function AddPage() {
         }
       );
 
-      if (!response.ok) {
-        throw new Error("Failed to save data");
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        result = {};
       }
 
-      toast.success(`${type} added successfully!`);
-      navigate(`/`);
+      if (!response.ok) {
+        // Show full server error message in toast
+        const errorMsg =
+          result?.message && result?.error
+            ? `${result.message}: ${result.error}`
+            : result?.message || "Failed to save data";
+ // 👈 show toast directly here
+        throw new Error(errorMsg);
+      }
+
+   
+      toast.success(result.message || `${type} added successfully!`);
+      setTimeout(() => {
+        navigate(`/`);
+      }, 1000); // wait 1s
     } catch (err) {
       console.error(err);
       toast.error(`Error: ${err.message}`);
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
@@ -263,13 +288,17 @@ export default function AddPage() {
                   ) : key === "desc" ||
                     key === "message" ||
                     key === "clientBackground" ? (
-                    <textarea
-                      name={key}
-                      rows={3}
-                      onChange={(e) => handleChange(e, key)}
-                      className="border p-2 rounded-md bg-gray-50 text-sm focus:ring-1 focus:ring-green-500"
-                      placeholder={`Enter ${label}`}
-                    />
+                    <div className="quill-editor">
+                      <ReactQuill
+                        theme="snow"
+                        value={formData[key] || ""}
+                        onChange={(value) =>
+                          setFormData({ ...formData, [key]: value })
+                        }
+                        className="bg-white border rounded-md"
+                        placeholder={`Enter ${label}`}
+                      />
+                    </div>
                   ) : type === "select" ? (
                     <select
                       value={formData[key] || ""}
@@ -307,9 +336,14 @@ export default function AddPage() {
               </button>
               <button
                 type="submit"
-                className="px-5 py-2 bg-green-600 text-white text-sm font-semibold rounded-md hover:bg-green-700 shadow-sm"
+                disabled={loading}
+                className={`px-5 py-2 text-white text-sm font-semibold rounded-md shadow-sm ${
+                  loading
+                    ? "bg-green-400 cursor-not-allowed"
+                    : "bg-green-600 hover:bg-green-700"
+                }`}
               >
-                Save
+                {loading ? "Saving..." : "Save"}
               </button>
             </div>
           </form>
@@ -358,7 +392,10 @@ export default function AddPage() {
                     ) : key === "desc" ||
                       key === "message" ||
                       key === "clientBackground" ? (
-                      <p className="text-gray-700">{formData[key]}</p>
+                      <div
+                        className="text-gray-700 prose"
+                        dangerouslySetInnerHTML={{ __html: formData[key] }}
+                      />
                     ) : key === "challenge" ||
                       key === "solution" ||
                       key === "resultsAchieved" ? (
