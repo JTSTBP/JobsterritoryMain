@@ -19,7 +19,7 @@ const router = express.Router();
 router.get("/getblogs", async (req, res) => {
   try {
     const blogs = await Blog.find().sort({ createdAt: -1 });
-    console.log(blogs[0], "ooo");
+
     res.json(blogs);
   } catch (err) {
     res.status(500).json({ message: err.message });
