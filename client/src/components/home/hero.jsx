@@ -314,8 +314,7 @@ const Hero = () => {
     {
       heading: "India’s Leading Recruitment &",
       heading1: "Workforce Solutions Agency",
-     paragraph:"Hire smarter. Scale faster. One platform for recruitment, remote teams, leadership, and DEI excellence.",
-
+      paragraph:"Hire smarter. Scale faster. One platform for recruitment, remote teams, leadership, and DEI excellence.",
 
       // heading: "Raas - India's First Predictable",
       // heading1: "Recruitment Engine",
