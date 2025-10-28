@@ -82,7 +82,7 @@ const blogs = [
     id: 2,
     title: "Pay per hire smarter hiring better ROI",
     slug: "pay-per-hire-smarter-hiring-better-roi",
-    image: "/images/blogsimg.png",
+    image: "/images/blogsh1.png",
     bg: "#1B084C",
   },
   {
@@ -95,7 +95,7 @@ const blogs = [
     id: 4,
     title: "Pay per hire trend or future of hiring",
     slug: "pay-per-hire-trend-or-future-of-hiring",
-    image: "/images/blogsimgsh1.png",
+    image: "/images/blogsh2.png",
     bg: "#1B084C",
   },
   {
@@ -108,7 +108,7 @@ const blogs = [
     id: 6,
     title: "How pay per hire can cut hiring costs by 50 percent",
     slug: "how-pay-per-hire-can-cut-hiring-costs-by-50-percent",
-    image: "/images/blogsimgsh2.png",
+    image: "/images/blogsh3.png",
     bg: "#1B084C",
   },
 ];
@@ -217,7 +217,7 @@ const PayperHire = () => {
     <div>
       <Navbar />
       <Bannersection
-        backgroundImage="/images/exbg2.png"
+        backgroundImage="/images/pphbg.png"
         heading="Pay Per Hire  "
         heading1="Talent Without the Risk"
         paragraph="Hire with confidence — you pay only for successful placements. No upfront costs, no hidden fees, no ongoing commitments."

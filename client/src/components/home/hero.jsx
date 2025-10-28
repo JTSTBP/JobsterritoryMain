@@ -312,10 +312,15 @@ const Hero = () => {
 
   const slides = [
     {
-      heading: "Raas - India's First Predictable",
-      heading1: "Recruitment Engine",
-      paragraph:
-        "Stop paying 8–12% per hire. Hire smarter with Jobs Territory’s flat monthly plan — Unlimited roles, Unlimited hiring.",
+      heading: "India’s Leading Recruitment &",
+      heading1: "Workforce Solutions Agency",
+     paragraph:"Hire smarter. Scale faster. One platform for recruitment, remote teams, leadership, and DEI excellence.",
+
+
+      // heading: "Raas - India's First Predictable",
+      // heading1: "Recruitment Engine",
+      // paragraph:
+      //   "Stop paying 8–12% per hire. Hire smarter with Jobs Territory’s flat monthly plan — Unlimited roles, Unlimited hiring.",
       statNumber: "One Subscription",
       statLabel: "Unlimited Hires",
       cta1: "Book a Demo",
@@ -365,7 +370,7 @@ const Hero = () => {
       small: backgroundImagesmall,
     },
     {
-      url: "/images/exbg2.png",
+      url: "/images/fhbg.png",
       tab: backgroundImage,
       small: backgroundImagesmall,
     },

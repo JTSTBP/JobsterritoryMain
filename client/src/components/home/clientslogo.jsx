@@ -60,9 +60,11 @@ const ClientLogos = () => {
             Trusted by India’s Industry Leaders
           </h2>
           <p className="max-w-2xl mx-auto font-poppins">
-            From ambitious startups to India’s most iconic brands, we match
+            Trusted by 500+ companies | 15+ years of expertise | 80% faster
+            hiring | Global delivery across India, UAE, UK & Australia
+            {/* From ambitious startups to India’s most iconic brands, we match
             businesses with the people who spark innovation, drive measurable
-            results, and shape the future.
+            results, and shape the future. */}
           </p>
         </motion.div>
       </div>

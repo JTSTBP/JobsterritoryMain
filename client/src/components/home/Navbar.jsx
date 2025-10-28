@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 
 import React, { useState } from "react";
@@ -7,9 +7,31 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showResources, setShowResources] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const currentPath = location.pathname;
 
   const isActive = (path) => currentPath === path;
+
+
+
+const handleScroll = (e, path) => {
+  if (path.startsWith("#")) {
+    e.preventDefault();
+    const id = path.replace("#", "");
+
+    if (location.pathname === "/") {
+      // Already on homepage → scroll directly
+      const section = document.getElementById(id);
+      if (section) section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // On another page → navigate to home and store target
+      navigate("/", { state: { scrollTo: id } });
+    }
+
+    setShowResources(false);
+    setIsOpen(false);
+  }
+};
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -17,7 +39,7 @@ const Navbar = () => {
     { name: "Raas ", path: "/raas" },
     { name: "Fractional Hiring", path: "/fractionalhiring" },
 
-    // { name: "Pay Per Hire", path: "/Payperhire" },
+    { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Resources", path: "#" },
     // { name: "About", path: "/aboutus" },
   ];
@@ -27,7 +49,7 @@ const Navbar = () => {
     { name: "Raas ", path: "/raas" },
     // { name: "About Us", path: "/aboutus" },
     { name: "Fractional Hiring", path: "/fractionalhiring" },
-
+    { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Hire Now", path: "/contactus" },
     { name: "Resources", path: "#" },
     { name: "AboutUs", path: "/aboutus" },
@@ -81,6 +103,13 @@ const Navbar = () => {
                               className="block px-4 py-2 hover:bg-gray-200"
                             >
                               Blogs
+                            </a>
+                            <a
+                              href="#testimonials"
+                              onClick={(e) => handleScroll(e, "#testimonials")}
+                              className="block px-4 py-2 hover:bg-gray-200"
+                            >
+                              Testimonials
                             </a>
                             <a
                               href="/aboutus"
@@ -160,6 +189,13 @@ const Navbar = () => {
                             >
                               Blogs
                             </a>
+                            <a
+                              href="#testimonials"
+                              onClick={(e) => handleScroll(e, "#testimonials")}
+                              className="block px-4 py-2 hover:bg-gray-200"
+                            >
+                              Testimonials
+                            </a>
                           </div>
                         )}
                       </div>
@@ -208,6 +244,13 @@ const Navbar = () => {
                             className="block px-4 py-2 hover:bg-gray-200"
                           >
                             Blogs
+                          </a>
+                          <a
+                            href="#testimonials"
+                            onClick={(e) => handleScroll(e, "#testimonials")}
+                            className="block px-4 py-2 hover:bg-gray-200"
+                          >
+                            Testimonials
                           </a>
                         </div>
                       )}
@@ -329,6 +372,13 @@ const Navbar = () => {
                       className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
                     >
                       Blogs
+                    </a>
+                    <a
+                      href="#testimonials"
+                      onClick={(e) => handleScroll(e, "#testimonials")}
+                      className="block px-4 py-2 hover:bg-gray-200"
+                    >
+                      Testimonials
                     </a>
                   </div>
                 )}

@@ -57,9 +57,9 @@ const Bannersection = ({
             className="text-left mb-10"
           >
             <h1
-              className="text-3xl md:text-4xl font-bold text-[#FFFFFF]"
+              className="text-3xl md:text-4xl font-bold text-[rgb(36, 9, 96)]"
               style={{
-                textShadow: "2px 2px 6px rgba(0, 0, 0, 0.2)"
+                textShadow: "2px 2px 6px rgba(0, 0, 0, 0.2)",
               }}
             >
               {heading}

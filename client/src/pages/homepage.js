@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/home/Navbar";
 import HeroSection from "../components/home/herosection";
 import ClientLogos from "../components/home/clientslogo";
@@ -14,11 +14,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import BlogsSection from "../components/commonsections/staticblogs";
 import Hero from "../components/home/hero";
 import { usePopup } from "../contexts/popupcontext";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Homepage = () => {
   const { openPopup } = usePopup();
   const navigate = useNavigate();
+
+    const location = useLocation();
+
+   useEffect(() => {
+     if (location.state?.scrollTo) {
+       // Delay ensures testimonials section is rendered first
+       setTimeout(() => {
+         const section = document.getElementById(location.state.scrollTo);
+         if (section) {
+           section.scrollIntoView({ behavior: "smooth" });
+         }
+       }, 400); // 300–400ms delay works best
+     }
+   }, [location]);
   const industries = [
     {
       title: "Technology & Startups",

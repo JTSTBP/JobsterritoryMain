@@ -27,21 +27,21 @@ const Services = () => {
       icon: "/images/icon1.png",
       href: "/raas",
     },
-    // {
-    //   // you can use emoji or image path
-    //   heading: "Pay Per Hire",
-    //   description: "Hire with confidence—only pay when we deliver results.",
-    //   points: [
-    //     "No Upfront Costs  ",
-    //     "Pay for Results ",
-    //     "Scale on Demand  ",
-    //     "Quality Guarantee  ",
-    //   ],
-    //   buttonText: "Learn More",
-    //   image: "/images/vec2.png",
-    //   icon: "/images/icon2.png",
-    //   href: "/Payperhire",
-    // },
+    {
+      // you can use emoji or image path
+      heading: "Pay Per Hire",
+      description: "Hire with confidence—only pay when we deliver results.",
+      points: [
+        "No Upfront Costs  ",
+        "Pay for Results ",
+        "Scale on Demand  ",
+        "Quality Guarantee  ",
+      ],
+      buttonText: "Learn More",
+      image: "/images/vec2.png",
+      icon: "/images/icon2.png",
+      href: "/Payperhire",
+    },
     {
       // you can use emoji or image path
       heading: "Fractional Hiring",
