@@ -315,14 +315,14 @@ const Hero = () => {
       heading: "India’s Leading Recruitment &",
       heading1: "Workforce Solutions Agency",
       paragraph:
-        "Hire smarter. Scale faster. One platform for recruitment, remote teams, leadership, and DEI excellence.",
+        "Hire smarter. Scale faster. One platform for recruitment, Remote teams, Leadership, and DEI excellence.",
 
       // heading: "Raas - India's First Predictable",
       // heading1: "Recruitment Engine",
       // paragraph:
       //   "Stop paying 8–12% per hire. Hire smarter with Jobs Territory’s flat monthly plan — Unlimited roles, Unlimited hiring.",
-      statNumber: "One Subscription",
-      statLabel: "Unlimited Hires",
+      statNumber: "Pay Only",
+      statLabel: "When You Hire",
       cta1: "Book a Demo",
       cta2: "Start Subscription",
       nav1: "/raas",
