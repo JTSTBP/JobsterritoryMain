@@ -1,9 +1,9 @@
-
-
 import React, { useState, useEffect } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
+
+import { useLocation } from "react-router-dom";
 
 const Testimonial = () => {
   const defaultone = [
@@ -40,6 +40,27 @@ const Testimonial = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState(0);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScrollToHash = () => {
+      if (window.location.hash) {
+        const el = document.querySelector(window.location.hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+
+    // Run immediately when the component mounts (for direct load)
+    setTimeout(handleScrollToHash, 600);
+
+    // Also run whenever hash changes (for navigation within SPA)
+    window.addEventListener("hashchange", handleScrollToHash);
+
+    return () => window.removeEventListener("hashchange", handleScrollToHash);
+  }, []);
 
   useEffect(() => {
     const fetchTestimonials = async () => {
@@ -92,12 +113,12 @@ const Testimonial = () => {
   if (items.length === 0)
     return <p className="text-center">No testimonials available</p>;
 
-   const rows = [];
-   for (let i = 0; i < items.length; i += 3) {
-     rows.push(items.slice(i, i + 3));
-   }
+  const rows = [];
+  for (let i = 0; i < items.length; i += 3) {
+    rows.push(items.slice(i, i + 3));
+  }
 
-console.log(rows)
+  console.log(rows);
   return (
     <div
       id="testimonials"
