@@ -43,23 +43,50 @@ const Testimonial = () => {
 
   const location = useLocation();
 
+  // useEffect(() => {
+  //   const handleScrollToHash = () => {
+  //     if (window.location.hash) {
+  //       const el = document.querySelector(window.location.hash);
+  //       if (el) {
+  //         el.scrollIntoView({ behavior: "smooth" });
+  //       }
+  //     }
+  //   };
+
+  //   // Run immediately when the component mounts (for direct load)
+  //   setTimeout(handleScrollToHash, 600);
+
+  //   // Also run whenever hash changes (for navigation within SPA)
+  //   window.addEventListener("hashchange", handleScrollToHash);
+
+  //   return () => window.removeEventListener("hashchange", handleScrollToHash);
+  // }, []);
+
   useEffect(() => {
-    const handleScrollToHash = () => {
-      if (window.location.hash) {
-        const el = document.querySelector(window.location.hash);
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      const scroll = () => {
+        const el = document.querySelector(hash);
         if (el) {
           el.scrollIntoView({ behavior: "smooth" });
+        } else {
+          // Retry until element is rendered
+          setTimeout(scroll, 300);
         }
-      }
+      };
+
+      scroll();
     };
 
-    // Run immediately when the component mounts (for direct load)
-    setTimeout(handleScrollToHash, 600);
+    // Run on first mount
+    setTimeout(scrollToHash, 600);
 
-    // Also run whenever hash changes (for navigation within SPA)
-    window.addEventListener("hashchange", handleScrollToHash);
+    // Run whenever hash changes
+    window.addEventListener("hashchange", scrollToHash);
 
-    return () => window.removeEventListener("hashchange", handleScrollToHash);
+    return () => window.removeEventListener("hashchange", scrollToHash);
   }, []);
 
   useEffect(() => {
