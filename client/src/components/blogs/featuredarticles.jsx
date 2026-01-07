@@ -55,28 +55,30 @@ export default function FeaturedArticles() {
   }, []);
 
   // Filter logic (before pagination)
- const filteredArticles = articles.filter((article) => {
-   const heading = article.heading.toLowerCase();
-   const category = article.category?.toLowerCase();
-   const searchLower = search.toLowerCase();
+  const filteredArticles = articles.filter((article) => {
+    const heading = article.heading.toLowerCase();
+    const category = article.category?.toLowerCase();
+    const searchLower = search.toLowerCase();
 
-   const matchesCategory =
-     active === "All" ||
-     category === active.toLowerCase() || // direct category match
-     (active === "Recruitment" && heading.includes("recruitment")) ||
-     (active === "Technology" && heading.includes("tech")) ||
-     (active === "Career Tips" && heading.includes("career")) ||
-     (active === "Industry Insights" && heading.includes("industry")) ||
-     (active === "HR Trends" && heading.includes("hr")) ||
-     (active === "Funding" && heading.includes("funding"));
-   
+    const matchesCategory =
+      active === "All" ||
+      category === active.toLowerCase() || // direct category match
+      (active === "Recruitment" && heading.includes("recruitment")) ||
+      (active === "Technology" && heading.includes("tech")) ||
+      (active === "Career Tips" && heading.includes("career")) ||
+      (active === "Industry Insights" && heading.includes("industry")) ||
+      (active === "HR Trends" && heading.includes("hr")) ||
+      (active === "Funding" && heading.includes("funding"));
 
-   const matchesSearch =
-     heading.includes(searchLower) ||
-     htmlToText(article.desc).toLowerCase().includes(searchLower);
 
-   return matchesCategory && matchesSearch;
- });
+    const matchesSearch =
+      heading.includes(searchLower) ||
+      htmlToText(article.desc).toLowerCase().includes(searchLower);
+
+    const isScheduled = article.schedulepost && new Date(article.schedulepost) > new Date();
+
+    return matchesCategory && matchesSearch && !isScheduled;
+  });
 
 
   // Pagination
@@ -128,11 +130,10 @@ export default function FeaturedArticles() {
                   setPage(0); // reset to first page when switching category
                   setActive(cat);
                 }}
-                className={`px-5 py-2 rounded-full border text-sm font-medium transition whitespace-nowrap ${
-                  active === cat
+                className={`px-5 py-2 rounded-full border text-sm font-medium transition whitespace-nowrap ${active === cat
                     ? "bg-gradient-to-r from-purple-600 to-indigo-500 text-white shadow-md"
                     : "border-gray-300 text-gray-600 hover:bg-gray-100"
-                }`}
+                  }`}
               >
                 {cat}
               </button>

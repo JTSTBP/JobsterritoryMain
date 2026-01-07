@@ -31,6 +31,11 @@ const tableConfig = {
     },
     { key: "slug", label: "Slug" },
     {
+      key: "schedulepost",
+      label: "Scheduled For",
+      render: (val) => (val ? new Date(val).toLocaleDateString() : "-"),
+    },
+    {
       key: "createdAt",
       label: "Created At",
       render: (val) => new Date(val).toLocaleDateString(),

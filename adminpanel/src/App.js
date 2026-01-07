@@ -27,7 +27,7 @@ export default function App() {
           <Route path="/login" element={<JobsterritoryLogin />} />
           {/* Protected Dashboard */}
           <Route
-            path="/"
+            path="/:type?"
             element={
               <ProtectedRoute>
                 <Dashboard />

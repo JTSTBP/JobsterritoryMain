@@ -37,6 +37,9 @@ const blogSchema = new mongoose.Schema(
         "Funding",
       ],
     },
+    schedulepost: {
+      type: Date,
+    },
   },
   { timestamps: true } // will auto add createdAt & updatedAt
 );

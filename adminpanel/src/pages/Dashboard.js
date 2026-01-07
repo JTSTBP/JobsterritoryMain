@@ -1,22 +1,35 @@
-
 import { useState, useEffect } from "react";
 import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
 import OrderTable from "../components/ordertable";
 import EditModal from "../components/editmode"; // ✅ new import
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Dashboard() {
-  const [selected, setSelected] = useState("blogs");
+  const { type } = useParams();
+  const navigate = useNavigate();
+  const [selected, setSelected] = useState(type || "blogs");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [mobileSidebar, setMobileSidebar] = useState(false);
   const [search, setSearch] = useState("");
 
+  // ✅ Keep state in sync with URL
+  useEffect(() => {
+    if (type) {
+      setSelected(type);
+    }
+  }, [type]);
+
+  // ✅ Update selection and navigate
+  const handleSelect = (newType) => {
+    setSelected(newType);
+    navigate(`/${newType}`);
+  };
+
   // ✅ new states for edit
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingRow, setEditingRow] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,8 +63,7 @@ export default function Dashboard() {
 
     try {
       const res = await fetch(
-        `${
-          process.env.REACT_APP_API_URL
+        `${process.env.REACT_APP_API_URL
         }/admin/${selected.toLowerCase()}/${id}`,
         {
           method: "DELETE",
@@ -93,7 +105,7 @@ export default function Dashboard() {
       <div className="flex flex-col md:flex-row w-[97%] min-h-[97vh] bg-[#EFEFEF]">
         <Sidebar
           selected={selected}
-          onSelect={setSelected}
+          onSelect={handleSelect}
           mobileOpen={mobileSidebar}
           onClose={() => setMobileSidebar(false)}
         />

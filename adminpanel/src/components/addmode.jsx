@@ -217,14 +217,14 @@ export default function AddPage() {
           result?.message && result?.error
             ? `${result.message}: ${result.error}`
             : result?.message || "Failed to save data";
- // 👈 show toast directly here
+        // 👈 show toast directly here
         throw new Error(errorMsg);
       }
 
-   
+
       toast.success(result.message || `${type} added successfully!`);
       setTimeout(() => {
-        navigate(`/`);
+        navigate(`/${type}`);
       }, 1000); // wait 1s
     } catch (err) {
       console.error(err);
@@ -260,8 +260,8 @@ export default function AddPage() {
 
                   {/* Images */}
                   {key === "banner" ||
-                  key.includes("image") ||
-                  key.includes("logo") ? (
+                    key.includes("image") ||
+                    key.includes("logo") ? (
                     <div className="flex flex-col">
                       <input
                         type="file"
@@ -329,7 +329,7 @@ export default function AddPage() {
             <div className="flex justify-end gap-3 mt-4">
               <button
                 type="button"
-                onClick={() => navigate(`/admin/${type}`)}
+                onClick={() => navigate(`/${type}`)}
                 className="px-4 py-2 bg-gray-100 text-gray-700 text-sm rounded-md hover:bg-gray-200"
               >
                 Cancel
@@ -337,11 +337,10 @@ export default function AddPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className={`px-5 py-2 text-white text-sm font-semibold rounded-md shadow-sm ${
-                  loading
+                className={`px-5 py-2 text-white text-sm font-semibold rounded-md shadow-sm ${loading
                     ? "bg-green-400 cursor-not-allowed"
                     : "bg-green-600 hover:bg-green-700"
-                }`}
+                  }`}
               >
                 {loading ? "Saving..." : "Save"}
               </button>

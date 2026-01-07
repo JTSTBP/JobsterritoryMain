@@ -17,10 +17,9 @@ export default function EditModal({ row, type, onClose, onSave }) {
   };
 
   const [formData, setFormData] = useState(() => {
-    const cleaned = {};
-    Object.keys(row).forEach((key) => {
-      cleaned[key] = htmlToText(row[key]); // ✅ convert all fields to plain text
-    });
+    const cleaned = { ...row };
+    // We keep the original values, but for representation in simple inputs, 
+    // we might want to clean some, but stripping everything is bad for descriptions.
     return cleaned;
   });
 
@@ -68,20 +67,35 @@ export default function EditModal({ row, type, onClose, onSave }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {Object.keys(formData).map((key) =>
-            key === "_id" ? null : (
-              <div key={key} className="flex flex-col">
-                <label className="text-sm font-medium mb-1">{key}</label>
-                <input
-                  type="text"
-                  name={key}
-                  value={formData[key] || ""}
-                  onChange={handleChange}
-                  className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                />
+          {Object.keys(formData).map((key) => {
+            if (key === "_id" || key === "createdAt" || key === "updatedAt" || key === "__v") return null;
+
+            const isDate = key === "schedulepost" || key === "postedAt";
+            const isLongText = key === "desc" || key === "message" || key === "clientBackground";
+
+            return (
+              <div key={key} className={`flex flex-col ${isLongText ? "md:col-span-2" : ""}`}>
+                <label className="text-sm font-medium mb-1 capitalize">{key}</label>
+                {isLongText ? (
+                  <textarea
+                    name={key}
+                    value={formData[key] || ""}
+                    onChange={handleChange}
+                    rows={5}
+                    className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                ) : (
+                  <input
+                    type={isDate ? "date" : "text"}
+                    name={key}
+                    value={isDate && formData[key] ? new Date(formData[key]).toISOString().split('T')[0] : (formData[key] || "")}
+                    onChange={handleChange}
+                    className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                )}
               </div>
-            )
-          )}
+            );
+          })}
         </div>
 
         <div className="mt-6 flex justify-end gap-4">
