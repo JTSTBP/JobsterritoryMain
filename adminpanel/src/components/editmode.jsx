@@ -23,6 +23,22 @@ export default function EditModal({ row, type, onClose, onSave }) {
     return cleaned;
   });
 
+  const handleArrayChange = (key, index, subKey, value) => {
+    const currentArray = [...(formData[key] || [])];
+    currentArray[index] = { ...currentArray[index], [subKey]: value };
+    setFormData({ ...formData, [key]: currentArray });
+  };
+
+  const addArrayItem = (key, newItem) => {
+    const currentArray = formData[key] || [];
+    setFormData({ ...formData, [key]: [...currentArray, newItem] });
+  };
+
+  const removeArrayItem = (key, index) => {
+    const currentArray = formData[key] || [];
+    setFormData({ ...formData, [key]: currentArray.filter((_, i) => i !== index) });
+  };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -68,13 +84,15 @@ export default function EditModal({ row, type, onClose, onSave }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {Object.keys(formData).map((key) => {
-            if (key === "_id" || key === "createdAt" || key === "updatedAt" || key === "__v") return null;
+            if (key === "_id" || key === "createdAt" || key === "updatedAt" || key === "__v" || key === "images") return null;
 
             const isDate = key === "schedulepost" || key === "postedAt";
             const isLongText = key === "desc" || key === "message" || key === "clientBackground";
+            const isArray = Array.isArray(formData[key]);
+            const isObject = typeof formData[key] === "object" && formData[key] !== null && !isArray;
 
             return (
-              <div key={key} className={`flex flex-col ${isLongText ? "md:col-span-2" : ""}`}>
+              <div key={key} className={`flex flex-col ${isLongText || isArray || isObject ? "md:col-span-2" : ""}`}>
                 <label className="text-sm font-medium mb-1 capitalize">{key}</label>
                 {isLongText ? (
                   <textarea
@@ -84,6 +102,70 @@ export default function EditModal({ row, type, onClose, onSave }) {
                     rows={5}
                     className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
+                ) : isArray ? (
+                  <div className="space-y-4 border p-4 rounded-md bg-gray-50 shadow-inner">
+                    {formData[key].map((item, index) => (
+                      <div key={index} className="flex flex-col gap-2 bg-white p-3 rounded-md shadow-sm border">
+                        {Object.keys(item).filter(k => k !== '_id').map(subKey => (
+                          <div key={subKey} className="flex flex-col">
+                            <label className="text-xs text-gray-500 capitalize">{subKey}</label>
+                            {subKey === "description" ? (
+                              <textarea
+                                value={item[subKey] || ""}
+                                onChange={(e) => handleArrayChange(key, index, subKey, e.target.value)}
+                                className="border p-1 rounded text-sm w-full"
+                                rows={2}
+                              />
+                            ) : (
+                              <input
+                                type="text"
+                                value={item[subKey] || ""}
+                                onChange={(e) => handleArrayChange(key, index, subKey, e.target.value)}
+                                className="border p-1 rounded text-sm w-full"
+                              />
+                            )}
+                          </div>
+                        ))}
+                        <button
+                          type="button"
+                          onClick={() => removeArrayItem(key, index)}
+                          className="text-red-500 text-xs font-bold self-end hover:underline"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    ))}
+                    <button
+                      type="button"
+                      onClick={() => addArrayItem(key, { title: "", description: "", icon: "" })}
+                      className="w-full py-2 border-2 border-dashed border-green-400 text-green-600 rounded-md text-sm font-semibold hover:bg-green-100 transition"
+                    >
+                      + Add Item
+                    </button>
+                  </div>
+                ) : isObject ? (
+                  <div className="grid grid-cols-1 gap-3 border p-4 rounded-md bg-gray-50 shadow-inner">
+                    {Object.keys(formData[key]).filter(k => k !== '_id').map(subKey => (
+                      <div key={subKey} className="flex flex-col">
+                        <label className="text-xs text-gray-500 capitalize">{subKey}</label>
+                        {subKey === "quote" ? (
+                          <textarea
+                            value={formData[key][subKey] || ""}
+                            onChange={(e) => setFormData({ ...formData, [key]: { ...formData[key], [subKey]: e.target.value } })}
+                            className="border p-1 rounded text-sm w-full bg-white"
+                            rows={3}
+                          />
+                        ) : (
+                          <input
+                            type="text"
+                            value={formData[key][subKey] || ""}
+                            onChange={(e) => setFormData({ ...formData, [key]: { ...formData[key], [subKey]: e.target.value } })}
+                            className="border p-1 rounded text-sm w-full bg-white"
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 ) : (
                   <input
                     type={isDate ? "date" : "text"}

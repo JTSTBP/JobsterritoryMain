@@ -152,6 +152,21 @@ export default function AddPage() {
       setFormData({ ...formData, [key]: value });
     }
   };
+  const addArrayItem = (key, newItem) => {
+    const currentArray = formData[key] || [];
+    setFormData({ ...formData, [key]: [...currentArray, newItem] });
+  };
+
+  const removeArrayItem = (key, index) => {
+    const currentArray = formData[key] || [];
+    setFormData({ ...formData, [key]: currentArray.filter((_, i) => i !== index) });
+  };
+
+  const handleArrayChange = (key, index, subKey, value) => {
+    const currentArray = [...(formData[key] || [])];
+    currentArray[index] = { ...currentArray[index], [subKey]: value };
+    setFormData({ ...formData, [key]: currentArray });
+  };
   const selectOptions = {
     category: [
       "Recruitment",
@@ -281,10 +296,64 @@ export default function AddPage() {
                     key === "solution" ||
                     key === "resultsAchieved" ? (
                     /* Arrays handling */
-                    <div>/* your array input code */</div>
+                    <div className="space-y-4 border p-4 rounded-md bg-gray-50">
+                      {(formData[key] || []).map((item, index) => (
+                        <div key={index} className="flex flex-col gap-2 bg-white p-3 rounded-md shadow-sm border">
+                          <input
+                            type="text"
+                            placeholder="Title"
+                            value={item.title || ""}
+                            onChange={(e) => handleArrayChange(key, index, "title", e.target.value)}
+                            className="border p-2 rounded-md text-sm"
+                          />
+                          <textarea
+                            placeholder="Description"
+                            value={item.description || ""}
+                            onChange={(e) => handleArrayChange(key, index, "description", e.target.value)}
+                            className="border p-2 rounded-md text-sm"
+                            rows={2}
+                          />
+                          <input
+                            type="text"
+                            placeholder="Icon (optional e.g. Circle, Star)"
+                            value={item.icon || ""}
+                            onChange={(e) => handleArrayChange(key, index, "icon", e.target.value)}
+                            className="border p-2 rounded-md text-sm"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => removeArrayItem(key, index)}
+                            className="text-red-500 text-xs font-bold self-end hover:underline"
+                          >
+                            Remove
+                          </button>
+                        </div>
+                      ))}
+                      <button
+                        type="button"
+                        onClick={() => addArrayItem(key, { title: "", description: "", icon: "" })}
+                        className="w-full py-2 border-2 border-dashed border-green-400 text-green-600 rounded-md text-sm font-semibold hover:bg-green-50 transition"
+                      >
+                        + Add {label} Item
+                      </button>
+                    </div>
                   ) : key === "clientTestimonial" ? (
-                    /* Object input code */
-                    <div>/* your clientTestimonial inputs */</div>
+                    <div className="flex flex-col gap-2 border p-4 rounded-md bg-gray-50">
+                      <textarea
+                        placeholder="Quote"
+                        value={formData[key]?.quote || ""}
+                        onChange={(e) => setFormData({ ...formData, [key]: { ...formData[key], quote: e.target.value } })}
+                        className="border p-2 rounded-md text-sm bg-white"
+                        rows={3}
+                      />
+                      <input
+                        type="text"
+                        placeholder="Author"
+                        value={formData[key]?.author || ""}
+                        onChange={(e) => setFormData({ ...formData, [key]: { ...formData[key], author: e.target.value } })}
+                        className="border p-2 rounded-md text-sm bg-white"
+                      />
+                    </div>
                   ) : key === "desc" ||
                     key === "message" ||
                     key === "clientBackground" ? (
@@ -338,8 +407,8 @@ export default function AddPage() {
                 type="submit"
                 disabled={loading}
                 className={`px-5 py-2 text-white text-sm font-semibold rounded-md shadow-sm ${loading
-                    ? "bg-green-400 cursor-not-allowed"
-                    : "bg-green-600 hover:bg-green-700"
+                  ? "bg-green-400 cursor-not-allowed"
+                  : "bg-green-600 hover:bg-green-700"
                   }`}
               >
                 {loading ? "Saving..." : "Save"}
@@ -425,14 +494,11 @@ export default function AddPage() {
                     ) : key === "clientTestimonial" ? (
                       formData.clientTestimonial && (
                         <div className="p-3 border rounded-md bg-gray-50">
-                          <p className="font-semibold">
-                            {formData.clientTestimonial.name}
-                          </p>
-                          <p className="text-sm text-gray-500">
-                            {formData.clientTestimonial.designation}
+                          <p className="font-semibold text-gray-800">
+                            {formData.clientTestimonial.author || "Author Name"}
                           </p>
                           <p className="italic text-gray-700 mt-1">
-                            "{formData.clientTestimonial.message}"
+                            "{formData.clientTestimonial.quote || "Your quote will appear here..."}"
                           </p>
                         </div>
                       )
