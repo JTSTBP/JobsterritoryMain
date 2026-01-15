@@ -14,30 +14,30 @@ const Navbar = () => {
 
 
 
-const handleScroll = (e, path) => {
-  if (path.startsWith("#")) {
-    e.preventDefault();
-    const id = path.replace("#", "");
+  const handleScroll = (e, path) => {
+    if (path.startsWith("#")) {
+      e.preventDefault();
+      const id = path.replace("#", "");
 
-    if (location.pathname === "/") {
-      // Already on homepage → scroll directly
-      const section = document.getElementById(id);
-      if (section) section.scrollIntoView({ behavior: "smooth" });
-    } else {
-      // On another page → navigate to home and store target
-      navigate("/", { state: { scrollTo: id } });
+      if (location.pathname === "/") {
+        // Already on homepage → scroll directly
+        const section = document.getElementById(id);
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // On another page → navigate to home and store target
+        navigate("/", { state: { scrollTo: id } });
+      }
+
+      setShowResources(false);
+      setIsOpen(false);
     }
-
-    setShowResources(false);
-    setIsOpen(false);
-  }
-};
+  };
 
   const menuItems = [
     { name: "Home", path: "/" },
     // { name: "About Us", path: "/aboutus" },
-    { name: "Raas ", path: "/raas" },
-    { name: "Fractional Hiring", path: "/fractionalhiring" },
+    // { name: "Raas ", path: "/raas" },
+    // { name: "Fractional Hiring", path: "/fractionalhiring" },
 
     { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Resources", path: "#" },
@@ -46,9 +46,9 @@ const handleScroll = (e, path) => {
 
   const miditems = [
     { name: "Home", path: "/" },
-    { name: "Raas ", path: "/raas" },
+    // { name: "Raas ", path: "/raas" },
     // { name: "About Us", path: "/aboutus" },
-    { name: "Fractional Hiring", path: "/fractionalhiring" },
+    // { name: "Fractional Hiring", path: "/fractionalhiring" },
     { name: "Pay Per Hire", path: "/Payperhire" },
     { name: "Hire Now", path: "/contactus" },
     { name: "Resources", path: "#" },
@@ -341,7 +341,7 @@ const handleScroll = (e, path) => {
         {isOpen && (
           <div className="md:hidden border-t border-gray-200 bg-gray-50 absolute top-16 left-0 w-full shadow-md z-[60]">
             <div className="px-2 pt-2 pb-3 space-y-1 ">
-              {miditems.slice(0, 4).map((item) => (
+              {miditems.slice(0, 2).map((item) => (
                 <a
                   key={item.name}
                   href={item.path}

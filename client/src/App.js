@@ -40,8 +40,8 @@ export default function App() {
           <PopupContainer />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/fractionalhiring" element={<FractionalHiring />} />
-            <Route path="/raas" element={<RaasPage />} />
+            {/* <Route path="/fractionalhiring" element={<FractionalHiring />} />
+            <Route path="/raas" element={<RaasPage />} /> */}
             <Route path="/Payperhire" element={<PayperHire />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contactus" element={<ContactUs />} />

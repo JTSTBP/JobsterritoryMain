@@ -12,21 +12,21 @@ import {
 
 const Services = () => {
   const cardData = [
-    {
-      // you can use emoji or image path
-      heading: "RAAS — Recruitment as a Service",
-      description:
-        "Your business deserves more than a recruiter. It deserves a dedicated partner who understands your goals, culture, and vision.",
-      points: [
-        "Custom Hiring  ",
-        "Industry Expertise  ",
-        "Scalable Solutions  ",
-      ],
-      buttonText: "Learn More",
-      image: "/images/vec1.png",
-      icon: "/images/icon1.png",
-      href: "/raas",
-    },
+    // {
+    //   // you can use emoji or image path
+    //   heading: "RAAS — Recruitment as a Service",
+    //   description:
+    //     "Your business deserves more than a recruiter. It deserves a dedicated partner who understands your goals, culture, and vision.",
+    //   points: [
+    //     "Custom Hiring  ",
+    //     "Industry Expertise  ",
+    //     "Scalable Solutions  ",
+    //   ],
+    //   buttonText: "Learn More",
+    //   image: "/images/vec1.png",
+    //   icon: "/images/icon1.png",
+    //   href: "/raas",
+    // },
     {
       // you can use emoji or image path
       heading: "Pay Per Hire",
@@ -42,22 +42,22 @@ const Services = () => {
       icon: "/images/icon2.png",
       href: "/Payperhire",
     },
-    {
-      // you can use emoji or image path
-      heading: "Fractional Hiring",
-      description:
-        "Leadership on your terms. Access experienced executives—only when you need them.",
-      points: [
-        "Executive Search Expertise ",
-        "Leadership Assessment  ",
-        "Confidential Process ",
-        "Global Network  ",
-      ],
-      buttonText: "Learn More",
-      image: "/images/vec3.png",
-      icon: "/images/icon3.png",
-      href: "/fractionalhiring",
-    },
+    // {
+    //   // you can use emoji or image path
+    //   heading: "Fractional Hiring",
+    //   description:
+    //     "Leadership on your terms. Access experienced executives—only when you need them.",
+    //   points: [
+    //     "Executive Search Expertise ",
+    //     "Leadership Assessment  ",
+    //     "Confidential Process ",
+    //     "Global Network  ",
+    //   ],
+    //   buttonText: "Learn More",
+    //   image: "/images/vec3.png",
+    //   icon: "/images/icon3.png",
+    //   href: "/fractionalhiring",
+    // },
   ];
 
   const containerVariants = {
@@ -114,8 +114,8 @@ const Services = () => {
         whileInView="visible"
         viewport={{ once: true }}
         className="flex justify-center flex-wrap items-stretch gap-8 bg-[#EFEFEF]"
-        // className="flex justify-center flex-wrap items-start gap-8   bg-[#EFEFEF] items-stretch"
-        // className="grid sm:grid-cols-2 lg:grid-cols- gap-5 items-stretch justify-items-center"
+      // className="flex justify-center flex-wrap items-start gap-8   bg-[#EFEFEF] items-stretch"
+      // className="grid sm:grid-cols-2 lg:grid-cols- gap-5 items-stretch justify-items-center"
       >
         {cardData.map((item, index) => (
           <motion.a

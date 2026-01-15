@@ -19,17 +19,17 @@ import ThankYouPopup from "../commonsections/thankyoupopup";
 
 const Footer = () => {
   const navigate = useNavigate();
-   const [email, setEmail] = useState("");
-   const [popupOpen, setPopupOpen] = useState(false);
-   const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const services = [
-    {
-      name: "Recruitment as a Service (RAAS)",
-      url: "/raas",
-    },
-    // { name: "Pay Per Hire", url: "/Payperhire" },
-    { name: "Fractional Hiring", url: "/fractionalhiring" },
+    // {
+    //   name: "Recruitment as a Service (RAAS)",
+    //   url: "/raas",
+    // },
+    { name: "Pay Per Hire", url: "/Payperhire" },
+    // { name: "Fractional Hiring", url: "/fractionalhiring" },
   ];
 
   const industries = [
@@ -77,26 +77,26 @@ const Footer = () => {
   ];
 
 
-   const handleSubscribe = async () => {
-     if (!email) return;
+  const handleSubscribe = async () => {
+    if (!email) return;
 
-     try {
-       setLoading(true);
-       const res = await axios.post(
-         `${process.env.REACT_APP_API_URL}/api/subscribe`,
-         { email }
-       );
+    try {
+      setLoading(true);
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/subscribe`,
+        { email }
+      );
 
-       if (res.status===201) {
-         setPopupOpen(true);
-         setEmail(""); // clear input
-       }
-     } catch (err) {
-       console.error("Subscription error:", err);
-       alert("❌ Failed to subscribe. Please try again.");
-     } finally {
-       setLoading(false);
-     }
+      if (res.status === 201) {
+        setPopupOpen(true);
+        setEmail(""); // clear input
+      }
+    } catch (err) {
+      console.error("Subscription error:", err);
+      alert("❌ Failed to subscribe. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
   console.log(popupOpen, "popupOpen");
 
