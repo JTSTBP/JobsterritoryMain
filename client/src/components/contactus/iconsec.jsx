@@ -17,7 +17,7 @@ export default function ContactUsicons() {
       </p>
 
       {/* Contact Items */}
-      <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
         {/* Email */}
         <div className="flex flex-col items-center">
           <div className="bg-purple-100 rounded-full p-6 mb-4">
@@ -31,7 +31,7 @@ export default function ContactUsicons() {
             href="mailto:hello@jobsterritory.co"
             className="text-[#6A1FFF] text-sm hover:underline"
           >
-            hello@jobsterritory.co
+            career@jobsterritory.com
           </a>
         </div>
 
@@ -46,12 +46,12 @@ export default function ContactUsicons() {
           </p>
           <div className="text-[#6A1FFF] text-sm">
             <p>Bangalore</p>
-        
+
           </div>
         </div>
 
         {/* Phone */}
-        <div className="flex flex-col items-center">
+        {/* <div className="flex flex-col items-center">
           <div className="bg-purple-100 rounded-full p-6 mb-4">
             <Phone size={40} className="text-purple-600" />
           </div>
@@ -60,7 +60,7 @@ export default function ContactUsicons() {
             Mon–Fri from 8 am to 5 pm
           </p>
          
-        </div>
+        </div> */}
       </div>
     </section>
   );
