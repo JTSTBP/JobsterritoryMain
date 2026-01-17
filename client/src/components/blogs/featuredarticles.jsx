@@ -131,8 +131,8 @@ export default function FeaturedArticles() {
                   setActive(cat);
                 }}
                 className={`px-5 py-2 rounded-full border text-sm font-medium transition whitespace-nowrap ${active === cat
-                    ? "bg-gradient-to-r from-purple-600 to-indigo-500 text-white shadow-md"
-                    : "border-gray-300 text-gray-600 hover:bg-gray-100"
+                  ? "bg-gradient-to-r from-purple-600 to-indigo-500 text-white shadow-md"
+                  : "border-gray-300 text-gray-600 hover:bg-gray-100"
                   }`}
               >
                 {cat}
@@ -197,10 +197,13 @@ export default function FeaturedArticles() {
                   {/* Meta */}
                   <div className="flex items-center justify-between text-xs text-gray-500">
                     <span>
-                      {item.createdAt
-                        ? new Date(item.createdAt).toLocaleDateString("en-GB") // "dd/mm/yyyy"
-                        : ""}
+                      {item.schedulepost
+                        ? new Date(item.schedulepost).toLocaleDateString("en-GB")
+                        : item.createdAt
+                          ? new Date(item.createdAt).toLocaleDateString("en-GB")
+                          : ""}
                     </span>
+
                     <span className="bg-purple-100 text-purple-600 px-2 py-1 rounded-md text-[10px]">
                       Article
                     </span>
