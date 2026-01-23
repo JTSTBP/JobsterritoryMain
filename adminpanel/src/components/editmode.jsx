@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReactQuill from "react-quill";
+import IndustryDropdown from "./industrydropdown";
 import "react-quill/dist/quill.snow.css";
 
 export default function EditModal({ row, type, onClose, onSave }) {
@@ -20,8 +21,9 @@ export default function EditModal({ row, type, onClose, onSave }) {
 
   const [formData, setFormData] = useState(() => {
     const cleaned = { ...row };
-    // We keep the original values, but for representation in simple inputs, 
-    // we might want to clean some, but stripping everything is bad for descriptions.
+    if ((type === "logos" || type === "casestudies") && !cleaned.industry) {
+      cleaned.industry = "";
+    }
     return cleaned;
   });
 
@@ -217,6 +219,11 @@ export default function EditModal({ row, type, onClose, onSave }) {
                         + Add Item
                       </button>
                     </div>
+                  ) : key === "industry" ? (
+                    <IndustryDropdown
+                      value={formData[key] || ""}
+                      onChange={(val) => setFormData({ ...formData, [key]: val })}
+                    />
                   ) : isObject ? (
                     <div className="grid grid-cols-1 gap-3 border p-4 rounded-md bg-gray-50 shadow-inner">
                       {Object.keys(formData[key]).filter(k => k !== '_id').map(subKey => (

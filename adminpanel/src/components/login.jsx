@@ -25,7 +25,7 @@ export default function JobsterritoryLogin() {
       localStorage.setItem("isadmin", "true");
       localStorage.setItem("adminToken", data.token);
 
-      window.location.href = "/admin-panel";
+      window.location.href = "/";
     } catch (error) {
       const message = error.response?.data?.message || "Login failed";
       toast.error(message);

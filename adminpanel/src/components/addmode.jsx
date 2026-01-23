@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
+import IndustryDropdown from "./industrydropdown";
 
 // ✨ Smooth animations
 
@@ -58,6 +59,7 @@ const tableConfig = {
         />
       ),
     },
+    { key: "industry", label: "Industry" },
   ],
 
   casestudies: [
@@ -91,6 +93,7 @@ const tableConfig = {
 
     // Object → can hold multiple sub-fields
     { key: "clientTestimonial", label: "Client Testimonial" },
+    { key: "industry", label: "Industry" },
     { key: "slug", label: "Slug (Leave empty to auto-generate)", required: false },
   ],
 
@@ -401,6 +404,11 @@ export default function AddPage() {
                         </option>
                       ))}
                     </select>
+                  ) : key === "industry" ? (
+                    <IndustryDropdown
+                      value={formData[key] || ""}
+                      onChange={(val) => setFormData({ ...formData, [key]: val })}
+                    />
                   ) : (
                     /* Default input */
                     <input

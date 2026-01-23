@@ -14,7 +14,10 @@ const categorySchema = new mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User", // reference to User who created the category
-      
+    },
+    industry: {
+      type: String,
+      trim: true,
     },
   },
   { timestamps: true }

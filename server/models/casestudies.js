@@ -59,6 +59,10 @@ const caseStudySchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
+    industry: {
+      type: String,
+      trim: true,
+    },
   },
   { timestamps: true }
 );
