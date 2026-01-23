@@ -92,7 +92,7 @@ router.post("/:type", upload.any(), async (req, res) => {
   const { type } = req.params;
   const Model = modelMap[type.toLowerCase()];
   if (!Model) return res.status(400).json({ message: "Invalid type" });
-  console.log(req.body,"giv");
+  console.log(req.body, "giv");
   try {
     const data = { ...req.body };
 
@@ -101,17 +101,45 @@ router.post("/:type", upload.any(), async (req, res) => {
       data[file.fieldname] = file.path; // save path to DB
     });
 
-    // Convert arrays and objects if sent as JSON strings
+    // Helper to expand flat keys with dots into nested objects
+    const expandedData = {};
     for (const key in data) {
-      try {
-        const parsed = JSON.parse(data[key]);
-        if (typeof parsed === "object") data[key] = parsed;
-      } catch (err) {
-        // not JSON, keep as string
+      const parts = key.split(".");
+      let current = expandedData;
+      for (let i = 0; i < parts.length; i++) {
+        const part = parts[i];
+        if (i === parts.length - 1) {
+          // Final part - set value
+          let val = data[key];
+          try {
+            // Only try parsing if it looks like JSON array or object
+            if (typeof val === "string" && (val.startsWith("[") || val.startsWith("{"))) {
+              const parsed = JSON.parse(val);
+              if (typeof parsed === "object") {
+                if (current[part] && typeof current[part] === "object" && !Array.isArray(current[part])) {
+                  // Merge: newly parsed bulk object is the base, but existing keys (from granular updates) override it
+                  current[part] = { ...parsed, ...current[part] };
+                } else {
+                  current[part] = parsed;
+                }
+                continue;
+              }
+            }
+          } catch (err) { }
+
+          if (current[part] && typeof current[part] === "object" && typeof val === "object" && val !== null && !Array.isArray(val) && !Array.isArray(current[part])) {
+            current[part] = { ...val, ...current[part] };
+          } else {
+            current[part] = val;
+          }
+        } else {
+          current[part] = current[part] || {};
+          current = current[part];
+        }
       }
     }
 
-    const created = await Model.create(data);
+    const created = await Model.create(expandedData);
     res.status(201).json(created);
   } catch (err) {
     console.error(err);
@@ -195,17 +223,59 @@ router.delete("/:type/:id", async (req, res) => {
   }
 });
 
-router.put("/:type/:id", async (req, res) => {
+router.put("/:type/:id", upload.any(), async (req, res) => {
   const { type, id } = req.params;
-  const data = req.body;
+  const rawData = { ...req.body };
+
+  // Attach uploaded files
+  if (req.files) {
+    req.files.forEach((file) => {
+      rawData[file.fieldname] = file.path;
+    });
+  }
 
   const Model = modelMap[type.toLowerCase()];
   if (!Model) return res.status(400).json({ message: "Invalid type" });
 
   try {
+    // Helper to expand flat keys with dots into nested objects
+    const data = {};
+    for (const key in rawData) {
+      const parts = key.split(".");
+      let current = data;
+      for (let i = 0; i < parts.length; i++) {
+        const part = parts[i];
+        if (i === parts.length - 1) {
+          let val = rawData[key];
+          try {
+            if (typeof val === "string" && (val.startsWith("[") || val.startsWith("{"))) {
+              const parsed = JSON.parse(val);
+              if (typeof parsed === "object") {
+                if (current[part] && typeof current[part] === "object" && !Array.isArray(current[part])) {
+                  current[part] = { ...parsed, ...current[part] };
+                } else {
+                  current[part] = parsed;
+                }
+                continue;
+              }
+            }
+          } catch (err) { }
+
+          if (current[part] && typeof current[part] === "object" && typeof val === "object" && val !== null && !Array.isArray(val) && !Array.isArray(current[part])) {
+            current[part] = { ...val, ...current[part] };
+          } else {
+            current[part] = val;
+          }
+        } else {
+          current[part] = current[part] || {};
+          current = current[part];
+        }
+      }
+    }
+
     const updated = await Model.findByIdAndUpdate(id, data, {
-      new: true, // return the updated document
-      runValidators: true, // validate schema
+      new: true,
+      runValidators: true,
     });
 
     if (!updated) return res.status(404).json({ message: "Item not found" });
@@ -213,7 +283,7 @@ router.put("/:type/:id", async (req, res) => {
     res.json(updated);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "Error updating item" });
+    res.status(500).json({ message: "Error updating item", error: err.message });
   }
 });
 

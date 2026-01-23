@@ -73,9 +73,16 @@ const tableConfig = {
         <img src={val} alt="logo" className="w-10 h-10 object-cover rounded" />
       ),
     },
+    {
+      key: "images.main.filename",
+      label: "Main Banner",
+      render: (val) => (
+        <img src={val} alt="banner" className="w-20 h-12 object-cover rounded" />
+      ),
+    },
 
     // ✅ New structured fields
-    { key: "clientBackground", label: "Client Background" },
+    { key: "clientBackground", label: "Client Background", required: true },
 
     // Arrays → handled as repeatable inputs
     { key: "challenge", label: "Challenges (Array)" },
@@ -84,7 +91,7 @@ const tableConfig = {
 
     // Object → can hold multiple sub-fields
     { key: "clientTestimonial", label: "Client Testimonial" },
-    { key: "slug", label: "Slug" },
+    { key: "slug", label: "Slug (Leave empty to auto-generate)", required: false },
   ],
 
   testimonials: [
@@ -149,7 +156,18 @@ export default function AddPage() {
         [key]: URL.createObjectURL(file),
       });
     } else {
-      setFormData({ ...formData, [key]: value });
+      let updatedData = { ...formData, [key]: value };
+
+      // Auto-generate slug from heading if slug is empty
+      if (key === "heading" && (!formData.slug || formData.slug === "")) {
+        const generatedSlug = value
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+        updatedData.slug = generatedSlug;
+      }
+
+      setFormData(updatedData);
     }
   };
   const addArrayItem = (key, newItem) => {
@@ -215,6 +233,9 @@ export default function AddPage() {
         `${process.env.REACT_APP_API_URL}/admin/${type}`,
         {
           method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+          },
           body: formPayload,
         }
       );
