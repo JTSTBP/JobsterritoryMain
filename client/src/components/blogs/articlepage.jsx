@@ -43,7 +43,23 @@ export default function ArticlePage() {
           <button className="p-2 bg-purple-200 rounded-xl hover:bg-purple-100 transition">
             <MessageCircle className="w-5 h-5 " />
           </button>
-          <button className="p-2 bg-purple-200 rounded-xl hover:bg-purple-100 transition">
+          <button
+            className="p-2 bg-purple-200 rounded-xl hover:bg-purple-100 transition"
+            onClick={() => {
+              if (navigator.share) {
+                navigator
+                  .share({
+                    title: blog.heading,
+                    text: "Check out this article!",
+                    url: window.location.href,
+                  })
+                  .catch(console.error);
+              } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert("Link copied to clipboard!");
+              }
+            }}
+          >
             <Share2 className="w-5 h-5 " />
           </button>
           <button className="p-2 bg-purple-200 rounded-xl hover:bg-purple-100 transition">
@@ -78,7 +94,12 @@ export default function ArticlePage() {
               >
                 Hire Now
               </button>
-              <button className="px-5 py-2 bg-white text-purple-700 rounded-full font-medium hover:bg-purple-100 transition">
+              <button
+                className="px-5 py-2 bg-white text-purple-700 rounded-full font-medium hover:bg-purple-100 transition"
+                onClick={() =>
+                  window.open("https://wa.me/919916205266", "_blank")
+                }
+              >
                 Whatsapp
               </button>
             </div>
