@@ -13,6 +13,8 @@ import CaseStudiesMain from "./components/casestudies/mainsection";
 import CaseStudy from "./pages/casestudies";
 import BlogsPage from "./pages/blogs";
 import SeparateBlogs from "./pages/separateblog";
+import AllIndustries from "./pages/allindustries";
+import IndustryDetail from "./pages/industrydetail";
 import ViewCaseStudy from "./pages/viewcasestudy";
 import ScrollToTop from "./pages/scrollTop";
 import AboutUs from "./pages/aboutus";
@@ -49,6 +51,8 @@ export default function App() {
             <Route path="/casestudy/:slug" element={<ViewCaseStudy />} />
             <Route path="/blogs" element={<BlogsPage />} />
             <Route path="/blogs/:slug" element={<SeparateBlogs />} />
+            <Route path="/industries" element={<AllIndustries />} />
+            <Route path="/industries/:slug" element={<IndustryDetail />} />
             <Route
               path="/termsandconditions"
               element={<TermsAndConditions />}

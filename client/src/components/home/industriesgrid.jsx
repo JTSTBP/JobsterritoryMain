@@ -59,7 +59,12 @@ const IndustriesGrid = ({ industries, separate }) => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              className={`rounded-xl p-6 shadow-md break-inside-avoid ${item.text}`}
+              className={`rounded-xl p-6 shadow-md break-inside-avoid ${item.text} ${item.slug ? 'cursor-pointer' : ''}`}
+              onClick={() => {
+                if (item.slug && separate !== "true") {
+                  navigate(`/industries/${item.slug}`);
+                }
+              }}
             >
               <img src={item.img} className="w-36 mx-auto my-2" />
               <h3 className="text-xl font-bold mb-2">{item.title}</h3>
@@ -67,11 +72,10 @@ const IndustriesGrid = ({ industries, separate }) => {
 
               {separate === "true" ? (
                 <button
-                  className={`py-2 px-4 border rounded-full ${
-                    item.text.includes("#FFFFFF")
-                      ? "bg-[#FFFFFF] text-[#1B084C]"
-                      : "bg-[#1B084C] text-white"
-                  }`}
+                  className={`py-2 px-4 border rounded-full ${item.text.includes("#FFFFFF")
+                    ? "bg-[#FFFFFF] text-[#1B084C]"
+                    : "bg-[#1B084C] text-white"
+                    }`}
                 >
                   Learn more
                 </button>

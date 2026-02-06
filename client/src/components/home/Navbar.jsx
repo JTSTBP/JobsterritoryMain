@@ -93,6 +93,12 @@ const Navbar = () => {
                         {showResources && (
                           <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
                             <a
+                              href="/industries"
+                              className="block px-4 py-2 hover:bg-gray-200"
+                            >
+                              Industries
+                            </a>
+                            <a
                               href="/casestudies"
                               className="block px-4 py-2 hover:bg-gray-200"
                             >
@@ -178,6 +184,12 @@ const Navbar = () => {
                         {showResources && (
                           <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
                             <a
+                              href="/industries"
+                              className="block px-4 py-2 hover:bg-gray-200"
+                            >
+                              Industries
+                            </a>
+                            <a
                               href="/casestudies"
                               className="block px-4 py-2 hover:bg-gray-200"
                             >
@@ -233,6 +245,12 @@ const Navbar = () => {
                       </button>
                       {showResources && (
                         <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
+                          <a
+                            href="/industries"
+                            className="block px-4 py-2 hover:bg-gray-200"
+                          >
+                            Industries
+                          </a>
                           <a
                             href="/casestudies"
                             className="block px-4 py-2 hover:bg-gray-200"
@@ -361,6 +379,12 @@ const Navbar = () => {
                 </button>
                 {showResources && (
                   <div className="ml-4 border-l border-gray-200 pl-4">
+                    <a
+                      href="/industries"
+                      className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+                    >
+                      Industries
+                    </a>
                     <a
                       href="/casestudies"
                       className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
