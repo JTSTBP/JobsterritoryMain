@@ -6,6 +6,7 @@ const Logos = require("../models/logos");
 const Testimonial = require("../models/testimonials");
 const RecruiterRequest = require("../models/recruiterReq");
 const NewSubscribe = require("../models/subscribe");
+const Industry = require("../models/industries");
 const {
   sendContactmail,
   sendRecruitermail,
@@ -170,6 +171,17 @@ router.get("/recruiter-requests", async (req, res) => {
   } catch (error) {
     console.error("Error fetching recruiter requests:", error);
     res.status(500).json({ message: "Server error" });
+  }
+});
+
+// @desc   Get all industries
+// @route  GET /api/getindustries
+router.get("/getindustries", async (req, res) => {
+  try {
+    const industries = await Industry.find().sort({ createdAt: -1 });
+    res.json(industries);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 });
 

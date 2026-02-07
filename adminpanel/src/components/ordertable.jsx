@@ -150,6 +150,26 @@ const tableConfig = {
       render: (val) => new Date(val).toLocaleDateString(),
     },
   ],
+  industries: [
+    { key: "_id", label: "ID" },
+    { key: "title", label: "Title" },
+    {
+      key: "img",
+      label: "Icon",
+      render: (val, row) => (
+        <img
+          src={val}
+          alt={row.title}
+          className="w-10 h-10 object-cover rounded"
+        />
+      ),
+    },
+    {
+      key: "createdAt",
+      label: "Created At",
+      render: (val) => new Date(val).toLocaleDateString(),
+    },
+  ],
 };
 const getNestedValue = (obj, path) => {
   return path.split(".").reduce((acc, part) => acc && acc[part], obj);

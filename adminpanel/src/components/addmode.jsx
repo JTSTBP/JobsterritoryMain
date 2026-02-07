@@ -138,14 +138,19 @@ const tableConfig = {
     { key: "requirement", label: "Requirement" },
     { key: "level", label: "Level" },
   ],
-  recruiters: [
+  industries: [
     { key: "_id", label: "ID" },
-    { key: "name", label: "Name" },
-    { key: "phone", label: "Phone" },
-    { key: "email", label: "Email" },
-    { key: "company", label: "Company" },
-    { key: "requirement", label: "Requirement" },
-    { key: "level", label: "Level" },
+    { key: "title", label: "Title", required: true },
+    { key: "slug", label: "Slug" },
+    { key: "description", label: "Short Description", required: true },
+    { key: "longDescription", label: "Long Description (HTML)", type: "desc" },
+    { key: "challenges", label: "Challenges (Array)" },
+    { key: "solutions", label: "Solutions (Array)" },
+    { key: "placements", label: "Placements (e.g. 500+)" },
+    { key: "banner", label: "Banner Image", type: "file" },
+    { key: "img", label: "Icon / Thumbnail", type: "file" },
+    { key: "bg", label: "Background (leave blank for auto-theme, or e.g. images/bg1.png)" },
+    { key: "text", label: "Text Color (leave blank for auto, or e.g. text-[#FFFFFF])" },
   ],
 };
 
@@ -181,6 +186,13 @@ export default function AddPage() {
         ) {
           defaults[f.key] = selectOptions[f.key][0];
         }
+        // Initialize arrays
+        if (f.label && f.label.includes("(Array)")) {
+          defaults[f.key] = [];
+        }
+        if (["challenges", "solutions", "resultsAchieved", "placements_old"].includes(f.key)) {
+          defaults[f.key] = [];
+        }
       });
       setFormData((prev) => ({ ...defaults, ...prev }));
     }
@@ -200,10 +212,11 @@ export default function AddPage() {
     } else {
       let updatedData = { ...formData, [key]: value };
 
-      // Auto-generate slug from heading if slug is empty or matches the previous auto-generated version
-      if (key === "heading") {
-        const oldSlugified = formData.heading
-          ? formData.heading
+      // Auto-generate slug from heading or title if slug is empty or matches the previous auto-generated version
+      if (key === "heading" || key === "title") {
+        const sourceText = formData.heading || formData.title || "";
+        const oldSlugified = sourceText
+          ? sourceText
             .toLowerCase()
             .replace(/[^a-z0-9]+/g, "-")
             .replace(/^-+|-+$/g, "")
@@ -341,8 +354,10 @@ export default function AddPage() {
 
                   {/* Images */}
                   {key === "banner" ||
+                    key === "img" ||
                     key.includes("image") ||
-                    key.includes("logo") ? (
+                    key.includes("logo") ||
+                    type === "file" ? (
                     <div className="flex flex-col">
                       <input
                         type="file"
@@ -359,11 +374,13 @@ export default function AddPage() {
                       )}
                     </div>
                   ) : key === "challenge" ||
+                    key === "challenges" ||
                     key === "solution" ||
+                    key === "solutions" ||
                     key === "resultsAchieved" ? (
                     /* Arrays handling */
                     <div className="space-y-4 border p-4 rounded-md bg-gray-50">
-                      {(formData[key] || []).map((item, index) => (
+                      {Array.isArray(formData[key]) && formData[key].map((item, index) => (
                         <div key={index} className="flex flex-col gap-2 bg-white p-3 rounded-md shadow-sm border">
                           <input
                             type="text"
@@ -422,7 +439,9 @@ export default function AddPage() {
                     </div>
                   ) : key === "desc" ||
                     key === "message" ||
-                    key === "clientBackground" ? (
+                    key === "clientBackground" ||
+                    key === "longDescription" ||
+                    type === "desc" ? (
                     <div className="quill-editor">
                       <ReactQuill
                         theme="snow"
@@ -536,10 +555,12 @@ export default function AddPage() {
                         dangerouslySetInnerHTML={{ __html: formData[key] }}
                       />
                     ) : key === "challenge" ||
+                      key === "challenges" ||
                       key === "solution" ||
+                      key === "solutions" ||
                       key === "resultsAchieved" ? (
                       <div className="space-y-2">
-                        {(formData[key] || []).map((item, idx) => (
+                        {Array.isArray(formData[key]) && formData[key].map((item, idx) => (
                           <div
                             key={idx}
                             className="p-2 border rounded-md bg-gray-50 shadow-sm"
@@ -573,7 +594,7 @@ export default function AddPage() {
                           </p>
                         </div>
                       )
-                    ) : key.includes("image") || key.includes("logo") ? (
+                    ) : key === "img" || key.includes("image") || key.includes("logo") || fields.find(f => f.key === key)?.type === "file" ? (
                       imagePreview[key] && (
                         <img
                           src={imagePreview[key]}

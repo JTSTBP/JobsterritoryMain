@@ -20,20 +20,37 @@ const Homepage = () => {
   const { openPopup } = usePopup();
   const navigate = useNavigate();
 
-    const location = useLocation();
+  const location = useLocation();
 
-   useEffect(() => {
-     if (location.state?.scrollTo) {
-       // Delay ensures testimonials section is rendered first
-       setTimeout(() => {
-         const section = document.getElementById(location.state.scrollTo);
-         if (section) {
-           section.scrollIntoView({ behavior: "smooth" });
-         }
-       }, 400); // 300–400ms delay works best
-     }
-   }, [location]);
-  const industries = [
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      // Delay ensures testimonials section is rendered first
+      setTimeout(() => {
+        const section = document.getElementById(location.state.scrollTo);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 400); // 300–400ms delay works best
+    }
+  }, [location]);
+  const [dynamicIndustries, setDynamicIndustries] = useState([]);
+
+  useEffect(() => {
+    const fetchDynamicIndustries = async () => {
+      try {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/getindustries`);
+        if (res.ok) {
+          const data = await res.json();
+          setDynamicIndustries(data);
+        }
+      } catch (err) {
+        console.error("Error fetching industries:", err);
+      }
+    };
+    fetchDynamicIndustries();
+  }, []);
+
+  const staticIndustries = [
     {
       title: "Technology & Startups",
       description:
@@ -41,6 +58,7 @@ const Homepage = () => {
       placements: "2000+",
       bg: "images/bg1.png",
       text: "text-[#FFFFFF]",
+      slug: "information-technology"
     },
     {
       title: "Healthcare & Life Sciences",
@@ -49,6 +67,7 @@ const Homepage = () => {
       placements: "800+",
       bg: "images/bg4.png",
       text: "text-[#1B084C]",
+      slug: "healthcare"
     },
     {
       title: "E-Commerce & Retail",
@@ -57,6 +76,7 @@ const Homepage = () => {
       placements: "1500+",
       bg: "images/bg2.png",
       text: "text-[#FFFFFF]",
+      slug: "retail"
     },
     {
       title: "Banking & Financial Services",
@@ -65,6 +85,7 @@ const Homepage = () => {
       placements: "1000+",
       bg: "images/bg5.png",
       text: "text-[#1B084C]",
+      slug: "finance"
     },
     {
       title: "Engineering & Manufacturing",
@@ -73,6 +94,7 @@ const Homepage = () => {
       placements: "1200+",
       bg: "images/bg1.png",
       text: "text-[#FFFFFF]",
+      slug: "manufacturing"
     },
 
     {
@@ -82,6 +104,7 @@ const Homepage = () => {
       placements: "1500+",
       bg: "images/bg8.png",
       text: "text-[#1B084C]",
+      slug: "hospitality"
     },
     {
       title: "Logistics & Supply Chain",
@@ -99,18 +122,19 @@ const Homepage = () => {
       placements: "500+",
       bg: "images/bg8.png",
       text: "text-[#1B084C]",
+      slug: "real-estate"
     },
     {
       title: "Renewable Energy",
       description:
         "Visionary leaders in solar, wind, and clean energy who drive sustainability, innovation, and measurable impact.",
       placements: "500+",
-      bg: "images/bg8.png",
-      text: "text-[#1B084C]",
       bg: "images/bg6.png",
       text: "text-[#FFFFFF]",
     },
   ];
+
+  const allIndustries = [...staticIndustries, ...dynamicIndustries];
   const blogs = [
     {
       id: 1,
@@ -207,7 +231,7 @@ const Homepage = () => {
       <Services />
       <SuccessStories />
       <Testimonial />
-      <IndustriesGrid industries={industries} />
+      <IndustriesGrid industries={allIndustries} />
 
       <BlogsSection blogs={blogs} />
       <FAQSection faqData={faqData} />

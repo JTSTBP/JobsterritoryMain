@@ -11,6 +11,17 @@ const cardVariants = {
   }),
 };
 
+const themes = [
+  { bg: "/images/bg1.png", text: "text-[#FFFFFF]" }, // Dark
+  { bg: "/images/bg4.png", text: "text-[#1B084C]" }, // Light
+  { bg: "/images/bg6.png", text: "text-[#FFFFFF]" }, // Dark
+  { bg: "/images/bg5.png", text: "text-[#1B084C]" }, // Light
+  { bg: "/images/bg2.png", text: "text-[#FFFFFF]" }, // Dark
+  { bg: "/images/bg8.png", text: "text-[#1B084C]" }, // Light
+  { bg: "/images/bg7.png", text: "text-[#FFFFFF]" }, // Dark
+  { bg: "/images/bg3.png", text: "text-[#1B084C]" }, // Light
+];
+
 const IndustriesGrid = ({ industries, separate }) => {
   const navigate = useNavigate();
   return (
@@ -41,61 +52,70 @@ const IndustriesGrid = ({ industries, separate }) => {
       </motion.div>
 
       {/* First 6 Cards */}
-      <div className="mb-5 text-center">
-        <div className="columns-1 md:columns-3 gap-6 space-y-6">
-          {industries.map((item, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              variants={cardVariants}
-              initial="hidden"
-              animate="visible"
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 10px 30px rgba(0,0,0,0.3)",
-              }}
-              style={{
-                backgroundImage: `url(${item.bg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-              className={`rounded-xl p-6 shadow-md break-inside-avoid ${item.text} ${item.slug ? 'cursor-pointer' : ''}`}
-              onClick={() => {
-                if (item.slug && separate !== "true") {
-                  navigate(`/industries/${item.slug}`);
-                }
-              }}
-            >
-              <img src={item.img} className="w-36 mx-auto my-2" />
-              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-              <p className="text-sm mb-4">{item.description}</p>
+      <div className="mb-5 text-center px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {industries.map((item, index) => {
+            const theme = themes[index % themes.length];
+            // Only use item specific background if it's an external URL (uploaded), 
+            // otherwise use our alternating theme for consistency
+            const isExternalBg = item.bg && (item.bg.startsWith('http') || item.bg.startsWith('https'));
+            const effectiveBg = isExternalBg ? item.bg : theme.bg;
+            const effectiveText = isExternalBg ? (item.text || "text-[#FFFFFF]") : theme.text;
 
-              {separate === "true" ? (
-                <button
-                  className={`py-2 px-4 border rounded-full ${item.text.includes("#FFFFFF")
-                    ? "bg-[#FFFFFF] text-[#1B084C]"
-                    : "bg-[#1B084C] text-white"
-                    }`}
-                >
-                  Learn more
-                </button>
-              ) : (
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{
-                    delay: index * 0.3 + 0.4,
-                    type: "spring",
-                    stiffness: 100,
-                  }}
-                  className="bg-[rgba(255,255,255,0.34)] rounded-2xl px-10 py-1 text-center w-fit mx-auto"
-                >
-                  <h2 className="text-2xl font-bold">{item.placements}</h2>
-                  <p className="text-lg">Placements</p>
-                </motion.div>
-              )}
-            </motion.div>
-          ))}
+            return (
+              <motion.div
+                key={index}
+                custom={index}
+                variants={cardVariants}
+                initial="hidden"
+                animate="visible"
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0px 10px 30px rgba(0,0,0,0.3)",
+                }}
+                style={{
+                  backgroundImage: `url(${effectiveBg})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+                className={`rounded-xl p-6 shadow-md transition-all duration-300 h-full flex flex-col items-center justify-between ${effectiveText} ${item.slug ? 'cursor-pointer' : ''}`}
+                onClick={() => {
+                  if (item.slug && separate !== "true") {
+                    navigate(`/industries/${item.slug}`);
+                  }
+                }}
+              >
+                <img src={item.img} className="w-36 mx-auto my-2" alt={item.title} />
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                <p className="text-sm mb-4">{item.description}</p>
+
+                {separate === "true" ? (
+                  <button
+                    className={`py-2 px-4 border rounded-full ${effectiveText.includes("#FFFFFF")
+                      ? "bg-[#FFFFFF] text-[#1B084C]"
+                      : "bg-[#1B084C] text-white"
+                      }`}
+                  >
+                    Learn more
+                  </button>
+                ) : (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{
+                      delay: index * 0.3 + 0.4,
+                      type: "spring",
+                      stiffness: 100,
+                    }}
+                    className="bg-[rgba(255,255,255,0.34)] rounded-2xl px-10 py-1 text-center w-fit mx-auto"
+                  >
+                    <h2 className="text-2xl font-bold">{item.placements}</h2>
+                    <p className="text-lg">Placements</p>
+                  </motion.div>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 

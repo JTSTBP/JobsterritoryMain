@@ -10,6 +10,7 @@ export default function Sidebar({ selected, onSelect, mobileOpen, onClose }) {
     { title: "Logos", key: "logos" },
     { title: "Contact Us", key: "contactus" },
     { title: "Recruiter Requests", key: "recruiters" },
+    { title: "Industries", key: "industries" },
   ];
 
   return (
@@ -28,11 +29,10 @@ export default function Sidebar({ selected, onSelect, mobileOpen, onClose }) {
             <button
               key={item.key}
               onClick={() => onSelect(item.key)}
-              className={`w-full text-left ${
-                selected === item.key
+              className={`w-full text-left ${selected === item.key
                   ? "text-red-500 font-semibold"
                   : "text-gray-700 hover:text-red-500"
-              }`}
+                }`}
             >
               {item.title}
             </button>
@@ -74,11 +74,10 @@ export default function Sidebar({ selected, onSelect, mobileOpen, onClose }) {
                     onSelect(item.key);
                     onClose();
                   }}
-                  className={`w-full text-left ${
-                    selected === item.key
+                  className={`w-full text-left ${selected === item.key
                       ? "text-red-500 font-semibold"
                       : "text-gray-700 hover:text-red-500"
-                  }`}
+                    }`}
                 >
                   {item.title}
                 </button>

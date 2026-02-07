@@ -11,6 +11,7 @@ const Contact = require("../models/contact");
 const Logos = require("../models/logos");
 const Testimonial = require("../models/testimonials");
 const RecruiterRequest = require("../models/recruiterReq");
+const Industry = require("../models/industries");
 const router = express.Router();
 const { upload } = require("./../cloudinary");
 
@@ -85,6 +86,7 @@ const modelMap = {
   contactus: Contact,
   recruiters: RecruiterRequest,
   logos: Logos,
+  industries: Industry,
 };
 
 // For multiple fields dynamically, use .any()
@@ -175,6 +177,9 @@ router.get("/:type", async (req, res) => {
       case "logos":
         data = await Logos.find().sort({ createdAt: -1 });
         break;
+      case "industries":
+        data = await Industry.find().sort({ createdAt: -1 });
+        break;
       default:
         return res.status(400).json({ error: "Invalid type" });
     }
@@ -187,32 +192,13 @@ router.get("/:type", async (req, res) => {
 
 // Example in Express
 router.delete("/:type/:id", async (req, res) => {
-  const { type } = req.params;
+  const { type, id } = req.params;
   console.log(type, "type", req.params);
   try {
-    let deleted;
-    switch (type.toLowerCase()) {
-      case "blogs":
-        deleted = await Blog.findByIdAndDelete(req.params.id);
-        break;
-      case "testimonials":
-        deleted = await Testimonial.findByIdAndDelete(req.params.id);
-        break;
-      case "contactus":
-        deleted = await Contact.findByIdAndDelete(req.params.id);
-        break;
-      case "recruiters":
-        deleted = await RecruiterRequest.findByIdAndDelete(req.params.id);
-        break;
-      case "casestudies":
-        deleted = await CaseStudy.findByIdAndDelete(req.params.id);
-        break;
-      case "logos":
-        deleted = await Logos.findByIdAndDelete(req.params.id);
-        break;
-      default:
-        return res.status(400).json({ error: "Invalid type" });
-    }
+    const Model = modelMap[type.toLowerCase()];
+    if (!Model) return res.status(400).json({ error: "Invalid type" });
+
+    const deleted = await Model.findByIdAndDelete(id);
     console.log(type, "type", deleted, "del");
 
     if (!deleted) return res.status(404).json({ message: "Item not found" });

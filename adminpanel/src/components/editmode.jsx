@@ -146,9 +146,9 @@ export default function EditModal({ row, type, onClose, onSave }) {
 
               const isDate = key === "schedulepost" || key === "postedAt";
               const isLongText = key === "desc" || key === "message" || key === "clientBackground";
-              const isArray = Array.isArray(formData[key]);
+              const isArray = Array.isArray(formData[key]) || key === "challenges" || key === "solutions" || key === "placements_old";
               const isObject = typeof formData[key] === "object" && formData[key] !== null && !isArray;
-              const isImage = key === "banner" || key.toLowerCase().includes("logo") || key.toLowerCase().includes("image");
+              const isImage = key === "banner" || key === "img" || key.toLowerCase().includes("logo") || key.toLowerCase().includes("image") || key.toLowerCase().includes("img");
 
               return (
                 <div key={key} className={`flex flex-col ${isLongText || isArray || isObject || isImage ? "md:col-span-2" : ""}`}>
@@ -180,7 +180,7 @@ export default function EditModal({ row, type, onClose, onSave }) {
                     </div>
                   ) : isArray ? (
                     <div className="space-y-4 border p-4 rounded-md bg-gray-50 shadow-inner">
-                      {(formData[key] || []).map((item, index) => (
+                      {Array.isArray(formData[key]) && formData[key].map((item, index) => (
                         <div key={index} className="flex flex-col gap-2 bg-white p-3 rounded-md shadow-sm border">
                           {Object.keys(item).filter(k => k !== '_id').map(subKey => (
                             <div key={subKey} className="flex flex-col">

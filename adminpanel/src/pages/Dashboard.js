@@ -4,6 +4,7 @@ import Navbar from "../components/navbar";
 import OrderTable from "../components/ordertable";
 import EditModal from "../components/editmode"; // ✅ new import
 import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Dashboard() {
   const { type } = useParams();
@@ -40,7 +41,12 @@ export default function Dashboard() {
           `${process.env.REACT_APP_API_URL}/admin/${selected.toLowerCase()}`
         );
         const json = await res.json();
-        setData(json);
+        if (Array.isArray(json)) {
+          setData(json);
+        } else {
+          console.error("API did not return an array:", json);
+          setData([]);
+        }
       } catch (err) {
         console.error(err);
       } finally {
@@ -50,13 +56,13 @@ export default function Dashboard() {
     if (selected) fetchData();
   }, [selected]);
 
-  const filteredData = data.filter((item) =>
+  const filteredData = Array.isArray(data) ? data.filter((item) =>
     Object.values(item).some(
       (val) =>
         typeof val === "string" &&
         val.toLowerCase().includes(search.toLowerCase())
     )
-  );
+  ) : [];
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this item?")) return;
@@ -76,14 +82,14 @@ export default function Dashboard() {
 
       if (res.ok) {
         setData((prev) => prev.filter((item) => item._id !== id));
-        alert("Item deleted successfully ✅");
+        toast.success("Item deleted successfully ✅");
       } else {
         const err = await res.json();
-        alert(err.message || "Failed to delete item ❌");
+        toast.error(err.message || "Failed to delete item ❌");
       }
     } catch (error) {
       console.error("Delete error:", error);
-      alert("Error deleting item ❌");
+      toast.error("Error deleting item ❌");
     }
   };
 

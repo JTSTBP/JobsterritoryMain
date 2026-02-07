@@ -20,8 +20,22 @@ const IndustryDetail = () => {
         if (found) {
             setIndustry(found);
         } else {
-            // Handle not found - maybe redirect to industries list or show error
-            // navigate("/industries"); 
+            // Fetch from backend
+            const fetchIndustry = async () => {
+                try {
+                    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/getindustries`);
+                    if (res.ok) {
+                        const data = await res.json();
+                        const dynamicFound = data.find(item => item.slug === slug);
+                        if (dynamicFound) {
+                            setIndustry(dynamicFound);
+                        }
+                    }
+                } catch (err) {
+                    console.error("Error fetching industry:", err);
+                }
+            };
+            fetchIndustry();
         }
     }, [slug, navigate]);
 
@@ -33,15 +47,39 @@ const IndustryDetail = () => {
         );
     }
 
+    // Helper to render challenge/solution items which can be strings or objects
+    const renderItems = (items) => {
+        if (!items) return null;
+        return items.map((item, idx) => {
+            const isObject = typeof item === 'object' && item !== null;
+            const title = isObject ? item.title : item;
+            const description = isObject ? item.description : null;
+
+            return (
+                <li key={idx} className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-purple-400">
+                    <p className="font-bold text-gray-800">{title}</p>
+                    {description && <p className="text-sm text-gray-600 mt-1">{description}</p>}
+                </li>
+            );
+        });
+    };
+
     return (
         <>
             <Navbar />
             <div className="bg-[#EFEFEF] min-h-screen font-poppins text-[#1B084C]">
 
                 {/* Header / Hero */}
-                <div className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden">
+                <div
+                    className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden bg-gray-200"
+                    style={{
+                        backgroundImage: `url(${industry.banner || (industry.bg ? (industry.bg.startsWith('bg') ? '' : `/${industry.bg}`) : '')})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}
+                >
                     {/* Gradient Overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${industry.text === 'text-[#FFFFFF]' ? 'from-[#1B084C] to-[#2D274B]' : 'from-gray-200 to-white'} opacity-90`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-r ${industry.text === 'text-[#FFFFFF]' ? 'from-[#1B084C]/80 to-[#2D274B]/70' : 'from-gray-200/90 to-white/80'} `}></div>
 
                     {/* Content */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
@@ -68,14 +106,17 @@ const IndustryDetail = () => {
                     {/* Overview */}
                     <div className="mb-16">
                         <h2 className="text-3xl font-bold mb-6 font-montserrat">Overview</h2>
-                        <p className="text-lg leading-relaxed text-gray-700">
-                            {industry.longDescription}
-                        </p>
+                        <div
+                            className="text-lg leading-relaxed text-gray-700 prose max-w-none"
+                            dangerouslySetInnerHTML={{ __html: industry.longDescription }}
+                        />
 
-                        <div className="mt-8 bg-white p-6 rounded-xl shadow-sm inline-block">
-                            <span className="block text-4xl font-bold text-purple-600 mb-1">{industry.placements}</span>
-                            <span className="text-gray-600 font-medium">Successful Placements</span>
-                        </div>
+                        {industry.placements && (
+                            <div className="mt-8 bg-white p-6 rounded-xl shadow-sm inline-block">
+                                <span className="block text-4xl font-bold text-purple-600 mb-1">{industry.placements}</span>
+                                <span className="text-gray-600 font-medium">Successful Placements</span>
+                            </div>
+                        )}
                     </div>
 
                     {/* Challenges & Solutions Grid */}
@@ -87,11 +128,7 @@ const IndustryDetail = () => {
                                 Industry Challenges
                             </h2>
                             <ul className="space-y-4">
-                                {industry.challenges?.map((challenge, idx) => (
-                                    <li key={idx} className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-red-400">
-                                        <p className="font-medium text-gray-800">{challenge}</p>
-                                    </li>
-                                ))}
+                                {renderItems(industry.challenges)}
                             </ul>
                         </div>
 
@@ -102,11 +139,7 @@ const IndustryDetail = () => {
                                 Our Solutions
                             </h2>
                             <ul className="space-y-4">
-                                {industry.solutions?.map((solution, idx) => (
-                                    <li key={idx} className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-green-400">
-                                        <p className="font-medium text-gray-800">{solution}</p>
-                                    </li>
-                                ))}
+                                {renderItems(industry.solutions)}
                             </ul>
                         </div>
                     </div>

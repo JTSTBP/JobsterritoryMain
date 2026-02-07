@@ -1,11 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
+import { industriesData } from "../../constants/industriesData";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showResources, setShowResources] = useState(false);
+  const [showIndustries, setShowIndustries] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const currentPath = location.pathname;
@@ -40,6 +42,7 @@ const Navbar = () => {
     // { name: "Fractional Hiring", path: "/fractionalhiring" },
 
     { name: "Pay Per Hire", path: "/Payperhire" },
+    { name: "Industries", path: "/industries" },
     { name: "Resources", path: "#" },
     // { name: "About", path: "/aboutus" },
   ];
@@ -50,10 +53,30 @@ const Navbar = () => {
     // { name: "About Us", path: "/aboutus" },
     // { name: "Fractional Hiring", path: "/fractionalhiring" },
     { name: "Pay Per Hire", path: "/Payperhire" },
+    { name: "Industries", path: "/industries" },
     { name: "Hire Now", path: "/contactus" },
     { name: "Resources", path: "#" },
     { name: "AboutUs", path: "/aboutus" },
   ];
+  const [dynamicIndustries, setDynamicIndustries] = useState([]);
+
+  useEffect(() => {
+    const fetchDynamicIndustries = async () => {
+      try {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/getindustries`);
+        if (res.ok) {
+          const data = await res.json();
+          setDynamicIndustries(data);
+        }
+      } catch (err) {
+        console.error("Error fetching industries:", err);
+      }
+    };
+    fetchDynamicIndustries();
+  }, []);
+
+  const allIndustries = [...industriesData, ...dynamicIndustries];
+
   // find active index (fallback to 0 if route not found)
   const foundIndex = menuItems.findIndex((m) => m.path === location.pathname);
   const activeIndex = foundIndex === -1 ? 0 : foundIndex;
@@ -63,7 +86,7 @@ const Navbar = () => {
   const rightItems = menuItems.slice(activeIndex + 1);
   return (
     <nav className="bg-[#EFEFEF] border-b border-gray-200 font-montserrat font-semibold">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 relative">
         <div className="flex justify-between items-center h-16   whitespace-nowrap  ">
           {/* logo */}
           <Link to="/">
@@ -85,19 +108,19 @@ const Navbar = () => {
                       <div key={it.path} className="relative">
                         <button
                           onClick={() => setShowResources(!showResources)}
+                          onMouseEnter={() => setShowResources(true)}
+                          onMouseLeave={() => setShowResources(false)}
                           className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                         >
                           <span>{it.name}</span>
                           <IoIosArrowDown className="ml-1 text-sm" />
                         </button>
                         {showResources && (
-                          <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
-                            <a
-                              href="/industries"
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              Industries
-                            </a>
+                          <div
+                            onMouseEnter={() => setShowResources(true)}
+                            onMouseLeave={() => setShowResources(false)}
+                            className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
+                          >
                             <a
                               href="/casestudies"
                               className="block px-4 py-2 hover:bg-gray-200"
@@ -123,6 +146,47 @@ const Navbar = () => {
                             >
                               About Us
                             </a>
+                          </div>
+                        )}
+                      </div>
+                    ) : it.name === "Industries" ? (
+                      <div key={it.path} className="">
+                        <button
+                          onClick={() => setShowIndustries(!showIndustries)}
+                          onMouseEnter={() => setShowIndustries(true)}
+                          onMouseLeave={() => setShowIndustries(false)}
+                          className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
+                        >
+                          <span>{it.name}</span>
+                          <IoIosArrowDown className="ml-1 text-sm" />
+                        </button>
+                        {showIndustries && (
+                          <div
+                            onMouseEnter={() => setShowIndustries(true)}
+                            onMouseLeave={() => setShowIndustries(false)}
+                            className="absolute mt-2 left-1/2 -translate-x-1/2 w-[800px] bg-white text-black rounded-xl shadow-2xl z-50 transition-all duration-300 animate-in fade-in slide-in-from-top-2 p-6 border border-gray-100"
+                          >
+                            <div className="grid grid-cols-4 gap-x-4 gap-y-2">
+                              {allIndustries.slice(0, 16).map((industry) => (
+                                <Link
+                                  key={industry.slug}
+                                  to={`/industries/${industry.slug}`}
+                                  className="block px-3 py-2 hover:bg-purple-50 hover:text-purple-600 rounded-lg text-sm font-semibold transition-colors whitespace-normal leading-tight"
+                                  onClick={() => setShowIndustries(false)}
+                                >
+                                  {industry.title}
+                                </Link>
+                              ))}
+                            </div>
+                            <div className="border-t border-gray-100 mt-4 pt-4 text-center">
+                              <Link
+                                to="/industries"
+                                className="inline-block text-xs font-bold text-purple-600 hover:text-purple-800 transition-colors px-6 py-2 rounded-full hover:bg-purple-50"
+                                onClick={() => setShowIndustries(false)}
+                              >
+                                View All Industries →
+                              </Link>
+                            </div>
                           </div>
                         )}
                       </div>
@@ -176,19 +240,19 @@ const Navbar = () => {
                       <div key={it.path} className="relative">
                         <button
                           onClick={() => setShowResources(!showResources)}
+                          onMouseEnter={() => setShowResources(true)}
+                          onMouseLeave={() => setShowResources(false)}
                           className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                         >
                           <span>{it.name}</span>
                           <IoIosArrowDown className="ml-1 text-sm" />
                         </button>
                         {showResources && (
-                          <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
-                            <a
-                              href="/industries"
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              Industries
-                            </a>
+                          <div
+                            onMouseEnter={() => setShowResources(true)}
+                            onMouseLeave={() => setShowResources(false)}
+                            className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
+                          >
                             <a
                               href="/casestudies"
                               className="block px-4 py-2 hover:bg-gray-200"
@@ -208,6 +272,47 @@ const Navbar = () => {
                             >
                               Testimonials
                             </a>
+                          </div>
+                        )}
+                      </div>
+                    ) : it.name === "Industries" ? (
+                      <div key={it.path} className="">
+                        <button
+                          onClick={() => setShowIndustries(!showIndustries)}
+                          onMouseEnter={() => setShowIndustries(true)}
+                          onMouseLeave={() => setShowIndustries(false)}
+                          className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
+                        >
+                          <span>{it.name}</span>
+                          <IoIosArrowDown className="ml-1 text-sm" />
+                        </button>
+                        {showIndustries && (
+                          <div
+                            onMouseEnter={() => setShowIndustries(true)}
+                            onMouseLeave={() => setShowIndustries(false)}
+                            className="absolute mt-2 left-1/2 -translate-x-1/2 w-[800px] bg-white text-black rounded-xl shadow-2xl z-50 transition-all duration-300 animate-in fade-in slide-in-from-top-2 p-6 border border-gray-100"
+                          >
+                            <div className="grid grid-cols-4 gap-x-4 gap-y-2">
+                              {industriesData.slice(0, 16).map((industry) => (
+                                <Link
+                                  key={industry.slug}
+                                  to={`/industries/${industry.slug}`}
+                                  className="block px-3 py-2 hover:bg-purple-50 hover:text-purple-600 rounded-lg text-sm font-semibold transition-colors whitespace-normal leading-tight"
+                                  onClick={() => setShowIndustries(false)}
+                                >
+                                  {industry.title}
+                                </Link>
+                              ))}
+                            </div>
+                            <div className="border-t border-gray-100 mt-4 pt-4 text-center">
+                              <Link
+                                to="/industries"
+                                className="inline-block text-xs font-bold text-purple-600 hover:text-purple-800 transition-colors px-6 py-2 rounded-full hover:bg-purple-50"
+                                onClick={() => setShowIndustries(false)}
+                              >
+                                View All Industries →
+                              </Link>
+                            </div>
                           </div>
                         )}
                       </div>
@@ -238,19 +343,19 @@ const Navbar = () => {
                     <div key={it.path} className="relative">
                       <button
                         onClick={() => setShowResources(!showResources)}
+                        onMouseEnter={() => setShowResources(true)}
+                        onMouseLeave={() => setShowResources(false)}
                         className="flex items-center text-[#2F1656]  cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                       >
                         <span>{it.name}</span>
                         <IoIosArrowDown className="ml-1 text-sm" />
                       </button>
                       {showResources && (
-                        <div className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40">
-                          <a
-                            href="/industries"
-                            className="block px-4 py-2 hover:bg-gray-200"
-                          >
-                            Industries
-                          </a>
+                        <div
+                          onMouseEnter={() => setShowResources(true)}
+                          onMouseLeave={() => setShowResources(false)}
+                          className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
+                        >
                           <a
                             href="/casestudies"
                             className="block px-4 py-2 hover:bg-gray-200"
@@ -270,6 +375,47 @@ const Navbar = () => {
                           >
                             Testimonials
                           </a>
+                        </div>
+                      )}
+                    </div>
+                  ) : it.name === "Industries" ? (
+                    <div key={it.path} className="">
+                      <button
+                        onClick={() => setShowIndustries(!showIndustries)}
+                        onMouseEnter={() => setShowIndustries(true)}
+                        onMouseLeave={() => setShowIndustries(false)}
+                        className="flex items-center text-[#2F1656]  cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
+                      >
+                        <span>{it.name}</span>
+                        <IoIosArrowDown className="ml-1 text-sm" />
+                      </button>
+                      {showIndustries && (
+                        <div
+                          onMouseEnter={() => setShowIndustries(true)}
+                          onMouseLeave={() => setShowIndustries(false)}
+                          className="absolute mt-2 left-1/2 -translate-x-1/2 w-[700px] bg-white text-black rounded-xl shadow-2xl z-50 transition-all duration-300 animate-in fade-in slide-in-from-top-2 p-6 border border-gray-100"
+                        >
+                          <div className="grid grid-cols-4 gap-x-3 gap-y-2">
+                            {allIndustries.slice(0, 16).map((industry) => (
+                              <Link
+                                key={industry.slug}
+                                to={`/industries/${industry.slug}`}
+                                className="block px-3 py-2 hover:bg-purple-50 hover:text-purple-600 rounded-lg text-[13px] font-semibold transition-colors whitespace-normal leading-tight"
+                                onClick={() => setShowIndustries(false)}
+                              >
+                                {industry.title}
+                              </Link>
+                            ))}
+                          </div>
+                          <div className="border-t border-gray-100 mt-4 pt-4 text-center">
+                            <Link
+                              to="/industries"
+                              className="inline-block text-[11px] font-bold text-purple-600 hover:text-purple-800 transition-colors px-4 py-2 rounded-full hover:bg-purple-50"
+                              onClick={() => setShowIndustries(false)}
+                            >
+                              View All Industries →
+                            </Link>
+                          </div>
                         </div>
                       )}
                     </div>
@@ -368,6 +514,44 @@ const Navbar = () => {
                   {item.name}
                 </a>
               ))}
+              {/* Mobile Industries Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setShowIndustries(!showIndustries)}
+                  className="flex items-center w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md text-sm font-bold"
+                >
+                  <span>Industries</span>
+                  <IoIosArrowDown className={`ml-1 text-sm transition-transform duration-200 ${showIndustries ? 'rotate-180' : ''}`} />
+                </button>
+                {showIndustries && (
+                  <div className="ml-4 border-l border-gray-200 pl-4 py-1 space-y-1">
+                    {industriesData.slice(0, 9).map((industry) => (
+                      <Link
+                        key={industry.slug}
+                        to={`/industries/${industry.slug}`}
+                        className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
+                        onClick={() => {
+                          setShowIndustries(false);
+                          setIsOpen(false);
+                        }}
+                      >
+                        {industry.title}
+                      </Link>
+                    ))}
+                    <Link
+                      to="/industries"
+                      className="block px-3 py-2 text-purple-600 font-bold hover:bg-gray-100 rounded-md text-sm"
+                      onClick={() => {
+                        setShowIndustries(false);
+                        setIsOpen(false);
+                      }}
+                    >
+                      View All Industries
+                    </Link>
+                  </div>
+                )}
+              </div>
+
               {/* Mobile Resources Dropdown */}
               <div className="relative">
                 <button
@@ -375,16 +559,10 @@ const Navbar = () => {
                   className="flex items-center w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md text-sm font-bold"
                 >
                   <span>Resources</span>
-                  <IoIosArrowDown className="ml-1 text-sm" />
+                  <IoIosArrowDown className={`ml-1 text-sm transition-transform duration-200 ${showResources ? 'rotate-180' : ''}`} />
                 </button>
                 {showResources && (
-                  <div className="ml-4 border-l border-gray-200 pl-4">
-                    <a
-                      href="/industries"
-                      className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-                    >
-                      Industries
-                    </a>
+                  <div className="ml-4 border-l border-gray-200 pl-4 py-1 space-y-1">
                     <a
                       href="/casestudies"
                       className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
@@ -400,7 +578,7 @@ const Navbar = () => {
                     <a
                       href="#testimonials"
                       onClick={(e) => handleScroll(e, "#testimonials")}
-                      className="block px-4 py-2 hover:bg-gray-200"
+                      className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
                     >
                       Testimonials
                     </a>
