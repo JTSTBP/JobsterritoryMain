@@ -7,6 +7,8 @@ import Footer from "../components/home/footer";
 import FAQSection from "../components/home/faqs";
 import BlogsSection from "../components/commonsections/staticblogs";
 import StaticCaestudies from "../components/commonsections/casestdiesstatic";
+import IndustriesGrid from "../components/home/industriesgrid";
+import { industriesData } from "../constants/industriesData";
 import { useNavigate } from "react-router-dom";
 import { usePopup } from "../contexts/popupcontext";
 
@@ -229,6 +231,14 @@ const PayperHire = () => {
       />
       <WhyChoosePayPerHire />
       <PayPerHireProcess />
+
+      <IndustriesGrid
+        industries={industriesData.slice(0, 8)}
+        title="Our Services"
+        description="Comprehensive recruitment solutions for various industries, delivering the right talent for your specific needs."
+        showViewAll={true}
+        variant="modern"
+      />
 
       <StaticCaestudies industries={industries} separate="true" />
       <BlogsSection blogs={blogs} />

@@ -22,7 +22,14 @@ const themes = [
   { bg: "/images/bg3.png", text: "text-[#1B084C]" }, // Light
 ];
 
-const IndustriesGrid = ({ industries, separate }) => {
+const IndustriesGrid = ({
+  industries,
+  separate,
+  title = "Your Industry, Our Expertise",
+  description = "From emerging brands to industry giants, we deliver hiring solutions tailored to your sector’s challenges and ambitions.",
+  showViewAll = false,
+  variant = "default"
+}) => {
   const navigate = useNavigate();
   return (
     <div className="py-12 px-10 md:px-8 lg:px-16 bg-[#EFEFEF] text-[#1B084C]">
@@ -43,17 +50,16 @@ const IndustriesGrid = ({ industries, separate }) => {
           />
         </div>
         <h2 className="text-3xl md:text-4xl font-bold font-montserrat inline-block pb-2">
-          Your Industry, Our Expertise
+          {title}
         </h2>
-        <p className="mt-2">
-          From emerging brands to industry giants, we deliver hiring solutions
-          tailored to your sector’s challenges and ambitions.
+        <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
+          {description}
         </p>
       </motion.div>
 
-      {/* First 6 Cards */}
+      {/* Grid */}
       <div className="mb-5 text-center px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((item, index) => {
             const theme = themes[index % themes.length];
             // Only use item specific background if it's an external URL (uploaded), 
@@ -61,6 +67,45 @@ const IndustriesGrid = ({ industries, separate }) => {
             const isExternalBg = item.bg && (item.bg.startsWith('http') || item.bg.startsWith('https'));
             const effectiveBg = isExternalBg ? item.bg : theme.bg;
             const effectiveText = isExternalBg ? (item.text || "text-[#FFFFFF]") : theme.text;
+
+            if (variant === "modern") {
+              return (
+                <motion.div
+                  key={index}
+                  custom={index}
+                  variants={cardVariants}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover={{
+                    y: -10,
+                    boxShadow: "0px 20px 40px rgba(0,0,0,0.1)",
+                  }}
+                  className={`bg-white rounded-3xl p-6 border border-white flex flex-col items-center text-center shadow-lg transition-all duration-300 h-full ${item.slug ? 'cursor-pointer' : ''}`}
+                  onClick={() => {
+                    if (item.slug && separate !== "true") {
+                      navigate(`/industries/${item.slug}`);
+                    }
+                  }}
+                >
+                  <div className="w-20 h-20 mb-4 bg-purple-50 rounded-2xl flex items-center justify-center p-4">
+                    <img src={item.img} className="w-full h-full object-contain" alt={item.title} />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 font-montserrat">{item.title}</h3>
+                  <p className="text-xs text-gray-500 mb-4 flex-grow line-clamp-3">{item.description}</p>
+
+                  {separate === "true" ? (
+                    <button className="text-purple-600 text-sm font-bold hover:underline">
+                      Learn more →
+                    </button>
+                  ) : (
+                    <div className="text-[#1B084C] font-montserrat">
+                      <span className="block text-xl font-bold">{item.placements}</span>
+                      <span className="text-[10px] text-gray-400 uppercase tracking-widest">Placements</span>
+                    </div>
+                  )}
+                </motion.div>
+              );
+            }
 
             return (
               <motion.div
@@ -116,8 +161,38 @@ const IndustriesGrid = ({ industries, separate }) => {
               </motion.div>
             );
           })}
+
+          {showViewAll && (
+            <motion.div
+              custom={industries.length}
+              variants={cardVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0px 10px 30px rgba(0,0,0,0.3)",
+              }}
+              style={{
+                backgroundImage: variant === "modern" ? "none" : `url('/images/trasfrom.png')`,
+                backgroundColor: variant === "modern" ? "#2D274B" : "transparent",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              className={`rounded-xl p-6 shadow-md transition-all duration-300 h-full flex flex-col items-center justify-center text-white cursor-pointer ${variant === "modern" ? "rounded-3xl" : ""}`}
+              onClick={() => navigate("/industries")}
+            >
+              <div className="text-center group">
+                <h3 className="text-2xl font-bold mb-4">View All Industries</h3>
+                <div className="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center mx-auto group-hover:bg-white group-hover:text-purple-900 transition-colors">
+                  <span className="text-3xl font-bold">→</span>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </div>
       </div>
+
+
 
       <div className="relative w-[90%] my-2 mx-auto h-[300px] md:h-full rounded-lg overflow-hidden">
         {/* Background Image */}
