@@ -9,7 +9,7 @@ export const industriesData = [
         placements: "2000+",
         bg: "images/bg1.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/3067/3067451.png"
+        img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Healthcare",
@@ -21,7 +21,7 @@ export const industriesData = [
         placements: "800+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/2966/2966334.png"
+        img: "https://images.unsplash.com/photo-1505751172107-1bc9277d7301?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Finance",
@@ -33,7 +33,7 @@ export const industriesData = [
         placements: "1000+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/2704/2704332.png"
+        img: "https://images.unsplash.com/photo-1550565118-3a14e8d0386f?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Education",
@@ -45,7 +45,7 @@ export const industriesData = [
         placements: "500+",
         bg: "images/bg6.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/2232/2232688.png"
+        img: "https://images.unsplash.com/photo-1523050335102-c89b1474b125?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Manufacturing",
@@ -57,7 +57,7 @@ export const industriesData = [
         placements: "1200+",
         bg: "images/bg1.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/2083/2083239.png"
+        img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Retail",
@@ -69,7 +69,7 @@ export const industriesData = [
         placements: "1500+",
         bg: "images/bg2.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/1170/1170679.png"
+        img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Hospitality",
@@ -81,7 +81,7 @@ export const industriesData = [
         placements: "600+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/201/201623.png"
+        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Real Estate",
@@ -93,7 +93,7 @@ export const industriesData = [
         placements: "500+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/609/609803.png"
+        img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Automotive",
@@ -105,7 +105,7 @@ export const industriesData = [
         placements: "400+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/2311/2311491.png"
+        img: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Telecommunications",
@@ -117,7 +117,7 @@ export const industriesData = [
         placements: "700+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/3253/3253234.png"
+        img: "https://images.unsplash.com/photo-1520869177160-59d386b75fb7?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Energy",
@@ -129,7 +129,7 @@ export const industriesData = [
         placements: "500+",
         bg: "images/bg6.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/2933/2933880.png"
+        img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Logistics & Supply Chain",
@@ -141,7 +141,7 @@ export const industriesData = [
         placements: "700+",
         bg: "images/bg7.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/759/759041.png"
+        img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "E-commerce",
@@ -153,7 +153,7 @@ export const industriesData = [
         placements: "1500+",
         bg: "images/bg2.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"
+        img: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Marketing & Advertising",
@@ -165,7 +165,7 @@ export const industriesData = [
         placements: "1100+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/1998/1998087.png"
+        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Construction",
@@ -177,7 +177,7 @@ export const industriesData = [
         placements: "600+",
         bg: "images/bg1.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/3022/3022319.png"
+        img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Pharmaceuticals",
@@ -189,7 +189,7 @@ export const industriesData = [
         placements: "450+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/883/883407.png"
+        img: "https://images.unsplash.com/photo-1587854680352-936b22b91030?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Media & Entertainment",
@@ -201,7 +201,7 @@ export const industriesData = [
         placements: "1500+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/3163/3163478.png"
+        img: "https://images.unsplash.com/photo-1492619339912-583bc3983fd1?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Insurance",
@@ -213,7 +213,7 @@ export const industriesData = [
         placements: "800+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/2666/2666505.png"
+        img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Legal Services",
@@ -225,7 +225,7 @@ export const industriesData = [
         placements: "300+",
         bg: "images/bg6.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/2452/2452286.png"
+        img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Human Resources",
@@ -237,7 +237,7 @@ export const industriesData = [
         placements: "900+",
         bg: "images/bg2.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/942/942799.png"
+        img: "https://images.unsplash.com/photo-1521737706045-519b61aef98e?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Banking",
@@ -249,7 +249,7 @@ export const industriesData = [
         placements: "1000+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/2830/2830284.png"
+        img: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Food & Beverage",
@@ -261,7 +261,7 @@ export const industriesData = [
         placements: "550+",
         bg: "images/bg7.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/3014/3014521.png"
+        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Aerospace & Defense",
@@ -273,7 +273,7 @@ export const industriesData = [
         placements: "200+",
         bg: "images/bg1.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/1063/1063376.png"
+        img: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Agriculture",
@@ -285,7 +285,7 @@ export const industriesData = [
         placements: "300+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/2829/2829824.png"
+        img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Chemicals",
@@ -297,7 +297,7 @@ export const industriesData = [
         placements: "400+",
         bg: "images/bg6.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/1004/1004948.png"
+        img: "https://images.unsplash.com/photo-1532187863486-abf71ad1b286?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Consulting",
@@ -309,7 +309,7 @@ export const industriesData = [
         placements: "800+",
         bg: "images/bg2.png",
         text: "text-[#FFFFFF]",
-        img: "https://cdn-icons-png.flaticon.com/512/912/912318.png"
+        img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Gaming",
@@ -321,7 +321,7 @@ export const industriesData = [
         placements: "500+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/686/686589.png"
+        img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Biotechnology",
@@ -333,7 +333,7 @@ export const industriesData = [
         placements: "350+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/2082/2082878.png"
+        img: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=800"
     },
     {
         title: "Non-Profit",
@@ -345,6 +345,6 @@ export const industriesData = [
         placements: "250+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://cdn-icons-png.flaticon.com/512/3209/3209265.png"
+        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800"
     }
 ];
