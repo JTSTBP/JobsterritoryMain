@@ -50,21 +50,21 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="bg-white py-12 px-6 flex justify-center text-[#1B084C] font-poppins">
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-2xl w-full bg-white rounded-lg mb-[5rem]"
-      >
+    <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.05)] border border-white/50 p-6 md:p-10 font-poppins">
+      <form onSubmit={handleSubmit} className="w-full">
+
         {/* Heading */}
-        <h2 className="text-3xl font-bold text-center mb-2">Contact Us</h2>
-        <p className="text-center  mb-10">
-          Get in touch, we’d love to hear from you. Please fill out this form.
-        </p>
+        <div className="mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1B084C] mb-3">Send us a Message</h2>
+          <p className="text-gray-500 text-lg">
+            We’d love to hear from you. Please fill out this form.
+          </p>
+        </div>
 
         {/* First & Last Name */}
-        <div className="grid md:grid-cols-2 gap-4 mb-6">
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div>
-            <label className="block text-sm font-medium  mb-1">
+            <label className="block text-sm font-semibold text-[#1B084C]/80 mb-2">
               First Name*
             </label>
             <input
@@ -74,11 +74,11 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="First Name"
               required
-              className="w-full border border-purple-400 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5500FE]/20 focus:border-[#5500FE] transition-all"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Last Name*</label>
+            <label className="block text-sm font-semibold text-[#1B084C]/80 mb-2">Last Name*</label>
             <input
               type="text"
               name="lastName"
@@ -86,14 +86,14 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Last Name"
               required
-              className="w-full border border-purple-400 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5500FE]/20 focus:border-[#5500FE] transition-all"
             />
           </div>
         </div>
 
         {/* Email */}
         <div className="mb-6">
-          <label className="block text-sm font-medium  mb-1">Email*</label>
+          <label className="block text-sm font-semibold text-[#1B084C]/80 mb-2">Email*</label>
           <input
             type="email"
             name="email"
@@ -101,13 +101,13 @@ export default function ContactForm() {
             onChange={handleChange}
             placeholder="you@company.com"
             required
-            className="w-full border border-purple-400 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5500FE]/20 focus:border-[#5500FE] transition-all"
           />
         </div>
 
         {/* Phone Number */}
         <div className="mb-6">
-          <label className="block text-sm font-medium  mb-1">
+          <label className="block text-sm font-semibold text-[#1B084C]/80 mb-2">
             Phone Number
           </label>
           <input
@@ -115,14 +115,14 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="In +91 9999999999"
-            className="w-full border border-purple-400 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            placeholder="+91 9999999999"
+            className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5500FE]/20 focus:border-[#5500FE] transition-all"
           />
         </div>
 
         {/* Company name */}
         <div className="mb-6">
-          <label className="block text-sm font-medium  mb-1">
+          <label className="block text-sm font-semibold text-[#1B084C]/80 mb-2">
             Company Name
           </label>
           <input
@@ -131,50 +131,38 @@ export default function ContactForm() {
             value={formData.company}
             onChange={handleChange}
             placeholder="Company Name"
-            className="w-full border border-purple-400 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5500FE]/20 focus:border-[#5500FE] transition-all"
           />
         </div>
 
         {/* Job Title */}
         <div className="mb-6">
-          <label className="block text-sm font-medium  mb-1">Job Title</label>
+          <label className="block text-sm font-semibold text-[#1B084C]/80 mb-2">Job Title</label>
           <input
             type="text"
             name="Jobtitle"
             value={formData.Jobtitle}
             onChange={handleChange}
             placeholder="Job Title"
-            className="w-full border border-purple-400 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5500FE]/20 focus:border-[#5500FE] transition-all"
           />
         </div>
 
-        {/* Message
-        <div className="mb-6">
-          <label className="block text-sm font-medium  mb-1">Message*</label>
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Leave us a message"
-            required
-            rows="4"
-            className="w-full border border-purple-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
-          ></textarea>
-        </div> */}
-
-        <div className="mb-6">
-          <label className="block text-sm font-medium  mb-1">
-            By providing phone number and submitting this form you are consuming
-            to be contacted by Job Territiory , Inc through SMS message
+        <div className="mb-8">
+          <label className="block text-sm font-semibold text-[#1B084C]/80 mb-2">
+            LinkedIn URL
           </label>
           <input
             type="text"
             name="linkdin"
             value={formData.linkdin}
             onChange={handleChange}
-            placeholder="Linkdin URL"
-            className="w-full border border-purple-400 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            placeholder="https://linkedin.com/in/..."
+            className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#5500FE]/20 focus:border-[#5500FE] transition-all"
           />
+          <p className="text-xs text-gray-400 mt-2">
+            By submitting this form you agree to be contacted by Jobs Territory via SMS/Email.
+          </p>
         </div>
 
         {/* Checkbox */}
@@ -184,23 +172,23 @@ export default function ContactForm() {
             name="agree"
             checked={formData.agree}
             onChange={handleChange}
-            className="w-4 h-4  border-gray-300 rounded focus:ring-purple-500"
+            className="w-5 h-5 border-gray-300 rounded text-purple-600 focus:ring-purple-500 cursor-pointer"
           />
-          <label className="ml-2 text-sm ">
+          <label className="ml-3 text-sm text-gray-600">
             You agree to our friendly{" "}
-            <a href="#" className=" hover:underline">
+            <a href="/privacypolicy" className="text-[#5500FE] font-semibold hover:underline">
               privacy policy
-            </a>
+            </a>.
           </label>
         </div>
 
         <button
           type="submit"
-          className="w-[50%] mx-auto block bg-gradient-to-r from-[#2D274B] to-[#5500FE] text-white py-2 rounded-xl font-medium hover:opacity-90 transition"
+          className="w-full bg-gradient-to-r from-[#2D274B] to-[#5500FE] text-white py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:opacity-95 transition-all transform hover:-translate-y-0.5"
         >
-          Contact With Us
+          Send Message
         </button>
       </form>
-    </section>
+    </div>
   );
 }

@@ -68,3 +68,8 @@ code {
   filter: blur(72px);
   z-index: -1;
 }
+
+/* Pause animation on hover */
+.group:hover .group-hover\:pause {
+  animation-play-state: paused;
+}

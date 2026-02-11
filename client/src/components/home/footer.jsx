@@ -28,7 +28,7 @@ const Footer = () => {
     //   name: "Recruitment as a Service (RAAS)",
     //   url: "/raas",
     // },
-    { name: "Pay Per Hire", url: "/Payperhire" },
+    { name: "Industries We Hire", url: "/IndustriesweHire" },
     // { name: "Fractional Hiring", url: "/fractionalhiring" },
   ];
 
@@ -149,7 +149,7 @@ const Footer = () => {
                   {[
                     { icon: Users, number: "15k", label: "Placements" },
                     { icon: Award, number: "95%", label: "Success Rate" },
-                    { icon: Clock, number: "48hrs", label: "Response Time" },
+                    { icon: Clock, number: "48Hrs", label: "Response Time" },
                   ].map((stat, index) => (
                     <motion.div
                       key={stat.label}

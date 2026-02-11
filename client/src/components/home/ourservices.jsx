@@ -29,7 +29,7 @@ const Services = () => {
     // },
     {
       // you can use emoji or image path
-      heading: "Pay Per Hire",
+      heading: "Industries We Hire",
       description: "Hire with confidence—only pay when we deliver results.",
       points: [
         "No Upfront Costs  ",
@@ -40,7 +40,7 @@ const Services = () => {
       buttonText: "Learn More",
       image: "/images/vec2.png",
       icon: "/images/icon2.png",
-      href: "/Payperhire",
+      href: "/IndustriesweHire",
     },
     // {
     //   // you can use emoji or image path
@@ -78,8 +78,8 @@ const Services = () => {
     visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   };
   return (
-    <section id="services" className=" bg-[#EFEFEF] text-[#1B084C] ">
-      <div className="container mx-auto px-6">
+    <section id="services" className=" bg-[#EFEFEF] text-[#1B084C] py-12 md:py-20">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -113,7 +113,7 @@ const Services = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="flex justify-center flex-wrap items-stretch gap-8 bg-[#EFEFEF]"
+        className="flex justify-center flex-wrap items-stretch gap-6 bg-[#EFEFEF]"
       // className="flex justify-center flex-wrap items-start gap-8   bg-[#EFEFEF] items-stretch"
       // className="grid sm:grid-cols-2 lg:grid-cols- gap-5 items-stretch justify-items-center"
       >
@@ -122,8 +122,8 @@ const Services = () => {
             key={index}
             variants={cardVariants}
             whileHover={{ scale: 1.05, y: -10 }}
-            className="group relative w-full max-w-[360px] min-h-[367px] 
-p-6 md:p-7 lg:p-8 overflow-hidden rounded-2xl shadow-lg flex flex-col font-poppins"
+            className="group relative w-full max-w-[340px] min-h-[360px] 
+p-6 md:p-7 overflow-hidden rounded-2xl shadow-lg flex flex-col font-poppins"
             //           className="group relative w-full max-w-[300px] sm:max-w-[340px] md:max-w-[360px] lg:max-w-[380px]
             //  p-6 md:p-7 lg:p-8 overflow-hidden rounded-2xl shadow-lg flex flex-col h-full font-poppins"
             style={{

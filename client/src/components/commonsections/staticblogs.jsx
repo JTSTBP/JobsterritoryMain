@@ -30,29 +30,28 @@ export default function BlogsSection({ blogs }) {
 
   return (
     <div
-      className="py-16 sm:px-6 relative w-full"
+      className="py-12 px-4 sm:px-6 relative w-full"
       style={{
         backgroundImage: "url(/images/processbg.png)",
         backgroundSize: "cover",
-        minHeight: (containerHeight ? containerHeight + 150 : 600) + "px",
+        minHeight: (containerHeight ? containerHeight + 100 : 600) + "px",
       }}
     >
       {groupedBlogs.map((group, index) => (
         <div
           key={index}
           ref={currentIndex === index ? containerRef : null}
-          className={`absolute transition-all duration-700 ease-in-out w-[97%] flex justify-center ${
-            currentIndex === index
+          className={`absolute transition-all duration-700 ease-in-out w-full left-0 flex justify-center ${currentIndex === index
               ? "z-20 scale-100 opacity-100"
               : currentIndex === (index + 1) % groupedBlogs.length
-              ? "z-10 scale-95 opacity-70 translate-y-8"
-              : currentIndex === (index + 2) % groupedBlogs.length
-              ? "z-0 scale-90 opacity-50 translate-y-14"
-              : "hidden"
-          }`}
+                ? "z-10 scale-95 opacity-70 translate-y-8"
+                : currentIndex === (index + 2) % groupedBlogs.length
+                  ? "z-0 scale-90 opacity-50 translate-y-14"
+                  : "hidden"
+            }`}
         >
           {/* Main Card Container */}
-          <div className="rounded-3xl shadow-lg p-8 w-[83%] bg-white max-w-5xl mx-auto">
+          <div className="rounded-3xl shadow-lg p-6 md:p-8 w-[95%] sm:w-[90%] bg-white max-w-5xl mx-auto">
             {/* Top Row */}
             <div className="flex md:flex-row flex-col gap-3 md:justify-between items-start mb-8">
               <div>
@@ -76,12 +75,11 @@ export default function BlogsSection({ blogs }) {
               </a>
             </div>
 
-            {/* Blog Cards (2 per slide) */}
-            <div className="flex md:flex-row flex-col justify-center items-center gap-4 md:justify-evenly">
+            <div className="flex md:flex-row flex-col justify-center items-center gap-6 md:justify-evenly">
               {group.map((blog) => (
                 <div
                   key={blog.id}
-                  className="relative sm:w-[320px] sm:h-[420px] rounded-2xl overflow-hidden"
+                  className="relative w-full max-w-[320px] aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer"
                   onClick={() => navigate(`/blogs/${blog.slug}`)}
                 >
                   {/* Full image */}
@@ -92,11 +90,11 @@ export default function BlogsSection({ blogs }) {
                   />
 
                   {/* Bottom-left text */}
-                  <div className="absolute bottom-4 left-4 text-left w-[156px]">
+                  <div className="absolute bottom-4 left-4 text-left right-4">
                     <button
                       className=
-                     
-                         
+
+
                       "bg-white text-[#1B084C] text-sm font-medium px-4 py-1 rounded-full mb-2 shadow-md"
                     >
                       Read More

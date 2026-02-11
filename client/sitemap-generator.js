@@ -8,7 +8,8 @@ async function generateSitemap() {
   const routes = [
     { url: "/", changefreq: "daily", priority: 1.0 },
     { url: "/fractionalhiring", changefreq: "weekly", priority: 0.8 },
-    { url: "/Payperhire", changefreq: "weekly", priority: 0.8 },
+    { url: "/IndustriesweHire", changefreq: "weekly", priority: 0.8 },
+    { url: "/industries-we-serve", changefreq: "weekly", priority: 0.8 },
     { url: "/aboutus", changefreq: "monthly", priority: 0.7 },
     { url: "/contactus", changefreq: "monthly", priority: 0.6 },
     { url: "/casestudies", changefreq: "weekly", priority: 0.7 },

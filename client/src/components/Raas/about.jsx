@@ -19,7 +19,7 @@ export default function AboutJobsTerritory() {
     },
     {
       icon: <Clock size={40} />,
-      value: "48hrs",
+      value: "48Hrs",
       label: "Average Response",
     },
   ];

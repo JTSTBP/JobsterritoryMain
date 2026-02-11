@@ -84,7 +84,7 @@ const IndustryDetail = () => {
                     {/* Content */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
                         <button
-                            onClick={() => navigate("/industries")}
+                            onClick={() => navigate("/industries-we-serve")}
                             className={`absolute top-8 left-8 flex items-center gap-2 font-semibold hover:underline ${industry.text === 'text-[#FFFFFF]' ? 'text-white' : 'text-[#1B084C]'}`}
                         >
                             <ArrowLeft size={20} /> Back to Industries

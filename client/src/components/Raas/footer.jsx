@@ -20,9 +20,9 @@ import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const services = [
     "Recruitment as a Service (RAAS)",
-   
 
-  
+
+
   ];
 
   const industries = [
@@ -49,7 +49,7 @@ const Footer = () => {
     { icon: Facebook, href: "#", color: "hover:text-blue-700" },
     { icon: Instagram, href: "#", color: "hover:text-pink-600" },
   ];
- const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <footer className="bg-[#1B084C] text-white relative overflow-hidden">
       {/* Background Pattern */}
@@ -99,7 +99,7 @@ const Footer = () => {
                   {[
                     { icon: Users, number: "10K+", label: "Placements" },
                     { icon: Award, number: "95%", label: "Success Rate" },
-                    { icon: Clock, number: "48hrs", label: "Response Time" },
+                    { icon: Clock, number: "48Hrs", label: "Response Time" },
                   ].map((stat, index) => (
                     <motion.div
                       key={stat.label}

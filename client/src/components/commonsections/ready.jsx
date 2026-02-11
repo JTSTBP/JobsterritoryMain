@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const HireSection = ({
   title,
@@ -9,6 +10,7 @@ const HireSection = ({
   buttontext2,
   backgroundImage = "/images/trasfrom.png",
 }) => {
+  const navigate = useNavigate();
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -54,6 +56,9 @@ const HireSection = ({
             scale: 1.05,
             boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
           }}
+          onClick={() => {
+            navigate("/contactus");
+          }}
           whileTap={{ scale: 0.95 }}
           className="text-[#1B084C] bg-white px-8 py-3 rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-2"
         >
@@ -64,6 +69,9 @@ const HireSection = ({
             whileHover={{
               scale: 1.05,
               boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
+            }}
+            onClick={() => {
+              navigate("/contactus");
             }}
             whileTap={{ scale: 0.95 }}
             className="text-[#fff] ml-3 bg-[rgb(213_206_255/56%)] px-8 py-3 rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-2"

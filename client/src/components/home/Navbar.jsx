@@ -41,8 +41,8 @@ const Navbar = () => {
     // { name: "Raas ", path: "/raas" },
     // { name: "Fractional Hiring", path: "/fractionalhiring" },
 
-    { name: "Pay Per Hire", path: "/Payperhire" },
-    { name: "Industries", path: "/industries" },
+    { name: "Industries We Hire", path: "/IndustriesweHire" },
+    { name: "Industries We Serve", path: "/industries-we-serve" },
     { name: "Resources", path: "#" },
     // { name: "About", path: "/aboutus" },
   ];
@@ -52,8 +52,8 @@ const Navbar = () => {
     // { name: "Raas ", path: "/raas" },
     // { name: "About Us", path: "/aboutus" },
     // { name: "Fractional Hiring", path: "/fractionalhiring" },
-    { name: "Pay Per Hire", path: "/Payperhire" },
-    { name: "Industries", path: "/industries" },
+    { name: "Industries We Hire", path: "/IndustriesweHire" },
+    { name: "Industries We Serve", path: "/industries-we-serve" },
     { name: "Hire Now", path: "/contactus" },
     { name: "Resources", path: "#" },
     { name: "AboutUs", path: "/aboutus" },
@@ -105,11 +105,14 @@ const Navbar = () => {
                 <div className="flex items-center bg-white h-10 px-4 space-x-6">
                   {leftItems.map((it) =>
                     it.name === "Resources" ? (
-                      <div key={it.path} className="relative">
+                      <div
+                        key={it.path}
+                        className="relative h-full flex items-center"
+                        onMouseEnter={() => setShowResources(true)}
+                        onMouseLeave={() => setShowResources(false)}
+                      >
                         <button
                           onClick={() => setShowResources(!showResources)}
-                          onMouseEnter={() => setShowResources(true)}
-                          onMouseLeave={() => setShowResources(false)}
                           className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                         >
                           <span>{it.name}</span>
@@ -117,44 +120,47 @@ const Navbar = () => {
                         </button>
                         {showResources && (
                           <div
-                            onMouseEnter={() => setShowResources(true)}
-                            onMouseLeave={() => setShowResources(false)}
-                            className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
+                            className="absolute top-full left-0 pt-2 w-40 z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
                           >
-                            <a
-                              href="/casestudies"
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              Case Studies
-                            </a>
-                            <a
-                              href="/blogs"
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              Blogs
-                            </a>
-                            <a
-                              href="#testimonials"
-                              onClick={(e) => handleScroll(e, "#testimonials")}
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              Testimonials
-                            </a>
-                            <a
-                              href="/aboutus"
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              About Us
-                            </a>
+                            <div className="bg-white text-black rounded shadow-lg">
+                              <a
+                                href="/casestudies"
+                                className="block px-4 py-2 hover:bg-gray-200"
+                              >
+                                Case Studies
+                              </a>
+                              <a
+                                href="/blogs"
+                                className="block px-4 py-2 hover:bg-gray-200"
+                              >
+                                Blogs
+                              </a>
+                              <a
+                                href="#testimonials"
+                                onClick={(e) => handleScroll(e, "#testimonials")}
+                                className="block px-4 py-2 hover:bg-gray-200"
+                              >
+                                Testimonials
+                              </a>
+                              <a
+                                href="/aboutus"
+                                className="block px-4 py-2 hover:bg-gray-200"
+                              >
+                                About Us
+                              </a>
+                            </div>
                           </div>
                         )}
                       </div>
-                    ) : it.name === "Industries" ? (
-                      <div key={it.path} className="">
+                    ) : it.name === "Industries We Serve" ? (
+                      <div
+                        key={it.path}
+                        className="relative h-full flex items-center"
+                        onMouseEnter={() => setShowIndustries(true)}
+                        onMouseLeave={() => setShowIndustries(false)}
+                      >
                         <button
                           onClick={() => setShowIndustries(!showIndustries)}
-                          onMouseEnter={() => setShowIndustries(true)}
-                          onMouseLeave={() => setShowIndustries(false)}
                           className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                         >
                           <span>{it.name}</span>
@@ -162,30 +168,30 @@ const Navbar = () => {
                         </button>
                         {showIndustries && (
                           <div
-                            onMouseEnter={() => setShowIndustries(true)}
-                            onMouseLeave={() => setShowIndustries(false)}
-                            className="absolute mt-2 left-1/2 -translate-x-1/2 w-[800px] bg-white text-black rounded-xl shadow-2xl z-50 transition-all duration-300 animate-in fade-in slide-in-from-top-2 p-6 border border-gray-100"
+                            className="absolute top-full left-1/2 -translate-x-1/2 w-[800px] pt-2 z-50 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
                           >
-                            <div className="grid grid-cols-4 gap-x-4 gap-y-2">
-                              {allIndustries.slice(0, 16).map((industry) => (
+                            <div className="bg-white text-black rounded-xl shadow-2xl p-6 border border-gray-100">
+                              <div className="grid grid-cols-4 gap-x-4 gap-y-2">
+                                {allIndustries.slice(0, 16).map((industry) => (
+                                  <Link
+                                    key={industry.slug}
+                                    to={`/industries-we-serve/${industry.slug}`}
+                                    className="block px-3 py-2 hover:bg-purple-50 hover:text-purple-600 rounded-lg text-sm font-semibold transition-colors whitespace-normal leading-tight"
+                                    onClick={() => setShowIndustries(false)}
+                                  >
+                                    {industry.title}
+                                  </Link>
+                                ))}
+                              </div>
+                              <div className="border-t border-gray-100 mt-4 pt-4 text-center">
                                 <Link
-                                  key={industry.slug}
-                                  to={`/industries/${industry.slug}`}
-                                  className="block px-3 py-2 hover:bg-purple-50 hover:text-purple-600 rounded-lg text-sm font-semibold transition-colors whitespace-normal leading-tight"
+                                  to="/industries-we-serve"
+                                  className="inline-block text-xs font-bold text-purple-600 hover:text-purple-800 transition-colors px-6 py-2 rounded-full hover:bg-purple-50"
                                   onClick={() => setShowIndustries(false)}
                                 >
-                                  {industry.title}
+                                  View All Industries →
                                 </Link>
-                              ))}
-                            </div>
-                            <div className="border-t border-gray-100 mt-4 pt-4 text-center">
-                              <Link
-                                to="/industries"
-                                className="inline-block text-xs font-bold text-purple-600 hover:text-purple-800 transition-colors px-6 py-2 rounded-full hover:bg-purple-50"
-                                onClick={() => setShowIndustries(false)}
-                              >
-                                View All Industries →
-                              </Link>
+                              </div>
                             </div>
                           </div>
                         )}
@@ -237,11 +243,14 @@ const Navbar = () => {
                 <div className="flex items-center bg-white h-10 px-4 space-x-6">
                   {rightItems.map((it) =>
                     it.name === "Resources" ? (
-                      <div key={it.path} className="relative">
+                      <div
+                        key={it.path}
+                        className="relative h-full flex items-center"
+                        onMouseEnter={() => setShowResources(true)}
+                        onMouseLeave={() => setShowResources(false)}
+                      >
                         <button
                           onClick={() => setShowResources(!showResources)}
-                          onMouseEnter={() => setShowResources(true)}
-                          onMouseLeave={() => setShowResources(false)}
                           className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                         >
                           <span>{it.name}</span>
@@ -249,38 +258,41 @@ const Navbar = () => {
                         </button>
                         {showResources && (
                           <div
-                            onMouseEnter={() => setShowResources(true)}
-                            onMouseLeave={() => setShowResources(false)}
-                            className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
+                            className="absolute top-full right-0 pt-2 w-40 z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
                           >
-                            <a
-                              href="/casestudies"
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              Case Studies
-                            </a>
-                            <a
-                              href="/blogs"
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              Blogs
-                            </a>
-                            <a
-                              href="#testimonials"
-                              onClick={(e) => handleScroll(e, "#testimonials")}
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              Testimonials
-                            </a>
+                            <div className="bg-white text-black rounded shadow-lg">
+                              <a
+                                href="/casestudies"
+                                className="block px-4 py-2 hover:bg-gray-200"
+                              >
+                                Case Studies
+                              </a>
+                              <a
+                                href="/blogs"
+                                className="block px-4 py-2 hover:bg-gray-200"
+                              >
+                                Blogs
+                              </a>
+                              <a
+                                href="#testimonials"
+                                onClick={(e) => handleScroll(e, "#testimonials")}
+                                className="block px-4 py-2 hover:bg-gray-200"
+                              >
+                                Testimonials
+                              </a>
+                            </div>
                           </div>
                         )}
                       </div>
                     ) : it.name === "Industries" ? (
-                      <div key={it.path} className="">
+                      <div
+                        key={it.path}
+                        className="relative h-full flex items-center"
+                        onMouseEnter={() => setShowIndustries(true)}
+                        onMouseLeave={() => setShowIndustries(false)}
+                      >
                         <button
                           onClick={() => setShowIndustries(!showIndustries)}
-                          onMouseEnter={() => setShowIndustries(true)}
-                          onMouseLeave={() => setShowIndustries(false)}
                           className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                         >
                           <span>{it.name}</span>
@@ -288,30 +300,30 @@ const Navbar = () => {
                         </button>
                         {showIndustries && (
                           <div
-                            onMouseEnter={() => setShowIndustries(true)}
-                            onMouseLeave={() => setShowIndustries(false)}
-                            className="absolute mt-2 left-1/2 -translate-x-1/2 w-[800px] bg-white text-black rounded-xl shadow-2xl z-50 transition-all duration-300 animate-in fade-in slide-in-from-top-2 p-6 border border-gray-100"
+                            className="absolute top-full left-1/2 -translate-x-1/2 w-[800px] pt-2 z-50 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
                           >
-                            <div className="grid grid-cols-4 gap-x-4 gap-y-2">
-                              {industriesData.slice(0, 16).map((industry) => (
+                            <div className="bg-white text-black rounded-xl shadow-2xl p-6 border border-gray-100">
+                              <div className="grid grid-cols-4 gap-x-4 gap-y-2">
+                                {allIndustries.slice(0, 16).map((industry) => (
+                                  <Link
+                                    key={industry.slug}
+                                    to={`/industries-we-serve/${industry.slug}`}
+                                    className="block px-3 py-2 hover:bg-purple-50 hover:text-purple-600 rounded-lg text-sm font-semibold transition-colors whitespace-normal leading-tight"
+                                    onClick={() => setShowIndustries(false)}
+                                  >
+                                    {industry.title}
+                                  </Link>
+                                ))}
+                              </div>
+                              <div className="border-t border-gray-100 mt-4 pt-4 text-center">
                                 <Link
-                                  key={industry.slug}
-                                  to={`/industries/${industry.slug}`}
-                                  className="block px-3 py-2 hover:bg-purple-50 hover:text-purple-600 rounded-lg text-sm font-semibold transition-colors whitespace-normal leading-tight"
+                                  to="/industries-we-serve"
+                                  className="inline-block text-xs font-bold text-purple-600 hover:text-purple-800 transition-colors px-6 py-2 rounded-full hover:bg-purple-50"
                                   onClick={() => setShowIndustries(false)}
                                 >
-                                  {industry.title}
+                                  View All Industries →
                                 </Link>
-                              ))}
-                            </div>
-                            <div className="border-t border-gray-100 mt-4 pt-4 text-center">
-                              <Link
-                                to="/industries"
-                                className="inline-block text-xs font-bold text-purple-600 hover:text-purple-800 transition-colors px-6 py-2 rounded-full hover:bg-purple-50"
-                                onClick={() => setShowIndustries(false)}
-                              >
-                                View All Industries →
-                              </Link>
+                              </div>
                             </div>
                           </div>
                         )}
@@ -340,81 +352,87 @@ const Navbar = () => {
               <div className="flex bg-white items-center gap-5">
                 {miditems.map((it) =>
                   it.name === "Resources" ? (
-                    <div key={it.path} className="relative">
+                    <div
+                      key={it.path}
+                      className="relative h-full flex items-center"
+                      onMouseEnter={() => setShowResources(true)}
+                      onMouseLeave={() => setShowResources(false)}
+                    >
                       <button
                         onClick={() => setShowResources(!showResources)}
-                        onMouseEnter={() => setShowResources(true)}
-                        onMouseLeave={() => setShowResources(false)}
-                        className="flex items-center text-[#2F1656]  cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
+                        className="flex items-center text-[#2F1656] cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                       >
                         <span>{it.name}</span>
                         <IoIosArrowDown className="ml-1 text-sm" />
                       </button>
                       {showResources && (
                         <div
-                          onMouseEnter={() => setShowResources(true)}
-                          onMouseLeave={() => setShowResources(false)}
-                          className="absolute mt-2 w-40 bg-white text-black rounded shadow-lg z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
+                          className="absolute top-full left-0 pt-2 w-40 z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
                         >
-                          <a
-                            href="/casestudies"
-                            className="block px-4 py-2 hover:bg-gray-200"
-                          >
-                            Case Studies
-                          </a>
-                          <a
-                            href="/blogs"
-                            className="block px-4 py-2 hover:bg-gray-200"
-                          >
-                            Blogs
-                          </a>
-                          <a
-                            href="#testimonials"
-                            onClick={(e) => handleScroll(e, "#testimonials")}
-                            className="block px-4 py-2 hover:bg-gray-200"
-                          >
-                            Testimonials
-                          </a>
+                          <div className="bg-white text-black rounded shadow-lg">
+                            <a
+                              href="/casestudies"
+                              className="block px-4 py-2 hover:bg-gray-200"
+                            >
+                              Case Studies
+                            </a>
+                            <a
+                              href="/blogs"
+                              className="block px-4 py-2 hover:bg-gray-200"
+                            >
+                              Blogs
+                            </a>
+                            <a
+                              href="#testimonials"
+                              onClick={(e) => handleScroll(e, "#testimonials")}
+                              className="block px-4 py-2 hover:bg-gray-200"
+                            >
+                              Testimonials
+                            </a>
+                          </div>
                         </div>
                       )}
                     </div>
-                  ) : it.name === "Industries" ? (
-                    <div key={it.path} className="">
+                  ) : it.name === "industries-we-serve" ? (
+                    <div
+                      key={it.path}
+                      className="relative h-full flex items-center"
+                      onMouseEnter={() => setShowIndustries(true)}
+                      onMouseLeave={() => setShowIndustries(false)}
+                    >
                       <button
                         onClick={() => setShowIndustries(!showIndustries)}
-                        onMouseEnter={() => setShowIndustries(true)}
-                        onMouseLeave={() => setShowIndustries(false)}
-                        className="flex items-center text-[#2F1656]  cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
+                        className="flex items-center text-[#2F1656] cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
                       >
                         <span>{it.name}</span>
                         <IoIosArrowDown className="ml-1 text-sm" />
                       </button>
                       {showIndustries && (
                         <div
-                          onMouseEnter={() => setShowIndustries(true)}
-                          onMouseLeave={() => setShowIndustries(false)}
-                          className="absolute mt-2 left-1/2 -translate-x-1/2 w-[700px] bg-white text-black rounded-xl shadow-2xl z-50 transition-all duration-300 animate-in fade-in slide-in-from-top-2 p-6 border border-gray-100"
+                          className="absolute top-full left-1/2 -translate-x-1/2 w-[700px] pt-2 z-50 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
                         >
-                          <div className="grid grid-cols-4 gap-x-3 gap-y-2">
-                            {allIndustries.slice(0, 16).map((industry) => (
+                          <div className="bg-white text-black rounded-xl shadow-2xl p-6 border border-gray-100">
+                            <div className="grid grid-cols-4 gap-x-3 gap-y-2">
+                              {allIndustries.slice(0, 16).map((industry) => (
+                                <Link
+                                  key={industry.slug}
+                                  to={`/industries-we-serve/${industry.slug}`}
+                                  className="block px-3 py-2 hover:bg-purple-50 hover:text-purple-600 rounded-lg text-[13px] font-semibold transition-colors whitespace-normal leading-tight"
+                                  onClick={() => setShowIndustries(false)}
+                                >
+                                  {industry.title}
+                                </Link>
+                              ))}
+                            </div>
+                            <div className="border-t border-gray-100 mt-4 pt-4 text-center">
                               <Link
-                                key={industry.slug}
-                                to={`/industries/${industry.slug}`}
-                                className="block px-3 py-2 hover:bg-purple-50 hover:text-purple-600 rounded-lg text-[13px] font-semibold transition-colors whitespace-normal leading-tight"
+                                to="/industries-we-serve"
+                                className="inline-block text-[11px] font-bold text-purple-600 hover:text-purple-800 transition-colors px-4 py-2 rounded-full hover:bg-purple-50"
                                 onClick={() => setShowIndustries(false)}
                               >
-                                {industry.title}
+                                View All Industries →
                               </Link>
-                            ))}
-                          </div>
-                          <div className="border-t border-gray-100 mt-4 pt-4 text-center">
-                            <Link
-                              to="/industries"
-                              className="inline-block text-[11px] font-bold text-purple-600 hover:text-purple-800 transition-colors px-4 py-2 rounded-full hover:bg-purple-50"
-                              onClick={() => setShowIndustries(false)}
-                            >
-                              View All Industries →
-                            </Link>
+                            </div>
                           </div>
                         </div>
                       )}
@@ -520,7 +538,7 @@ const Navbar = () => {
                   onClick={() => setShowIndustries(!showIndustries)}
                   className="flex items-center w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md text-sm font-bold"
                 >
-                  <span>Industries</span>
+                  <span>industries we serve</span>
                   <IoIosArrowDown className={`ml-1 text-sm transition-transform duration-200 ${showIndustries ? 'rotate-180' : ''}`} />
                 </button>
                 {showIndustries && (
@@ -528,7 +546,7 @@ const Navbar = () => {
                     {industriesData.slice(0, 9).map((industry) => (
                       <Link
                         key={industry.slug}
-                        to={`/industries/${industry.slug}`}
+                        to={`/industries-we-serve/${industry.slug}`}
                         className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
                         onClick={() => {
                           setShowIndustries(false);
@@ -539,7 +557,7 @@ const Navbar = () => {
                       </Link>
                     ))}
                     <Link
-                      to="/industries"
+                      to="/industries-we-serve"
                       className="block px-3 py-2 text-purple-600 font-bold hover:bg-gray-100 rounded-md text-sm"
                       onClick={() => {
                         setShowIndustries(false);

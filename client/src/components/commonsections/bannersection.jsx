@@ -32,8 +32,8 @@ const Bannersection = ({
     screenWidth >= 1024
       ? backgroundImage // Desktop
       : screenWidth >= 568
-      ? backgroundImagemobile // Tablet
-      : backgroundImagemobilesmall; // Mobile
+        ? backgroundImagemobile // Tablet
+        : backgroundImagemobilesmall; // Mobile
 
   return (
     <div className="bg-[#EFEFEF] py-4 font-montserrat">
@@ -46,7 +46,7 @@ const Bannersection = ({
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="relative w-[89%] mx-auto min-h-screen lg:min-h-[115vh] text-[#240960] flex flex-col gap-3 px-4 py-10 pt-16 md:pt-24 lg:pt-28 pl-4 md:pl-10 lg:pl-16  "
+        className="relative w-[89%] mx-auto min-h-[500px] md:min-h-[600px] lg:min-h-[650px] text-[#240960] flex flex-col gap-3 px-4 py-10 pt-16 md:pt-24 lg:pt-28 pl-4 md:pl-10 lg:pl-16  "
       >
         {/* Heading and Paragraph */}
         <div className="lg:w-[50%]">
@@ -98,7 +98,7 @@ const Bannersection = ({
             <p className="text-[15px] md:text-[21px]">{paragraph}</p>
           </motion.div>
         </div>
-        <div className="lg:flex-grow" />
+
 
         {/* Top Action Button */}
         {primaryButtonText && (
@@ -128,7 +128,7 @@ const Bannersection = ({
             transition={{ delay: 1, duration: 0.6 }}
             className="absolute bottom-10 right-10 z-40 hidebuttons:hidden"
           >
-            <motion.div
+            {/* <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2"
@@ -147,7 +147,7 @@ const Bannersection = ({
                   className="text-white"
                 />
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         )}
       </motion.div>

@@ -2,66 +2,63 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function ContactUsicons() {
   return (
-    <section className="bg-white text-center py-12 px-6">
-      {/* Top Button */}
-      <div className="flex justify-center mb-8">
-        <button className="flex items-center gap-2 border border-purple-500 text-purple-700 px-4 py-1 rounded-full text-sm hover:bg-purple-50">
-          <span className="text-purple-500">●</span> Contact Us
-        </button>
+    <div className="flex flex-col gap-6 font-poppins">
+
+      {/* Contact Details Card */}
+      <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-white/50 p-8">
+        <h3 className="text-2xl font-bold text-[#1B084C] mb-8">Get in Touch</h3>
+
+        <div className="space-y-8">
+
+          {/* Email */}
+          <div className="flex items-start gap-5 group">
+            <div className="bg-white p-4 rounded-2xl shadow-sm text-[#5500FE] border border-gray-100 group-hover:scale-105 transition-transform duration-300">
+              <Mail size={24} />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">Email Support</p>
+              <a href="mailto:career@jobsterritory.com" className="block text-[#1B084C] font-semibold text-lg hover:text-[#5500FE] transition-colors">
+                career@jobsterritory.com
+              </a>
+              <a href="mailto:hello@jobsterritory.co" className="block text-[#1B084C] font-semibold text-lg hover:text-[#5500FE] transition-colors">
+                hello@jobsterritory.co
+              </a>
+            </div>
+          </div>
+
+          {/* Office */}
+          <div className="flex items-start gap-5 group">
+            <div className="bg-white p-4 rounded-2xl shadow-sm text-[#5500FE] border border-gray-100 group-hover:scale-105 transition-transform duration-300">
+              <MapPin size={24} />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1">Headquarters</p>
+              <p className="text-[#1B084C] font-semibold text-lg leading-relaxed">
+                Bangalore, India
+              </p>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      {/* Heading */}
-      <h2 className="text-3xl font-bold text-purple-900 mb-2">Contact Us</h2>
-      <p className="text-gray-600 mb-12">
-        We’d love to hear from you, our friendly team is always here to chat.
-      </p>
+      {/* Decorative 'Need Help' Card */}
+      <div className="bg-gradient-to-br from-[#1B084C] to-[#2D274B] rounded-3xl p-8 text-white relative overflow-hidden shadow-xl">
+        {/* Background Decor */}
+        <div className="absolute top-[-20%] right-[-20%] w-32 h-32 bg-[#5500FE] rounded-full blur-[50px] opacity-50"></div>
+        <div className="absolute bottom-[-20%] left-[-20%] w-32 h-32 bg-[#FF0080] rounded-full blur-[50px] opacity-30"></div>
 
-      {/* Contact Items */}
-      <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-        {/* Email */}
-        <div className="flex flex-col items-center">
-          <div className="bg-purple-100 rounded-full p-6 mb-4">
-            <Mail size={40} className="text-purple-600" />
-          </div>
-          <h3 className="text-lg font-semibold text-purple-900 mb-1">Email</h3>
-          <p className="text-gray-600 text-sm mb-1">
-            Our friendly team is ready to help you
+        <div className="relative z-10">
+          <h4 className="text-xl font-bold mb-3">Looking for talent?</h4>
+          <p className="text-white/80 mb-6 text-sm leading-relaxed">
+            We help companies find the best candidates. Let's discuss your hiring needs.
           </p>
-          <a
-            href="mailto:hello@jobsterritory.co"
-            className="text-[#6A1FFF] text-sm hover:underline"
-          >
-            career@jobsterritory.com
-          </a>
+          <button className="w-full bg-white text-[#1B084C] py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg">
+            Start Hiring
+          </button>
         </div>
-
-        {/* Office */}
-        <div className="flex flex-col items-center">
-          <div className="bg-purple-100 rounded-full p-6 mb-4">
-            <MapPin size={40} className="text-purple-600" />
-          </div>
-          <h3 className="text-lg font-semibold text-purple-900 mb-1">Office</h3>
-          <p className="text-gray-600 text-sm mb-1">
-            Come say hello to our office HQ
-          </p>
-          <div className="text-[#6A1FFF] text-sm">
-            <p>Bangalore</p>
-
-          </div>
-        </div>
-
-        {/* Phone */}
-        {/* <div className="flex flex-col items-center">
-          <div className="bg-purple-100 rounded-full p-6 mb-4">
-            <Phone size={40} className="text-purple-600" />
-          </div>
-          <h3 className="text-lg font-semibold text-purple-900 mb-1">Phone</h3>
-          <p className="text-gray-600 text-sm mb-1">
-            Mon–Fri from 8 am to 5 pm
-          </p>
-         
-        </div> */}
       </div>
-    </section>
+
+    </div>
   );
 }

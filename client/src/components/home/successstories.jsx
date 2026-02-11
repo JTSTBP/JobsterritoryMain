@@ -21,7 +21,7 @@ const SuccessStories = () => {
         {
           text: "Academic",
           position:
-            "absolute top-[2rem] left-[-7%] bg-white px-3 py-1 shadow-md rounded text-base",
+            "absolute top-[2rem] left-0 md:left-[-7%] bg-white px-3 py-1 shadow-md rounded text-base whitespace-nowrap",
         },
         {
           text: "Unacademy",
@@ -176,6 +176,7 @@ const SuccessStories = () => {
 
   return (
     <div>
+
       <div className="bg-[#f8f8ff] py-12 lg:px-20 font-poppins text-[#1B084C]">
         {/* Heading */}
         <motion.div
@@ -291,7 +292,7 @@ const SuccessStories = () => {
               {/* Client Testimonial */}
               <div
                 className="text-left mt-10 cursor-pointer"
-                // onClick={() => toggleTestimonial(index)}
+              // onClick={() => toggleTestimonial(index)}
               >
                 <div className="flex justify-between items-center">
                   <h4 className="text-lg font-bold">Client Testimonial</h4>

@@ -70,11 +70,10 @@ const StaticCaestudies = ({ industries, separate }) => {
                 {separate === "true" ? (
                   <button
                     onClick={() => navigate(`/casestudy/${item.slug}`)}
-                    className={`py-2 px-4 border rounded-full ${
-                      item.text.includes("#FFFFFF")
+                    className={`py-2 px-4 border rounded-full ${item.text.includes("#FFFFFF")
                         ? "bg-[#FFFFFF] text-[#1B084C]"
                         : "bg-[#1B084C] text-white"
-                    }`}
+                      }`}
                   >
                     Learn more
                   </button>
@@ -163,37 +162,7 @@ const StaticCaestudies = ({ industries, separate }) => {
           </motion.div>
         </div>
       )}
-      {/* Last 2 Cards */}
 
-      <div className="relative w-[90%] my-2 mx-auto h-[300px] md:h-full rounded-lg overflow-hidden">
-        {/* Background Image */}
-        <img
-          src="/images/group.png"
-          alt="Background"
-          className="w-full h-full object-cover"
-        />
-
-        {/* Centered Text */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-[#1B084C] w-[80%]">
-            <h2 className="text-2xl md:text-4xl font-light mb-2">
-              Don't See Your <span className="font-bold">Industry?</span>
-            </h2>
-            <p className="max-w-2xl mx-auto mb-6 text-sm md:text-base">
-              No matter your sector, we can find the right people to drive your
-              business forward. Let’s talk about your hiring needs.
-            </p>
-            <button
-              className="bg-[#1B084C] text-white px-6 py-2 rounded-full hover:bg-purple-700 transition"
-              onClick={() => {
-                navigate("/contactus");
-              }}
-            >
-              Contact Us
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

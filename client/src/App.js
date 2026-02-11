@@ -44,15 +44,15 @@ export default function App() {
             <Route path="/" element={<Homepage />} />
             {/* <Route path="/fractionalhiring" element={<FractionalHiring />} />
             <Route path="/raas" element={<RaasPage />} /> */}
-            <Route path="/Payperhire" element={<PayperHire />} />
+            <Route path="/IndustriesweHire" element={<PayperHire />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contactus" element={<ContactUs />} />
             <Route path="/casestudies" element={<CaseStudy />} />
             <Route path="/casestudy/:slug" element={<ViewCaseStudy />} />
             <Route path="/blogs" element={<BlogsPage />} />
             <Route path="/blogs/:slug" element={<SeparateBlogs />} />
-            <Route path="/industries" element={<AllIndustries />} />
-            <Route path="/industries/:slug" element={<IndustryDetail />} />
+            <Route path="/industries-we-serve" element={<AllIndustries />} />
+            <Route path="/industries-we-serve/:slug" element={<IndustryDetail />} />
             <Route
               path="/termsandconditions"
               element={<TermsAndConditions />}

@@ -11,6 +11,7 @@ import Footer from "../components/home/footer";
 import FAQSection from "../components/home/faqs";
 
 import { motion, AnimatePresence } from "framer-motion";
+import IndustryCTA from "../components/home/industrycta";
 import BlogsSection from "../components/commonsections/staticblogs";
 import Hero from "../components/home/hero";
 import { usePopup } from "../contexts/popupcontext";
@@ -49,6 +50,13 @@ const Homepage = () => {
     };
     fetchDynamicIndustries();
   }, []);
+  // ... (rest of imports and code above remains, I will target the Return statement area primarily)
+
+  // Actually, I should use 2 replace calls if I can't match the whole block easily.
+  // One for Import, one for Section.
+  // replace_file_content only does ONE contiguous block.
+  // So I'll use multi_replace_file_content.
+
 
   const staticIndustries = [
     {
@@ -58,7 +66,8 @@ const Homepage = () => {
       placements: "2000+",
       bg: "images/bg1.png",
       text: "text-[#FFFFFF]",
-      slug: "information-technology"
+      slug: "information-technology",
+      img: "/images/infor.png"
     },
     {
       title: "Healthcare & Life Sciences",
@@ -67,7 +76,8 @@ const Homepage = () => {
       placements: "800+",
       bg: "images/bg4.png",
       text: "text-[#1B084C]",
-      slug: "healthcare"
+      slug: "healthcare",
+      img: "/images/health.png"
     },
     {
       title: "E-Commerce & Retail",
@@ -76,7 +86,8 @@ const Homepage = () => {
       placements: "1500+",
       bg: "images/bg2.png",
       text: "text-[#FFFFFF]",
-      slug: "retail"
+      slug: "retail",
+      img: "/images/logis.png"
     },
     {
       title: "Banking & Financial Services",
@@ -85,17 +96,10 @@ const Homepage = () => {
       placements: "1000+",
       bg: "images/bg5.png",
       text: "text-[#1B084C]",
-      slug: "finance"
+      slug: "finance",
+      img: "/images/bussi.png"
     },
-    {
-      title: "Engineering & Manufacturing",
-      description:
-        "Mechanical, electrical, industrial engineers, and production managers who optimize operations.",
-      placements: "1200+",
-      bg: "images/bg1.png",
-      text: "text-[#FFFFFF]",
-      slug: "manufacturing"
-    },
+
 
     {
       title: "Media & Creative",
@@ -104,7 +108,8 @@ const Homepage = () => {
       placements: "1500+",
       bg: "images/bg8.png",
       text: "text-[#1B084C]",
-      slug: "hospitality"
+      slug: "media-entertainment",
+      img: "/images/media.png"
     },
     {
       title: "Logistics & Supply Chain",
@@ -114,6 +119,8 @@ const Homepage = () => {
       bg: "images/bg7.png",
       large: true,
       text: "text-[#FFFFFF]",
+      slug: "logistics-supply-chain",
+      img: "/images/logis.png"
     },
     {
       title: "Real Estate",
@@ -122,7 +129,8 @@ const Homepage = () => {
       placements: "500+",
       bg: "images/bg8.png",
       text: "text-[#1B084C]",
-      slug: "real-estate"
+      slug: "real-estate",
+      img: "/images/realest.png"
     },
     {
       title: "Renewable Energy",
@@ -131,7 +139,10 @@ const Homepage = () => {
       placements: "500+",
       bg: "images/bg6.png",
       text: "text-[#FFFFFF]",
+      slug: "renewable-energy",
+      img: "/images/chemi.png"
     },
+
   ];
 
   const allIndustries = [...staticIndustries, ...dynamicIndustries];
@@ -178,12 +189,12 @@ const Homepage = () => {
   ];
 
   const faqData = [
-    {
-      question: "How does Recruitment as a service (RAAS) work?",
-      icon: "/images/f1.png",
-      answer:
-        "Recruitment as a Service (RaaS) provides on-demand hiring support with flexible pricing and dedicated recruiting experts.",
-    },
+    // {
+    //   question: "How does Recruitment as a service (RAAS) work?",
+    //   icon: "/images/f1.png",
+    //   answer:
+    //     "Recruitment as a Service (RaaS) provides on-demand hiring support with flexible pricing and dedicated recruiting experts.",
+    // },
     // {
     //   question: "What is Pay Per Hire and how does pricing work?",
     //   icon: "/images/f2.png",
@@ -228,7 +239,7 @@ const Homepage = () => {
       {/* <HeroSection /> */}
       <Hero />
       <ClientLogos />
-      <Services />
+      {/* <Services /> */}
       <SuccessStories />
       <Testimonial />
       <IndustriesGrid industries={allIndustries} />
@@ -236,84 +247,11 @@ const Homepage = () => {
       <BlogsSection blogs={blogs} />
       <FAQSection faqData={faqData} />
 
-      {/* Bottom CTA Section */}
-      <section
-        className="relative bg-cover bg-center text-center bg-[#EFEFEF]"
-        style={{
-          backgroundImage: "url('/images/footbg.png')",
-          backgroundPosition: "unset",
-        }}
-      >
-        <div className="py-24 px-4 relative overflow-hidden">
-          {/* Animated BG Elements */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-4 right-4 w-16 h-16 border-2 border-white/20 rounded-full"
-          />
-          <motion.div
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className="absolute bottom-4 left-4 w-8 h-8 bg-white/20 rounded-full"
-          />
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-            className="absolute top-1/2 left-8 w-6 h-6 bg-white/10 rounded-full"
-          />
+      {/* Improved Bottom CTA Section */}
 
-          <div className="relative z-10">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-light text-white mb-4 font-montserrat"
-            >
-              Still Have <span className="font-bold">Questions?</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-white text-base md:text-lg max-w-2xl mx-auto mb-8"
-            >
-              Our recruitment experts are here to help. Get in touch for a
-              personalized consultation about your hiring needs.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="flex flex-col sm:flex-row justify-center gap-4 font-montserrat"
-            >
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
-                }}
-                onClick={openPopup}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-[#1B084C] font-bold py-3 px-6 rounded-full shadow hover:bg-gray-100 transition"
-              >
-                Contact experts
-              </motion.button>
-              <motion.button
-                onClick={() => navigate("/contactus")}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-[#1B084C] font-bold py-3 px-6 rounded-full shadow hover:bg-gray-100 transition"
-              >
-                Schedule call
-              </motion.button>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+
       <Footer />
-    </div>
+    </div >
   );
 };
 

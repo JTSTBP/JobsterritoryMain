@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Navbar from "../components/home/Navbar";
 import Bannersection from "../components/commonsections/bannersection";
-import WhyChoosePayPerHire from "../components/PayPerHire/whychoose";
-import PayPerHireProcess from "../components/PayPerHire/process";
+import ModernBanner from "../components/commonsections/ModernBanner";
+import WhyChooseIndustriesWeHire from "../components/PayPerHire/whychoose";
+import IndustriesWeHireProcess from "../components/PayPerHire/process";
 import Footer from "../components/home/footer";
 import FAQSection from "../components/home/faqs";
 import BlogsSection from "../components/commonsections/staticblogs";
@@ -14,19 +15,19 @@ import { usePopup } from "../contexts/popupcontext";
 
 const faqData = [
   {
-    question: "What is Pay Per Hire recruitment?",
+    question: "What is Industries We Hire recruitment?",
     icon: "/images/f1.png",
     answer:
-      "Pay Per Hire is a traditional recruitment model where you only pay once we successfully fill a position with the right candidate.",
+      "Industries We Hire is a traditional recruitment model where you only pay once we successfully fill a position with the right candidate.",
   },
   {
-    question: "How does Jobs Territory’s Pay Per Hire service work?",
+    question: "How does Jobs Territory’s Industries We Hire service work?",
     icon: "/images/f2.png",
     answer:
       "We source, screen, and present qualified candidates. Once you select and onboard a candidate, you pay the agreed placement fee.",
   },
   {
-    question: "What types of roles can I hire under Pay Per Hire?",
+    question: "What types of roles can I hire under Industries We Hire?",
     icon: "/images/f3.png",
     answer:
       "From entry-level to leadership roles across industries like e-commerce, FMCG, fashion, healthcare, and more.",
@@ -38,7 +39,7 @@ const faqData = [
       "Yes, we offer a replacement guarantee within a specific time frame if the candidate leaves or doesn’t perform as expected.",
   },
   {
-    question: "What makes Pay Per Hire cost-effective?",
+    question: "What makes Industries We Hire cost-effective?",
     icon: "/images/f5.png",
     answer:
       "You only pay when the role is filled, ensuring no upfront costs and zero risk.",
@@ -61,13 +62,13 @@ const faqData = [
       "We continue sourcing until we find candidates that match your expectations.",
   },
   {
-    question: "Do you support niche or specialized roles under Pay Per Hire?",
+    question: "Do you support niche or specialized roles under Industries We Hire?",
     icon: "/images/f2.png",
     answer:
       "Yes, our team has expertise in closing highly specialized and leadership positions.",
   },
   {
-    question: "Why choose Jobs Territory for Pay Per Hire?",
+    question: "Why choose Jobs Territory for Industries We Hire?",
     icon: "/images/f3.png",
     answer:
       "We combine speed, industry expertise, and DEI-focused recruitment to deliver the right talent without compromise.",
@@ -76,14 +77,14 @@ const faqData = [
 const blogs = [
   {
     id: 1,
-    title: "Pay per hire a fix for costly hiring",
-    slug: "pay-per-hire-a-fix-for-costly-hiring",
+    title: "Industries we hire a fix for costly hiring",
+    slug: "industries-we-hire-a-fix-for-costly-hiring",
     image: "/images/blogsimg1.png",
   },
   {
     id: 2,
-    title: "Pay per hire smarter hiring better ROI",
-    slug: "pay-per-hire-smarter-hiring-better-roi",
+    title: "Industries we hire smarter hiring better ROI",
+    slug: "industries-we-hire-smarter-hiring-better-roi",
     image: "/images/blogsh1.png",
     bg: "#1B084C",
   },
@@ -95,21 +96,21 @@ const blogs = [
   },
   {
     id: 4,
-    title: "Pay per hire trend or future of hiring",
-    slug: "pay-per-hire-trend-or-future-of-hiring",
+    title: "Industries we hire trend or future of hiring",
+    slug: "industries-we-hire-trend-or-future-of-hiring",
     image: "/images/blogsh2.png",
     bg: "#1B084C",
   },
   {
     id: 5,
-    title: "Is pay per hire changing recruitment forever",
-    slug: "is-pay-per-hire-changing-recruitment-forever",
+    title: "Is industries we hire changing recruitment forever",
+    slug: "is-industries-we-hire-changing-recruitment-forever",
     image: "/images/blogimg2.png",
   },
   {
     id: 6,
-    title: "How pay per hire can cut hiring costs by 50 percent",
-    slug: "how-pay-per-hire-can-cut-hiring-costs-by-50-percent",
+    title: "How industries we hire can cut hiring costs by 50 percent",
+    slug: "how-industries-we-hire-can-cut-hiring-costs-by-50-percent",
     image: "/images/blogsh3.png",
     bg: "#1B084C",
   },
@@ -218,19 +219,25 @@ const PayperHire = () => {
   return (
     <div>
       <Navbar />
-      <Bannersection
-        backgroundImage="/images/pphbg.png"
-        heading="Pay Per Hire  "
-        heading1="Talent Without the Risk"
-        paragraph="Hire with confidence — you pay only for successful placements. No upfront costs, no hidden fees, no ongoing commitments."
+      <ModernBanner
+        heading="Industries We Hire"
+        paragraph="Recruitment and workforce solutions across key industries in India."
         primaryButtonText="Get Started"
-        secondrybuttontext="Learn More"
         onPrimaryButtonClick={() => navigate("/contactus")}
-        onSecondaryButtonClick={openPopup}
-        showBottomButton={true}
+        industries={[
+          { label: "Logistics", img: "/images/logis.png" },
+          { label: "Healthcare", img: "/images/health.png" },
+          { label: "Technology", img: "/images/infor.png" },
+          { label: "Media", img: "/images/media.png" },
+          { label: "Finance", img: "/images/bussi.png" },
+          { label: "Energy", img: "/images/chemi.png" },
+          { label: "Transport", img: "/images/trans.png" },
+          { label: "Agriculture", img: "/images/agri.png" },
+          { label: "Education", img: "/images/edu.png" }
+        ]}
       />
-      <WhyChoosePayPerHire />
-      <PayPerHireProcess />
+      <WhyChooseIndustriesWeHire />
+      <IndustriesWeHireProcess />
 
       <IndustriesGrid
         industries={industriesData.slice(0, 8)}

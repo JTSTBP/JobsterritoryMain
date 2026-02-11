@@ -12,7 +12,7 @@ const Testimonial = () => {
       banner: "/images/cliimg1.png",
       heading: "Rajesh Kumar",
       message:
-        "The Pay Per Hire model was perfect for our startup phase. We got access to top-tier talent without the financial risk of traditional recruitment agencies. Jobs Territory's team became an extension of our HR department.",
+        "The Industries We Hire model was perfect for our startup phase. We got access to top-tier talent without the financial risk of traditional recruitment agencies. Jobs Territory's team became an extension of our HR department.",
     },
     {
       _id: 2,
@@ -149,7 +149,7 @@ const Testimonial = () => {
   return (
     <div
       id="testimonials"
-      className="bg-[#EFEFEF] py-12 sm:px-2 font-poppins text-[#1B084C]"
+      className="bg-[#EFEFEF] py-12 px-4 sm:px-6 font-poppins text-[#1B084C]"
     >
       {/* Heading */}
       <motion.div
@@ -222,13 +222,13 @@ const Testimonial = () => {
         </motion.div>
       </AnimatePresence> */}
 
-      <div className="relative h-[800px] overflow-hidden px-10">
+      <div className="relative h-[600px] md:h-[800px] overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#EFEFEF] to-transparent pointer-events-none z-10"></div>
         <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#EFEFEF] to-transparent pointer-events-none z-10"></div>
 
-        <div className="overflow-y-scroll h-full px-10">
+        <div className="overflow-y-scroll h-full no-scrollbar">
           <div className="animate-scrollUp space-y-6">
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 px-2">
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
               {[...rows, ...rows].flat().map((t, index) => (
                 <div
                   key={index}

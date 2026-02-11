@@ -17,7 +17,7 @@ const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 3;
   const navigate = useNavigate();
-  console.log(openPopup,"opened")
+  console.log(openPopup, "opened")
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
   const prevSlide = () =>
@@ -58,7 +58,7 @@ const HeroSection = () => {
       statLabel: "Successful Placement",
     },
     {
-      heading: "Pay Per Hire Success",
+      heading: "Industries We Hire Success",
       paragraph:
         "Risk-free hiring—pay only when your new team member is on board.",
       statNumber: "48hr",
@@ -81,7 +81,7 @@ const HeroSection = () => {
   //   return () => clearInterval(interval);
   // }, []);
 
-  
+
 
   return (
     <div className="bg-[#EFEFEF] py-4 font-montserrat">
@@ -93,11 +93,10 @@ const HeroSection = () => {
           exit={{ scale: 0.95, opacity: 0 }}
           transition={{ duration: 1 }}
           style={{
-            backgroundImage: `url(${
-              window.innerWidth >= 768
+            backgroundImage: `url(${window.innerWidth >= 768
                 ? "/images/exherobg3.png" // ✅ single bg for md+
                 : backgroundImages[currentSlide].url // ✅ rotating bg for sm
-            })`,
+              })`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -192,11 +191,10 @@ const HeroSection = () => {
                         key={index}
                         whileHover={{ scale: 1.2 }}
                         onClick={() => setCurrentSlide(index)}
-                        className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
-                          currentSlide === index
+                        className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${currentSlide === index
                             ? "bg-[#5f00f5]"
                             : "bg-[#a47ff5]"
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>

@@ -33,7 +33,7 @@ module.exports = {
         },
       },
       animation: {
-        scroll: "scroll 130s linear infinite",
+        scroll: "scroll 200s linear infinite",
         orbit: "orbit 5s linear infinite",
         "spin-slow": "spinSlow 10s linear infinite",
         float: "float 3s ease-in-out infinite",
