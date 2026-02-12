@@ -69,7 +69,14 @@ code {
   z-index: -1;
 }
 
-/* Pause animation on hover */
-.group:hover .group-hover\:pause {
-  animation-play-state: paused;
+/* Floating animation for icons */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
 }
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+

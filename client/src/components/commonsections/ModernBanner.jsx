@@ -15,15 +15,16 @@ const ModernBanner = ({
     const navigate = useNavigate();
     // Standard Industry labels if none provided
     const defaultIndustries = [
-        { label: "Logistics", img: "/images/logis.png" },
-        { label: "Healthcare", img: "/images/health.png" },
-        { label: "Technology", img: "/images/infor.png" },
-        { label: "Media", img: "/images/media.png" },
-        { label: "Finance", img: "/images/bussi.png" },
-        { label: "Energy", img: "/images/chemi.png" },
-        { label: "Aviation", img: "/images/trans.png" },
-        { label: "Agriculture", img: "/images/agri.png" },
-        { label: "education", img: "/images/edu.png" }
+        { label: "Logistics", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800" },
+        { label: "Healthcare", img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800" },
+        { label: "Technology", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" },
+        { label: "Media", img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800" },
+        { label: "Finance", img: "https://images.unsplash.com/photo-1550565118-3a14e8d0386f?auto=format&fit=crop&q=80&w=800" },
+        { label: "Energy", img: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80&w=800" },
+        { label: "Chemicals", img: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800" },
+        { label: "Aviation", img: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800" },
+        { label: "Agriculture", img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800" },
+        { label: "education", img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800" }
     ];
 
     const displayIndustries = industries.length > 0 ? industries : defaultIndustries;

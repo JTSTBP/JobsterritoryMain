@@ -71,30 +71,39 @@ const IndustryDetail = () => {
 
                 {/* Header / Hero */}
                 <div
-                    className="relative h-[40vh] md:h-[50vh] w-full overflow-hidden bg-gray-200"
+                    className="relative min-h-[450px] md:h-[60vh] w-full overflow-hidden bg-gray-200"
                     style={{
                         backgroundImage: `url(${industry.banner || (industry.bg ? (industry.bg.startsWith('bg') ? '' : `/${industry.bg}`) : '')})`,
                         backgroundSize: 'cover',
-                        backgroundPosition: 'center'
+                        backgroundPosition: 'center',
+                        backgroundAttachment: 'fixed'
                     }}
                 >
-                    {/* Gradient Overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${industry.text === 'text-[#FFFFFF]' ? 'from-[#1B084C]/80 to-[#2D274B]/70' : 'from-gray-200/90 to-white/80'} `}></div>
+                    {/* Gradient Overlay - Darker for better text readability */}
+                    <div className="absolute inset-0 bg-black/50"></div>
+                    <div className={`absolute inset-0 bg-gradient-to-t from-[#1B084C] via-transparent to-black/30`}></div>
 
                     {/* Content */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
                         <button
                             onClick={() => navigate("/industries-we-serve")}
-                            className={`absolute top-8 left-8 flex items-center gap-2 font-semibold hover:underline ${industry.text === 'text-[#FFFFFF]' ? 'text-white' : 'text-[#1B084C]'}`}
+                            className="absolute top-6 left-6 md:top-8 md:left-8 flex items-center gap-2 font-semibold text-white/80 hover:text-white transition-colors duration-200 z-20"
                         >
-                            <ArrowLeft size={20} /> Back to Industries
+                            <ArrowLeft size={18} /> <span className="hidden md:inline text-sm md:text-base">Back to Industries</span>
                         </button>
 
-                        <img src={industry.img} alt={industry.title} className="w-24 h-24 mb-4 object-contain" />
-                        <h1 className={`text-4xl md:text-6xl font-bold font-montserrat mb-4 ${industry.text === 'text-[#FFFFFF]' ? 'text-white' : 'text-[#1B084C]'}`}>
+                        <div className="bg-white/10 backdrop-blur-md p-4 md:p-6 rounded-3xl border border-white/20 mb-4 md:mb-6 group transition-all duration-500 hover:scale-110">
+                            <img
+                                src={industry.img}
+                                alt={industry.title}
+                                className="w-24 h-24 md:w-48 md:h-48 object-contain transition-transform duration-500 animate-float"
+                            />
+                        </div>
+
+                        <h1 className="text-3xl md:text-7xl font-bold font-montserrat mb-3 md:mb-4 text-white drop-shadow-2xl px-4">
                             {industry.title}
                         </h1>
-                        <p className={`text-lg md:text-xl max-w-2xl ${industry.text === 'text-[#FFFFFF]' ? 'text-gray-200' : 'text-gray-600'}`}>
+                        <p className="text-base md:text-2xl max-w-3xl text-gray-200 font-light drop-shadow-lg px-6">
                             {industry.description}
                         </p>
                     </div>

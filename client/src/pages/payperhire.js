@@ -15,102 +15,83 @@ import { usePopup } from "../contexts/popupcontext";
 
 const faqData = [
   {
-    question: "What is Industries We Hire recruitment?",
+    question: "What industries does Jobs Territory specialize in?",
     icon: "/images/f1.png",
-    answer:
-      "Industries We Hire is a traditional recruitment model where you only pay once we successfully fill a position with the right candidate.",
+    answer: "We work across a wide range of industries including IT & Technology, BFSI & Fintech, Healthcare & Life Sciences, Manufacturing & Engineering, Retail & E-commerce, Logistics & Supply Chain, GCCs, and high-growth startups.",
   },
   {
-    question: "How does Jobs Territory’s Industries We Hire service work?",
+    question: "Do you offer industry-specific recruitment solutions?",
     icon: "/images/f2.png",
-    answer:
-      "We source, screen, and present qualified candidates. Once you select and onboard a candidate, you pay the agreed placement fee.",
+    answer: "Yes. Our hiring approach is tailored to each industry’s talent requirements, role complexity, and market dynamics. This ensures faster hiring and better candidate fit.",
   },
   {
-    question: "What types of roles can I hire under Industries We Hire?",
+    question: "Can you support both permanent and contract hiring across industries?",
     icon: "/images/f3.png",
-    answer:
-      "From entry-level to leadership roles across industries like e-commerce, FMCG, fashion, healthcare, and more.",
+    answer: "Absolutely. We provide permanent hiring, contract staffing, and workforce solutions depending on business needs, scale, and project requirements across industries.",
   },
   {
-    question: "Is there a guarantee period for new hires?",
+    question: "Do you handle pan-India hiring?",
     icon: "/images/f4.png",
-    answer:
-      "Yes, we offer a replacement guarantee within a specific time frame if the candidate leaves or doesn’t perform as expected.",
+    answer: "Yes. We support hiring across major cities and regions in India, backed by a strong pan-India talent network and local market understanding.",
   },
   {
-    question: "What makes Industries We Hire cost-effective?",
+    question: "What company sizes do you work with?",
     icon: "/images/f5.png",
-    answer:
-      "You only pay when the role is filled, ensuring no upfront costs and zero risk.",
+    answer: "We work with startups, SMEs, large enterprises, and Global Capability Centers. Our solutions scale based on the size, growth stage, and hiring volume of the organization.",
   },
   {
-    question: "How fast can Jobs Territory fill a role under this model?",
+    question: "How do you ensure candidate quality for different industries?",
     icon: "/images/f6.png",
-    answer:
-      "Depending on the role and industry, we usually close positions within 7–15 business days.",
+    answer: "We combine industry-specific screening, role-aligned assessments, and experience-based shortlisting to ensure candidates meet both technical and cultural expectations.",
   },
   {
-    question: "Can I hire multiple roles at the same time?",
+    question: "Can you support bulk or high-volume hiring?",
     icon: "/images/f7.png",
-    answer: "Absolutely, we support bulk hiring needs for growing companies.",
+    answer: "Yes. We have dedicated processes and teams for bulk and volume hiring, especially for industries like manufacturing, logistics, retail, and GCC operations.",
   },
   {
-    question: "What if I don’t like the candidates presented?",
-    icon: "/images/f1.png",
-    answer:
-      "We continue sourcing until we find candidates that match your expectations.",
-  },
-  {
-    question: "Do you support niche or specialized roles under Industries We Hire?",
-    icon: "/images/f2.png",
-    answer:
-      "Yes, our team has expertise in closing highly specialized and leadership positions.",
-  },
-  {
-    question: "Why choose Jobs Territory for Industries We Hire?",
-    icon: "/images/f3.png",
-    answer:
-      "We combine speed, industry expertise, and DEI-focused recruitment to deliver the right talent without compromise.",
+    question: "How do we get started with Jobs Territory?",
+    icon: "/images/f8.png",
+    answer: "You can reach out through our contact form or speak directly with our team. We’ll understand your industry, roles, and hiring goals before recommending the right solution.",
   },
 ];
 const blogs = [
   {
     id: 1,
-    title: "Industries we hire a fix for costly hiring",
-    slug: "industries-we-hire-a-fix-for-costly-hiring",
+    title: "Why Sector-Specific Recruitment is the Key to Scaling Fast",
+    slug: "sector-specific-recruitment-scaling-fast",
     image: "/images/blogsimg1.png",
   },
   {
     id: 2,
-    title: "Industries we hire smarter hiring better ROI",
-    slug: "industries-we-hire-smarter-hiring-better-roi",
+    title: "Cutting Hiring Costs: The Power of Success-Based Models",
+    slug: "cutting-hiring-costs-success-based-models",
     image: "/images/blogsh1.png",
     bg: "#1B084C",
   },
   {
     id: 3,
-    title: "Fast hiring no upfront fees",
-    slug: "fast-hiring-no-upfront-fees",
+    title: "Mastering the Talent War: Insights from 25+ Industry Sectors",
+    slug: "mastering-talent-war-industry-insights",
     image: "/images/blogimg1.png",
   },
   {
     id: 4,
-    title: "Industries we hire trend or future of hiring",
-    slug: "industries-we-hire-trend-or-future-of-hiring",
+    title: "The Future of Workforce Solutions in India's Growth Economy",
+    slug: "future-workforce-solutions-india-growth",
     image: "/images/blogsh2.png",
     bg: "#1B084C",
   },
   {
     id: 5,
-    title: "Is industries we hire changing recruitment forever",
-    slug: "is-industries-we-hire-changing-recruitment-forever",
+    title: "How to Build a High-Performance Team Without the Overhead",
+    slug: "build-high-performance-team-no-overhead",
     image: "/images/blogimg2.png",
   },
   {
     id: 6,
-    title: "How industries we hire can cut hiring costs by 50 percent",
-    slug: "how-industries-we-hire-can-cut-hiring-costs-by-50-percent",
+    title: "Diversity & Inclusion: Strengthening Industries Through Inclusive Hiring",
+    slug: "diversity-inclusion-strengthening-industries",
     image: "/images/blogsh3.png",
     bg: "#1B084C",
   },
@@ -221,7 +202,7 @@ const PayperHire = () => {
       <Navbar />
       <ModernBanner
         heading="Industries We Hire"
-        paragraph="Recruitment and workforce solutions across key industries in India."
+        paragraph="Dominate your sector with elite talent. We provide specialized recruitment and workforce solutions across 25+ key industries in India."
         primaryButtonText="Get Started"
         onPrimaryButtonClick={() => navigate("/contactus")}
         industries={[
@@ -241,8 +222,8 @@ const PayperHire = () => {
 
       <IndustriesGrid
         industries={industriesData.slice(0, 8)}
-        title="Our Services"
-        description="Comprehensive recruitment solutions for various industries, delivering the right talent for your specific needs."
+        title="Our Sector Expertise"
+        description="Agile, industry-specific recruitment solutions that bridge the gap between niche talent requirements and high-growth ambitions."
         showViewAll={true}
         variant="modern"
       />

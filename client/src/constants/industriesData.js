@@ -9,7 +9,8 @@ export const industriesData = [
         placements: "2000+",
         bg: "images/bg1.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Healthcare",
@@ -21,7 +22,8 @@ export const industriesData = [
         placements: "800+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1505751172107-1bc9277d7301?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Finance",
@@ -33,7 +35,8 @@ export const industriesData = [
         placements: "1000+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1550565118-3a14e8d0386f?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1550565118-3a14e8d0386f?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1550565118-3a14e8d0386f?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Education",
@@ -45,7 +48,8 @@ export const industriesData = [
         placements: "500+",
         bg: "images/bg6.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1523050335102-c89b1474b125?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Manufacturing",
@@ -57,7 +61,8 @@ export const industriesData = [
         placements: "1200+",
         bg: "images/bg1.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Retail",
@@ -69,7 +74,8 @@ export const industriesData = [
         placements: "1500+",
         bg: "images/bg2.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Hospitality",
@@ -81,7 +87,8 @@ export const industriesData = [
         placements: "600+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Real Estate",
@@ -93,7 +100,8 @@ export const industriesData = [
         placements: "500+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Automotive",
@@ -105,7 +113,8 @@ export const industriesData = [
         placements: "400+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Telecommunications",
@@ -117,7 +126,8 @@ export const industriesData = [
         placements: "700+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1520869177160-59d386b75fb7?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1520869177160-59d386b75fb7?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Energy",
@@ -129,7 +139,8 @@ export const industriesData = [
         placements: "500+",
         bg: "images/bg6.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Logistics & Supply Chain",
@@ -141,7 +152,8 @@ export const industriesData = [
         placements: "700+",
         bg: "images/bg7.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "E-commerce",
@@ -153,7 +165,8 @@ export const industriesData = [
         placements: "1500+",
         bg: "images/bg2.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Marketing & Advertising",
@@ -165,7 +178,8 @@ export const industriesData = [
         placements: "1100+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Construction",
@@ -177,7 +191,8 @@ export const industriesData = [
         placements: "600+",
         bg: "images/bg1.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Pharmaceuticals",
@@ -189,7 +204,8 @@ export const industriesData = [
         placements: "450+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1587854680352-936b22b91030?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1587854680352-936b22b91030?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1587854680352-936b22b91030?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Media & Entertainment",
@@ -201,7 +217,8 @@ export const industriesData = [
         placements: "1500+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1492619339912-583bc3983fd1?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Insurance",
@@ -213,7 +230,8 @@ export const industriesData = [
         placements: "800+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Legal Services",
@@ -225,7 +243,8 @@ export const industriesData = [
         placements: "300+",
         bg: "images/bg6.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Human Resources",
@@ -237,7 +256,8 @@ export const industriesData = [
         placements: "900+",
         bg: "images/bg2.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1521737706045-519b61aef98e?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Banking",
@@ -249,7 +269,8 @@ export const industriesData = [
         placements: "1000+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Food & Beverage",
@@ -261,7 +282,8 @@ export const industriesData = [
         placements: "550+",
         bg: "images/bg7.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Aerospace & Defense",
@@ -273,7 +295,8 @@ export const industriesData = [
         placements: "200+",
         bg: "images/bg1.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Agriculture",
@@ -285,7 +308,8 @@ export const industriesData = [
         placements: "300+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Chemicals",
@@ -297,7 +321,8 @@ export const industriesData = [
         placements: "400+",
         bg: "images/bg6.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1532187863486-abf71ad1b286?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Consulting",
@@ -309,7 +334,8 @@ export const industriesData = [
         placements: "800+",
         bg: "images/bg2.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Gaming",
@@ -321,7 +347,8 @@ export const industriesData = [
         placements: "500+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Biotechnology",
@@ -333,7 +360,8 @@ export const industriesData = [
         placements: "350+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=1600"
     },
     {
         title: "Non-Profit",
@@ -345,6 +373,7 @@ export const industriesData = [
         placements: "250+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800"
+        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800",
+        banner: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1600"
     }
 ];
