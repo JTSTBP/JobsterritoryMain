@@ -20,9 +20,7 @@ export default function ContactUsicons() {
               <a href="mailto:career@jobsterritory.com" className="block text-[#1B084C] font-semibold text-lg hover:text-[#5500FE] transition-colors">
                 career@jobsterritory.com
               </a>
-              <a href="mailto:hello@jobsterritory.co" className="block text-[#1B084C] font-semibold text-lg hover:text-[#5500FE] transition-colors">
-                hello@jobsterritory.co
-              </a>
+
             </div>
           </div>
 
@@ -48,7 +46,7 @@ export default function ContactUsicons() {
         <div className="absolute top-[-20%] right-[-20%] w-32 h-32 bg-[#5500FE] rounded-full blur-[50px] opacity-50"></div>
         <div className="absolute bottom-[-20%] left-[-20%] w-32 h-32 bg-[#FF0080] rounded-full blur-[50px] opacity-30"></div>
 
-        <div className="relative z-10">
+        {/* <div className="relative z-10">
           <h4 className="text-xl font-bold mb-3">Looking for talent?</h4>
           <p className="text-white/80 mb-6 text-sm leading-relaxed">
             We help companies find the best candidates. Let's discuss your hiring needs.
@@ -56,7 +54,7 @@ export default function ContactUsicons() {
           <button className="w-full bg-white text-[#1B084C] py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-lg">
             Start Hiring
           </button>
-        </div>
+        </div> */}
       </div>
 
     </div>

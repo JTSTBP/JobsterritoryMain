@@ -83,7 +83,7 @@ const IndustryCTA = () => {
                     {/* Bottom Left */}
                     <FloatingCard
                         icon={<Users className="text-[#5500FE]" size={20} />}
-                        text="7000+ Total Placements"
+                        text="15000+ Total Placements"
                         position="bottom-[15%] left-[10%]"
                         delay={0.4}
                     />
@@ -99,7 +99,7 @@ const IndustryCTA = () => {
                     {/* Bottom Right */}
                     <FloatingCard
                         icon={<Clock className="text-[#5500FE]" size={20} />}
-                        text="24hrs Response Time"
+                        text="48Hrs Response Time"
                         position="bottom-[15%] right-[10%]"
                         delay={0.5}
                     />
