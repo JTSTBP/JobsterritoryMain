@@ -272,25 +272,25 @@ const IndustryCTA = () => {
         {/* ===== ABSOLUTE STAT CIRCLES (Desktop Only) ===== */}
         <StatCircle
           className="absolute top-[192px] left-[136px]"
-          icon={<Briefcase size={22} />}
+          icon={<Briefcase size={28} />}
           title="15+"
           text="Industries Served"
         />
         <StatCircle
           className="absolute top-[192px] right-[136px]"
-          icon={<TrendingUp size={22} />}
+          icon={<TrendingUp size={28} />}
           title="98%"
           text="Success Rate"
         />
         <StatCircle
           className="absolute bottom-[188px] left-[160px]"
-          icon={<Users size={22} />}
+          icon={<Users size={28} />}
           title="10k+"
           text="Total Placements"
         />
         <StatCircle
           className="absolute bottom-[279px] right-[15px]"
-          icon={<Zap size={22} />}
+          icon={<Zap size={28} />}
           title="Rapid 12hr"
           text="Response"
         />
@@ -315,22 +315,22 @@ const IndustryCTA = () => {
       {/* ===== Mobile Stat Circles Row ===== */}
       <div className="md:hidden mt-10 flex flex-wrap justify-center gap-6 max-w-md">
         <MobileStat
-          icon={<Briefcase size={20} />}
+          icon={<Briefcase size={24} />}
           title="15+"
           text="Industries Served "
         />
         <MobileStat
-          icon={<TrendingUp size={20} />}
+          icon={<TrendingUp size={24} />}
           title="98%"
           text="Success Rate"
         />
         <MobileStat
-          icon={<Users size={20} />}
+          icon={<Users size={24} />}
           title="10k+"
           text=" Total Placements"
         />
         <MobileStat
-          icon={<Zap size={20} />}
+          icon={<Zap size={24} />}
           title="Rapid 12hr"
           text="Response"
         />
@@ -342,20 +342,20 @@ const IndustryCTA = () => {
 /* ===== Reusable Desktop Stat Circle ===== */
 const StatCircle = ({ className, icon, title, text }) => (
   <div
-    className={`${className} w-[120px] h-[120px] bg-[#EFEFEF] rounded-full shadow-2xl z-20 flex flex-col items-center justify-center text-center p-3`}
+    className={`${className} w-[130px] h-[130px] bg-[#EFEFEF] rounded-full shadow-2xl z-20 flex flex-col items-center justify-center text-center p-1`}
   >
     <div className="text-blue-800 mb-1">{icon}</div>
-    <h3 className="text-sm font-bold">{title}</h3>
-    <p className="text-[10px] text-gray-500">{text}</p>
+    <h3 className="text-lg font-bold">{title}</h3>
+    <p className="text-sm text-gray-500">{text}</p>
   </div>
 );
 
 /* ===== Mobile Version Circle ===== */
 const MobileStat = ({ icon, title, text }) => (
-  <div className="w-[110px] h-[110px] bg-[#EFEFEF] rounded-full shadow-xl flex flex-col items-center justify-center text-center p-3">
+  <div className="w-[115px] h-[115px] bg-[#EFEFEF] rounded-full shadow-xl flex flex-col items-center justify-center text-center p-1">
     <div className="text-blue-800 mb-1">{icon}</div>
-    <h3 className="text-sm font-bold">{title}</h3>
-    <p className="text-[10px] text-gray-500">{text}</p>
+    <h3 className="text-base font-bold">{title}</h3>
+    <p className="text-xs text-gray-500">{text}</p>
   </div>
 );
 

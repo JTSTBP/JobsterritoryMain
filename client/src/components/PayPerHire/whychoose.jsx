@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 const POS = [
   {
     pos: "top-[0rem] left-1/2 -translate-x-1/2",
@@ -25,27 +24,27 @@ const IMAGES = [
   {
     src: "/images/pph1.jpg",
     title: "Risk-Free Model",
-    text: "This is the description for the first feature.",
+    text: "Pay only when you hire. No upfront costs or hidden fees involved.",
   },
   {
     src: "/images/pph2.jpg",
-    title: "Quality Guaranteed",
-    text: "This is the description for the second feature.",
+    title: "Success-Based Hiring",
+    text: "Our 100% success-based recruitment model ensures maximum ROI for your business.",
   },
   {
     src: "/images/pph3.jpg",
-    title: "Fast Turnaround",
-    text: "This is the description for the third feature.",
+    title: "Faster TAT",
+    text: "Close niche industry roles in record time with our specialized talent pipelines.",
   },
   {
     src: "/images/pph4.jpg",
-    title: "Flexible Engagement",
-    text: "This is the description for the fourth feature.",
+    title: "Niche Sector Expertise",
+    text: "Specialized recruitment teams dedicated to 25+ high-growth industry sectors.",
   },
   {
     src: "/images/pph5.jpg",
-    title: "Proven Results",
-    text: "This is the description for the fifth feature.",
+    title: "Pan-India Network",
+    text: "Access to a massive pre-vetted talent pool across every major city in India.",
   },
 ];
 
@@ -156,7 +155,7 @@ export default function WhyChooseIndustriesWeHire() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center lg:items-start gap-8">
+        <div className="flex flex-col sm:flex-row justify-between items-center lg:items-center gap-8">
           <div className="flex-1">
             <h3 className="font-montserrat text-2xl md:text-3xl font-semibold text-[#5500FE] mb-2">
               {activeImage.title}:
