@@ -173,49 +173,42 @@ const IndustriesGrid = ({
                                     initial="hidden"
                                     animate="visible"
                                     whileHover={{
-                                        scale: 1.05,
-                                        boxShadow: "0px 10px 30px rgba(0,0,0,0.3)",
+                                        y: -6,
+                                        boxShadow: "0px 20px 40px rgba(0,0,0,0.25)",
                                     }}
-                                    style={{
-                                        backgroundImage: `url(${effectiveBg})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                    }}
-                                    className={`rounded-xl p-6 shadow-md transition-all duration-300 h-full flex flex-col items-center justify-between ${effectiveText} ${item.slug ? 'cursor-pointer' : ''}`}
+                                    className={`rounded-2xl overflow-hidden shadow-lg transition-all duration-300 h-full flex flex-col bg-[#0f0c29] ${item.slug ? 'cursor-pointer' : ''}`}
                                     onClick={() => {
                                         if (item.slug && separate !== "true") {
                                             navigate(`/industries-we-serve/${item.slug}`);
                                         }
                                     }}
                                 >
-                                    <img src={item.img} className="w-36 mx-auto my-2" alt={item.title} />
-                                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                                    <p className="text-sm mb-4">{item.description}</p>
+                                    {/* Photo area */}
+                                    <div className="w-full h-48 relative overflow-hidden group flex-shrink-0">
+                                        <img
+                                            src={item.img}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            alt={item.title}
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0f0c29]/60 to-transparent" />
+                                    </div>
 
-                                    {separate === "true" ? (
-                                        <button
-                                            className={`py-2 px-4 border rounded-full ${effectiveText.includes("#FFFFFF")
-                                                ? "bg-[#FFFFFF] text-[#1B084C]"
-                                                : "bg-[#1B084C] text-white"
-                                                }`}
-                                        >
-                                            Learn more
-                                        </button>
-                                    ) : (
-                                        <motion.div
-                                            initial={{ scale: 0 }}
-                                            animate={{ scale: 1 }}
-                                            transition={{
-                                                delay: index * 0.3 + 0.4,
-                                                type: "spring",
-                                                stiffness: 100,
-                                            }}
-                                            className="bg-[rgba(255,255,255,0.34)] rounded-2xl px-10 py-1 text-center w-fit mx-auto"
-                                        >
-                                            <h2 className="text-2xl font-bold">{item.placements}</h2>
-                                            <p className="text-lg">Placements</p>
-                                        </motion.div>
-                                    )}
+                                    {/* Content area */}
+                                    <div className="p-5 flex flex-col flex-grow text-white">
+                                        <h3 className="text-lg font-bold mb-2 font-montserrat leading-tight">{item.title}</h3>
+                                        <p className="text-sm text-gray-300 leading-relaxed flex-grow line-clamp-3">{item.description}</p>
+
+                                        {separate === "true" ? (
+                                            <button className="mt-4 py-2 px-5 bg-white text-[#1B084C] rounded-full text-sm font-semibold hover:bg-purple-100 transition-colors duration-200 self-start">
+                                                Learn more
+                                            </button>
+                                        ) : (
+                                            <div className="mt-4 pt-4 border-t border-white/10">
+                                                <span className="text-xl font-bold text-white">{item.placements}</span>
+                                                <span className="text-sm text-gray-400 ml-2">Placements</span>
+                                            </div>
+                                        )}
+                                    </div>
                                 </motion.div>
                             );
                         })}

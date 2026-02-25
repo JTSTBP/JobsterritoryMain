@@ -16,6 +16,7 @@ import BlogsSection from "../components/commonsections/staticblogs";
 import Hero from "../components/home/hero";
 import { usePopup } from "../contexts/popupcontext";
 import { useLocation, useNavigate } from "react-router-dom";
+import BannerSection from "../components/home/bannersection";
 
 const Homepage = () => {
   const { openPopup } = usePopup();
@@ -62,12 +63,12 @@ const Homepage = () => {
     {
       title: "Technology & Startups",
       description:
-        "Software engineers, product managers, data scientists, and tech leaders. 2,000+ placements and counting.",
+        "Software engineers, product managers, data scientists, and tech leaders driving innovation.",
       placements: "2000+",
       bg: "images/bg1.png",
       text: "text-[#FFFFFF]",
       slug: "information-technology",
-      img: "/images/infor.png"
+      img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "Healthcare & Life Sciences",
@@ -77,7 +78,7 @@ const Homepage = () => {
       bg: "images/bg4.png",
       text: "text-[#1B084C]",
       slug: "healthcare",
-      img: "/images/health.png"
+      img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "E-Commerce & Retail",
@@ -87,7 +88,7 @@ const Homepage = () => {
       bg: "images/bg2.png",
       text: "text-[#FFFFFF]",
       slug: "retail",
-      img: "/images/logis.png"
+      img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "Banking & Financial Services",
@@ -97,19 +98,17 @@ const Homepage = () => {
       bg: "images/bg5.png",
       text: "text-[#1B084C]",
       slug: "finance",
-      img: "/images/bussi.png"
+      img: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?auto=format&fit=crop&q=80&w=800"
     },
-
-
     {
       title: "Media & Creative",
       description:
-        "Content creators, marketers, and storytellers who inspire audiences.",
+        "Content creators, marketers, and storytellers who inspire audiences worldwide.",
       placements: "1500+",
       bg: "images/bg8.png",
       text: "text-[#1B084C]",
       slug: "media-entertainment",
-      img: "/images/media.png"
+      img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "Logistics & Supply Chain",
@@ -120,29 +119,28 @@ const Homepage = () => {
       large: true,
       text: "text-[#FFFFFF]",
       slug: "logistics-supply-chain",
-      img: "/images/logis.png"
+      img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "Real Estate",
       description:
-        "Strategic leaders in development, sales, marketing, and investment who deliver measurable returns.",
+        "Strategic leaders in development, sales, marketing, and investment delivering measurable returns.",
       placements: "500+",
       bg: "images/bg8.png",
       text: "text-[#1B084C]",
       slug: "real-estate",
-      img: "/images/realest.png"
+      img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "Renewable Energy",
       description:
-        "Visionary leaders in solar, wind, and clean energy who drive sustainability, innovation, and measurable impact.",
+        "Visionary leaders in solar, wind, and clean energy driving sustainability and measurable impact.",
       placements: "500+",
       bg: "images/bg6.png",
       text: "text-[#FFFFFF]",
-      slug: "renewable-energy",
-      img: "/images/chemi.png"
+      slug: "energy",
+      img: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80&w=800"
     },
-
   ];
 
   const allIndustries = [...staticIndustries, ...dynamicIndustries];
@@ -237,7 +235,8 @@ const Homepage = () => {
     <div>
       <Navbar />
       {/* <HeroSection /> */}
-      <Hero />
+      {/* <Hero /> */}
+      <BannerSection />
       <ClientLogos />
       {/* <Services /> */}
       <SuccessStories />
