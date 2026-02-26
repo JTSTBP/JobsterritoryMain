@@ -1,5 +1,4 @@
 import { Briefcase, Users, Globe, Award, Eye, Target } from "lucide-react";
-import teamHero from "@/assets/team-hero.jpg";
 
 const Index = () => {
     return (
@@ -15,7 +14,7 @@ const Index = () => {
             <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-10">
                 <div className="rounded-2xl overflow-hidden">
                     <img
-                        src={teamHero}
+                        src="/images/visionbanner.png"
                         alt="Professional team collaborating in modern office"
                         className="w-full h-64 md:h-[360px] object-cover"
                     />

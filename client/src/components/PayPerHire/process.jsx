@@ -231,13 +231,13 @@ const steps = [
 
 /* ===== Orbit Dot — center connector with 3 pulsing rings ===== */
 const OrbitDot = ({ color }) => (
-  <div className="relative flex items-center justify-center w-6 h-6">
+  <div className="relative flex items-center justify-center w-5 h-5">
     {/* Ring 3 — outermost, slowest */}
     <span
       className="absolute rounded-full animate-ping opacity-20"
       style={{
-        width: 40,
-        height: 40,
+        width: 30,
+        height: 30,
         backgroundColor: color,
         animationDuration: "2.4s",
       }}
@@ -246,8 +246,8 @@ const OrbitDot = ({ color }) => (
     <span
       className="absolute rounded-full animate-ping opacity-30"
       style={{
-        width: 28,
-        height: 28,
+        width: 20,
+        height: 20,
         backgroundColor: color,
         animationDuration: "1.8s",
       }}
@@ -256,8 +256,8 @@ const OrbitDot = ({ color }) => (
     <span
       className="absolute rounded-full animate-ping opacity-40"
       style={{
-        width: 18,
-        height: 18,
+        width: 12,
+        height: 12,
         backgroundColor: color,
         animationDuration: "1.2s",
       }}
@@ -275,12 +275,12 @@ const StepCard = ({ step }) => {
   const Icon = step.icon;
   return (
     <div
-      className="relative overflow-hidden rounded-2xl p-6 shadow-md w-full"
-      style={{ backgroundColor: `${step.color}12`, border: `1.5px solid ${step.color}30` }}
+      className="relative overflow-hidden rounded-xl p-2 md:p-3 shadow-sm w-full"
+      style={{ backgroundColor: `${step.color}05`, border: `1px solid ${step.color}15` }}
     >
       {/* Ghost number background */}
       <span
-        className="absolute -top-4 -right-2 text-[7rem] font-black leading-none select-none pointer-events-none"
+        className="absolute -top-2 -right-1 text-[3.5rem] md:text-[4.5rem] font-black leading-none select-none pointer-events-none"
         style={{ color: `${step.color}18` }}
       >
         {step.num}
@@ -288,19 +288,19 @@ const StepCard = ({ step }) => {
 
       {/* Icon circle */}
       <div
-        className="w-11 h-11 rounded-full flex items-center justify-center mb-4 text-white shadow-md"
+        className="w-9 h-9 rounded-full flex items-center justify-center mb-2 text-white shadow-md"
         style={{ backgroundColor: step.color }}
       >
-        <Icon size={20} />
+        <Icon size={18} />
       </div>
 
       {/* Sub-heading */}
-      <h3 className="text-base font-bold text-[#1B084C] mb-2 leading-snug">
+      <h3 className="text-sm font-bold text-[#1B084C] mb-1 leading-snug">
         {step.title}
       </h3>
 
       {/* Description */}
-      <p className="text-sm text-gray-500 leading-relaxed relative z-10">
+      <p className="text-[0.75rem] text-gray-500 leading-tight relative z-10">
         {step.desc}
       </p>
     </div>
@@ -310,15 +310,15 @@ const StepCard = ({ step }) => {
 export default function IndustriesWeHireProcess() {
   return (
     <div className="bg-[#f8fafc]">
-      <section className="px-4 py-16 md:py-24">
+      <section className="px-4 py-4 md:py-6 min-h-[100dvh] flex flex-col justify-center overflow-hidden">
 
         {/* ── Header ── */}
-        <div className="mx-auto mb-12 max-w-2xl text-center md:mb-20">
-          <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-[#1B084C] sm:text-4xl md:text-5xl">
+        <div className="mx-auto mb-4 max-w-2xl text-center md:mb-6">
+          <h2 className="mb-2 text-2xl font-extrabold tracking-tight text-[#1B084C] sm:text-3xl md:text-4xl">
             A Simple, Transparent{" "}
             <span className="text-indigo-600">Hiring Journey</span>
           </h2>
-          <p className="text-sm leading-relaxed text-gray-500 sm:text-base">
+          <p className="text-xs leading-tight text-gray-500 sm:text-sm max-w-xl mx-auto">
             We've streamlined our process to focus on speed and accuracy,
             ensuring you meet the right talent without the traditional
             recruitment hassle.
@@ -334,11 +334,11 @@ export default function IndustriesWeHireProcess() {
           {/* Vertical line — mobile (left) */}
           <div className="absolute left-5 top-0 block h-full w-px bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 md:hidden" />
 
-          <div className="flex flex-col gap-12 md:gap-0">
+          <div className="flex flex-col gap-4 md:gap-0">
             {steps.map((step, i) => (
               <div
                 key={i}
-                className="relative flex items-center gap-4 md:gap-0 md:py-8"
+                className="relative flex items-center gap-4 md:gap-0 md:py-1"
               >
                 {/* ── Mobile dot ── */}
                 <div className="relative z-10 flex-shrink-0 md:hidden">
