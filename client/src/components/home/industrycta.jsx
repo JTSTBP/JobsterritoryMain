@@ -273,7 +273,7 @@ const IndustryCTA = () => {
         <StatCircle
           className="absolute top-[192px] left-[136px]"
           icon={<Briefcase size={28} />}
-          title="15+"
+          title="5k+"
           text="Industries Served"
         />
         <StatCircle
@@ -285,13 +285,13 @@ const IndustryCTA = () => {
         <StatCircle
           className="absolute bottom-[188px] left-[160px]"
           icon={<Users size={28} />}
-          title="10k+"
+          title="15k+"
           text="Total Placements"
         />
         <StatCircle
           className="absolute bottom-[279px] right-[15px]"
           icon={<Zap size={28} />}
-          title="Rapid 12hr"
+          title="Rapid 48hrs"
           text="Response"
         />
       </div>

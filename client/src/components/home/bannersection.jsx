@@ -10,9 +10,9 @@ const features = [
 ];
 
 const stats = [
-    { number: "30K+", label: "Placements" },
-    { number: "500+", label: "Clients" },
-    { number: "48hr", label: "Avg Response" },
+    { number: "15k+", label: "Placements" },
+    { number: "5k+", label: "Clients" },
+    { number: "48hrs", label: "Avg Response" },
 ];
 
 /* ── Decorative floating shapes ── */
