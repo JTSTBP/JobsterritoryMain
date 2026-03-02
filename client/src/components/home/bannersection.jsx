@@ -204,7 +204,7 @@ const BannerSection = () => {
                                 onClick={() => window.open("https://calendly.com/jobsterritory/30min", "_blank")}
                                 className="flex items-center gap-2 bg-transparent text-white text-sm font-semibold px-7 py-3 rounded-full border-2 border-white/30 hover:border-[#cfc0ff] hover:bg-white/10 transition-all"
                             >
-                                Book a Demo
+                                Book a call
                             </motion.button>
                         </motion.div>
                     </div>

@@ -232,7 +232,7 @@ const Testimonial = () => {
               {[...rows, ...rows].flat().map((t, index) => (
                 <div
                   key={index}
-                  className="break-inside-avoid mb-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all inline-block w-full"
+                  className="break-inside-avoid mb-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:scale-105 transition-all duration-300 transform cursor-pointer inline-block w-full hover:z-50 relative"
                 >
                   <img
                     src={t.banner}

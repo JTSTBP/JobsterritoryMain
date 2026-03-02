@@ -94,8 +94,8 @@ const HeroSection = () => {
           transition={{ duration: 1 }}
           style={{
             backgroundImage: `url(${window.innerWidth >= 768
-                ? "/images/exherobg3.png" // ✅ single bg for md+
-                : backgroundImages[currentSlide].url // ✅ rotating bg for sm
+              ? "/images/exherobg3.png" // ✅ single bg for md+
+              : backgroundImages[currentSlide].url // ✅ rotating bg for sm
               })`,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -192,8 +192,8 @@ const HeroSection = () => {
                         whileHover={{ scale: 1.2 }}
                         onClick={() => setCurrentSlide(index)}
                         className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${currentSlide === index
-                            ? "bg-[#5f00f5]"
-                            : "bg-[#a47ff5]"
+                          ? "bg-[#5f00f5]"
+                          : "bg-[#a47ff5]"
                           }`}
                       />
                     ))}
@@ -253,7 +253,7 @@ const HeroSection = () => {
                 className="flex items-center gap-2"
               >
                 <button className="xl:w-[200px] flex items-center justify-center bg-gradient-to-r from-[#7300ff] to-[#2c1361] text-white text-sm font-medium px-6 py-2 rounded-full border-2 border-[#cfc0ff] shadow-md">
-                  Book a Demo
+                  Book a call
                 </button>
                 <div className="w-1 h-0.5 bg-[#cfc0ff]" />
                 <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-[#7300ff] to-[#2c1361] border-2 border-[#cfc0ff] shadow-md">

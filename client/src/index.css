@@ -33,6 +33,10 @@ code {
   animation: scrollUp 65s linear infinite;
 }
 
+.animate-scrollUp:hover {
+  animation-play-state: paused;
+}
+
 .circle {
   position: relative;
   width: 170px;
