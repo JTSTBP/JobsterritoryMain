@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Search } from "lucide-react";
+import CategoryDropdown from "./CategoryDropdown";
 
 export default function FeaturedArticles() {
   const itemsPerPage = 9;
@@ -11,16 +12,6 @@ export default function FeaturedArticles() {
   const navigate = useNavigate();
   const [active, setActive] = useState("All");
   const [search, setSearch] = useState("");
-
-  const categories = [
-    "All",
-    "Recruitment",
-    "HR Trends",
-    "Industry Insights",
-    "Technology",
-    "Career Tips",
-    "Funding",
-  ];
 
   // Helper: convert HTML string to plain text for a safe preview
   const htmlToText = (html) => {
@@ -51,6 +42,7 @@ export default function FeaturedArticles() {
         setLoading(false);
       }
     };
+
     fetchBlogs();
   }, []);
 
@@ -121,24 +113,15 @@ export default function FeaturedArticles() {
             />
             <Search className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
           </div>
-          {/* Categories */}
-          <div className="flex gap-3 overflow-x-auto scrollbar-hide">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => {
-                  setPage(0); // reset to first page when switching category
-                  setActive(cat);
-                }}
-                className={`px-5 py-2 rounded-full border text-sm font-medium transition whitespace-nowrap ${active === cat
-                  ? "bg-gradient-to-r from-purple-600 to-indigo-500 text-white shadow-md"
-                  : "border-gray-300 text-gray-600 hover:bg-gray-100"
-                  }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+          {/* Categories Dropdown */}
+          <CategoryDropdown
+            value={active}
+            onChange={(val) => {
+              setPage(0);
+              setActive(val);
+            }}
+            className="w-full md:w-72 md:shrink-0"
+          />
         </div>
       </div>
       {/* Heading */}

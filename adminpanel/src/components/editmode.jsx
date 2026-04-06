@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import IndustryDropdown from "./industrydropdown";
+import CategoryDropdown from "./categorydropdown";
 import "react-quill/dist/quill.snow.css";
 
 export default function EditModal({ row, type, onClose, onSave }) {
@@ -219,6 +220,11 @@ export default function EditModal({ row, type, onClose, onSave }) {
                         + Add Item
                       </button>
                     </div>
+                  ) : key === "category" ? (
+                    <CategoryDropdown
+                      value={formData[key] || ""}
+                      onChange={(val) => setFormData({ ...formData, [key]: val })}
+                    />
                   ) : key === "industry" ? (
                     <IndustryDropdown
                       value={formData[key] || ""}

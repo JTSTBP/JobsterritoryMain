@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
 import IndustryDropdown from "./industrydropdown";
+import CategoryDropdown from "./categorydropdown";
 
 // ✨ Smooth animations
 
@@ -453,6 +454,11 @@ export default function AddPage() {
                         placeholder={`Enter ${label}`}
                       />
                     </div>
+                  ) : key === "category" ? (
+                    <CategoryDropdown
+                      value={formData[key] || ""}
+                      onChange={(val) => setFormData({ ...formData, [key]: val })}
+                    />
                   ) : type === "select" ? (
                     <select
                       value={formData[key] || ""}
