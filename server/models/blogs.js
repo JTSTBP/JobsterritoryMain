@@ -28,14 +28,6 @@ const blogSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      enum: [
-        "Recruitment",
-        "HR Trends",
-        "Industry Insights",
-        "Technology",
-        "Career Tips",
-        "Funding",
-      ],
     },
     schedulepost: {
       type: Date,
