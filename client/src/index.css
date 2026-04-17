@@ -30,7 +30,7 @@ code {
 }
 
 .animate-scrollUp {
-  animation: scrollUp 65s linear infinite;
+  animation: scrollUp 130s linear infinite;
 }
 
 .animate-scrollUp:hover {

@@ -81,7 +81,7 @@ const ClientLogos = () => {
         {/* Logos */}
         {!loading && (
           <div className="absolute inset-0 flex overflow-hidden z-10 group">
-            <div className="flex animate-scroll group-hover:pause gap-7 md:gap-32 min-w-max">
+            <div className="flex animate-scroll group-hover:[animation-play-state:paused] gap-7 md:gap-32 min-w-max">
               {allImages.map((item, index) => (
                 <div
                   key={index}
