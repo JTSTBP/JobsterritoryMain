@@ -13,6 +13,7 @@ import FAQSection from "../components/home/faqs";
 import { motion, AnimatePresence } from "framer-motion";
 import IndustryCTA from "../components/home/industrycta";
 import BlogsSection from "../components/commonsections/staticblogs";
+import CaseStudiesSlider from "../components/commonsections/casestudiesslider";
 import Hero from "../components/home/hero";
 import { usePopup } from "../contexts/popupcontext";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -144,47 +145,45 @@ const Homepage = () => {
   ];
 
   const allIndustries = [...staticIndustries, ...dynamicIndustries];
-  const blogs = [
-    {
-      id: 1,
-      title: "How to attract and retain top c suite talent",
-      slug: "how-to-attract-and-retain-top-c-suite-talent",
-      image: "/images/blogsimg1.png",
-    },
-    {
-      id: 2,
-      title: "Importance of executive search for c suite ro",
-      slug: "importance-of-executive-search-for-c-suite-ro",
-      image: "/images/blogsh1.png",
-      bg: "#1B084C",
-    },
-    {
-      id: 3,
-      title: "C suite hiring trends in tech healthcare",
-      slug: "c-suite-hiring-trends-in-tech-healthcare",
-      image: "/images/blogimg1.png",
-    },
-    {
-      id: 4,
-      title: "Importance of executive search for c suite ro",
-      slug: "importance-of-executive-search-for-c-suite-ro",
-      image: "/images/blogsh2.png",
-      bg: "#1B084C",
-    },
-    {
-      id: 5,
-      title: "How to attract and retain top c suite talent",
-      slug: "how-to-attract-and-retain-top-c-suite-talent",
-      image: "/images/blogimg2.png",
-    },
-    {
-      id: 6,
-      title: "Importance of executive search for c suite ro",
-      slug: "importance-of-executive-search-for-c-suite-ro",
-      image: "/images/blogsh3.png",
-      bg: "#1B084C",
-    },
-  ];
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/getblogs`);
+        if (res.ok) {
+          const data = await res.json();
+          // Map API data to the format expected by BlogsSection
+          const mappedBlogs = data.map((blog) => ({
+            id: blog._id,
+            title: blog.heading,
+            slug: blog.slug,
+            image: blog.banner,
+          }));
+          setBlogs(mappedBlogs);
+        }
+      } catch (err) {
+        console.error("Error fetching blogs:", err);
+      }
+    };
+    fetchBlogs();
+  }, []);
+
+  const [caseStudies, setCaseStudies] = useState([]);
+  useEffect(() => {
+    const fetchCaseStudies = async () => {
+      try {
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/getcasestudies`);
+        if (res.ok) {
+          const data = await res.json();
+          setCaseStudies(data);
+        }
+      } catch (err) {
+        console.error("Error fetching case studies:", err);
+      }
+    };
+    fetchCaseStudies();
+  }, []);
 
   const faqData = [
     // {
@@ -239,7 +238,8 @@ const Homepage = () => {
       <BannerSection />
       <ClientLogos />
       {/* <Services /> */}
-      <SuccessStories />
+      {/* <SuccessStories /> */}
+      <CaseStudiesSlider caseStudies={caseStudies} />
       <Testimonial />
       <IndustriesGrid industries={allIndustries} />
 

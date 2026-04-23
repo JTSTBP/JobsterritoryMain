@@ -6,14 +6,11 @@ import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showResources, setShowResources] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const currentPath = location.pathname;
 
   const isActive = (path) => currentPath === path;
-
-
 
   const handleScroll = (e, path) => {
     if (path.startsWith("#")) {
@@ -29,30 +26,19 @@ const Navbar = () => {
         navigate("/", { state: { scrollTo: id } });
       }
 
-      setShowResources(false);
       setIsOpen(false);
     }
   };
 
   const menuItems = [
     { name: "Home", path: "/" },
-    // { name: "About Us", path: "/aboutus" },
-    // { name: "Raas ", path: "/raas" },
-    // { name: "Fractional Hiring", path: "/fractionalhiring" },
-
     { name: "Industries We Hire", path: "/IndustriesweHire" },
-    { name: "Resources", path: "#" },
-    // { name: "About", path: "/aboutus" },
   ];
 
   const miditems = [
     { name: "Home", path: "/" },
-    // { name: "Raas ", path: "/raas" },
-    // { name: "About Us", path: "/aboutus" },
-    // { name: "Fractional Hiring", path: "/fractionalhiring" },
     { name: "Industries We Hire", path: "/IndustriesweHire" },
     { name: "Hire Now", path: "/contactus" },
-    { name: "Resources", path: "#" },
     { name: "AboutUs", path: "/aboutus" },
   ];
   // find active index (fallback to 0 if route not found)
@@ -81,67 +67,17 @@ const Navbar = () => {
               <>
                 <img src="/images/rec1.png" className="h-10" alt="rec-left" />
                 <div className="flex items-center bg-white h-10 px-4 space-x-6">
-                  {leftItems.map((it) =>
-                    it.name === "Resources" ? (
-                      <div
-                        key={it.path}
-                        className="relative h-full flex items-center"
-                        onMouseEnter={() => setShowResources(true)}
-                        onMouseLeave={() => setShowResources(false)}
-                      >
-                        <button
-                          onClick={() => setShowResources(!showResources)}
-                          className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
-                        >
-                          <span>{it.name}</span>
-                          <IoIosArrowDown className="ml-1 text-sm" />
-                        </button>
-                        {showResources && (
-                          <div
-                            className="absolute top-full left-0 pt-2 w-40 z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
-                          >
-                            <div className="bg-white text-black rounded shadow-lg">
-                              <a
-                                href="/casestudies"
-                                className="block px-4 py-2 hover:bg-gray-200"
-                              >
-                                Case Studies
-                              </a>
-                              <a
-                                href="/blogs"
-                                className="block px-4 py-2 hover:bg-gray-200"
-                              >
-                                Blogs
-                              </a>
-                              <a
-                                href="#testimonials"
-                                onClick={(e) => handleScroll(e, "#testimonials")}
-                                className="block px-4 py-2 hover:bg-gray-200"
-                              >
-                                Testimonials
-                              </a>
-                              <a
-                                href="/aboutus"
-                                className="block px-4 py-2 hover:bg-gray-200"
-                              >
-                                About Us
-                              </a>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <Link
-                        key={it.path}
-                        to={it.path}
-                        className="whitespace-nowrap"
-                      >
-                        <span className="text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer hover:underline">
-                          {it.name}
-                        </span>
-                      </Link>
-                    )
-                  )}
+                  {leftItems.map((it) => (
+                    <Link
+                      key={it.path}
+                      to={it.path}
+                      className="whitespace-nowrap"
+                    >
+                      <span className="text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer hover:underline">
+                        {it.name}
+                      </span>
+                    </Link>
+                  ))}
                 </div>
                 <img src="/images/rec2.png" className="h-10" alt="rec-right" />
               </>
@@ -175,61 +111,17 @@ const Navbar = () => {
               <>
                 <img src="/images/rec1.png" className="h-10" alt="rec-left" />
                 <div className="flex items-center bg-white h-10 px-4 space-x-6">
-                  {rightItems.map((it) =>
-                    it.name === "Resources" ? (
-                      <div
-                        key={it.path}
-                        className="relative h-full flex items-center"
-                        onMouseEnter={() => setShowResources(true)}
-                        onMouseLeave={() => setShowResources(false)}
-                      >
-                        <button
-                          onClick={() => setShowResources(!showResources)}
-                          className="flex items-center text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
-                        >
-                          <span>{it.name}</span>
-                          <IoIosArrowDown className="ml-1 text-sm" />
-                        </button>
-                        {showResources && (
-                          <div
-                            className="absolute top-full right-0 pt-2 w-40 z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
-                          >
-                            <div className="bg-white text-black rounded shadow-lg">
-                              <a
-                                href="/casestudies"
-                                className="block px-4 py-2 hover:bg-gray-200"
-                              >
-                                Case Studies
-                              </a>
-                              <a
-                                href="/blogs"
-                                className="block px-4 py-2 hover:bg-gray-200"
-                              >
-                                Blogs
-                              </a>
-                              <a
-                                href="#testimonials"
-                                onClick={(e) => handleScroll(e, "#testimonials")}
-                                className="block px-4 py-2 hover:bg-gray-200"
-                              >
-                                Testimonials
-                              </a>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <Link
-                        key={it.path}
-                        to={it.path}
-                        className="whitespace-nowrap"
-                      >
-                        <span className="text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer hover:underline">
-                          {it.name}
-                        </span>
-                      </Link>
-                    )
-                  )}
+                  {rightItems.map((it) => (
+                    <Link
+                      key={it.path}
+                      to={it.path}
+                      className="whitespace-nowrap"
+                    >
+                      <span className="text-[#2F1656] text-xs sm:text-sm md:text-base cursor-pointer hover:underline">
+                        {it.name}
+                      </span>
+                    </Link>
+                  ))}
                 </div>
                 <img src="/images/rec2.png" className="h-10" alt="rec-right" />
               </>
@@ -240,61 +132,17 @@ const Navbar = () => {
             <div className="flex">
               <img src="/images/rec1.png" className="h-10" alt="rec-right" />
               <div className="flex bg-white items-center gap-5">
-                {miditems.map((it) =>
-                  it.name === "Resources" ? (
-                    <div
-                      key={it.path}
-                      className="relative h-full flex items-center"
-                      onMouseEnter={() => setShowResources(true)}
-                      onMouseLeave={() => setShowResources(false)}
-                    >
-                      <button
-                        onClick={() => setShowResources(!showResources)}
-                        className="flex items-center text-[#2F1656] cursor-pointer whitespace-nowrap hover:underline px-2 py-1"
-                      >
-                        <span>{it.name}</span>
-                        <IoIosArrowDown className="ml-1 text-sm" />
-                      </button>
-                      {showResources && (
-                        <div
-                          className="absolute top-full left-0 pt-2 w-40 z-40 transition-all duration-300 animate-in fade-in slide-in-from-top-2"
-                        >
-                          <div className="bg-white text-black rounded shadow-lg">
-                            <a
-                              href="/casestudies"
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              Case Studies
-                            </a>
-                            <a
-                              href="/blogs"
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              Blogs
-                            </a>
-                            <a
-                              href="#testimonials"
-                              onClick={(e) => handleScroll(e, "#testimonials")}
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              Testimonials
-                            </a>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <Link
-                      key={it.path}
-                      to={it.path}
-                      className="whitespace-nowrap"
-                    >
-                      <span className="text-[#2F1656]  cursor-pointer hover:underline">
-                        {it.name}
-                      </span>
-                    </Link>
-                  )
-                )}
+                {miditems.map((it) => (
+                  <Link
+                    key={it.path}
+                    to={it.path}
+                    className="whitespace-nowrap"
+                  >
+                    <span className="text-[#2F1656]  cursor-pointer hover:underline">
+                      {it.name}
+                    </span>
+                  </Link>
+                ))}
               </div>
               <img src="/images/rec2.png" className="h-10" alt="rec-right" />
             </div>
@@ -379,40 +227,6 @@ const Navbar = () => {
                 </a>
               ))}
 
-
-              {/* Mobile Resources Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={() => setShowResources(!showResources)}
-                  className="flex items-center w-full text-left px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md text-sm font-bold"
-                >
-                  <span>Resources</span>
-                  <IoIosArrowDown className={`ml-1 text-sm transition-transform duration-200 ${showResources ? 'rotate-180' : ''}`} />
-                </button>
-                {showResources && (
-                  <div className="ml-4 border-l border-gray-200 pl-4 py-1 space-y-1">
-                    <a
-                      href="/casestudies"
-                      className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-                    >
-                      Case Studies
-                    </a>
-                    <a
-                      href="/blogs"
-                      className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-                    >
-                      Blogs
-                    </a>
-                    <a
-                      href="#testimonials"
-                      onClick={(e) => handleScroll(e, "#testimonials")}
-                      className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md text-sm"
-                    >
-                      Testimonials
-                    </a>
-                  </div>
-                )}
-              </div>
 
               <div className="border-t border-gray-200 pt-3 mt-3 space-y-2">
                 <a

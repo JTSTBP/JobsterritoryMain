@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Search } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import CategoryDropdown from "./CategoryDropdown";
 
 export default function FeaturedArticles() {
@@ -17,7 +17,7 @@ export default function FeaturedArticles() {
   const htmlToText = (html) => {
     if (!html) return "";
     try {
-      const clean = html.replace(/\\r\\n/g, " "); // handle escaped line breaks
+      const clean = html.replace(/\r\n/g, " "); // handle escaped line breaks
       const doc = new DOMParser().parseFromString(clean, "text/html");
       return (doc.body.textContent || "").replace(/\s+/g, " ").trim();
     } catch {
@@ -62,7 +62,6 @@ export default function FeaturedArticles() {
       (active === "HR Trends" && heading.includes("hr")) ||
       (active === "Funding" && heading.includes("funding"));
 
-
     const matchesSearch =
       heading.includes(searchLower) ||
       htmlToText(article.desc).toLowerCase().includes(searchLower);
@@ -72,8 +71,8 @@ export default function FeaturedArticles() {
     return matchesCategory && matchesSearch && !isScheduled;
   });
 
-
   // Pagination
+  const totalPages = Math.ceil(filteredArticles.length / itemsPerPage);
   const startIndex = page * itemsPerPage;
   const currentItems = filteredArticles.slice(
     startIndex,
@@ -81,7 +80,7 @@ export default function FeaturedArticles() {
   );
 
   const handleNext = () => {
-    if ((page + 1) * itemsPerPage < articles.length) setPage(page + 1);
+    if ((page + 1) < totalPages) setPage(page + 1);
   };
   const handlePrev = () => {
     if (page > 0) setPage(page - 1);
@@ -92,7 +91,7 @@ export default function FeaturedArticles() {
       <div className="flex flex-col items-center text-center py-14 pt-4 px-4 text-[#1B084C] font-poppins">
         {/* Title */}
         <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent leading-tight h-[10vh]">
-          <span className="inline-block">Blogs</span>
+          <span className="inline-block">Recruitment Insights</span>
         </h1>
         <p className=" text-base md:text-lg text-gray-600">
           Your Guide to Smarter Hiring and Career Growth
@@ -124,6 +123,7 @@ export default function FeaturedArticles() {
           />
         </div>
       </div>
+
       {/* Heading */}
       <h2 className="text-2xl md:text-4xl font-bold text-center mb-2">
         Featured Articles
@@ -199,25 +199,47 @@ export default function FeaturedArticles() {
       )}
 
       {/* Controls */}
-      {!loading && (
-        <div className="flex justify-center items-center gap-6 mt-10">
-          {page > 0 && (
-            <button
-              onClick={handlePrev}
-              className="px-5 py-2 rounded-full bg-gradient-to-r from-[#2D274B] to-[#5500FE] text-white shadow hover:bg-purple-700 transition"
-            >
-              &lt; Prev
-            </button>
-          )}
+      {!loading && filteredArticles.length > itemsPerPage && (
+        <div className="flex justify-center items-center gap-4 mt-12">
+          <button
+            onClick={handlePrev}
+            disabled={page === 0}
+            className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${
+              page === 0 
+              ? "bg-gray-100 text-gray-400 cursor-not-allowed" 
+              : "bg-white text-[#1B084C] shadow-md hover:bg-[#1B084C] hover:text-white border border-gray-100"
+            }`}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          
+          <div className="flex items-center gap-2">
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => setPage(i)}
+                className={`w-8 h-8 flex items-center justify-center rounded-lg text-sm font-semibold transition-all duration-300 ${
+                  page === i 
+                  ? "bg-[#1B084C] text-white" 
+                  : "bg-white text-gray-600 hover:bg-gray-100"
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
 
-          {(page + 1) * itemsPerPage < articles.length && (
-            <button
-              onClick={handleNext}
-              className="px-5 py-2 rounded-full bg-gradient-to-r from-[#2D274B] to-[#5500FE] text-white shadow hover:bg-purple-700 transition"
-            >
-              {page === 0 ? "View More" : "Next >"}
-            </button>
-          )}
+          <button
+            onClick={handleNext}
+            disabled={(page + 1) >= totalPages}
+            className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${
+              (page + 1) >= totalPages
+              ? "bg-gray-100 text-gray-400 cursor-not-allowed" 
+              : "bg-white text-[#1B084C] shadow-md hover:bg-[#1B084C] hover:text-white border border-gray-100"
+            }`}
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       )}
     </div>

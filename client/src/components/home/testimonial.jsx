@@ -168,7 +168,7 @@ const Testimonial = () => {
           />
         </div>
         <h2 className="text-3xl md:text-4xl font-bold font-montserrat inline-block pb-2">
-          What Clients Say
+          Clients Accolade
         </h2>
         <p className="mt-2">
           Don't just take our word for it. Here's what our clients have to say
