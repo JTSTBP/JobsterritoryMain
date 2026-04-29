@@ -12,8 +12,7 @@ import FAQSection from "../components/home/faqs";
 
 import { motion, AnimatePresence } from "framer-motion";
 import IndustryCTA from "../components/home/industrycta";
-import BlogsSection from "../components/commonsections/staticblogs";
-import CaseStudiesSlider from "../components/commonsections/casestudiesslider";
+
 import Hero from "../components/home/hero";
 import { usePopup } from "../contexts/popupcontext";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -145,45 +144,7 @@ const Homepage = () => {
   ];
 
   const allIndustries = [...staticIndustries, ...dynamicIndustries];
-  const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/getblogs`);
-        if (res.ok) {
-          const data = await res.json();
-          // Map API data to the format expected by BlogsSection
-          const mappedBlogs = data.map((blog) => ({
-            id: blog._id,
-            title: blog.heading,
-            slug: blog.slug,
-            image: blog.banner,
-          }));
-          setBlogs(mappedBlogs);
-        }
-      } catch (err) {
-        console.error("Error fetching blogs:", err);
-      }
-    };
-    fetchBlogs();
-  }, []);
-
-  const [caseStudies, setCaseStudies] = useState([]);
-  useEffect(() => {
-    const fetchCaseStudies = async () => {
-      try {
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/getcasestudies`);
-        if (res.ok) {
-          const data = await res.json();
-          setCaseStudies(data);
-        }
-      } catch (err) {
-        console.error("Error fetching case studies:", err);
-      }
-    };
-    fetchCaseStudies();
-  }, []);
 
   const faqData = [
     // {
@@ -238,15 +199,10 @@ const Homepage = () => {
       <BannerSection />
       <ClientLogos />
       {/* <Services /> */}
-      {/* <SuccessStories /> */}
-      <CaseStudiesSlider caseStudies={caseStudies} />
       <Testimonial />
       <IndustriesGrid industries={allIndustries} />
 
-      <BlogsSection blogs={blogs} />
       <FAQSection faqData={faqData} />
-
-      {/* Improved Bottom CTA Section */}
 
 
       <Footer />
