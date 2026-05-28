@@ -17,6 +17,7 @@ import Hero from "../components/home/hero";
 import { usePopup } from "../contexts/popupcontext";
 import { useLocation, useNavigate } from "react-router-dom";
 import BannerSection from "../components/home/bannersection";
+import LandingHero from "../components/home/LandingHero";
 
 const Homepage = () => {
   const { openPopup } = usePopup();
@@ -196,7 +197,8 @@ const Homepage = () => {
       <Navbar />
       {/* <HeroSection /> */}
       {/* <Hero /> */}
-      <BannerSection />
+      <LandingHero/>
+      {/* <BannerSection /> */}
       <ClientLogos />
       {/* <Services /> */}
       <Testimonial />

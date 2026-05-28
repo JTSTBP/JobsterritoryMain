@@ -111,10 +111,10 @@ const ClientLogos = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -8, scale: 1.05 }}
                 viewport={{ once: true }}
-                className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 bg-gradient-to-br from-[#F5F3FF] to-white rounded-full flex flex-col justify-center items-center shadow-lg hover:shadow-xl transition-all duration-300 border border-[#E9D5FF] group"
+                className="relative w-40 h-40 sm:w-48 sm:w-48 md:w-56 md:h-56 bg-gradient-to-br from-[#F5F3FF] to-white rounded-xl flex flex-col justify-center items-center shadow-lg hover:shadow-xl transition-all duration-300 border border-[#E9D5FF] group"
               >
                 {/* Decorative corner accent */}
-                <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-[#8B5CF6]/10 to-transparent rounded-full"></div>
+                <div className="absolute top-4 right-4 w-16 h-16 rounded-full" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.1), transparent)" }}></div>
 
                 {/* Content */}
                 <div className="relative z-10 text-center px-4">
