@@ -113,7 +113,7 @@ export const industriesData = [
         placements: "400+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=800",
+       img: "/images/ser9.png",
         banner: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1920"
     },
     {
@@ -126,8 +126,8 @@ export const industriesData = [
         placements: "700+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800",
-        banner: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=1920"
+        img: "/images/ser10.png",
+      banner: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=1920"
     },
     {
         title: "Energy",
@@ -139,8 +139,8 @@ export const industriesData = [
         placements: "500+",
         bg: "images/bg6.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80&w=800",
-        banner: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1920"
+        img:"/images/ser11.png",
+       banner: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1920"
     },
     {
         title: "Logistics & Supply Chain",
@@ -152,8 +152,8 @@ export const industriesData = [
         placements: "700+",
         bg: "images/bg7.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
-        banner: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80&w=1920"
+        img:'/images/ser12.png',
+       banner: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80&w=1920"
     },
     {
         title: "E-commerce",
@@ -165,8 +165,8 @@ export const industriesData = [
         placements: "1500+",
         bg: "images/bg2.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
-        banner: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=1920"
+        img:'/images/ser13.png',
+       banner: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=1920"
     },
     {
         title: "Marketing & Advertising",
@@ -178,8 +178,8 @@ export const industriesData = [
         placements: "1100+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-        banner: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1920"
+        img:'/images/ser14.png',
+       banner: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1920"
     },
     {
         title: "Construction",
@@ -191,7 +191,7 @@ export const industriesData = [
         placements: "600+",
         bg: "images/bg1.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800",
+        img:'/images/ser15.png',
         banner: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1920"
     },
     {
@@ -204,8 +204,8 @@ export const industriesData = [
         placements: "450+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1587854680352-936b22b91030?auto=format&fit=crop&q=80&w=800",
-        banner: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=1920"
+        img:'/images/ser16.png',
+       banner: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=1920"
     },
     {
         title: "Media & Entertainment",
@@ -217,8 +217,8 @@ export const industriesData = [
         placements: "1500+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
-        banner: "https://images.unsplash.com/photo-1574267432644-f610a4ab1b6c?auto=format&fit=crop&q=80&w=1920"
+        img:'/images/ser17.png',
+       banner: "https://images.unsplash.com/photo-1574267432644-f610a4ab1b6c?auto=format&fit=crop&q=80&w=1920"
     },
     {
         title: "Insurance",
@@ -230,8 +230,8 @@ export const industriesData = [
         placements: "800+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
-        banner: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1920"
+        img:'/images/ser18.png',
+       banner: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1920"
     },
     {
         title: "Legal Services",
@@ -243,7 +243,7 @@ export const industriesData = [
         placements: "300+",
         bg: "images/bg6.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800",
+        img:'/images/ser19.png',
         banner: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=1920"
     },
     {
@@ -256,7 +256,7 @@ export const industriesData = [
         placements: "900+",
         bg: "images/bg2.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800",
+        img:'/images/ser20.png',
         banner: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1920"
     },
     {
@@ -269,8 +269,8 @@ export const industriesData = [
         placements: "1000+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?auto=format&fit=crop&q=80&w=800",
-        banner: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&q=80&w=1920"
+        img:'/images/ser21.png',
+       banner: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&q=80&w=1920"
     },
     {
         title: "Food & Beverage",
@@ -282,7 +282,7 @@ export const industriesData = [
         placements: "550+",
         bg: "images/bg7.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800",
+        img:'/images/ser22.png',
         banner: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=1920"
     },
     {
@@ -295,7 +295,7 @@ export const industriesData = [
         placements: "200+",
         bg: "images/bg1.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800",
+        img:'/images/ser23.png',
         banner: "https://images.unsplash.com/photo-1436262513933-a0b06755c784?auto=format&fit=crop&q=80&w=1920"
     },
     {
@@ -308,7 +308,7 @@ export const industriesData = [
         placements: "300+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
+        img:'/images/ser24.png',
         banner: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=1920"
     },
     {
@@ -321,7 +321,7 @@ export const industriesData = [
         placements: "400+",
         bg: "images/bg6.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
+       img:'/images/ser25.png',
         banner: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=1920"
     },
     {
@@ -334,7 +334,7 @@ export const industriesData = [
         placements: "800+",
         bg: "images/bg2.png",
         text: "text-[#FFFFFF]",
-        img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+        img:'/images/ser26.png',
         banner: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=1920"
     },
     {
@@ -347,7 +347,7 @@ export const industriesData = [
         placements: "500+",
         bg: "images/bg8.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800",
+        img:'/images/ser27.png',
         banner: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=1920"
     },
     {
@@ -360,7 +360,7 @@ export const industriesData = [
         placements: "350+",
         bg: "images/bg4.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=800",
+        img:'/images/ser28.png',
         banner: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=1920"
     },
     {
@@ -373,7 +373,7 @@ export const industriesData = [
         placements: "250+",
         bg: "images/bg5.png",
         text: "text-[#1B084C]",
-        img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800",
+        img:'/images/ser29.png',
         banner: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=1920"
     }
 ];

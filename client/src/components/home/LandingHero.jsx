@@ -99,24 +99,24 @@ const LandingHero = () => {
       {/* Background Floating Shapes */}
       <FloatingShapes />
 
-      <div className="max-w-[85rem] mx-auto px-6 md:px-12 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-[85rem] mx-auto px-6 md:px-12 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         
         {/* Left Content */}
-        <div className="flex flex-col text-white space-y-6 lg:pr-10">
-          <p className="text-[10px] md:text-xs tracking-[0.2em] text-[#7C6FA8] uppercase font-semibold">
+        <div className="flex flex-col max-w-2xl text-center md:text-left text-white space-y-6 lg:pr-8">
+          <p className="text-sm md:text-base tracking-wider text-[#7C6FA8] uppercase font-medium">
             India's Leading Recruitment & Workforce Solutions
           </p>
           
-          <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.15] text-[#2E1363]">
+          <h1 className="text-3xl md:text-4xl lg:text-[2.5rem] font-bold leading-[1.15] bg-clip-text text-transparent bg-gradient-to-r from-[#3F1388] to-[#5A1FC8]">
             Hire Smarter, <span className="text-[#B68CFF]">Scale Faster</span> with Talent Across India
           </h1>
           
-          <p className="text-[#6F6690] text-sm md:text-base max-w-[90%] leading-relaxed pt-2">
+          <p className="text-[#6F6690] text-base md:text-lg max-w-full leading-relaxed pt-2">
             We don't just fill roles — we connect you with visionaries who ignite change and drive your business forward.
           </p>
           
           {/* Features / Pills */}
-          <div className="flex flex-wrap gap-3 mt-4">
+          <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-4">
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#3F1388] to-[#5A1FC8] border border-[#A855F7] text-white">
               <Users size={14} className="text-white" /> Expert Recruiters
             </div>
@@ -132,7 +132,7 @@ const LandingHero = () => {
           </div>
           
           {/* Buttons */}
-          <div className="flex flex-wrap items-center gap-4 mt-8 pt-4">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-8 pt-4">
             <button
               onClick={openPopup}
               className="flex items-center gap-2 bg-gradient-to-r from-[#3F1388] to-[#5A1FC8] border border-[#A855F7] text-white px-7 py-3 rounded-full font-medium text-sm shadow-[0_0_20px_rgba(139,92,246,0.3)]"
@@ -149,9 +149,9 @@ const LandingHero = () => {
         </div>
 
         {/* Right Content / Image */}
-        <div className="relative w-full h-full flex justify-center lg:justify-end mt-12 lg:mt-0 pt-6 lg:pt-0">
+            <div className="relative w-full h-full flex justify-center items-center mt-12 lg:mt-0 pt-6 lg:pt-0">
           {/* Dark box background */}
-          <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[95%] h-[115%] bg-[#E6E1F5] z-0 hidden lg:block rounded-xl shadow-xl"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[115%] bg-[#E6E1F5] z-0 hidden lg:block rounded-xl shadow-xl"></div>
           
           <img 
             src="images/newhero.png" 
@@ -163,19 +163,19 @@ const LandingHero = () => {
 
       {/* Bottom Stats */}
       <div className="relative z-20 w-full max-w-[85rem] mx-auto px-6 md:px-12 mt-16 lg:mt-24">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 lg:w-[50%] lg:ml-auto pr-4 lg:pr-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 lg:w-[50%] lg:ml-auto ">
           {/* Stat 1 */}
-          <div className="flex flex-col items-center justify-center py-6 px-4 rounded-xl bg-gradient-to-r from-[#3F1388] to-[#5A1FC8] border border-[#A855F7] text-white shadow-[0_0_20px_rgba(139,92,246,0.3)]">
+          <div className="flex flex-col items-center justify-center py-3 px-3 rounded-xl bg-gradient-to-r from-[#3F1388] to-[#5A1FC8] border border-[#A855F7] text-white shadow-[0_0_20px_rgba(139,92,246,0.3)]">
             <h3 className="text-2xl md:text-3xl font-bold">15k+</h3>
             <p className="text-[10px] md:text-xs mt-2 uppercase tracking-wider text-center">Placements</p>
           </div>
           {/* Stat 2 */}
-          <div className="flex flex-col items-center justify-center py-6 px-4 rounded-xl bg-gradient-to-r from-[#3F1388] to-[#5A1FC8] border border-[#A855F7] text-white shadow-[0_0_20px_rgba(139,92,246,0.3)]">
+          <div className="flex flex-col items-center justify-center py-3 px-3 rounded-xl bg-gradient-to-r from-[#3F1388] to-[#5A1FC8] border border-[#A855F7] text-white shadow-[0_0_20px_rgba(139,92,246,0.3)]">
             <h3 className="text-2xl md:text-3xl font-bold">5k+</h3>
             <p className="text-[10px] md:text-xs mt-2 uppercase tracking-wider text-center">Companies</p>
           </div>
           {/* Stat 3 */}
-          <div className="flex flex-col items-center justify-center py-6 px-4 rounded-xl bg-gradient-to-r from-[#3F1388] to-[#5A1FC8] border border-[#A855F7] text-white shadow-[0_0_20px_rgba(139,92,246,0.3)]">
+          <div className="flex flex-col items-center justify-center py-3 px-3 rounded-xl bg-gradient-to-r from-[#3F1388] to-[#5A1FC8] border border-[#A855F7] text-white shadow-[0_0_20px_rgba(139,92,246,0.3)]">
             <h3 className="text-2xl md:text-3xl font-bold">48hrs</h3>
             <p className="text-[10px] md:text-xs mt-2 uppercase tracking-wider text-center">Avg Response</p>
           </div>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
-
 import { useLocation } from "react-router-dom";
 
 const Testimonial = () => {
@@ -43,58 +42,31 @@ const Testimonial = () => {
 
   const location = useLocation();
 
-  // useEffect(() => {
-  //   const handleScrollToHash = () => {
-  //     if (window.location.hash) {
-  //       const el = document.querySelector(window.location.hash);
-  //       if (el) {
-  //         el.scrollIntoView({ behavior: "smooth" });
-  //       }
-  //     }
-  //   };
-
-  //   // Run immediately when the component mounts (for direct load)
-  //   setTimeout(handleScrollToHash, 600);
-
-  //   // Also run whenever hash changes (for navigation within SPA)
-  //   window.addEventListener("hashchange", handleScrollToHash);
-
-  //   return () => window.removeEventListener("hashchange", handleScrollToHash);
-  // }, []);
-
+  // Scroll to hash on mount / hash change
   useEffect(() => {
     const scrollToHash = () => {
       const hash = window.location.hash;
       if (!hash) return;
-
       const scroll = () => {
         const el = document.querySelector(hash);
         if (el) {
           el.scrollIntoView({ behavior: "smooth" });
         } else {
-          // Retry until element is rendered
           setTimeout(scroll, 300);
         }
       };
-
       scroll();
     };
-
-    // Run on first mount
     setTimeout(scrollToHash, 600);
-
-    // Run whenever hash changes
     window.addEventListener("hashchange", scrollToHash);
-
     return () => window.removeEventListener("hashchange", scrollToHash);
   }, []);
 
+  // Fetch testimonials
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/gettestimonials`
-        );
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/gettestimonials`);
         if (res.data && res.data.length > 0) {
           setItems(res.data);
         } else {
@@ -107,7 +79,6 @@ const Testimonial = () => {
         setLoading(false);
       }
     };
-
     fetchTestimonials();
   }, []);
 
@@ -117,12 +88,12 @@ const Testimonial = () => {
     try {
       const clean = html.replace(/\\r\\n/g, " "); // handle escaped line breaks
       const doc = new DOMParser().parseFromString(clean, "text/html");
-      return (doc.body.textContent || "").replace(/\s+/g, " ").trim();
+      return (doc.body.textContent || "").replace(/\\s+/g, " ").trim();
     } catch {
       // fallback: strip tags
       return html
         .replace(/<[^>]+>/g, " ")
-        .replace(/\s+/g, " ")
+        .replace(/\\s+/g, " ")
         .trim();
     }
   };
@@ -137,119 +108,37 @@ const Testimonial = () => {
   }, [items.length]);
 
   if (loading) return <p className="text-center">Loading testimonials...</p>;
-  if (items.length === 0)
-    return <p className="text-center">No testimonials available</p>;
+  if (items.length === 0) return <p className="text-center">No testimonials available</p>;
 
-  const rows = [];
-  for (let i = 0; i < items.length; i += 3) {
-    rows.push(items.slice(i, i + 3));
-  }
-
-  console.log(rows);
   return (
-    <div
-      id="testimonials"
-      className="bg-[#EFEFEF] py-12 px-4 sm:px-6 font-poppins text-[#1B084C]"
-    >
+    <div id="testimonials" className="bg-[#EFEFEF] py-12 px-4 sm:px-6 font-poppins text-[#1B084C]">
       {/* Heading */}
-      <motion.div
-        className="text-center mb-12"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-      >
+      <motion.div className="text-center mb-12" initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
         <div className="flex justify-center mb-6">
-          <motion.div
-            initial={{ width: 0, opacity: 0 }}
-            whileInView={{ width: 160, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
-          />
+          <motion.div initial={{ width: 0, opacity: 0 }} whileInView={{ width: 160, opacity: 1 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold font-montserrat inline-block pb-2">
-          Clients Accolade
-        </h2>
-        <p className="mt-2">
-          Don't just take our word for it. Here's what our clients have to say
-          about their experience with Jobs Territory
-        </p>
+        <h2 className="text-3xl md:text-4xl font-bold font-montserrat inline-block pb-2">Client Success Stories</h2>
+        <p className="mt-2">Don't just take our word for it. Here's what our clients have to say about their experience with Jobs Territory</p>
       </motion.div>
 
-      {/* <AnimatePresence mode="wait">
-        <motion.div
-          key={items[active]._id}
-          className="w-full flex flex-col gap-5 items-center lg:flex-row justify-center px-4 md:py-4 rounded-lg"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -50 }}
-          transition={{ duration: 0.6 }}
-        >
-
-          <div className="flex items-start">
-            <motion.div
-              className="rounded-lg flex justify-center items-center flex-shrink-0"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <img
-                src={items[active]?.banner}
-                alt={items[active]?.heading || "Client"}
-                className="w-44 h-52 sm:w-72 sm:h-80 object-contain"
-              />
-            </motion.div>
-          </div>
-
-        
-          <motion.div
-            className="mt-8 md:mt-0 md:ml-12 max-w-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            <h2 className="text-xl font-bold text-[#6A1FFF] font-montserrat">
-              {items[active]?.heading}
-            </h2>
-            <div className="flex items-start mt-4">
-              <FaQuoteLeft className="text-[#6A1FFF] text-xl mr-3 mt-1" />
-              <p className="text-base leading-relaxed">
-                {htmlToText(items[active]?.message)}
-              </p>
-            </div>
-          </motion.div>
-        </motion.div>
-      </AnimatePresence> */}
-
+      {/* Scrolling testimonials */}
       <div className="relative h-[600px] md:h-[800px] overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#EFEFEF] to-transparent pointer-events-none z-10"></div>
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#EFEFEF] to-transparent pointer-events-none z-10"></div>
-
-        <div className="overflow-y-scroll h-full no-scrollbar">
-          <div className="animate-scrollUp space-y-6">
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
-              {[...rows, ...rows].flat().map((t, index) => (
-                <div
-                  key={index}
-                  className="break-inside-avoid mb-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:scale-105 transition-all duration-300 transform cursor-pointer inline-block w-full hover:z-50 relative"
-                >
-                  <img
-                    src={t.banner}
-                    alt={t.heading}
-                    className="w-40 h-40 object-contain rounded-xl mb-4 my-2 mx-auto"
-                  />
-                  <h3 className="font-semibold text-gray-900 text-sm mb-1">
-                    {t.heading}
-                  </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    {htmlToText(t.message)}
-                  </p>
-                </div>
-              ))}
-            </div>
+        {/* Top fade/blur */}
+        <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-[#EFEFEF] to-transparent pointer-events-none z-10"></div>
+        {/* Scroll container */}
+        <div className="animate-scrollUp space-y-6" onMouseEnter={e => (e.currentTarget.style.animationPlayState = "paused")} onMouseLeave={e => (e.currentTarget.style.animationPlayState = "running")}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[...items, ...items].map((t, index) => (
+              <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:scale-105 transition-all duration-300 transform cursor-pointer inline-block w-full hover:z-50 relative">
+                <img src={t.banner} alt={t.heading} className="w-40 h-40 object-contain rounded-xl mb-4 my-2 mx-auto" />
+                <h3 className="font-semibold text-gray-900 text-sm mb-1">{t.heading}</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">{htmlToText(t.message)}</p>
+              </div>
+            ))}
           </div>
         </div>
+        {/* Bottom fade/blur */}
+        <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-[#EFEFEF] to-transparent pointer-events-none z-10"></div>
       </div>
     </div>
   );

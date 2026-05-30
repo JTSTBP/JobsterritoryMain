@@ -33,15 +33,16 @@ const Navbar = () => {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "Industries We Hire", path: "/IndustriesweHire" },
-    { name: "Blogs", path: "/blogs" },
     { name: "Case Studies", path: "/casestudies" },
+    { name: "Blogs", path: "/blogs" },
+    
   ];
 
   const miditems = [
     { name: "Home", path: "/" },
     { name: "Industries We Hire", path: "/IndustriesweHire" },
-    { name: "Blogs", path: "/blogs" },
     { name: "Case Studies", path: "/casestudies" },
+     { name: "Blogs", path: "/blogs" },
     { name: "Hire Now", path: "/contactus" },
     { name: "AboutUs", path: "/aboutus" },
   ];
