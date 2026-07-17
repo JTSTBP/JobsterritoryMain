@@ -3,9 +3,9 @@
   "name": "Jobs Territory",
   "icons": [
     {
-      "src": "favicon-48x48.png",
+      "src": "favicon-96x96.png",
       "type": "image/png",
-      "sizes": "48x48"
+      "sizes": "96x96"
     },
     {
       "src": "logo192.png",
